@@ -270,88 +270,88 @@ CREATE TABLE HUESPED (
 );
 
 CREATE TABLE ASEGURADORA (
-    id_aseguradora NUMBER(5) PRIMARY KEY,
-    nombre VARCHAR(15),
+    id_aseguradora INTEGER PRIMARY KEY,
+    nombre VARCHAR(15) NOT NULL,
     logo BLOB DEFAULT EMPTY_BLOB()
 );
 
 CREATE TABLE SERVICIO (
-    id_servicio NUMBER(5) PRIMARY KEY,
-    nombre VARCHAR(15),
+    id_servicio INTEGER PRIMARY KEY,
+    nombre VARCHAR(20) NOT NULL,
     logo BLOB DEFAULT EMPTY_BLOB()
 );
 
 CREATE TABLE SEGURO(
-    id_seguro NUMBER(5) PRIMARY KEY,
-    reserva_seguro RESERVA ,
-    fk_aseguradora NUMBER(5),
-    CONSTRAINT FK_ASEGURADORA_SEGURO FOREIGN KEY (fk_aseguradora)
+    id_seguro INTEGER PRIMARY KEY,
+    reserva_seguro RESERVA NOT NULL,
+    adeguradora_id INTEGER NOT NULL,
+    CONSTRAINT FK_ASEGURADORA_SEGURO FOREIGN KEY (adeguradora_id)
     REFERENCES ASEGURADORA (id_aseguradora)
 );
 
 CREATE TABLE SEGURO_SERVICIO (
-    id_seguro_servicio NUMBER(5) PRIMARY KEY,
-    fk_seguro NUMBER(5),
-    fk_servicio NUMBER(5),
-    CONSTRAINT FK_SEGURO_SEGUROSERVICIO FOREIGN KEY (fk_seguro)
+    id_seguro_servicio INTEGER PRIMARY KEY,
+    seguro_id INTEGER NOT NULL,
+    servicio_id INTEGER NOT NULL,
+    CONSTRAINT FK_SEGURO_SEGUROSERVICIO FOREIGN KEY (seguro_id)
     REFERENCES SEGURO (id_seguro),
-    CONSTRAINT FK_SERVICIO_SEGUROSERVICIO FOREIGN KEY (fk_servicio)
+    CONSTRAINT FK_SERVICIO_SEGUROSERVICIO FOREIGN KEY (servicio_id)
     REFERENCES SERVICIO (id_servicio)
 );
 
 CREATE TABLE MILLA (
-    id_milla NUMBER(5) PRIMARY KEY,
-    cantidad UNIDAD,
-    fk_usuario NUMBER(5),
-    CONSTRAINT FK_USUARIO_MILLA FOREIGN KEY (fk_usuario)
+    id_milla INTEGER PRIMARY KEY,
+    cantidad UNIDAD NOT NULL,
+    usuario_id INTEGER NOT NULL,
+    CONSTRAINT FK_USUARIO_MILLA FOREIGN KEY (usuario_id)
     REFERENCES usuario (id_usuario)
 );
 
 CREATE TABLE TARJETA_DEBITO (
-    id_trajeta_debito NUMBER(5) PRIMARY KEY,
-    numero VARCHAR(15),
-    banco VARCHAR(15),
-    fecha_vencimiento DATE,
-    fk_usuario NUMBER(5),
-    CONSTRAINT FK_USUARIO_TARJETADEBITO FOREIGN KEY (fk_usuario)
+    id_trajeta_debito INTEGER PRIMARY KEY,
+    numero VARCHAR(20) NOT NULL,
+    banco VARCHAR(20) NOT NULL,
+    fecha_vencimiento DATE NOT NULL,
+    usuario_id INTEGER NOT NULL,
+    CONSTRAINT FK_USUARIO_TARJETADEBITO FOREIGN KEY (usuario_id)
     REFERENCES USUARIO (id_usuario)
 );
 
 CREATE TABLE TARJETA_CREDITO (
-    id_tarjeta_credito NUMBER(5) PRIMARY KEY,
-    numero VARCHAR(15),
-    banco VARCHAR(15),
-    tipo VARCHAR(15),
-    fk_usuario NUMBER(5),
-    CONSTRAINT FK_USUARIO_TRAJETACREDITO FOREIGN KEY (fk_usuario)
+    id_tarjeta_credito INTEGER PRIMARY KEY,
+    numero VARCHAR(20) NOT NULL,
+    banco VARCHAR(20) NOT NULL,
+    tipo VARCHAR(20) NOT NULL,
+    usuario_id INTEGER NOT NULL,
+    CONSTRAINT FK_USUARIO_TRAJETACREDITO FOREIGN KEY (usuario_id)
     REFERENCES USUARIO (id_usuario)
 );
 
 CREATE TABLE PAGO (
-    id_pago NUMBER(5) PRIMARY KEY,
-    monto UNIDAD,
-    fecha DATE,
-    millas_restantes NUMBER(10),
-    fk_millas NUMBER(5),
-    fk_tarjetadebito NUMBER(5),
-    fk_tarjetacredito NUMBER(5),
-    fk_reservaestancia NUMBER(5),
-    fk_reservavuelo NUMBER(5),
-    fk_seguro NUMBER(5),
-    fk_reservacarro NUMBER(5),
-    CONSTRAINT FK_MILLAS_PAGO FOREIGN KEY (fk_millas)
+    id_pago INTEGER PRIMARY KEY,
+    monto UNIDAD NOT NULL,
+    fecha TIMESTAMP NOT NULL,
+    millas_restantes UNIDAD NOT NULL,
+    millas_id INTEGER,
+    tarjetadebito_id INTEGER,
+    tarjetacredito_id INTEGER,
+    reservaestancia_id INTEGER,
+    reservavuelo_id INTEGER,
+    seguro_id INTEGER,
+    reservacarro_id INTEGER,
+    CONSTRAINT FK_MILLAS_PAGO FOREIGN KEY (millas_id)
     REFERENCES MILLA (id_milla),
-    CONSTRAINT FK_TARJETADEBITO_PAGO FOREIGN KEY (fk_tarjetadebito)
+    CONSTRAINT FK_TARJETADEBITO_PAGO FOREIGN KEY (tarjetadebito_id)
     REFERENCES TARJETA_DEBITO (id_trajeta_debito),
-    CONSTRAINT FK_TARJETACREDITO_PAGO FOREIGN KEY (fk_tarjetacredito)
+    CONSTRAINT FK_TARJETACREDITO_PAGO FOREIGN KEY (tarjetacredito_id)
     REFERENCES TARJETA_CREDITO (id_tarjeta_credito),
-    CONSTRAINT FK_RESERVAESTANCIA_PAGO FOREIGN KEY (fk_reservaestancia)
+    CONSTRAINT FK_RESERVAESTANCIA_PAGO FOREIGN KEY (reservaestancia_id)
     REFERENCES RESERVA_ESTANCIA (id_reserva_estancia),
-    CONSTRAINT FK_RESERVAVUELO_PAGO FOREIGN KEY (fk_reservavuelo)
+    CONSTRAINT FK_RESERVAVUELO_PAGO FOREIGN KEY (reservavuelo_id)
     REFERENCES RESERVA_VUELO (id_reserva_vuelo),
-    CONSTRAINT FK_SEGURO_PAGO FOREIGN KEY (fk_seguro)
+    CONSTRAINT FK_SEGURO_PAGO FOREIGN KEY (seguro_id)
     REFERENCES SEGURO (id_seguro),
-    CONSTRAINT FK_RESERVACARRO_PAGO FOREIGN KEY (fk_reservacarro)
+    CONSTRAINT FK_RESERVACARRO_PAGO FOREIGN KEY (reservacarro_id)
     REFERENCES RESERVA_CARRO (id_reserva_carro)
 );
 
