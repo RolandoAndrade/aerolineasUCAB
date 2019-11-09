@@ -74,8 +74,8 @@ CREATE TABLE AEROPUERTO (
     id_aeropuerto INTEGER PRIMARY KEY,
     nombre VARCHAR(20) NOT NULL,
     abreviatura VARCHAR(5) NOT NULL,
-    latitud NUMBER(10,5) NOT NULL,
-    longitud NUMBER(10,5) NOT NULL,
+    latitud UNIDAD NOT NULL,
+    longitud UNIDAD NOT NULL,
     lugar_aeropuerto LUGAR NOT NULL
 );
 
