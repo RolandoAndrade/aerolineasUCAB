@@ -7,6 +7,7 @@ CREATE OR REPLACE PACKAGE ASIGNACION_VUELOS IS
     aeropuerto3 IN OUT INTEGER, alcance UNIDAD) RETURN BOOLEAN; 
     FUNCTION calcular_duracion(aeropuerto1 INTEGER, aeropuerto2 INTEGER, distancia UNIDAD) RETURN UNIDAD;
 END;
+
 CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
     FUNCTION fecha_de_vuelo(minima TIMESTAMP, maxima TIMESTAMP) RETURN TIMESTAMP
     IS
@@ -15,8 +16,28 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
     END;
     FUNCTION calcula_distancia(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN UNIDAD
     IS
+        R INTEGER; -- RADIO DE LA TIERRA
+        lat1 NUMBER(10,5); -- LATITUD 1
+        lat2 NUMBER(10,5); -- LATITUD 2
+        lon1 NUMBER(10,5); -- LONGITUD 1
+        lon2 NUMBER(10,5); -- LONGITUD 2
+        dLat NUMBER(10,5); -- DELTA LATITUD
+        dLon NUMBER(10,5); -- DELTA LONGITUD
+        a NUMBER(10,5);
+        c NUMBER(10,5);
     BEGIN
-        RETURN NULL;
+       	R:=6371000;
+        --FALTA CONVERTIR UNIDADES A RADIANES
+        SELECT W.latitud.valor INTO lat1 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto1;
+        SELECT W.latitud.valor INTO lat2 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto2;
+        SELECT W.longitud.valor INTO lon1 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto1;
+        SELECT W.longitud.valor INTO lon2 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto2;
+        dLat := lat2 - lat1;
+        dLon := lon2 - lon1;
+        a:=SIN(dLat/2)*SIN(dLat/2)+COS(lat1)*COS(lat2)*SIN(dLon/2)*SIN(dLon/2);
+        c:=2*ATAN(SQRT(a)/SQRT(1-a))/1000;
+        RETURN UNIDAD(R*c,'kilometros','distancia','km');
+        -- FORMULA DE https://www.movable-type.co.uk/scripts/latlong.html
     END;
     FUNCTION seleccionar_escala(aeropuerto1 INTEGER, aeropuerto2 INTEGER, alcance UNIDAD) RETURN INTEGER
     IS
@@ -84,4 +105,3 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         END LOOP;
     END;
 END;
-
