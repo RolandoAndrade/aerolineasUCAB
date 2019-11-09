@@ -3,9 +3,6 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
     IS
         hora TIMESTAMP;
     BEGIN
-        dbms_Output.Put_Line(SYSTIMESTAMP);
-        dbms_Output.Put_Line(minima);
-        dbms_Output.Put_Line(maxima);
         SELECT minima + dbms_random.value*(maxima-minima)
         INTO hora
         FROM DUAL;
@@ -24,11 +21,10 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         c NUMBER(10,5);
     BEGIN
        	R:=6371000;
-        --FALTA CONVERTIR UNIDADES A RADIANES
-        SELECT W.latitud.valor INTO lat1 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto1;
-        SELECT W.latitud.valor INTO lat2 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto2;
-        SELECT W.longitud.valor INTO lon1 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto1;
-        SELECT W.longitud.valor INTO lon2 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto2;
+        SELECT W.latitud.convertir('coordenada','rad') INTO lat1 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto1;
+        SELECT W.latitud.convertir('coordenada','rad') INTO lat2 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto2;
+        SELECT W.longitud.convertir('coordenada','rad') INTO lon1 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto1;
+        SELECT W.longitud.convertir('coordenada','rad') INTO lon2 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto2;
         dLat := lat2 - lat1;
         dLon := lon2 - lon1;
         a:=SIN(dLat/2)*SIN(dLat/2)+COS(lat1)*COS(lat2)*SIN(dLon/2)*SIN(dLon/2);
