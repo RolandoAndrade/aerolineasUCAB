@@ -1,0 +1,11 @@
+# Aerolineas UCAB
+
+*Pasos para iniciar*
+
+- DROP
+- TDA
+- CREATE
+- SQUENCES
+- STORE_PROCEDURES
+- TRIGGERS
+- INSERTS
