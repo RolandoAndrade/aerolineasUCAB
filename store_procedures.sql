@@ -17,3 +17,11 @@ IS
 BEGIN
     RETURN ABS(MOD(dbms_random.random,5000))+1000;
 END;
+/
+CREATE OR REPLACE FUNCTION getAeropuerto(aeropuertoId INTEGER) RETURN AEROPUERTO%RowType
+IS
+    registro AEROPUERTO%RowType;
+BEGIN
+    SELECT * INTO registro FROM AEROPUERTO WHERE id_aeropuerto = aeropuertoId;
+    RETURN registro;
+END;
