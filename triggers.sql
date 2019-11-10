@@ -44,3 +44,16 @@ BEGIN
 END;
 END IF;
 END;
+/
+CREATE OR REPLACE TRIGGER TARJETAS 
+AFTER INSERT ON USUARIO FOR EACH ROW
+DECLARE
+    numero number;
+BEGIN
+    numero := GenerarAleatorio;
+    INSERT INTO TARJETA_DEBITO VALUES(id_tarjeta_debito.nextVal, numero, 'Banesco', '01/01/2022', :new.id_usuario);
+    numero := GenerarAleatorio;
+    INSERT INTO TARJETA_CREDITO VALUES(id_tarjeta_credito.nextVal, numero, 'Mercantil', 'visa', :new.id_usuario );
+    INSERT INTO MILLA VALUES(id_milla.nextVal, UNIDAD(0,'millas', 'monetaria', 'milla'),:new.id_usuario );
+
+END;

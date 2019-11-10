@@ -208,7 +208,6 @@ BEGIN
 END;
 -----------------------------------------------FIN MODELO------------------------------------------------------------------------------
 ------------------------------------------------AEROLINEA------------------------------------------------------------------------------
-
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -221,7 +220,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -234,7 +233,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -247,7 +246,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -260,7 +259,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -273,7 +272,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -286,7 +285,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -299,7 +298,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -312,7 +311,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -325,7 +324,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -338,7 +337,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -351,7 +350,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -364,7 +363,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -377,7 +376,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -390,7 +389,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -828,7 +827,7 @@ INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,enver
 
 INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
 
 
 INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
@@ -1373,7 +1372,6 @@ INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,enver
 ----------------------------------------------------------------------------------------------------------------------------FIN AVIONES---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------PROVEEDOR DE CARROS-------------------------------------------------------------
-
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1386,7 +1384,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1399,7 +1397,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1412,7 +1410,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1425,7 +1423,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1438,7 +1436,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1451,7 +1449,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1464,7 +1462,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1477,7 +1475,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1490,7 +1488,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1503,7 +1501,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1516,7 +1514,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1529,7 +1527,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1542,7 +1540,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1555,7 +1553,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -1639,7 +1637,7 @@ INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),2, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),2 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),2, 8);
 INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),2, 8);
 
 INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),2, 9);
@@ -2581,27 +2579,7 @@ INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'ALCANTIRI SUCRE', 'mai', U
 
 --------------------------------------------------------------------------------------FIN AEROPUERTO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-CREATE OR REPLACE FUNCTION GenerarAleatorio RETURN NUMBER
-IS
-    BEGIN
-        RETURN ABS(MOD(dbms_random.random,5000))+1000;
-    END;
-
-CREATE OR REPLACE TRIGGER TARJETAS 
-AFTER INSERT ON USUARIO FOR EACH ROW
-DECLARE
-    numero number;
-BEGIN
-    numero := GenerarAleatorio;
-    INSERT INTO TARJETA_DEBITO VALUES(id_tarjeta_debito.nextVal, numero, 'Banesco', '01/01/2022', :new.id_usuario);
-    numero := GenerarAleatorio;
-    INSERT INTO TARJETA_CREDITO VALUES(id_tarjeta_credito.nextVal, numero, 'Mercantil', 'visa', :new.id_usuario );
-    INSERT INTO MILLA VALUES(id_milla.nextVal, UNIDAD(0,'millas', 'monetaria', 'milla'),:new.id_usuario );
-
-END;
-
 ------------------------------------------------------------------------------------------------USUARIO----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2614,7 +2592,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2627,7 +2605,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2640,7 +2618,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2653,7 +2631,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2666,8 +2644,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/
 
 SET serveroutput ON
 DECLARE 
@@ -2681,7 +2658,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2694,7 +2671,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2707,7 +2684,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2720,7 +2697,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2733,7 +2710,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -2749,7 +2726,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2762,7 +2739,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2775,7 +2752,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2788,7 +2765,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2801,7 +2778,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 SET serveroutput ON
@@ -2816,7 +2793,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2829,7 +2806,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2842,7 +2819,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2855,7 +2832,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2868,7 +2845,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 SET serveroutput ON
@@ -2883,7 +2860,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2896,7 +2873,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2909,7 +2886,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2922,7 +2899,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2937,7 +2914,7 @@ BEGIN
 END;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2950,7 +2927,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2963,7 +2940,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2976,7 +2953,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -2989,7 +2966,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -3002,7 +2979,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 SET serveroutput ON
@@ -3017,7 +2994,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -3030,7 +3007,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -3043,7 +3020,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -3056,7 +3033,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -3069,7 +3046,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 SET serveroutput ON
@@ -3084,7 +3061,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -3097,7 +3074,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -3110,7 +3087,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -3123,7 +3100,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;

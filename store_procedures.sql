@@ -11,3 +11,9 @@ BEGIN
     INSERT INTO ASIENTO VALUES (id_asiento.nextVal, i+inicio, clase,UNIDAD(precio ,'dolares', 'monetaria', 'usd'), avion);
     END LOOP;
 END;
+/
+CREATE OR REPLACE FUNCTION GenerarAleatorio RETURN NUMBER
+IS
+BEGIN
+    RETURN ABS(MOD(dbms_random.random,5000))+1000;
+END;
