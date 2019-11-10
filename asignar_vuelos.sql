@@ -1,3 +1,5 @@
+--SET SERVEROUTPUT ON;
+
 CREATE or REPLACE PACKAGE ASIGNACION_VUELOS IS
     PROCEDURE asignar_vuelos;
     FUNCTION fecha_de_vuelo(minima TIMESTAMP, maxima TIMESTAMP) RETURN TIMESTAMP;
@@ -9,6 +11,8 @@ CREATE or REPLACE PACKAGE ASIGNACION_VUELOS IS
 END;
 
 CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
+
+
     FUNCTION fecha_de_vuelo(minima TIMESTAMP, maxima TIMESTAMP) RETURN TIMESTAMP
     IS
         hora TIMESTAMP;
@@ -18,6 +22,10 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         FROM DUAL;
         RETURN hora;
     END;
+    
+    
+    
+    
     FUNCTION calcula_distancia(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN UNIDAD
     IS
         R INTEGER; -- RADIO DE LA TIERRA
@@ -30,7 +38,7 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         a NUMBER(10,5);
         c NUMBER(10,5);
     BEGIN
-       	R:=6371000;
+        R:=6371000;
         SELECT W.latitud.convertir('coordenada','rad') INTO lat1 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto1;
         SELECT W.latitud.convertir('coordenada','rad') INTO lat2 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto2;
         SELECT W.longitud.convertir('coordenada','rad') INTO lon1 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto1;
@@ -42,11 +50,31 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         RETURN UNIDAD(R*c,'kilometros','distancia','km');
         -- FORMULA DE https://www.movable-type.co.uk/scripts/latlong.html
     END;
+    
+    
+    
+    
     FUNCTION seleccionar_escala(aeropuerto1 INTEGER, aeropuerto2 INTEGER, alcance UNIDAD) RETURN INTEGER
     IS
+    CURSOR escalas IS
+        SELECT id_aeropuerto FROM AEROPUERTO
+        WHERE id_aeropuerto!=aeropuerto1 AND
+        id_aeropuerto!=aeropuerto2 AND
+        ASIGNACION_VUELOS.calcula_distancia(aeropuerto1, id_aeropuerto).valor<=alcance.valor AND
+        ASIGNACION_VUELOS.calcula_distancia(aeropuerto2, id_aeropuerto).valor<=alcance.valor;
+    escala INTEGER;
     BEGIN
-        RETURN NULL;
+        OPEN escalas;
+        FETCH escalas INTO escala;
+        IF escalas%found THEN
+            RETURN escala;
+        END IF;
+        CLOSE escalas;
+        RETURN -1;
     END;
+    
+    
+    
     FUNCTION seleccionar_aeropuertos(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER, aeropuerto3 IN OUT INTEGER, alcance UNIDAD) RETURN BOOLEAN
     IS
         CURSOR aeropuertos IS
@@ -69,7 +97,7 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
                     CONTINUE;
                 END;
             END IF;
-            IF calcula_distancia(aeropuerto1, aeropuerto1).valor<=alcance.valor THEN
+            IF calcula_distancia(aeropuerto1, aeropuerto2).valor<=alcance.valor THEN
                 RETURN TRUE;
             ELSE
                 BEGIN
@@ -87,6 +115,10 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         END LOOP;
         RETURN FALSE;
     END;
+    
+    
+    
+    
     FUNCTION calcular_duracion(aeropuerto1 INTEGER, aeropuerto2 INTEGER, distancia UNIDAD) RETURN UNIDAD
     IS
     BEGIN
@@ -108,4 +140,3 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         END LOOP;
     END;
 END;
---SET SERVEROUTPUT ON;
