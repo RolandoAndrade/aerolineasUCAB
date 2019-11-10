@@ -12,7 +12,6 @@ INSERT INTO MARCA VALUES (id_marca.nextVal,'Suzuki','terrestre');
 INSERT INTO MARCA VALUES (id_marca.nextVal,'Honda','terrestre');
 
 -----------------------------------------------MODELO------------------------------------------------------------------------------
-
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -25,7 +24,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -38,7 +37,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -51,7 +50,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -64,7 +63,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -77,7 +76,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -90,7 +89,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -103,7 +102,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -116,7 +115,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -129,7 +128,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -142,7 +141,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -155,7 +154,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -168,7 +167,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -181,7 +180,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -194,7 +193,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 SET serveroutput ON
 DECLARE 
     V_blob BLOB;
@@ -207,7 +206,6 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
 -----------------------------------------------FIN MODELO------------------------------------------------------------------------------
 ------------------------------------------------AEROLINEA------------------------------------------------------------------------------
 
