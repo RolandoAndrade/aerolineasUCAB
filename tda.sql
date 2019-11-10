@@ -73,12 +73,12 @@ END;
 
 
 CREATE OR REPLACE TYPE LUGAR AS OBJECT (
-    pais VARCHAR(15),
-    ciudad VARCHAR(15),
-    calle VARCHAR(15),
-    nombre VARCHAR(15),
-    codigo_postal VARCHAR(15),
-    zona_horaria VARCHAR(15),
+    pais VARCHAR(50),
+    ciudad VARCHAR(50),
+    calle VARCHAR(50),
+    nombre VARCHAR(50),
+    codigo_postal VARCHAR(50),
+    zona_horaria VARCHAR(50),
     MEMBER FUNCTION convertir_zonaH(zona_horaria VARCHAR) RETURN DATE
 );
 ------------------------falta crear la funcion canvertir hora-------------------------------------------------------------------

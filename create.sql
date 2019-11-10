@@ -1,7 +1,7 @@
 CREATE TABLE AEROLINEA (
     id_aerolinea INTEGER PRIMARY KEY,
     logo BLOB DEFAULT EMPTY_BLOB(),
-    nombre VARCHAR(20) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
     tipo VARCHAR(20) NOT NULL
 );
 
@@ -72,7 +72,7 @@ CREATE TABLE ASIENTO (
 
 CREATE TABLE AEROPUERTO (
     id_aeropuerto INTEGER PRIMARY KEY,
-    nombre VARCHAR(20) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
     abreviatura VARCHAR(5) NOT NULL,
     latitud UNIDAD NOT NULL,
     longitud UNIDAD NOT NULL,
@@ -99,14 +99,14 @@ CREATE TABLE VUELO (
 
 CREATE TABLE USUARIO (
     id_usuario INTEGER PRIMARY KEY,
-    correo VARCHAR(30) NOT NULL,
+    correo VARCHAR(50) NOT NULL,
     contrasenia VARCHAR(20) NOT NULL,
     foto BLOB DEFAULT EMPTY_BLOB(),
     p_nombre VARCHAR(20) NOT NULL,
     s_nombre VARCHAR(20),
     p_apellido VARCHAR(20) NOT NULL,
     s_apellido VARCHAR(20),
-    telefono VARCHAR(20) NOT NULL
+    telefono VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE DISPONIBILIDAD (
@@ -126,11 +126,11 @@ CREATE TABLE DISPONIBILIDAD (
 CREATE TABLE RESERVA_VUELO (
     id_reserva_vuelo NUMBER(5) PRIMARY KEY,
     reserva_vuelo RESERVA,
-    fk_vuelo NUMBER(5),
-    fk_usuario NUMBER(5),
-    CONSTRAINT FK_VUELO_RESERVAVUELO FOREIGN KEY (fk_vuelo)
+    vuelo_id INTEGER,
+    usuario_id INTEGER,
+    CONSTRAINT FK_VUELO_RESERVAVUELO FOREIGN KEY (vuelo_id)
     REFERENCES VUELO (id_vuelo),
-    CONSTRAINT FK_USUARIO_RESERVAVUELO FOREIGN KEY (fk_usuario)
+    CONSTRAINT FK_USUARIO_RESERVAVUELO FOREIGN KEY (usuario_id)
     REFERENCES USUARIO (id_usuario)
 );
 
@@ -152,7 +152,7 @@ CREATE TABLE RESERVA_CARRO (
 
 CREATE TABLE HOTEL (
     id_hotel INTEGER PRIMARY KEY,
-    nombre VARCHAR(20) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
     foto BLOB DEFAULT EMPTY_BLOB(),
     estrellas NUMBER(2) NOT NULL,
     lugar_hotel LUGAR NOT NULL
@@ -223,13 +223,13 @@ CREATE TABLE HUESPED (
 
 CREATE TABLE ASEGURADORA (
     id_aseguradora INTEGER PRIMARY KEY,
-    nombre VARCHAR(15) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
     logo BLOB DEFAULT EMPTY_BLOB()
 );
 
 CREATE TABLE SERVICIO (
     id_servicio INTEGER PRIMARY KEY,
-    nombre VARCHAR(20) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
     logo BLOB DEFAULT EMPTY_BLOB()
 );
 
@@ -306,3 +306,28 @@ CREATE TABLE PAGO (
     CONSTRAINT FK_RESERVACARRO_PAGO FOREIGN KEY (reservacarro_id)
     REFERENCES RESERVA_CARRO (id_reserva_carro)
 );
+
+--------------------------------------------------------para poder crear blobs, despues del AS deben poner la direccion --------
+-------------------------------------------------------donde tienen la imagen---------------------------------------------------
+
+CREATE OR REPLACE DIRECTORY IMAGES AS 'C:\Users\Usuario\Documents\Universidad\septimo\Base de Datos 2\proyecto\imagenes';
+--CREATE OR REPLACE DIRECTORY IMAGES AS 'C:\Users\Rolando Andrade\Desktop\SISTEMAS DE BASES DE DATOS II\aerolineasUCAB\imagenes';
+
+GRANT READ, WRITE ON DIRECTORY IMAGES TO system;
+
+------------------------------------------prueba insertando una imagen en una tabla que ya no existe----------------------------
+--------------------------------------------la prueba funciono asi se insertan blob en la bd------------------------------------
+--SET serveroutput ON
+--DECLARE 
+    --V_blob BLOB;
+    --V_bfile BFILE;
+--BEGIN 
+    --INSERT INTO MODELO VALUES (3,'PRUEBA','A',EMPTY_BLOB()) RETURNING foto INTO V_blob;
+    --V_bfile := BFILENAME('IMAGES', 'boeing737max9.jpg');
+    --DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    --DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+   --COMMIT;
+--END;
+
+--------------------------------------------fin de prueba----------------------------------------------------------------------
+

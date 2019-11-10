@@ -1,7 +1,7 @@
-INSERT INTO MARCA VALUES (id_marca.nextVal,'Boeing','Aéreo');
-INSERT INTO MARCA VALUES (id_marca.nextVal,'Embraer','Aéreo');
-INSERT INTO MARCA VALUES (id_marca.nextVal,'Tupolev','Aéreo');
-INSERT INTO MARCA VALUES (id_marca.nextVal,'Airbus','Aéreo');
+INSERT INTO MARCA VALUES (id_marca.nextVal,'Boeing','aéreo');
+INSERT INTO MARCA VALUES (id_marca.nextVal,'Embraer','aéreo');
+INSERT INTO MARCA VALUES (id_marca.nextVal,'Tupolev','aéreo');
+INSERT INTO MARCA VALUES (id_marca.nextVal,'Airbus','aéreo');
 INSERT INTO MARCA VALUES (id_marca.nextVal,'Ford','terrestre');
 INSERT INTO MARCA VALUES (id_marca.nextVal,'Ferrari','terrestre');
 INSERT INTO MARCA VALUES (id_marca.nextVal,'BMW','terrestre');
@@ -412,1410 +412,964 @@ END;
 ----------------------------------------ASIENTOS----------------------------------------------------------------------------------
 
 
-CREATE OR REPLACE PROCEDURE insertarAsientos(avion NUMBER, cantidad NUMBER, clase VARCHAR, precio NUMBER)
-IS 
-BEGIN
-    FOR i IN 1..cantidad LOOP
-    INSERT INTO ASIENTO VALUES (id_asiento.nextVal, numero.nextVal, clase,UNIDAD(precio ,'dolares', 'monetaria', 'usd'), avion);
-    END LOOP;
-END;
-
-CREATE OR REPLACE TRIGGER asignacion AFTER INSERT ON AVION FOR EACH ROW
-BEGIN
-IF (:new.fk_modelo = 1) THEN 
-BEGIN
-    insertarAsientos(:new.id_avion, 16, 'primera clase', 1500 );
-    insertarAsientos(:new.id_avion, 24, 'economy extra', 1000 );
-    insertarAsientos(:new.id_avion, 126, 'cabina prin', 500 ); 
-END;
-ELSIF (:new.fk_modelo = 2 AND :new.serie_modelo = 'A')THEN
-BEGIN
-     insertarAsientos(:new.id_avion, 16, 'primera clase', 1500 );
-     insertarAsientos(:new.id_avion, 144, 'cabina prin', 500 ); 
-END;
-ELSIF (:new.fk_modelo = 2 AND :new.serie_modelo = 'B')THEN
-BEGIN
-     insertarAsientos(:new.id_avion, 16, 'primera clase', 1500 );
-     insertarAsientos(:new.id_avion, 138, 'cabina prin', 500 ); 
-END;
-ELSIF (:new.fk_modelo = 3 AND :new.serie_modelo = 'A')THEN
-BEGIN
-     insertarAsientos(:new.id_avion, 12, 'primera clase', 1500 );
-     insertarAsientos(:new.id_avion, 112, 'cabina prin', 500 ); 
-END;
-ELSIF (:new.fk_modelo = 3 AND :new.serie_modelo = 'B')THEN
-BEGIN
-     insertarAsientos(:new.id_avion, 14, 'primera clase', 1500 );
-     insertarAsientos(:new.id_avion, 115, 'cabina prin', 500 ); 
-END;
-ELSIF (:new.fk_modelo = 4)THEN
-BEGIN
-     insertarAsientos(:new.id_avion, 10, 'primera clase', 1500 );
-     insertarAsientos(:new.id_avion, 84, 'cabina prin', 500 ); 
-END;
-ELSIF (:new.fk_modelo = 5 )THEN
-BEGIN
-     insertarAsientos(:new.id_avion, 15, 'primera clase', 1500 );
-     insertarAsientos(:new.id_avion, 100, 'cabina prin', 500 ); 
-END;
-ELSIF (:new.fk_modelo = 6 )THEN
-BEGIN
-    insertarAsientos(:new.id_avion, 20, 'primera clase', 1500 );
-    insertarAsientos(:new.id_avion, 30, 'economy extra', 1000 );
-    insertarAsientos(:new.id_avion, 150, 'cabina prin', 500 ); 
-END;
-
-END IF;
-END;
-
 ------------------------------------------------FIN ASIETNOS--------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------------------------AVIONES---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,1);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,1);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,1);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,1);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,1);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,1);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,1);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,2);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,2);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,2);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,2);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,2);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,2);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,2);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,2);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,2);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,2);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,2);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,2);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,2);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,2);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,2);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,2);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,2);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,2);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,2);
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,3);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,3);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,3);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,3);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,3);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,3);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,3);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,3);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,3);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,3);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,3);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,3);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,3);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,3);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,3);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,3);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,3);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,3);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,3);
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,4);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,4);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,4);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,4);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,4);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,4);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,4);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,4);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,4);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,4);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,5);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,5);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,5);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,5);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,5);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,5);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,5);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,5);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,5);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,5);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,5);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,5);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,5);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,5);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,5);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,5);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,5);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,5);
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,6);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,6);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,6);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,6);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,6);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,6);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,6);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,6);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,6);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,6);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,6);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,6);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,6);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,6);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,6);
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,7);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,7);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,7);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,7);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,7);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,7);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,7);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,7);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,7);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,7);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,7);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,7);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,7);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,7);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,7);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,7);
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,8);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,8);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,8);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,8);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,8);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,8);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,8);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,8);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,8);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,8);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,8);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,8);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,8);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,8);
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,9);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,9);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
 
 INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVIDROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; ON VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,9);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,9);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,9);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,9);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,9);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,9);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,9);
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,10);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,10);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,10);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,10);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,10);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,10);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,10);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,10);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,10);
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,10);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,10);
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,11);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,11);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,11);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,11);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,11);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,11);
+
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,11);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,11);
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,12);
 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,12);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,12);
 
-
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,12);
 
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
 
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,12);
 
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,12);
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
 
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,12);
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,12);
 
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,12);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,12);
+
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,12);
+
+
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,12);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,12);
+
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,13);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,13);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,13);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,13);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,13);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,13);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,13);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,13);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,13);
+
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,14);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,14);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,14);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,14);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,14);
+
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,1 ,15);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(840 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(5700,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0399 ,'kilometros','distancia','KM') , UNIDAD(0.0035 ,'kilometros','distancia','KM') , UNIDAD( 0.0021,'kilometros','distancia','KM') ,2 ,15);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'A', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,14);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'B', UNIDAD(1012 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6000,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.0359 ,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.0025,'kilometros','distancia','KM') ,3 ,15);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,15);
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(1004.5 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(4074,'kilometros','distancia','KM') ,UNIDAD( 12.496,'kilometros','distancia','KM') , UNIDAD(0.03624 ,'kilometros','distancia','KM') , UNIDAD(0.0027 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,4 ,15);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(850 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(6500,'kilometros','distancia','KM') ,UNIDAD(12.1,'kilometros','distancia','KM') , UNIDAD(0.0418,'kilometros','distancia','KM') , UNIDAD(0.0047 ,'kilometros','distancia','KM') , UNIDAD( 0.001,'kilometros','distancia','KM') ,5 ,15);
 
 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
-INSERT INTO AVION VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,15);
-DROP SEQUENCE NUMERO;
-CREATE SEQUENCE numero INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,15);
+
+INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,15);
+
 
 
 ----------------------------------------------------------------------------------------------------------------------------FIN AVIONES---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
