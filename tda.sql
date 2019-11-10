@@ -5,7 +5,7 @@ CREATE OR REPLACE TYPE UNIDAD AS OBJECT(
     simbolo VARCHAR2(5),
     MEMBER FUNCTION convertir(tipoP VARCHAR2, simboloP VARCHAR2) RETURN NUMBER
 );
-
+/
 CREATE OR REPLACE TYPE BODY UNIDAD AS 
     MEMBER FUNCTION convertir(tipoP VARCHAR2, simboloP VARCHAR2) RETURN NUMBER IS 
         BEGIN   
@@ -50,7 +50,7 @@ CREATE OR REPLACE TYPE BODY UNIDAD AS
             END IF; 
         END; 
 END;
-
+/
 CREATE OR REPLACE TYPE RESERVA AS OBJECT (
     fecha_inicio DATE,
     fecha_fin DATE,
@@ -58,7 +58,7 @@ CREATE OR REPLACE TYPE RESERVA AS OBJECT (
     estado VARCHAR(15),
     MEMBER FUNCTION validar_fecha(fecha_inicioP DATE, fecha_finP DATE) RETURN DATE
 );
-
+/
 CREATE OR REPLACE TYPE BODY RESERVA AS
     MEMBER FUNCTION validar_fecha(fecha_inicioP DATE, fecha_finP DATE) RETURN DATE
     IS
@@ -70,7 +70,7 @@ CREATE OR REPLACE TYPE BODY RESERVA AS
         END IF;
     END;
 END;
-
+/
 
 CREATE OR REPLACE TYPE LUGAR AS OBJECT (
     pais VARCHAR(50),
@@ -81,6 +81,7 @@ CREATE OR REPLACE TYPE LUGAR AS OBJECT (
     zona_horaria VARCHAR(50),
     MEMBER FUNCTION convertir_zonaH(zona_horaria VARCHAR) RETURN DATE
 );
+/
 ------------------------falta crear la funcion canvertir hora-------------------------------------------------------------------
 CREATE OR REPLACE TYPE BODY LUGAR AS
     MEMBER FUNCTION convertir_zonaH(zona_horaria VARCHAR) RETURN DATE

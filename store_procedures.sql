@@ -4,13 +4,6 @@ BEGIN
     RETURN dbms_random.value < probabilidadSi;
 END;
 /
-
-CREATE OR REPLACE PROCEDURE simulacion
-IS
-BEGIN
-    ASIGNACION_VUELOS.asignar_vuelos;
-END;
-/
 CREATE OR REPLACE PROCEDURE insertarAsientos(avion NUMBER, cantidad NUMBER, clase VARCHAR, precio NUMBER, inicio NUMBER)
 IS 
 BEGIN
