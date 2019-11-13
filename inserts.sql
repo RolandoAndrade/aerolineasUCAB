@@ -3115,6 +3115,569 @@ BEGIN
 END;
 
 ------------------------------------------------------------FI USUARIO-------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------HOTEL-------------------------------------------------------------------------------------
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Burj Al Arab',EMPTY_BLOB(),'5',LUGAR('Emiratos Arabes Unidos','Dubai','Jumeirah Beach Road','Jumeirah St','111','GMT+4')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'burj-al-arab.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'President Wilson',EMPTY_BLOB(),'5',LUGAR('Suiza','Ginebra',' Quai Wilson 47','Ginebra','1211','GMT+1')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'president-wilson.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Atlantis',EMPTY_BLOB(),'5',LUGAR('Emiratos Arabes Unidos','Dubai','Crescent Rd','Dubai','111','GMT+4')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'the-atlantis.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Four Season Hotel George V',EMPTY_BLOB(),'5',LUGAR('Francia','Paris','31 Avenue George V','Paris','75008','GMT+1')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'four-season-hotel-george-v.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel de Glace',EMPTY_BLOB(),'5',LUGAR('Canada','Quebec','1860 Boulevard Valcartier','Quebec','G0A 4S0','GMT-5')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'hotel-de-glace.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Palms Casino Resort',EMPTY_BLOB(),'5',LUGAR('Estados Unidos','Las Vegas','4321 W Flamingo Rd','Las Vegas','NV 89103','GMT-8')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'palms-casino-resort.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Mandarin Oriental',EMPTY_BLOB(),'5',LUGAR('Estados Unidos','New York','80 Columbus Cir','New York','NY 10023','GMT-5')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'mandarin-oriental.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Fairmmont Kea Lani Maui',EMPTY_BLOB(),'5',LUGAR('Estados Unidos','Wailea','4100 Wailea Alanui Dr','Wailea','HI 96753','GMT-10')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'fairmont-kea-lani-maui.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Park Hyatt',EMPTY_BLOB(),'5',LUGAR('Francia','Paris','5 Rue de la Paix','Paris','75002','GMT+1')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'fairmont-kea-lani-maui.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'The Raj Palace',EMPTY_BLOB(),'5',LUGAR('India','Jaipur','Jorawar Singh Gate','Jaipur','302002','GMT+5:30')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'the-raj-palace.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bora Bora Resort',EMPTY_BLOB(),'5',LUGAR('Francia','Bora Bora','St. Regis','Bora Bora','98714 ','GMT-10')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'bora-bora.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Tamanaco',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caracas','Av.Ppal de las Mercedes','Caracas','1060','GMT-4')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'tamanaco.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Macuto Sheraton',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caraballeda','Av.Ppal de Caraballeda','Caraballeda','1165','GMT-4')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'macuto-sheraton.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Eurobuilding',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caracas','Calle La Guairita','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'eurobuilding.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Aladdin',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caracas','Av Guaicaipuro','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'aladdin.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
 
+---------------------------------------------HABITACION------------------------------------------------------------------------
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,10,1,'King',UNIDAD(10000,'dolar','monetaria','$'),1);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,11,2,'Twin',UNIDAD(5000,'dolar','monetaria','$'),1);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,1,4,'Individual',UNIDAD(1000,'dolar','monetaria','$'),1);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,2,5,'King',UNIDAD(10000,'dolar','monetaria','$'),1);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,1,'Quad',UNIDAD(2500,'dolar','monetaria','$'),1);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,15,1,'King',UNIDAD(10000,'dolar','monetaria','$'),2);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,6,2,'Double',UNIDAD(4000,'dolar','monetaria','$'),2);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,9,3,'Queen',UNIDAD(7800,'dolar','monetaria','$'),2);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,1,4,'King',UNIDAD(15000,'dolar','monetaria','$'),2);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,5,'Individual',UNIDAD(1250,'dolar','monetaria','$'),2);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,2,7,'Triple',UNIDAD(3500,'dolar','monetaria','$'),3);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,13,7,'King',UNIDAD(12500,'dolar','monetaria','$'),3);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,19,8,'Twin',UNIDAD(1360,'dolar','monetaria','$'),3);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,3,9,'Individual',UNIDAD(1250,'dolar','monetaria','$'),3);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,1,'King',UNIDAD(12300,'dolar','monetaria','$'),3);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,6,1,'Individual',UNIDAD(3000,'dolar','monetaria','$'),4);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,7,2,'Double',UNIDAD(4000,'dolar','monetaria','$'),4);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,2,3,'Quad',UNIDAD(7500,'dolar','monetaria','$'),4);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,6,6,'Quad',UNIDAD(7500,'dolar','monetaria','$'),4);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,9,1,'Triple',UNIDAD(5600,'dolar','monetaria','$'),4);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,2,1,'Individual',UNIDAD(2600,'dolar','monetaria','$'),5);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,3,2,'Twin',UNIDAD(6000,'dolar','monetaria','$'),5);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,1,'Queen',UNIDAD(9000,'dolar','monetaria','$'),5);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,6,4,'King',UNIDAD(12600,'dolar','monetaria','$'),5);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,8,3,'King',UNIDAD(12600,'dolar','monetaria','$'),5);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(9000,'dolar','monetaria','$'),6);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,5,3,'King',UNIDAD(9000,'dolar','monetaria','$'),6);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,8,2,'Double',UNIDAD(6000,'dolar','monetaria','$'),6);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,9,1,'Quad',UNIDAD(7500,'dolar','monetaria','$'),6);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,5,5,'Triple',UNIDAD(6700,'dolar','monetaria','$'),6);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,2,1,'Individual',UNIDAD(1250,'dolar','monetaria','$'),7);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,1,2,'Quad',UNIDAD(4500,'dolar','monetaria','$'),7);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,7,2,'Double',UNIDAD(2680,'dolar','monetaria','$'),7);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,10,2,'King',UNIDAD(15000,'dolar','monetaria','$'),7);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,15,1,'King',UNIDAD(15700,'dolar','monetaria','$'),7);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,14,4,'King',UNIDAD(12300,'dolar','monetaria','$'),8);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,13,2,'Queen',UNIDAD(11000,'dolar','monetaria','$'),8);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,12,1,'Quad',UNIDAD(9000,'dolar','monetaria','$'),8);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,11,5,'Triple',UNIDAD(8600,'dolar','monetaria','$'),8);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,10,1,'Twin',UNIDAD(12000,'dolar','monetaria','$'),8);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,9,1,'Twin',UNIDAD(9000,'dolar','monetaria','$'),9);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,1,2,'King',UNIDAD(12000,'dolar','monetaria','$'),9);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,5,1,'Double',UNIDAD(3600,'dolar','monetaria','$'),9);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,3,2,'Twin',UNIDAD(9000,'dolar','monetaria','$'),9);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2300,'dolar','monetaria','$'),9);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Triple',UNIDAD(8000,'dolar','monetaria','$'),10);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15000,'dolar','monetaria','$'),10);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14500,'dolar','monetaria','$'),10);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15000,'dolar','monetaria','$'),10);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(1500,'dolar','monetaria','$'),10);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15600,'dolar','monetaria','$'),11);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Triple',UNIDAD(9000,'dolar','monetaria','$'),11);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Triple',UNIDAD(9000,'dolar','monetaria','$'),11);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Twin',UNIDAD(5500,'dolar','monetaria','$'),11);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2000,'dolar','monetaria','$'),11);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15000,'dolar','monetaria','$'),12);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Triple',UNIDAD(6500,'dolar','monetaria','$'),12);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14000,'dolar','monetaria','$'),12);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14000,'dolar','monetaria','$'),12);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(1256,'dolar','monetaria','$'),12);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14600,'dolar','monetaria','$'),13);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Twin',UNIDAD(4500,'dolar','monetaria','$'),13);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15600,'dolar','monetaria','$'),13);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Twin',UNIDAD(4500,'dolar','monetaria','$'),13);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','$'),13);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14000,'dolar','monetaria','$'),14);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Triple',UNIDAD(5000,'dolar','monetaria','$'),14);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Twin',UNIDAD(2560,'dolar','monetaria','$'),14);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(1250,'dolar','monetaria','$'),14);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15000,'dolar','monetaria','$'),14);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','$'),15);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15800,'dolar','monetaria','$'),15);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15800,'dolar','monetaria','$'),15);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15800,'dolar','monetaria','$'),15);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','$'),15);
+
+----------------------------------APARTAMENTO CON CARACTERISTICA----------------------------------------------------------------
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cob Cottage',EMPTY_BLOB(),1,1,UNIDAD(120,'dolar','monetaria','$'),LUGAR('Columbia Britanica','Mayne Island','Horton Bay Rd','Mayne Island','V0N 2J0','GMT-8')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'cob-cottage.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Cocina','Cocina completa',1,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Wifi','Wifi privado',1,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Calefaccion','Calefaccion funcional',1,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Estacionamiento','Estacionamiento gratuito',1,null,null);
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'I Sette Coni',EMPTY_BLOB(),1,1,UNIDAD(72,'dolar','monetaria','$'),LUGAR('Italia','Specchiaruzzo','Contrada Difesa','Specchiaruzzo','72017','GMT+1')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'sette-coni.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Alojamiento','Dispondras de toda la vivienda(casa) para ti',2,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Impecable','Huéspedes han dicho que está impecable.',2,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Superhost','Valoraciones excelentes',2,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Ubicacion','Huéspedes han valorado con 5 estrellas.',2,null,null);
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Estudio en Sol',EMPTY_BLOB(),5,5,UNIDAD(70,'dolar','monetaria','$'),LUGAR('Espania','Madrid','Puerta del sol','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'sol.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Alojamiento','Dispondras de toda la vivienda(casa) para ti',3,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Ubicacion','Huéspedes han valorado su ubicacion.',3,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Proceso','Valoraciones excelentes',3,null,null);
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Gran Vía',EMPTY_BLOB(),3,1,UNIDAD(61,'dolar','monetaria','$'),LUGAR('Espania','Madrid','Calle Gran Via','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'sol.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Alojamiento','Dispondras de toda la vivienda(casa) para ti',4,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Ubicacion','Huéspedes han valorado su ubicacion.',4,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Proceso','Valoraciones excelentes',4,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Superhost','Valoraciones excelentes',4,null,null);
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cottage',EMPTY_BLOB(),3,1,UNIDAD(100,'dolar','monetaria','$'),LUGAR('Estados Unidos','Miami','NE 6th Ave','Miami','33101','GMT-5')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'cottage.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Alojamiento','Dispondras de toda la vivienda(casa) para ti',5,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Ubicacion','Huéspedes han valorado su ubicacion.',5,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Superhost','Valoraciones excelentes',5,null,null);
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Hector Cave',EMPTY_BLOB(),1,3,UNIDAD(436,'dolar','monetaria','$'),LUGAR('Grecia','Santorini','Epa Od Firon-las','Santorini','84700','GMT+2')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'hector-cave.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Alojamiento','Dispondras de toda la vivienda(casa) para ti',6,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Ubicacion','Huéspedes han valorado su ubicacion.',6,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Superhost','Valoraciones excelentes',6,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Impecable','Huéspedes han dicho que está impecable.',6,null,null);
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Fiori',EMPTY_BLOB(),1,3,UNIDAD(105,'dolar','monetaria','$'),LUGAR('Italia','Roma','Piazza venecia','Roma','04100','GMT+1')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'fiori.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Alojamiento','Dispondras de toda la vivienda(casa) para ti',7,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Ubicacion','Huéspedes han valorado su ubicacion.',7,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Superhost','Valoraciones excelentes',7,null,null);
+INSERT INTO CARACTERISTICA VALUES(id_caracteristica.nextVal,'Impecable','Huéspedes han dicho que está impecable.',7,null,null);
+/
+----------------------------------------------ASEGURADORA-----------------------------------------------------------------------
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO ASEGURADORA VALUES (id_aseguradora.nextVal,'La Internacional',EMPTY_BLOB()) RETURNING logo INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'la-internacional.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO ASEGURADORA VALUES (id_aseguradora.nextVal,'Mercantil Seguros',EMPTY_BLOB()) RETURNING logo INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'mercantil-seguros.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO ASEGURADORA VALUES (id_aseguradora.nextVal,'Insurance Advisor Group',EMPTY_BLOB()) RETURNING logo INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'insurance-group.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO ASEGURADORA VALUES (id_aseguradora.nextVal,'Vivir Seguros',EMPTY_BLOB()) RETURNING logo INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'vivir.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO ASEGURADORA VALUES (id_aseguradora.nextVal,'Multinacional de Seguros',EMPTY_BLOB()) RETURNING logo INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'multinacional.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO ASEGURADORA VALUES (id_aseguradora.nextVal,'Marival Insurance',EMPTY_BLOB()) RETURNING logo INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'marival.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO ASEGURADORA VALUES (id_aseguradora.nextVal,'USA-ASSIST',EMPTY_BLOB()) RETURNING logo INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'usa-assist.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO ASEGURADORA VALUES (id_aseguradora.nextVal,'Prudential',EMPTY_BLOB()) RETURNING logo INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'prudential.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO ASEGURADORA VALUES (id_aseguradora.nextVal,'MetLife',EMPTY_BLOB()) RETURNING logo INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'metlife.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO ASEGURADORA VALUES (id_aseguradora.nextVal,'Pacific Life',EMPTY_BLOB()) RETURNING logo INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'pacific-life.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+--------------------------------------------SERVICIO--------------------------------------------------
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Gastos medicos',UNIDAD(350,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Repatriacion',UNIDAD(1250,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Transporte de Heridos',UNIDAD(200,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Demora',UNIDAD(35,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Robo',UNIDAD(35,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Extravio de equipaje',UNIDAD(35,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Prolongacion de estancia en hotal',UNIDAD(650,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Cobertura por fallecimeinto',UNIDAD(350,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Responsabilidad civil',UNIDAD(200,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Asistencia legal',UNIDAD(1250,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Traslado sanitario',UNIDAD(600,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Anulacion de viaje',UNIDAD(100,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Fallecimiento accidental',UNIDAD(1000,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Envio de medicamentos',UNIDAD(50,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Otros imprevistos',UNIDAD(100,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Retorno anticipado',UNIDAD(35,'dolar','monetaria','$'));
+INSERT INTO SERVICIO VALUES(id_servicio.nextVal,'Servicio de traduccion',UNIDAD(60,'dolar','monetaria','$'));
 
 
