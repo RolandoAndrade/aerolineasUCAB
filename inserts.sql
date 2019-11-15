@@ -10,7 +10,7 @@ INSERT INTO MARCA VALUES (id_marca.nextVal,'Cadillac','terrestre');
 INSERT INTO MARCA VALUES (id_marca.nextVal,'Peugeot','terrestre');
 INSERT INTO MARCA VALUES (id_marca.nextVal,'Suzuki','terrestre');
 INSERT INTO MARCA VALUES (id_marca.nextVal,'Honda','terrestre');
-
+/
 -----------------------------------------------MODELO------------------------------------------------------------------------------
 SET serveroutput ON
 DECLARE 
@@ -206,6 +206,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
+/
 -----------------------------------------------FIN MODELO------------------------------------------------------------------------------
 ------------------------------------------------AEROLINEA------------------------------------------------------------------------------
 SET serveroutput ON
@@ -402,7 +403,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 ------------------------------------------------FINA AEROLINEA------------------------------------------------------------------------------
 
 
@@ -1367,7 +1368,7 @@ INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,enver
 
 INSERT INTO AVION(id_avion,serie_modelo,velocidad_max, alcance,altitud_max,envergadura,ancho_cabina,alto_cabina, modelo_id, aerolinea_id) VALUES (id_avion.nextVal,'unico', UNIDAD(871 ,'kilometros/hora','velocidad','KM/H'),UNIDAD(7800,'kilometros','distancia','KM') ,UNIDAD(12.8,'kilometros','distancia','KM') , UNIDAD(0.0341,'kilometros','distancia','KM') , UNIDAD(0.0037 ,'kilometros','distancia','KM') , UNIDAD( 0.002,'kilometros','distancia','KM') ,6 ,15);
 
-
+/
 
 ----------------------------------------------------------------------------------------------------------------------------FIN AVIONES---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1566,7 +1567,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 ----------------------------------------------FIN PROVEEDOR DE CARROS------------------------------------------------------------
 ------------------------------------------------CARROS--------------------------------------------------------------------------
 
@@ -2557,7 +2558,7 @@ INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes
 INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),15, 13);
 INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),15, 13);
 INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),15, 13);
-
+/
 ------------------------------------------------------------------------------------------------------------------------------- Fin de carro-----------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------AEROPUERTO--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2576,7 +2577,7 @@ INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'Giovanni Battista', 'gib',
 INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'TORONTO PEARSON', 'top', UNIDAD(43.68611,'grados','distancia','°'), UNIDAD(-79.63333,'grados','distancia','°'), LUGAR('CANADA', 'TORONO', 'OESTE', 'TORONTO PEARSON',null, 'gtm -1'));
 INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'BENITO JUAREZ', 'bej', UNIDAD(17.60157,'grados','distancia','°'), UNIDAD(-101.46054,'grados','distancia','°'), LUGAR('MEXICO', 'CIUDAD DE MEXICO', 'VALLE DE MEXICO', 'BENITO JUAREZ',null, 'gtm-2'));
 INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'ALCANTIRI SUCRE', 'mai', UNIDAD(-19.24647,'grados','distancia','°'), UNIDAD(-65.15094,'grados','distancia','°'), LUGAR('BOLIVIA', 'CIUDAD DE SUCRE', 'YAMPARAEZ', 'ALCANTIRI SUCRE',null, 'gtm 0'));
-
+/
 --------------------------------------------------------------------------------------FIN AEROPUERTO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------USUARIO----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -3113,7 +3114,7 @@ BEGIN
     DBMS_LOB.CLOSE(V_bfile);
     COMMIT;
 END;
-
+/
 ------------------------------------------------------------FI USUARIO-------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------HOTEL-------------------------------------------------------------------------------------
 SET serveroutput ON
