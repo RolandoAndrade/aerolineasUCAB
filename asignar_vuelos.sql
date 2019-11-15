@@ -9,13 +9,14 @@ CREATE or REPLACE PACKAGE ASIGNACION_VUELOS IS
     aeropuerto3 IN OUT INTEGER, alcance UNIDAD) RETURN BOOLEAN; 
     FUNCTION calcular_duracion(aeropuerto1 INTEGER, aeropuerto2 INTEGER, distancia UNIDAD) RETURN UNIDAD;
 END;
-
+/
 CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
 
     FUNCTION fecha_de_vuelo(minima TIMESTAMP, maxima TIMESTAMP) RETURN TIMESTAMP
     IS
         hora TIMESTAMP;
     BEGIN
+        dbms_output.put_line('*Seleccionando fecha y hora del vuelo');
         SELECT minima + dbms_random.value*(maxima-minima)
         INTO hora
         FROM DUAL;
@@ -31,14 +32,19 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         lon2 NUMBER(10,5); -- LONGITUD 2
         dLat NUMBER(10,5); -- DELTA LATITUD
         dLon NUMBER(10,5); -- DELTA LONGITUD
+        aero1 AEROPUERTO%RowType;
+        aero2 AEROPUERTO%RowType;
         a NUMBER(10,5);
         c NUMBER(10,5);
     BEGIN
+        dbms_output.put_line('*Calculando la distancia entre los aeropuertos');
         R:=6371000;
-        SELECT W.latitud.convertir('distancia','rad') INTO lat1 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto1;
-        SELECT W.latitud.convertir('distancia','rad') INTO lat2 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto2;
-        SELECT W.longitud.convertir('distancia','rad') INTO lon1 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto1;
-        SELECT W.longitud.convertir('distancia','rad') INTO lon2 FROM AEROPUERTO W WHERE W.id_aeropuerto = aeropuerto2;
+        aero1 := getAeropuerto(aeropuerto1);
+        aero2 := getAeropuerto(aeropuerto2);
+        lat1 := aero1.latitud.convertir('coordenada','rad');
+        lat2 := aero2.latitud.convertir('coordenada','rad');
+        lon1 := aero1.longitud.convertir('coordenada','rad');
+        lon2 := aero2.longitud.convertir('coordenada','rad');
         dLat := lat2 - lat1;
         dLon := lon2 - lon1;
         a:=SIN(dLat/2)*SIN(dLat/2)+COS(lat1)*COS(lat2)*SIN(dLon/2)*SIN(dLon/2);
@@ -58,6 +64,7 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         ORDER BY dbms_random.value;
     escala INTEGER;
     BEGIN
+        dbms_output.put_line('*Seleccionando escala');
         OPEN escalas;
         FETCH escalas INTO escala;
         IF escalas%found THEN
@@ -73,6 +80,7 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         SELECT * FROM AEROPUERTO ORDER BY dbms_random.value;
         registro AEROPUERTO%RowType;
     BEGIN
+        dbms_output.put_line('*Seleccionando aeropuertos');
         OPEN aeropuertos;
         FETCH aeropuertos INTO registro;
         WHILE aeropuertos%FOUND
@@ -125,10 +133,14 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         aeropuerto2 INTEGER;
         aeropuerto3 INTEGER;
     BEGIN
-        dbms_output.put_line('**************GENERANDO VUELOS**************');
+        dbms_output.put_line('******************************');
+        dbms_output.put_line('*                            *');
+        dbms_output.put_line('*    GENERACION DE VUELOS    *');
+        dbms_output.put_line('*                            *');
+        dbms_output.put_line('******************************');
         FOR avi in (SELECT * FROM AVION ORDER BY alcance.valor)
         LOOP
-            dbms_output.put_line('--AVION de alcance '||avi.alcance.valor||'km--');
+            dbms_output.put_line('--Asignando el vuelo para el avión '||avi.id_avion||' de alcance '||avi.alcance.valor||'km--');
             IF seleccionar_aeropuertos(aeropuerto1,aeropuerto2,aeropuerto3,avi.alcance) THEN
             BEGIN
                 IF aeropuerto3 IS NULL THEN
@@ -147,3 +159,6 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         END LOOP;
     END;
 END;
+/
+exec ASIGNACION_VUELOS.asignar_vuelos;
+
