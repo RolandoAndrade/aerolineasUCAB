@@ -3,13 +3,14 @@ CREATE OR REPLACE PACKAGE RESERVACION_VUELOS IS
     FUNCTION usuario_aleatorio RETURN INTEGER;
     FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
     FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER, usuarioid INTEGER) RETURN INTEGER;
-    FUNCTION vuelo_vuelta(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
+    FUNCTION vuelo_vuelta(vueloida INTEGER, aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
     PROCEDURE asignar_asiento(vueloid INTEGER, usuarioid INTEGER); 
     FUNCTION calcular_precio(vueloid INTEGER, vueltaid INTEGER) RETURN UNIDAD;
     PROCEDURE actualizar_millas_usuario(usuarioid INTEGER,vueloid INTEGER);
     PROCEDURE cancelar_reserva(reservaid INTEGER);
     PROCEDURE reservatriple(reservaid INTEGER);
     PROCEDURE agregar_seguro(reservaid INTEGER);
+    FUNCTION abrir_vuelo(vuelov INTEGER) RETURN INTEGER;
 END;
 /
 CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
@@ -153,9 +154,29 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         RETURN -1;
     END;
     
+    FUNCTION abrir_vuelo(vuelov INTEGER) RETURN INTEGER
+    IS
+        vuel VUELO%RowType;
+        vuelvuel VUELO%RowType;
+        duracion UNIDAD;
+        avi AVION%RowType;
+    BEGIN
+        SELECT DISTINCT avion_id INTO avi 
+        FROM DISPONIBILIDAD D, ASIENTO A 
+        WHERE vuelo_id = vuelov
+        AND A.id_asiento = D.asiento_id; --Se puede porque los asientos son únicos de un avión y el vuelo es realizado solo por un avion
+        vuel := getVuelo(vuelov);
+        vuelvuel := NULL;
+        IF vuel.vuelo_id != -1 THEN
+            vuelvuel := getVuelo(vuel.vuelo_id);
+            duracion := ASIGNACION_VUELOS.duracion_vuelo(vuelvuel.aeropuerto_sale, vuelvuel.aeropuerto_llega, avi.velocidad_max);
+            ASIGNACION_VUELOS.abrir_vuelo(vuelvuel.aeropuerto_sale, vuelvuel.aeropuerto_llega, vuelvuel.fecha_salida+30, duracion,avi.id_avion);
+        END IF;
+        duracion := ASIGNACION_VUELOS.duracion_vuelo(vuel.aeropuerto_sale, vuel.aeropuerto_llega, avi.velocidad_max);
+        ASIGNACION_VUELOS.abrir_vuelo(vuel.aeropuerto_sale, aeropuerto2, vuel.fecha_salida+30, duracion,avi.id_avion);
+    END;
     
-    
-    FUNCTION vuelo_vuelta(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER
+    FUNCTION vuelo_vuelta(vueloida INTEGER, aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER
     IS
         vuelov INTEGER;
     BEGIN
@@ -165,8 +186,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             dbms_output.put_line('q: Parece que no hay ningún vuelo, ¿Desea solicitar que se abra alguno?');
             IF aceptar_o_rechazar(0.5) THEN
                 dbms_output.put_line('  r: Abre un vuelo, que debe ser ida y vuelta');
-                --ASIGNACION_VUELOS.abrir_vuelo(aeropuerto2,aeropuerto1)
-                RETURN id_vuelo.currval;
+                RETURN abrir_vuelo(vueloida, aeropuerto1,aeropuerto2);
             ELSE
                 dbms_output.put_line('  r: No hace falta, es un vuelo de solo ida');
                 RETURN -1;
@@ -239,6 +259,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         END LOOP;
     END;       
 END;
+
 
 SELECT * FROM DISPONIBILIDAD;
 SELECT asientosDisponibles(id_vuelo) FROM VUELO;
