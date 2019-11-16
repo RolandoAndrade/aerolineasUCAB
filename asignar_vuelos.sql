@@ -10,8 +10,37 @@ CREATE or REPLACE PACKAGE ASIGNACION_VUELOS IS
     aeropuerto3 IN OUT INTEGER, alcance UNIDAD) RETURN BOOLEAN; 
     FUNCTION calcular_duracion(aeropuerto1 INTEGER, aeropuerto2 INTEGER, distancia UNIDAD) RETURN UNIDAD;
 END;
-/
-CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
+/CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
+
+    FUNCTION calcula_precio(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN UNIDAD
+    IS
+    BEGIN
+        dbms_output.put_line('*Calculando precio del recorrido y agregándolo a cada puesto');
+        NULL;
+    END;
+
+    PROCEDURE abrir_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, fecha TIMESTAMP, duracion UNIDAD,avi INTEGER)
+    IS
+    CURSOR asientos IS
+        SELECT *
+        FROM ASIENTO
+        WHERE avion_id = avi;
+    asien ASIENTO%RowType;
+    BEGIN
+        dbms_output.put_line('*Abriendo disponibilidad para el vuelo');
+        INSERT INTO VUELO VALUES(id_vuelo.nextval,fecha,null,
+        null,duracion,'no iniciado',null,aeropuerto1,aeropuerto2); 
+        OPEN asientos;
+        FETCH asientos INTO asien;
+        WHILE asientos%FOUND
+        LOOP
+            INSERT INTO DISPONIBILIDAD VALUES(
+                id_disponibilidad.nextval, asien.precio,
+                asien.id_asiento,
+                id_vuelo.currval, null);
+            FETCH asientos INTO asien;
+        END LOOP;
+    END;
 
     FUNCTION duracion_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, velocidad UNIDAD) RETURN UNIDAD
     IS
@@ -162,32 +191,24 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
                 IF aeropuerto3 IS NULL THEN
                     duracion := duracion_vuelo(aeropuerto1,aeropuerto2,avi.velocidad_max);
                     fechaPartida:= fecha_de_vuelo(SYSTIMESTAMP-100, SYSTIMESTAMP+100);
+                    abrir_vuelo(aeropuerto1,aeropuerto2,fechaPartida,duracion,avi.id_avion);
                     dbms_output.put_line('  c: Vuelo directo creado entre '||
                     getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||
                     getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||' con una duración de '||
                     duracion.valor||' horas, para el día '||fechaPartida);
-                    INSERT INTO VUELO VALUES(id_vuelo.nextval,
-                    fechaPartida,
-                    null,null,duracion,'no iniciado',null,
-                    aeropuerto1,aeropuerto2);
                 ELSE
                     duracion := duracion_vuelo(aeropuerto1,aeropuerto3,avi.velocidad_max);
                     duracion2 := duracion_vuelo(aeropuerto3,aeropuerto2,avi.velocidad_max);
                     fechaPartida:= fecha_de_vuelo(SYSTIMESTAMP-100, SYSTIMESTAMP+100);
+                    abrir_vuelo(aeropuerto1,aeropuerto3,fechaPartida,duracion,avi.id_avion);
+                    abrir_vuelo(aeropuerto3,aeropuerto2,fechaPartida+1/3,duracion2,avi.id_avion);
+                    
                     dbms_output.put_line('  c: Se creó un vuelo escalado que parte de '||
                     getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' el día '||fechaPartida||
                     ', realiza una parada en '||getAeropuerto(aeropuerto3).lugar_aeropuerto.ciudad||
                     ' luego de '||duracion.valor||' horas de viaje, para luego salir a '||getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||
                     ' el día '||(fechaPartida+1/3)||
                     ' en un trayecto de '||duracion.valor||' horas');
-                    INSERT INTO VUELO VALUES(id_vuelo.nextval,
-                    fechaPartida,
-                    null,null,duracion,'no iniciado',null,
-                    aeropuerto1,aeropuerto3);
-                    INSERT INTO VUELO VALUES(id_vuelo.nextval,
-                    fechaPartida+1/3,
-                    null,null,duracion,'no iniciado',id_vuelo.currval-1,
-                    aeropuerto1,aeropuerto3);
                 END IF;
             END;
             END IF;
@@ -197,3 +218,13 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         END LOOP;
     END;
 END;
+/
+DELETE FROM DISPONIBILIDAD;
+DELETE FROM VUELO;
+DROP SEQUENCE id_vuelo;
+DROP SEQUENCE id_disponibilidad;
+CREATE SEQUENCE id_vuelo INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+CREATE SEQUENCE id_disponibilidad INCREMENT BY 1 START WITH 1 MINVALUE 1; 
+SELECT * FROM VUELO;
+SELECT * FROM DISPONIBILIDAD;
+exec ASIGNACION_VUELOS.asignar_vuelos;
