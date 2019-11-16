@@ -43,8 +43,27 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
     
     FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER) RETURN INTEGER
     IS
+        CURSOR vuelos IS
+        SELECT id_aeropuerto
+        FROM AEROPUERTO
+        ORDER BY dbms_random.value;
     BEGIN
-        NULL;
+        OPEN vuelos;
+        FETCH vuelos INTO aeropuerto1;
+        WHILE vuelos%FOUND
+        LOOP
+            IF aeropuerto1 IS NOT NULL OR aeropuerto2 IS NOT NULL THEN
+                hay_vuelo(aeropuerto1, aeropuerto2);
+            END IF;
+            IF aeropuerto2 IS NULL THEN
+                FETCH vuelos INTO aeropuerto2;
+                CONTINUE;
+            END IF;
+            aeropuerto2 := aeropuerto1;
+            FETCH vuelos INTO aeropuerto1;
+        END LOOP;
+        CLOSE vuelos;
+        RETURN -1;
     END;
     
     FUNCTION vuelo_vuelta(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN INTEGER
@@ -83,3 +102,4 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         END LOOP;
     END;    
 END;
+
