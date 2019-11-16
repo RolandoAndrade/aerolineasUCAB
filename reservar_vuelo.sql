@@ -1,18 +1,3 @@
-CREATE OR REPLACE PACKAGE RESERVACION_VUELOS IS
-    PROCEDURE reservar_vuelos;
-    FUNCTION usuario_aleatorio RETURN INTEGER;
-    FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
-    FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER, usuarioid INTEGER) RETURN INTEGER;
-    FUNCTION vuelo_vuelta(vueloida INTEGER, aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
-    PROCEDURE asignar_asiento(vueloid INTEGER, usuarioid INTEGER); 
-    FUNCTION calcular_precio(vueloid INTEGER, vueltaid INTEGER, userid INTEGER) RETURN UNIDAD;
-    PROCEDURE actualizar_millas_usuario(usuarioid INTEGER,vueloid INTEGER);
-    PROCEDURE cancelar_reserva(reservaid INTEGER);
-    PROCEDURE reservatriple(reservaid INTEGER);
-    PROCEDURE agregar_seguro(reservaid INTEGER);
-    FUNCTION abrir_vuelo(vuelov INTEGER) RETURN INTEGER;
-END;
-/
 CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
 
     PROCEDURE agregar_seguro(reservaid INTEGER)
@@ -217,13 +202,13 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         precio NUMBER(10,5);
         monto NUMBER(10,5);
         CURSOR reservaciones IS
-        SELECT precio.valor
-        FROM DISPONIBILIDAD 
+        SELECT D.precio.valor
+        FROM DISPONIBILIDAD D
         WHERE vuelo_id = vueloid AND userid = usuario_id;
         
         CURSOR reservaciones2 IS
-        SELECT precio.valor
-        FROM DISPONIBILIDAD 
+        SELECT D.precio.valor
+        FROM DISPONIBILIDAD D 
         WHERE vuelo_id = vueloid AND userid = usuario_id;
     BEGIN
         dbms_output.put_line('*Calculando precio de la reserva');
@@ -252,7 +237,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             precio:=precio*0.5;
             dbms_output.put_line('  i: Se obtuvo un descuento al haber muchos asientos disponibles');
         END IF;
-        NULL;
+        RETURN UNIDAD(precio,'dolar','monetaria','usd');
     END;
     
     PROCEDURE actualizar_millas_usuario(usuarioid INTEGER,vueloid INTEGER)
@@ -264,7 +249,16 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
     PROCEDURE cancelar_reserva(reservaid INTEGER)
     IS
     BEGIN
-        NULL;
+        dbms_output.put_line('q: ¿Desea cancelar la reserva?');
+        IF aceptar_o_rechazar(0.05) THEN
+            dbms_output.put_line('r: Sí');
+            UPDATE RESERVA_VUELO SET reserva_vuelo.estado = 'cancelado' WHERE id_reserva_vuelo = reservaid;
+            UPDATE RESERVA_CARRO SET reserva_carro.estado = 'cancelado' WHERE reserva_vuelo_id = reservaid;
+            UPDATE RESERVA_ESTANCIA SET reserva_estacia.estado = 'cancelado' WHERE reserva_vuelo_id = reservaid;
+            
+        ELSE
+            dbms_output.put_line('r: No');
+        END IF;
     END;   
     
     PROCEDURE reservar_vuelos
@@ -296,18 +290,26 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             IF vueltaid != -1 THEN
                 asignar_asiento(vueltaid,usuarioid);
                 axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
-                getVuelo(vueltaid).fecha_salida, calcular_precio(vueloid,vueltaid,userid),
+                getVuelo(vueltaid).fecha_salida, calcular_precio(vueloid,vueltaid,usuarioid),
                 'sin pagar');
             ELSE
                 axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
-                null, calcular_precio(vueloid,vueltaid,userid),'sin pagar');
+                null, calcular_precio(vueloid,vueltaid,usuarioid),'sin pagar');
             END IF;
             dbms_output.put_line('*Creada reserva');
             INSERT INTO RESERVA_VUELO VALUES(id_reserva_vuelo.nextval,axReserva,vueloid,usuarioid);
+            agregar_seguro(id_reserva_vuelo.currval);
             --Pagar
+            
         END LOOP;
     END;       
 END;
+
+SELECT * FROM DISPONIBILIDAD WHERE usuario_id IS NOT NULL;
+SELECT * FROM RESERVA_VUELO;
+SELECT asientosDisponibles(id_vuelo) FROM VUELO;
+
+EXEC RESERVACION_VUELOS.reservar_vuelos;
 
 SELECT * FROM DISPONIBILIDAD;
 SELECT asientosDisponibles(id_vuelo) FROM VUELO;
