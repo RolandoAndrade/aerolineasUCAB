@@ -9,12 +9,30 @@ CREATE OR REPLACE PACKAGE RESERVACION_VUELOS IS
     PROCEDURE actualizar_millas_usuario(usuario INTEGER,vuelo INTEGER);
     PROCEDURE cancelar_reserva(reserva INTEGER);
 END;
+
+/
 CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
 
-    FUNCTION usuario_aleatorio RETURN INTEGER
+    PROCEDURE asignar_asiento(vuelo INTEGER, usuario INTEGER)
     IS
     BEGIN
         NULL;
+    END;    
+    
+    FUNCTION usuario_aleatorio RETURN INTEGER
+    IS
+        CURSOR usuarios IS 
+        SELECT id_usuario
+        FROM USUARIO 
+        ORDER BY dbms_random.value;
+        usuarioid INTEGER;
+    BEGIN
+        OPEN usuarios;
+        FETCH usuarios INTO usuarioid;
+        IF usuarios%found THEN
+            RETURN usuarioid;
+        END IF;
+        RETURN -1;
     END;  
     
     FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN INTEGER
@@ -34,13 +52,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
     BEGIN
         NULL;
     END;  
-    
-    PROCEDURE asignar_asiento(vuelo INTEGER, usuario INTEGER)
-    IS
-    BEGIN
-        NULL;
-    END;  
-    
+ 
     FUNCTION calcular_precio(vuelo INTEGER) RETURN UNIDAD
     IS
     BEGIN
@@ -61,7 +73,13 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
     
     PROCEDURE reservar_vuelos
     IS
+        usuarioid INTEGER;
+        origen INTEGER;
+        destino INTEGER;
     BEGIN
-        NULL;
+        FOR I IN 1..750
+        LOOP
+            usuarioid := usuario_aleatorio;
+        END LOOP;
     END;    
 END;
