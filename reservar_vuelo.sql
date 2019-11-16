@@ -63,7 +63,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         AND estado = 'no iniciado'
         AND asientosDisponibles(id_vuelo) >0
         AND chocaConOtrosVuelosUsuario(id_vuelo, usuarioid) = 0
-        AND (fecha IS NULL OR fecha_salida+1<fecha)
+        AND (fecha IS NULL OR fecha_salida+1>fecha)
         ORDER BY dbms_random.value;
         
         CURSOR vuelos2 IS
@@ -78,16 +78,17 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         AND asientosDisponibles(W.id_vuelo)>0
         AND chocaConOtrosVuelosUsuario(V.id_vuelo, usuarioid) = 0
         AND chocaConOtrosVuelosUsuario(W.id_vuelo, usuarioid) = 0
-        AND (fecha IS NULL OR V.fecha_salida+1<fecha)
+        AND (fecha IS NULL OR V.fecha_salida+1>fecha)
         ORDER BY dbms_random.value;
         
         vueloid INTEGER;
     BEGIN
-        dbms_output.put_line('*Verificando si hay vuelos o escalas entre '||
+        dbms_output.put_line('*Verificando si hay vuelos o escalas que no choquen con los horarios de vuelos del usuario entre '||
         getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad);
         OPEN vuelos;
         FETCH vuelos INTO vueloid;
         IF vuelos%FOUND THEN
+            dbms_output.put_line('  c: Se eligió el vuelo '||vueloid||' que sale el '||getVuelo(vueloid).fecha_salida);
             RETURN vueloid;
         END IF;
         CLOSE vuelos;
@@ -97,7 +98,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             RETURN vueloid;
         END IF;
         CLOSE vuelos2;
-        dbms_output.put_line('  e: No hay vuelos disponibles');
+        dbms_output.put_line('  e: No hay vuelos disponibles que cumplan con las condiciones');
         RETURN -1;
     END;
     
@@ -135,8 +136,21 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
     
     FUNCTION vuelo_vuelta(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER
     IS
+        vuelov INTEGER;
     BEGIN
-        RETURN hay_vuelo(aeropuerto2,aeropuerto1,usuarioid,fecha);
+        dbms_output.put_line('*Buscando vuelo de vuelta que se realice como mínimo un dia después');
+        vuelov:= hay_vuelo(aeropuerto2,aeropuerto1,usuarioid,fecha);
+        IF vuelov != -1 THEN
+            dbms_output.put_line('q: Elegir modalidad del vuelo');
+            IF aceptar_o_rechazar(0.5) THEN
+                dbms_output.put_line('r: Ida');
+                RETURN vuelov;
+            ELSE
+                dbms_output.put_line('r: Ida y Vuelta');
+                RETURN -1;
+            END IF;
+        END IF;
+        RETURN -1;
     END;  
  
     FUNCTION calcular_precio(vueloid INTEGER) RETURN UNIDAD
@@ -177,6 +191,8 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             origen:=NULL;
             destino:=NULL;
             vueloid:=origen_destino_aleatorio(origen,destino,usuarioid);
+            reservatriple(usuarioid);
+            vueltaid :=vuelo_vuelta(origen,destino,usuarioid,getVuelo(vueloid).fecha_salida);
         END LOOP;
     END;       
 END;
