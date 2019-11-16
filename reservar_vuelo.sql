@@ -23,7 +23,12 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
     PROCEDURE reservatriple(reserva INTEGER)
     IS
     BEGIN
-        NULL;
+        dbms_output.put_line('q: ¿Desea hacer una reserva triple?');
+        IF aceptar_o_rechazar(0.1) THEN
+            dbms_output.put_line('r: Sí');
+        ELSE
+            dbms_output.put_line('r: No');
+        END IF;
     END;
     
     PROCEDURE asignar_asiento(vuelo INTEGER, usuario INTEGER)
@@ -76,6 +81,8 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         
         vueloid INTEGER;
     BEGIN
+        dbms_output.put_line('*Verificando si hay vuelos o escalas entre '||
+        getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad);
         OPEN vuelos;
         FETCH vuelos INTO vueloid;
         IF vuelos%FOUND THEN
@@ -88,6 +95,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             RETURN vueloid;
         END IF;
         CLOSE vuelos2;
+        dbms_output.put_line('  e: No hay vuelos disponibles');
         RETURN -1;
     END;  
     
@@ -100,6 +108,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         
         vueloid INTEGER;
     BEGIN
+        dbms_output.put_line('*Seleccionando destinos');
         OPEN vuelos;
         FETCH vuelos INTO aeropuerto1;
         WHILE vuelos%FOUND
@@ -118,6 +127,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             FETCH vuelos INTO aeropuerto1;
         END LOOP;
         CLOSE vuelos;
+        dbms_output.put_line('  e: No se pudo asignar vuelo al usuario, saltando');
         RETURN -1;
     END;
     
@@ -153,9 +163,15 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         vueloid INTEGER;
         vueltaid INTEGER;
     BEGIN
+        dbms_output.put_line('******************************');
+        dbms_output.put_line('*                            *');
+        dbms_output.put_line('*   RESERVACION DE VUELOS    *');
+        dbms_output.put_line('*                            *');
+        dbms_output.put_line('******************************');
         FOR I IN 1..750
         LOOP
             usuarioid := usuario_aleatorio;
+            dbms_output.put_line('-----El usuario '||usuarioid||' desea hacer una reserva-----');
             origen:=NULL;
             destino:=NULL;
             vueloid := origen_destino_aleatorio(origen,destino);
