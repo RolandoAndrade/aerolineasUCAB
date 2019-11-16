@@ -48,7 +48,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         RETURN -1;
     END;  
     
-    FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN INTEGER
+    FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER) RETURN INTEGER
     IS
         CURSOR vuelos IS
         SELECT id_vuelo
@@ -56,7 +56,8 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         WHERE aeropuerto_sale = aeropuerto1 
         AND aeropuerto_llega = aeropuerto2
         AND estado = 'no iniciado'
-        AND asientosDisponibles(id_vuelo) >0;
+        AND asientosDisponibles(id_vuelo) >0
+        AND chocaConOtrosVuelosUsuario(id_vuelo, usuarioid) = FALSE
         ORDER BY dbms_random.value;
         
         CURSOR vuelos2 IS
@@ -68,7 +69,9 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         AND W.estado = 'no iniciado'
         AND W.vuelo_id = V.id_vuelo
         AND asientosDisponibles(V.id_vuelo) >0
-        AND asientosDisponibles(W.id_vuelo)>0;
+        AND asientosDisponibles(W.id_vuelo)>0
+        AND chocaConOtrosVuelosUsuario(V.id_vuelo, usuarioid) = FALSE
+        AND chocaConOtrosVuelosUsuario(W.id_vuelo, usuarioid) = FALSE
         ORDER BY dbms_random.value;
         
         vueloid INTEGER;
