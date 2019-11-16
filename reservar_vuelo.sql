@@ -8,11 +8,24 @@ CREATE OR REPLACE PACKAGE RESERVACION_VUELOS IS
     FUNCTION calcular_precio(vuelo INTEGER) RETURN UNIDAD;
     PROCEDURE actualizar_millas_usuario(usuario INTEGER,vuelo INTEGER);
     PROCEDURE cancelar_reserva(reserva INTEGER);
+    PROCEDURE reservatriple(reserva INTEGER);
+    PROCEDURE agregar_seguro(reserva INTEGER);
 END;
-
 /
 CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
 
+    PROCEDURE agregar_seguro(reserva INTEGER)
+    IS
+    BEGIN
+        NULL;
+    END;
+
+    PROCEDURE reservatriple(reserva INTEGER)
+    IS
+    BEGIN
+        NULL;
+    END;
+    
     PROCEDURE asignar_asiento(vuelo INTEGER, usuario INTEGER)
     IS
     BEGIN
@@ -131,10 +144,22 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         usuarioid INTEGER;
         origen INTEGER;
         destino INTEGER;
+        vueloid INTEGER;
+        vueltaid INTEGER;
     BEGIN
         FOR I IN 1..750
         LOOP
             usuarioid := usuario_aleatorio;
+            origen:=NULL;
+            destino:=NULL;
+            vueloid := origen_destino_aleatorio(origen,destino);
+            reservatriple(vueloid);
+            vueltaid:=vuelo_vuelta(origen,destino);
+            agregar_seguro(vueloid);
+            asignar_asiento(vueloid,usuarioid);
+            --pagar
+            actualizar_millas_usuario(usuarioid,vueloid);
+            cancelar_reserva(vueloid);
         END LOOP;
     END;    
 END;
