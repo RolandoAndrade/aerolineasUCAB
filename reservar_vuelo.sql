@@ -56,6 +56,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         WHERE aeropuerto_sale = aeropuerto1 
         AND aeropuerto_llega = aeropuerto2
         AND estado = 'no iniciado'
+        AND asientosDisponibles(id_vuelo) >0;
         ORDER BY dbms_random.value;
         
         CURSOR vuelos2 IS
@@ -66,6 +67,8 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         AND V.estado = 'no iniciado'
         AND W.estado = 'no iniciado'
         AND W.vuelo_id = V.id_vuelo
+        AND asientosDisponibles(V.id_vuelo) >0
+        AND asientosDisponibles(W.id_vuelo)>0;
         ORDER BY dbms_random.value;
         
         vueloid INTEGER;
@@ -163,3 +166,6 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         END LOOP;
     END;    
 END;
+SELECT * FROM DISPONIBILIDAD;
+SELECT asientosDisponibles(id_vuelo) FROM VUELO;
+SELECT RESERVACION_VUELOS.usuario_aleatorio() FROM DUAL;
