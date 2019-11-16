@@ -32,7 +32,9 @@ CREATE OR REPLACE TYPE BODY UNIDAD AS
                         RETURN ROUND(valor*0.91,2);
                     ELSIF (simboloP = 'cny') THEN
                         RETURN ROUND(valor*106.87,2);
-                    ELSIF (simboloP = 'milla' AND simboloP = 'usd') THEN
+                    ELSIF (simboloP = 'milla' AND simbolo = 'usd') THEN
+                        RETURN ROUND(valor*5/3,2);
+                    ELSIF (simboloP = 'usd' AND simbolo = 'milla') THEN
                         RETURN ROUND(valor*3/5,2);
                     END IF;
                 ELSIF (tipoP = 'tiempo') THEN  --Por defecto es horas
