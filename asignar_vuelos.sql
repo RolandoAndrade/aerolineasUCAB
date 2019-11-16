@@ -17,7 +17,7 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
     IS
         precio NUMBER(10,5);
     BEGIN
-        dbms_output.put_line('*Calculando precio del recorrido');
+        dbms_output.put_line('* Calculando precio del recorrido');
         precio:=UNIDAD(calcula_distancia(aeropuerto1,aeropuerto2).convertir('distancia','nmi'),'milla','monetaria','milla').convertir('monetaria','usd')/10;
         RETURN UNIDAD(precio,'dolar','monetaria','usd');
     END;
