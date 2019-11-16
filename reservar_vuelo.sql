@@ -13,6 +13,7 @@ CREATE OR REPLACE PACKAGE RESERVACION_VUELOS IS
     FUNCTION abrir_vuelo(vuelov INTEGER) RETURN INTEGER;
 END;
 /
+
 CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
 
     PROCEDURE agregar_seguro(reservaid INTEGER)
@@ -103,12 +104,12 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         
         vueloid INTEGER;
     BEGIN
-        dbms_output.put_line('*Verificando si hay vuelos o escalas que no choquen con los horarios de vuelos del usuario entre '||
+        dbms_output.put_line('  -Verificando si hay vuelos o escalas que no choquen con los horarios de vuelos del usuario entre '||
         getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad);
         OPEN vuelos;
         FETCH vuelos INTO vueloid;
         IF vuelos%FOUND THEN
-            dbms_output.put_line('  c: Se eligió el vuelo '||vueloid||' que sale el '||getVuelo(vueloid).fecha_salida);
+            dbms_output.put_line('      c: Se eligió el vuelo '||vueloid||' que sale el '||getVuelo(vueloid).fecha_salida);
             RETURN vueloid;
         END IF;
         CLOSE vuelos;
@@ -118,7 +119,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             RETURN vueloid;
         END IF;
         CLOSE vuelos2;
-        dbms_output.put_line('  e: No hay vuelos disponibles que cumplan con las condiciones');
+        dbms_output.put_line('      e: No hay vuelos disponibles que cumplan con las condiciones');
         RETURN -1;
     END;
     
@@ -160,20 +161,29 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         vuelvuel VUELO%RowType;
         duracion UNIDAD;
         avi AVION%RowType;
+        CURSOR aviones IS
+        SELECT AV.*
+        FROM DISPONIBILIDAD D, ASIENTO A, AVION AV
+        WHERE D.vuelo_id = vuelov
+        AND D.asiento_id = A.id_asiento
+        AND AV.id_avion = A.avion_id;
     BEGIN
-        SELECT DISTINCT avion_id INTO avi 
-        FROM DISPONIBILIDAD D, ASIENTO A 
-        WHERE vuelo_id = vuelov
-        AND A.id_asiento = D.asiento_id; --Se puede porque los asientos son únicos de un avión y el vuelo es realizado solo por un avion
-        vuel := getVuelo(vuelov);
-        vuelvuel := NULL;
-        IF vuel.vuelo_id != -1 THEN
-            vuelvuel := getVuelo(vuel.vuelo_id);
-            duracion := ASIGNACION_VUELOS.duracion_vuelo(vuelvuel.aeropuerto_sale, vuelvuel.aeropuerto_llega, avi.velocidad_max);
-            ASIGNACION_VUELOS.abrir_vuelo(vuelvuel.aeropuerto_sale, vuelvuel.aeropuerto_llega, vuelvuel.fecha_salida+30, duracion,avi.id_avion);
+        OPEN aviones;
+        FETCH aviones INTO avi;
+        IF aviones%FOUND THEN
+            vuel := getVuelo(vuelov);
+            vuelvuel := NULL;
+            IF vuel.vuelo_id != -1 THEN
+                vuelvuel := getVuelo(vuel.vuelo_id);
+                duracion := ASIGNACION_VUELOS.duracion_vuelo(vuelvuel.aeropuerto_llega, vuelvuel.aeropuerto_sale, avi.velocidad_max);
+                ASIGNACION_VUELOS.abrir_vuelo(vuelvuel.aeropuerto_sale, vuelvuel.aeropuerto_llega, vuelvuel.fecha_salida+30, duracion,avi.id_avion,null);
+            END IF;
+            duracion := ASIGNACION_VUELOS.duracion_vuelo(vuel.aeropuerto_llega, vuel.aeropuerto_sale, avi.velocidad_max);
+            ASIGNACION_VUELOS.abrir_vuelo(vuel.aeropuerto_sale, vuel.aeropuerto_llega, vuel.fecha_salida+30+1/2, duracion,avi.id_avion, id_vuelo.currval);
+            RETURN id_vuelo.currval;
         END IF;
-        duracion := ASIGNACION_VUELOS.duracion_vuelo(vuel.aeropuerto_sale, vuel.aeropuerto_llega, avi.velocidad_max);
-        ASIGNACION_VUELOS.abrir_vuelo(vuel.aeropuerto_sale, aeropuerto2, vuel.fecha_salida+30, duracion,avi.id_avion);
+        CLOSE aviones;
+        RETURN -1;
     END;
     
     FUNCTION vuelo_vuelta(vueloida INTEGER, aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER
@@ -186,7 +196,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             dbms_output.put_line('q: Parece que no hay ningún vuelo, ¿Desea solicitar que se abra alguno?');
             IF aceptar_o_rechazar(0.5) THEN
                 dbms_output.put_line('  r: Abre un vuelo, que debe ser ida y vuelta');
-                RETURN abrir_vuelo(vueloida, aeropuerto1,aeropuerto2);
+                RETURN abrir_vuelo(vueloida);
             ELSE
                 dbms_output.put_line('  r: No hace falta, es un vuelo de solo ida');
                 RETURN -1;
@@ -244,17 +254,17 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             destino:=NULL;
             vueloid:=origen_destino_aleatorio(origen,destino,usuarioid);
             reservatriple(usuarioid);
-            vueltaid :=vuelo_vuelta(origen,destino,usuarioid,getVuelo(vueloid).fecha_salida);
-            IF vueltaid != -1 THEN
-                axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
-                getVuelo(vueltaid).fecha_salida, calcular_precio(vueloid,vueltaid),
-                'sin pagar');
-            ELSE
-                axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
-                getVuelo(vueltaid).fecha_salida, null,'sin pagar');
-            END IF;
+            vueltaid :=vuelo_vuelta(vueloid,origen,destino,usuarioid,getVuelo(vueloid).fecha_salida);
+            --IF vueltaid != -1 THEN
+                --axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
+                --getVuelo(vueltaid).fecha_salida, calcular_precio(vueloid,vueltaid),
+                --'sin pagar');
+           -- ELSE
+                --axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
+                --getVuelo(vueltaid).fecha_salida, null,'sin pagar');
+            --END IF;
             dbms_output.put_line('*Creada reserva');
-            INSERT INTO RESERVA_VUELO VALUES(id_reserva_vuelo.nextval,axReserva,vueloid,usuarioid);
+            --INSERT INTO RESERVA_VUELO VALUES(id_reserva_vuelo.nextval,axReserva,vueloid,usuarioid);
             --Pagar
         END LOOP;
     END;       
