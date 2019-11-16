@@ -34,5 +34,9 @@ BEGIN
     FROM DISPONIBILIDAD
     WHERE vuelo_id = vueloid
     AND usuario_id IS NULL;
+    IF disponibles IS NULL OR disponibles = 0 THEN
+    	dbms_output.put_line('e: Todos los asientos están ocupados');
+    	RETURN 0;
+    END IF;
     RETURN disponibles ;
 END;
