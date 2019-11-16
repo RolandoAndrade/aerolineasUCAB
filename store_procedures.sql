@@ -51,7 +51,7 @@ BEGIN
     RETURN registro;
 END;
 /
-CREATE OR REPLACE FUNCTION chocaConOtrosVuelosUsuario(vueloid INTEGER, usuarioid INTEGER) RETURN BOOLEAN
+CREATE OR REPLACE FUNCTION chocaConOtrosVuelosUsuario(vueloid INTEGER, usuarioid INTEGER) RETURN NUMBER
 IS
     vuelon VUELO%RowType;
     vuelov VUELO%RowType;
@@ -63,8 +63,8 @@ BEGIN
     LOOP
         IF (vuelon.fecha_salida BETWEEN vuelov.fecha_salida AND vuelov.fecha_salida+vuelov.duracion.valor/24)
         OR (vuelov.fecha_salida BETWEEN vuelon.fecha_salida AND vuelon.fecha_salida+vuelon.duracion.valor/24) THEN
-            RETURN TRUE;
+            RETURN 1;
         END IF;
     END LOOP;
-    RETURN FALSE;
+    RETURN 0;
 END;

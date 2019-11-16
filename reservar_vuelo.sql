@@ -1,9 +1,9 @@
 CREATE OR REPLACE PACKAGE RESERVACION_VUELOS IS
     PROCEDURE reservar_vuelos;
     FUNCTION usuario_aleatorio RETURN INTEGER;
-    FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN INTEGER;
-    FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER) RETURN INTEGER;
-    FUNCTION vuelo_vuelta(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN INTEGER;
+    FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
+    FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER, usuarioid INTEGER) RETURN INTEGER;
+    FUNCTION vuelo_vuelta(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
     PROCEDURE asignar_asiento(vuelo INTEGER, usuario INTEGER); 
     FUNCTION calcular_precio(vuelo INTEGER) RETURN UNIDAD;
     PROCEDURE actualizar_millas_usuario(usuario INTEGER,vuelo INTEGER);
@@ -53,7 +53,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         RETURN -1;
     END;  
     
-    FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER) RETURN INTEGER
+    FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER
     IS
         CURSOR vuelos IS
         SELECT id_vuelo
@@ -63,6 +63,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         AND estado = 'no iniciado'
         AND asientosDisponibles(id_vuelo) >0
         AND chocaConOtrosVuelosUsuario(id_vuelo, usuarioid) = FALSE
+        AND (fecha IS NULL OR fecha_salida+1<fecha)
         ORDER BY dbms_random.value;
         
         CURSOR vuelos2 IS
@@ -77,6 +78,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         AND asientosDisponibles(W.id_vuelo)>0
         AND chocaConOtrosVuelosUsuario(V.id_vuelo, usuarioid) = FALSE
         AND chocaConOtrosVuelosUsuario(W.id_vuelo, usuarioid) = FALSE
+        AND (fecha IS NULL OR V.fecha_salida+1<fecha)
         ORDER BY dbms_random.value;
         
         vueloid INTEGER;
@@ -99,7 +101,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         RETURN -1;
     END;  
     
-    FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER) RETURN INTEGER
+    FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER, usuarioid INTEGER) RETURN INTEGER
     IS
         CURSOR vuelos IS
         SELECT id_aeropuerto
@@ -114,7 +116,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         WHILE vuelos%FOUND
         LOOP
             IF aeropuerto1 IS NOT NULL OR aeropuerto2 IS NOT NULL THEN
-                vueloid:=hay_vuelo(aeropuerto1, aeropuerto2);
+                vueloid:=hay_vuelo(aeropuerto1, aeropuerto2, usuarioid, NULL);
                 IF vueloid != -1 THEN
                     RETURN vueloid;
                 END IF;    
@@ -131,10 +133,10 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         RETURN -1;
     END;
     
-    FUNCTION vuelo_vuelta(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN INTEGER
+    FUNCTION vuelo_vuelta(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER
     IS
     BEGIN
-        RETURN hay_vuelo(aeropuerto2,aeropuerto1);
+        RETURN hay_vuelo(aeropuerto2,aeropuerto1,usuarioid,fecha);
     END;  
  
     FUNCTION calcular_precio(vuelo INTEGER) RETURN UNIDAD
@@ -174,9 +176,9 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             dbms_output.put_line('-----El usuario '||usuarioid||' desea hacer una reserva-----');
             origen:=NULL;
             destino:=NULL;
-            vueloid := origen_destino_aleatorio(origen,destino);
+            vueloid := origen_destino_aleatorio(origen,destino,usuarioid);
             reservatriple(vueloid);
-            vueltaid:=vuelo_vuelta(origen,destino);
+            vueltaid:=vuelo_vuelta(origen,destino, getVuelo(vueloid).fecha_salida);
             agregar_seguro(vueloid);
             asignar_asiento(vueloid,usuarioid);
             --pagar
