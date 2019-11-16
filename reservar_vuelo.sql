@@ -13,7 +13,6 @@ CREATE OR REPLACE PACKAGE RESERVACION_VUELOS IS
     FUNCTION abrir_vuelo(vuelov INTEGER) RETURN INTEGER;
 END;
 /
-
 CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
 
     PROCEDURE agregar_seguro(reservaid INTEGER)
@@ -48,7 +47,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         AND usuario_id IS NULL
         ORDER BY dbms_random.value;
     BEGIN
-        dbms_output.put_line('*Asignando asiento al usuario');
+        dbms_output.put_line('*Asignando asiento al usuario en vuelo '||vueloid);
         OPEN vuelos;
         FETCH vuelos INTO dispon;
         IF vuelos%FOUND THEN
@@ -213,9 +212,46 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         RETURN -1;
     END;  
  
-    FUNCTION calcular_precio(vueloid INTEGER,vueltaid INTEGER) RETURN UNIDAD
+    FUNCTION calcular_precio(vueloid INTEGER,vueltaid INTEGER, userid INTEGER) RETURN UNIDAD
     IS
+        precio NUMBER(10,5);
+        monto NUMBER(10,5);
+        CURSOR reservaciones IS
+        SELECT precio.valor
+        FROM DISPONIBILIDAD 
+        WHERE vuelo_id = vueloid AND userid = usuario_id;
+        
+        CURSOR reservaciones2 IS
+        SELECT precio.valor
+        FROM DISPONIBILIDAD 
+        WHERE vuelo_id = vueloid AND userid = usuario_id;
     BEGIN
+        dbms_output.put_line('*Calculando precio de la reserva');
+        precio:=0;
+        OPEN reservaciones;
+        FETCH reservaciones INTO monto;
+        WHILE reservaciones%FOUND
+        LOOP
+            precio:=precio+monto;
+            FETCH reservaciones INTO monto;
+        END LOOP;
+        CLOSE reservaciones;
+        OPEN reservaciones2;
+        FETCH reservaciones2 INTO monto;
+        WHILE reservaciones2%FOUND
+        LOOP
+            precio:=precio+monto*0.3;
+            FETCH reservaciones2 INTO monto;
+        END LOOP;
+        CLOSE reservaciones2;
+        IF asientosDisponibles(vueloid)<20 THEN
+            precio:=precio*1.5;
+            dbms_output.put_line('  i: Se obtuvo un aumento al haber pocos asientos disponibles');
+        END IF;
+        IF asientosDisponibles(vueloid)>70 THEN
+            precio:=precio*0.5;
+            dbms_output.put_line('  i: Se obtuvo un descuento al haber muchos asientos disponibles');
+        END IF;
         NULL;
     END;
     
@@ -255,21 +291,23 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             vueloid:=origen_destino_aleatorio(origen,destino,usuarioid);
             reservatriple(usuarioid);
             vueltaid :=vuelo_vuelta(vueloid,origen,destino,usuarioid,getVuelo(vueloid).fecha_salida);
-            --IF vueltaid != -1 THEN
-                --axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
-                --getVuelo(vueltaid).fecha_salida, calcular_precio(vueloid,vueltaid),
-                --'sin pagar');
-           -- ELSE
-                --axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
-                --getVuelo(vueltaid).fecha_salida, null,'sin pagar');
-            --END IF;
+            asignar_asiento(vueloid,usuarioid);
+           
+            IF vueltaid != -1 THEN
+                asignar_asiento(vueltaid,usuarioid);
+                axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
+                getVuelo(vueltaid).fecha_salida, calcular_precio(vueloid,vueltaid,userid),
+                'sin pagar');
+            ELSE
+                axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
+                null, calcular_precio(vueloid,vueltaid,userid),'sin pagar');
+            END IF;
             dbms_output.put_line('*Creada reserva');
-            --INSERT INTO RESERVA_VUELO VALUES(id_reserva_vuelo.nextval,axReserva,vueloid,usuarioid);
+            INSERT INTO RESERVA_VUELO VALUES(id_reserva_vuelo.nextval,axReserva,vueloid,usuarioid);
             --Pagar
         END LOOP;
     END;       
 END;
-
 
 SELECT * FROM DISPONIBILIDAD;
 SELECT asientosDisponibles(id_vuelo) FROM VUELO;
