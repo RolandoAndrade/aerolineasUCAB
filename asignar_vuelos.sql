@@ -2,6 +2,7 @@
 
 CREATE or REPLACE PACKAGE ASIGNACION_VUELOS IS
     PROCEDURE asignar_vuelos;
+    FUNCTION duracion_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, velocidad UNIDAD) RETURN UNIDAD;
     FUNCTION fecha_de_vuelo(minima TIMESTAMP, maxima TIMESTAMP) RETURN TIMESTAMP;
     FUNCTION calcula_distancia(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN UNIDAD;
     FUNCTION seleccionar_escala(aeropuerto1 INTEGER, aeropuerto2 INTEGER, alcance UNIDAD) RETURN INTEGER;
@@ -11,6 +12,15 @@ CREATE or REPLACE PACKAGE ASIGNACION_VUELOS IS
 END;
 /
 CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
+
+    FUNCTION duracion_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, velocidad UNIDAD) RETURN UNIDAD
+    IS
+        distancia UNIDAD;
+    BEGIN
+        dbms_output.put_line('*Calculando duración del vuelo');
+        distancia := calcula_distancia(aeropuerto1,aeropuerto2);
+        RETURN UNIDAD(distancia.valor/velocidad.valor,'horas','tiempo','h');
+    END;
 
     FUNCTION fecha_de_vuelo(minima TIMESTAMP, maxima TIMESTAMP) RETURN TIMESTAMP
     IS
@@ -37,7 +47,6 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         a NUMBER(10,5);
         c NUMBER(10,5);
     BEGIN
-        dbms_output.put_line('*Calculando la distancia entre los aeropuertos');
         R:=6371000;
         aero1 := getAeropuerto(aeropuerto1);
         aero2 := getAeropuerto(aeropuerto2);
@@ -64,13 +73,14 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         ORDER BY dbms_random.value;
     escala INTEGER;
     BEGIN
-        dbms_output.put_line('*Seleccionando escala');
+        dbms_output.put_line('  *Seleccionando escala');
         OPEN escalas;
         FETCH escalas INTO escala;
         IF escalas%found THEN
             RETURN escala;
         END IF;
         CLOSE escalas;
+        dbms_output.put_line('      e: No hay escala factible, se decidió cambiar los aeropuertos');
         RETURN -1;
     END;
     
@@ -79,6 +89,7 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         CURSOR aeropuertos IS
         SELECT * FROM AEROPUERTO ORDER BY dbms_random.value;
         registro AEROPUERTO%RowType;
+        distan UNIDAD;
     BEGIN
         dbms_output.put_line('*Seleccionando aeropuertos');
         OPEN aeropuertos;
@@ -99,18 +110,20 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
                     CONTINUE;
                 END;
             END IF;
-            IF calcula_distancia(aeropuerto1, aeropuerto2).valor<=alcance.valor THEN
+            distan := calcula_distancia(aeropuerto1, aeropuerto2);
+            dbms_output.put_line('  i: La distancia entre  '||
+            getAeropuerto(aeropuerto1).nombre||' y '||getAeropuerto(aeropuerto2).nombre||' es '||distan.valor||'km');
+            IF distan.valor<=alcance.valor THEN
                 RETURN TRUE;
             ELSE
                 BEGIN
-                    dbms_output.put_line('Creando escala entre '||getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad
+                    dbms_output.put_line('  s: Creando escala entre '||getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad
                     ||' y '||getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad);
                     aeropuerto3:=seleccionar_escala(aeropuerto1,aeropuerto2, alcance);
                     IF aeropuerto3 !=-1 THEN
                         RETURN TRUE;
                     ELSE
                         aeropuerto3:=NULL;
-                        dbms_output.put_line('No hay escala factible, se decidió cambiar los aeropuertos');
                     END IF;
                 END;
             END IF;
@@ -132,6 +145,8 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         aeropuerto1 INTEGER;
         aeropuerto2 INTEGER;
         aeropuerto3 INTEGER;
+        duracion UNIDAD;
+        duracion2 UNIDAD;
     BEGIN
         dbms_output.put_line('******************************');
         dbms_output.put_line('*                            *');
@@ -140,16 +155,26 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         dbms_output.put_line('******************************');
         FOR avi in (SELECT * FROM AVION ORDER BY alcance.valor)
         LOOP
-            dbms_output.put_line('--Asignando el vuelo para el avión '||avi.id_avion||' de alcance '||avi.alcance.valor||'km--');
+            dbms_output.put_line('------Asignando el vuelo para el avión '||avi.id_avion||' de alcance '||avi.alcance.valor||'km------');
             IF seleccionar_aeropuertos(aeropuerto1,aeropuerto2,aeropuerto3,avi.alcance) THEN
             BEGIN
                 IF aeropuerto3 IS NULL THEN
-                    dbms_output.put_line('Vuelo directo creado entre '||
-                    getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad);
+                    duracion := duracion_vuelo(aeropuerto1,aeropuerto2,avi.velocidad_max);
+                    dbms_output.put_line('  c: Vuelo directo creado entre '||
+                    getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||
+                    getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||' con una duración de '||duracion.valor||' horas');
+                    --INSERT INTO VUELO(id_vuelo.nextval,fecha_de_vuelo(SYSTIMESTAMP-100, SYSTIMESTAMP+100),
+                    
+                    
                 ELSE
-                    dbms_output.put_line('Vuelo ecalado entre '||
-                    getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||
-                    ' con parada en '||getAeropuerto(aeropuerto3).lugar_aeropuerto.ciudad);
+                    duracion := duracion_vuelo(aeropuerto1,aeropuerto3,avi.velocidad_max);
+                    duracion2 := duracion_vuelo(aeropuerto3,aeropuerto2,avi.velocidad_max);
+                    dbms_output.put_line('  c: Se creó un vuelo escalado que parte de '||
+                    getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||
+                    
+                    ', realiza una parada en '||getAeropuerto(aeropuerto3).lugar_aeropuerto.ciudad||
+                    ' luego de '||duracion.valor||' horas de viaje, para luego salir a '||getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||
+                    ' en un trayecto de '||duracion.valor||' horas');
                 END IF;
             END;
             END IF;
@@ -161,4 +186,3 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
 END;
 /
 exec ASIGNACION_VUELOS.asignar_vuelos;
-
