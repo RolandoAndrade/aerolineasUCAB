@@ -56,7 +56,6 @@ IS
     vuelon VUELO%RowType;
     vuelov VUELO%RowType;
 BEGIN
-    dbms_output.put_line('*Verificando si el usuario tiene vuelos a la hora seleccionada');
     vuelon := getVuelo(vueloid);
     FOR vuelov IN (SELECT V.* FROM VUELO V, DISPONIBILIDAD D
                    WHERE V.id_vuelo = D.vuelo_id AND D.usuario_id = usuarioid)
