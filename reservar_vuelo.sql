@@ -5,7 +5,7 @@ CREATE OR REPLACE PACKAGE RESERVACION_VUELOS IS
     FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER, usuarioid INTEGER) RETURN INTEGER;
     FUNCTION vuelo_vuelta(vueloida INTEGER, aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
     PROCEDURE asignar_asiento(vueloid INTEGER, usuarioid INTEGER); 
-    FUNCTION calcular_precio(vueloid INTEGER, vueltaid INTEGER) RETURN UNIDAD;
+    FUNCTION calcular_precio(vueloid INTEGER, vueltaid INTEGER, userid INTEGER) RETURN UNIDAD;
     PROCEDURE actualizar_millas_usuario(usuarioid INTEGER,vueloid INTEGER);
     PROCEDURE cancelar_reserva(reservaid INTEGER);
     PROCEDURE reservatriple(reservaid INTEGER);

@@ -125,9 +125,9 @@ CREATE TABLE DISPONIBILIDAD (
 
 CREATE TABLE RESERVA_VUELO (
     id_reserva_vuelo NUMBER(5) PRIMARY KEY,
-    reserva_vuelo RESERVA,
-    vuelo_id INTEGER,
-    usuario_id INTEGER,
+    reserva_vuelo RESERVA NOT NULL,
+    vuelo_id INTEGER NOT NULL,
+    usuario_id INTEGER NOT NULL,
     CONSTRAINT FK_VUELO_RESERVAVUELO FOREIGN KEY (vuelo_id)
     REFERENCES VUELO (id_vuelo),
     CONSTRAINT FK_USUARIO_RESERVAVUELO FOREIGN KEY (usuario_id)
