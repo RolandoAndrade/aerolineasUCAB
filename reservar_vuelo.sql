@@ -4,9 +4,9 @@ CREATE OR REPLACE PACKAGE RESERVACION_VUELOS IS
     FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
     FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER, usuarioid INTEGER) RETURN INTEGER;
     FUNCTION vuelo_vuelta(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
-    PROCEDURE asignar_asiento(vuelo INTEGER, usuario INTEGER); 
-    FUNCTION calcular_precio(vuelo INTEGER) RETURN UNIDAD;
-    PROCEDURE actualizar_millas_usuario(usuario INTEGER,vuelo INTEGER);
+    PROCEDURE asignar_asiento(vueloid INTEGER, usuarioid INTEGER); 
+    FUNCTION calcular_precio(vueloid INTEGER) RETURN UNIDAD;
+    PROCEDURE actualizar_millas_usuario(usuarioid INTEGER,vueloid INTEGER);
     PROCEDURE cancelar_reserva(reserva INTEGER);
     PROCEDURE reservatriple(reserva INTEGER);
     PROCEDURE agregar_seguro(reserva INTEGER);
@@ -31,7 +31,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         END IF;
     END;
     
-    PROCEDURE asignar_asiento(vuelo INTEGER, usuario INTEGER)
+    PROCEDURE asignar_asiento(vueloid INTEGER, usuarioid INTEGER)
     IS
     BEGIN
         NULL;
@@ -62,7 +62,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         AND aeropuerto_llega = aeropuerto2
         AND estado = 'no iniciado'
         AND asientosDisponibles(id_vuelo) >0
-        AND chocaConOtrosVuelosUsuario(id_vuelo, usuarioid) = FALSE
+        AND chocaConOtrosVuelosUsuario(id_vuelo, usuarioid) = 0
         AND (fecha IS NULL OR fecha_salida+1<fecha)
         ORDER BY dbms_random.value;
         
@@ -76,15 +76,15 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         AND W.vuelo_id = V.id_vuelo
         AND asientosDisponibles(V.id_vuelo) >0
         AND asientosDisponibles(W.id_vuelo)>0
-        AND chocaConOtrosVuelosUsuario(V.id_vuelo, usuarioid) = FALSE
-        AND chocaConOtrosVuelosUsuario(W.id_vuelo, usuarioid) = FALSE
+        AND chocaConOtrosVuelosUsuario(V.id_vuelo, usuarioid) = 0
+        AND chocaConOtrosVuelosUsuario(W.id_vuelo, usuarioid) = 0
         AND (fecha IS NULL OR V.fecha_salida+1<fecha)
         ORDER BY dbms_random.value;
         
         vueloid INTEGER;
     BEGIN
         dbms_output.put_line('*Verificando si hay vuelos o escalas entre '||
-        getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad);
+        getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad);
         OPEN vuelos;
         FETCH vuelos INTO vueloid;
         IF vuelos%FOUND THEN
@@ -99,7 +99,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         CLOSE vuelos2;
         dbms_output.put_line('  e: No hay vuelos disponibles');
         RETURN -1;
-    END;  
+    END;
     
     FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER, usuarioid INTEGER) RETURN INTEGER
     IS
@@ -115,7 +115,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         FETCH vuelos INTO aeropuerto1;
         WHILE vuelos%FOUND
         LOOP
-            IF aeropuerto1 IS NOT NULL OR aeropuerto2 IS NOT NULL THEN
+            IF aeropuerto1 IS NOT NULL AND aeropuerto2 IS NOT NULL THEN
                 vueloid:=hay_vuelo(aeropuerto1, aeropuerto2, usuarioid, NULL);
                 IF vueloid != -1 THEN
                     RETURN vueloid;
@@ -139,13 +139,13 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         RETURN hay_vuelo(aeropuerto2,aeropuerto1,usuarioid,fecha);
     END;  
  
-    FUNCTION calcular_precio(vuelo INTEGER) RETURN UNIDAD
+    FUNCTION calcular_precio(vueloid INTEGER) RETURN UNIDAD
     IS
     BEGIN
         NULL;
     END;
     
-    PROCEDURE actualizar_millas_usuario(usuario INTEGER,vuelo INTEGER)
+    PROCEDURE actualizar_millas_usuario(usuarioid INTEGER,vueloid INTEGER)
     IS
     BEGIN
         NULL;
@@ -170,22 +170,15 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         dbms_output.put_line('*   RESERVACION DE VUELOS    *');
         dbms_output.put_line('*                            *');
         dbms_output.put_line('******************************');
-        FOR I IN 1..750
+        FOR I IN 1..5
         LOOP
             usuarioid := usuario_aleatorio;
             dbms_output.put_line('-----El usuario '||usuarioid||' desea hacer una reserva-----');
             origen:=NULL;
             destino:=NULL;
-            vueloid := origen_destino_aleatorio(origen,destino,usuarioid);
-            reservatriple(vueloid);
-            vueltaid:=vuelo_vuelta(origen,destino, getVuelo(vueloid).fecha_salida);
-            agregar_seguro(vueloid);
-            asignar_asiento(vueloid,usuarioid);
-            --pagar
-            actualizar_millas_usuario(usuarioid,vueloid);
-            cancelar_reserva(vueloid);
+            vueloid:=origen_destino_aleatorio(origen,destino,usuarioid);
         END LOOP;
-    END;    
+    END;       
 END;
 SELECT * FROM DISPONIBILIDAD;
 SELECT asientosDisponibles(id_vuelo) FROM VUELO;
