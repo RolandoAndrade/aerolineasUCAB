@@ -105,7 +105,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
     FUNCTION vuelo_vuelta(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN INTEGER
     IS
     BEGIN
-        NULL;
+        RETURN hay_vuelo(aeropuerto2,aeropuerto1);
     END;  
  
     FUNCTION calcular_precio(vuelo INTEGER) RETURN UNIDAD
