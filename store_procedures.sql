@@ -50,3 +50,20 @@ BEGIN
     WHERE id_vuelo = vueloid;
     RETURN registro;
 END;
+/
+CREATE OR REPLACE FUNCTION chocaConOtrosVuelosUsuario(vueloid INTEGER, usuarioid INTEGER) RETURN BOOLEAN
+IS
+    vuelon VUELO%RowType;
+    vuelov VUELO%RowType;
+BEGIN
+    vuelon := getVuelo(vueloid);
+    FOR vuelov IN (SELECT V.* FROM VUELO V, DISPONIBILIDAD D
+                   WHERE V.id_vuelo = D.vuelo_id AND D.usuario_id = usuarioid)
+    LOOP
+        IF (vuelon.fecha_salida BETWEEN vuelov.fecha_salida AND vuelov.fecha_salida+vuelov.duracion.valor/24)
+        OR (vuelov.fecha_salida BETWEEN vuelon.fecha_salida AND vuelon.fecha_salida+vuelon.duracion.valor/24) THEN
+            RETURN FALSE;
+        END IF;
+    END LOOP;
+    RETURN TRUE;
+END;
