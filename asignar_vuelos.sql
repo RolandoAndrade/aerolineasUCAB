@@ -147,6 +147,7 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         aeropuerto3 INTEGER;
         duracion UNIDAD;
         duracion2 UNIDAD;
+        fechaPartida TIMESTAMP;
     BEGIN
         dbms_output.put_line('******************************');
         dbms_output.put_line('*                            *');
@@ -160,21 +161,33 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
             BEGIN
                 IF aeropuerto3 IS NULL THEN
                     duracion := duracion_vuelo(aeropuerto1,aeropuerto2,avi.velocidad_max);
+                    fechaPartida:= fecha_de_vuelo(SYSTIMESTAMP-100, SYSTIMESTAMP+100);
                     dbms_output.put_line('  c: Vuelo directo creado entre '||
                     getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||
-                    getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||' con una duración de '||duracion.valor||' horas');
-                    --INSERT INTO VUELO(id_vuelo.nextval,fecha_de_vuelo(SYSTIMESTAMP-100, SYSTIMESTAMP+100),
-                    
-                    
+                    getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||' con una duración de '||
+                    duracion.valor||' horas, para el día '||fechaPartida);
+                    INSERT INTO VUELO VALUES(id_vuelo.nextval,
+                    fechaPartida,
+                    null,null,duracion,'no iniciado',null,
+                    aeropuerto1,aeropuerto2);
                 ELSE
                     duracion := duracion_vuelo(aeropuerto1,aeropuerto3,avi.velocidad_max);
                     duracion2 := duracion_vuelo(aeropuerto3,aeropuerto2,avi.velocidad_max);
+                    fechaPartida:= fecha_de_vuelo(SYSTIMESTAMP-100, SYSTIMESTAMP+100);
                     dbms_output.put_line('  c: Se creó un vuelo escalado que parte de '||
-                    getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||
-                    
+                    getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' el día '||fechaPartida||
                     ', realiza una parada en '||getAeropuerto(aeropuerto3).lugar_aeropuerto.ciudad||
                     ' luego de '||duracion.valor||' horas de viaje, para luego salir a '||getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||
+                    ' el día '||(fechaPartida+1/3)||
                     ' en un trayecto de '||duracion.valor||' horas');
+                    INSERT INTO VUELO VALUES(id_vuelo.nextval,
+                    fechaPartida,
+                    null,null,duracion,'no iniciado',null,
+                    aeropuerto1,aeropuerto3);
+                    INSERT INTO VUELO VALUES(id_vuelo.nextval,
+                    fechaPartida+1/3,
+                    null,null,duracion,'no iniciado',id_vuelo.currval-1,
+                    aeropuerto1,aeropuerto3);
                 END IF;
             END;
             END IF;
@@ -184,5 +197,3 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         END LOOP;
     END;
 END;
-/
-exec ASIGNACION_VUELOS.asignar_vuelos;
