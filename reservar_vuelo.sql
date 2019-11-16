@@ -37,8 +37,39 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
     
     FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN INTEGER
     IS
+        CURSOR vuelos IS
+        SELECT id_vuelo
+        FROM VUELO
+        WHERE aeropuerto_sale = aeropuerto1 
+        AND aeropuerto_llega = aeropuerto2
+        AND estado = 'no iniciado'
+        ORDER BY dbms_random.value;
+        
+        CURSOR vuelos2 IS
+        SELECT W.id_vuelo
+        FROM VUELO V, VUELO W
+        WHERE V.aeropuerto_sale = aeropuerto1 
+        AND W.aeropuerto_llega = aeropuerto2
+        AND V.estado = 'no iniciado'
+        AND W.estado = 'no iniciado'
+        AND W.vuelo_id = V.id_vuelo
+        ORDER BY dbms_random.value;
+        
+        vueloid INTEGER;
     BEGIN
-        NULL;
+        OPEN vuelos;
+        FETCH vuelos INTO vueloid;
+        IF vuelos%FOUND THEN
+            RETURN vueloid;
+        END IF;
+        CLOSE vuelos;
+        OPEN vuelos2;
+        FETCH vuelos2 INTO vueloid;
+        IF vuelos2%FOUND THEN
+            RETURN vueloid;
+        END IF;
+        CLOSE vuelos2;
+        RETURN -1;
     END;  
     
     FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER) RETURN INTEGER
@@ -47,13 +78,18 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         SELECT id_aeropuerto
         FROM AEROPUERTO
         ORDER BY dbms_random.value;
+        
+        vueloid INTEGER;
     BEGIN
         OPEN vuelos;
         FETCH vuelos INTO aeropuerto1;
         WHILE vuelos%FOUND
         LOOP
             IF aeropuerto1 IS NOT NULL OR aeropuerto2 IS NOT NULL THEN
-                hay_vuelo(aeropuerto1, aeropuerto2);
+                vueloid:=hay_vuelo(aeropuerto1, aeropuerto2);
+                IF vueloid != -1 THEN
+                    RETURN vueloid;
+                END IF;    
             END IF;
             IF aeropuerto2 IS NULL THEN
                 FETCH vuelos INTO aeropuerto2;
@@ -102,4 +138,3 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         END LOOP;
     END;    
 END;
-
