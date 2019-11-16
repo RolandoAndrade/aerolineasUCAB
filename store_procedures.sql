@@ -40,3 +40,13 @@ BEGIN
     END IF;
     RETURN disponibles ;
 END;
+/
+CREATE OR REPLACE FUNCTION getVuelo(vueloid INTEGER) RETURN VUELO%RowType
+IS
+    registro VUELO%RowType;
+BEGIN
+    SELECT * INTO registro
+    FROM VUELO
+    WHERE id_vuelo = vueloid;
+    RETURN registro;
+END;
