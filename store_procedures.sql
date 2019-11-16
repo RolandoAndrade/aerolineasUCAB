@@ -25,3 +25,14 @@ BEGIN
     SELECT * INTO registro FROM AEROPUERTO WHERE id_aeropuerto = aeropuertoId;
     RETURN registro;
 END;
+/
+CREATE OR REPLACE FUNCTION asientosDisponibles(vueloid INTEGER) RETURN INTEGER
+IS
+    disponibles INTEGER;
+BEGIN
+    SELECT COUNT(*) INTO disponibles
+    FROM DISPONIBILIDAD
+    WHERE vuelo_id = vueloid
+    AND usuario_id IS NULL;
+    RETURN disponibles ;
+END;
