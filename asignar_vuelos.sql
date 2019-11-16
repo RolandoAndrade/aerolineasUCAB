@@ -10,13 +10,16 @@ CREATE or REPLACE PACKAGE ASIGNACION_VUELOS IS
     aeropuerto3 IN OUT INTEGER, alcance UNIDAD) RETURN BOOLEAN; 
     FUNCTION calcular_duracion(aeropuerto1 INTEGER, aeropuerto2 INTEGER, distancia UNIDAD) RETURN UNIDAD;
 END;
-/CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
+/
+CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
 
     FUNCTION calcula_precio(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN UNIDAD
     IS
+        precio NUMBER(10,5);
     BEGIN
-        dbms_output.put_line('*Calculando precio del recorrido y agregándolo a cada puesto');
-        NULL;
+        dbms_output.put_line('*Calculando precio del recorrido');
+        precio:=UNIDAD(calcula_distancia(aeropuerto1,aeropuerto2).convertir('distancia','nmi'),'milla','monetaria','milla').convertir('monetaria','usd')/10;
+        RETURN UNIDAD(precio,'dolar','monetaria','usd');
     END;
 
     PROCEDURE abrir_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, fecha TIMESTAMP, duracion UNIDAD,avi INTEGER)
@@ -26,20 +29,25 @@ END;
         FROM ASIENTO
         WHERE avion_id = avi;
     asien ASIENTO%RowType;
+    precio UNIDAD;
     BEGIN
         dbms_output.put_line('*Abriendo disponibilidad para el vuelo');
+        dbms_output.put_line('  -Creando vuelo');
         INSERT INTO VUELO VALUES(id_vuelo.nextval,fecha,null,
         null,duracion,'no iniciado',null,aeropuerto1,aeropuerto2); 
         OPEN asientos;
         FETCH asientos INTO asien;
+        precio := calcula_precio(aeropuerto1,aeropuerto2);
+        dbms_output.put_line('  -Asignando asientos al vuelo');
         WHILE asientos%FOUND
         LOOP
             INSERT INTO DISPONIBILIDAD VALUES(
-                id_disponibilidad.nextval, asien.precio,
+                id_disponibilidad.nextval, UNIDAD(asien.precio.valor+precio.valor,'dolar','monetaria','usd'),
                 asien.id_asiento,
                 id_vuelo.currval, null);
             FETCH asientos INTO asien;
         END LOOP;
+        CLOSE asientos;
     END;
 
     FUNCTION duracion_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, velocidad UNIDAD) RETURN UNIDAD
