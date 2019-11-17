@@ -136,7 +136,7 @@ CREATE TABLE RESERVA_VUELO (
 
 CREATE TABLE RESERVA_CARRO (
     id_reserva_carro INTEGER PRIMARY KEY,
-    reseva_carro RESERVA NOT NULL, 
+    reserva_carro RESERVA NOT NULL, 
     recogida LUGAR NOT NULL,
     devolucion LUGAR NOT NULL,
     carro_id INTEGER NOT NULL,
@@ -237,10 +237,10 @@ CREATE TABLE SEGURO(
     id_seguro INTEGER PRIMARY KEY,
     reserva_seguro RESERVA NOT NULL,
     aseguradora_id INTEGER NOT NULL,
-    reserva_vuelo_id INTEGER NOT NULL,
+    reservavuelo_id INTEGER NOT NULL,
     CONSTRAINT FK_ASEGURADORA_SEGURO FOREIGN KEY (aseguradora_id)
     REFERENCES ASEGURADORA (id_aseguradora),
-    CONSTRAINT FK_RESERVAVUELO_SEGURO FOREIGN KEY (reserva_vuelo_id)
+    CONSTRAINT FK_RESERVAVUELO_SEGURO FOREIGN KEY (reservavuelo_id)
     REFERENCES RESERVA_VUELO (id_reserva_vuelo)
 );
 
