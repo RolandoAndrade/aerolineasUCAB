@@ -9,7 +9,9 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_SEGURO IS
     PROCEDURE subir_precio(seguroid INTEGER, monto UNIDAD)
     IS
     BEGIN
-        NULL;
+        UPDATE SEGURO S
+        SET S.reserva_seguro.monto.value = S.reserva_seguro.monto.value + monto.value
+        WHERE S.id_seguro = seguroid;
     END;
     
     PROCEDURE agregar_servicios(seguroid INTEGER)
