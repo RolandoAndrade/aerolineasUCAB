@@ -5,12 +5,11 @@ CREATE or REPLACE PACKAGE PAGAR_RESERVA IS
     FUNCTION monto_aleatorio(precio NUMBER) RETURN UNIDAD;
     FUNCTION seleccionar_tipo_pago(usuarioid INTEGER) RETURN INTEGER;
     PROCEDURE cambiar_estado_reserva(reservaid INTEGER, tipo VARCHAR);
-    PROCEDURE pagar_tarjeta(usuarioid INTEGER, reservaid INTEGER);
+    PROCEDURE pagar_tarjeta(usuarioid INTEGER, reservaid INTEGER, monto UNIDAD, tipo VARCHAR);
     FUNCTION obtener_monto(reservaid INTEGER, tipo VARCHAR) RETURN UNIDAD;
-    PROCEDURE pagar_millas(usuarioid INTEGER, monto UNIDAD, tipo VARCHAR);
+    PROCEDURE pagar_millas(usuarioid INTEGER, reservaid INTEGER, monto UNIDAD, tipo VARCHAR);
 END;
 /
-
 CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
 
     FUNCTION obtener_monto(reservaid INTEGER, tipo VARCHAR) RETURN UNIDAD
@@ -64,19 +63,31 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
         END IF;
     END;
     
-    PROCEDURE pagar_tarjeta(usuarioid INTEGER, reservaid INTEGER)
+    PROCEDURE pagar_tarjeta(usuarioid INTEGER, reservaid INTEGER, monto UNIDAD, tipo VARCHAR)
     IS
+        valor NUMBER;
+        axmonto UNIDAD;
     BEGIN
-        NULL;
+        valor := monto.valor;
+        WHILE valor>0
+        LOOP
+            NULL;
+        END LOOP;
     END;
     
-    PROCEDURE pagar_millas(usuarioid INTEGER, monto UNIDAD,tipo VARCHAR)
+    PROCEDURE pagar_millas(usuarioid INTEGER, reservaid INTEGER, monto UNIDAD,tipo VARCHAR)
     IS
+        restantes UNIDAD;
+        idmilla INTEGER;
     BEGIN
         IF tipo = 'vuelo' THEN
             UPDATE MILLA M
             SET M.cantidad.valor = M.cantidad.valor - monto.valor
             WHERE usuario_id = usuarioid;
+            SELECT M.cantidad, M.id_milla INTO restantes, idmilla
+            FROM MILLA M
+            WHERE usuario_id = usuarioid;
+            INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,null, reservaid, null,null);
         END IF;
     END;
     
@@ -86,7 +97,13 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
     BEGIN
         monto := obtener_monto(reservaid, tipo);
         IF millas_suficientes(usuarioid, monto) THEN
-            pagar_millas(usuarioid,monto,tipo);
+            IF aceptar_o_rechazar(0.5) THEN
+                pagar_millas(usuarioid,reservaid,monto,tipo);
+            ELSE
+                pagar_tarjeta(usuarioid,reservaid,monto,tipo);
+            END IF;
+        ELSE
+            pagar_tarjeta(usuarioid,reservaid,monto,tipo);
         END IF;
         cambiar_estado_reserva(reservaid, tipo);
     END;
