@@ -18,9 +18,8 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
     BEGIN
         IF tipo = 'vuelo' THEN
             SELECT R.reserva_vuelo.monto INTO monto FROM RESERVA_VUELO R WHERE id_reserva_vuelo = reservaid;
-            RETURN monto;
         END IF;
-        RETURN NULL;
+        RETURN monto;
     END;
 
     FUNCTION millas_suficientes(usuarioid INTEGER, monto UNIDAD) RETURN BOOLEAN
@@ -45,8 +44,13 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
     
     FUNCTION monto_aleatorio(precio NUMBER) RETURN UNIDAD
     IS
+        valor NUMBER;
     BEGIN
-        NULL;
+        valor := dbms_random.value*precio*2;
+        IF valor>precio THEN
+            valor:=precio;
+        END IF;
+        RETURN UNIDAD(valor,'dolar','monetaria','usd');
     END;
     
     FUNCTION seleccionar_tipo_pago(usuarioid INTEGER) RETURN INTEGER
@@ -71,6 +75,7 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
     IS
         monto UNIDAD;
     BEGIN
-        NULL;
+        monto := obtener_monto(reservaid, tipo);
+        
     END;
 END;
