@@ -116,14 +116,20 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
         restantes UNIDAD;
         idmilla INTEGER;
     BEGIN
-        IF tipo = 'vuelo' THEN
             UPDATE MILLA M
             SET M.cantidad.valor = M.cantidad.valor - monto.convertir('monetaria','milla')
             WHERE usuario_id = usuarioid;
             SELECT M.cantidad, M.id_milla INTO restantes, idmilla
             FROM MILLA M
             WHERE usuario_id = usuarioid;
+        IF tipo = 'vuelo' THEN
             INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,null, reservaid, null,null);
+        ELSIF tipo = 'carro' THEN
+            INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,null, null, null,reservaid);
+        ELSIF tipo = 'estancia' THEN
+            INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,reservaid, null, null,null);
+        ELSIF tipo = 'triple' THEN
+            INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,reservaid, reservaid, null,reservaid);
         END IF;
         dbms_output.put_line('*Pagando con '||monto.convertir('monetaria','milla')||' millas. Millas restantes: '||restantes.valor);
     END;
@@ -151,3 +157,4 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
         dbms_output.put_line('i: Pagado');
     END;
 END;
+
