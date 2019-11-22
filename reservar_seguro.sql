@@ -14,8 +14,18 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_SEGURO IS
     
     PROCEDURE agregar_servicios(seguroid INTEGER)
     IS
-
+    	iter NUMBER;
     BEGIN
+    	iter := (dbms_random.value + 5)*2;
+    	FOR I IN (SELECT * FROM SERVICIO ORDER BY dbms_random.value)
+    	LOOP
+    		INSERT INTO SEGURO_SERVICIO(seguroid,I.id_servicio);
+    		subir_precio(seguroid,I.precio);
+    		iter:=iter-1;
+    		IF iter<0 THEN
+    			BREACK;
+    		END IF;
+    	END LOOP;
         
     END;
     
