@@ -260,3 +260,13 @@ BEGIN
     END LOOP;
     RETURN 0;
 END;
+/
+CREATE OR REPLACE FUNCTION getUsuarioAleatorio RETURN INTEGER
+IS
+BEGIN
+    FOR I IN (SELECT * FROM USUARIO ORDER BY dbms_random.value)
+    LOOP
+        RETURN I.id_usuario;
+    END LOOP;
+    RETURN NULL;
+END;
