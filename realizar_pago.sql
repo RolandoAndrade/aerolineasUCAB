@@ -100,6 +100,33 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
             UPDATE RESERVA_VUELO R
             SET R.reserva_vuelo.estado = 'pagado'
             WHERE R.id_reserva_vuelo = reservaid;
+            UPDATE SEGURO R
+            SET R.reserva_seguro.estado = 'pagado'
+            WHERE R.reservavuelo_id = reservaid;
+        ELSIF tipo = 'carro' THEN
+            UPDATE RESERVA_CARRO R
+            SET R.reserva_carro.estado = 'pagado'
+            WHERE R.id_reserva_carro = reservaid;
+        ELSIF tipo = 'estancia' THEN
+            UPDATE RESERVA_ESTANCIA R
+            SET R.reserva_estacia.estado = 'pagado'
+            WHERE R.id_reserva_estancia = reservaid;
+        ELSIF tipo = 'triple' THEN
+        UPDATE RESERVA_VUELO R
+            SET R.reserva_vuelo.estado = 'pagado'
+            WHERE R.id_reserva_vuelo = reservaid;
+            
+            UPDATE SEGURO R
+            SET R.reserva_seguro.estado = 'pagado'
+            WHERE R.reservavuelo_id = reservaid;
+            
+            UPDATE RESERVA_CARRO R
+            SET R.reserva_carro.estado = 'pagado'
+            WHERE R.id_reserva_carro = reservaid;
+            
+            UPDATE RESERVA_ESTANCIA R
+            SET R.reserva_estacia.estado = 'pagado'
+            WHERE R.id_reserva_estancia = reservaid;
         END IF;
     END;
     
