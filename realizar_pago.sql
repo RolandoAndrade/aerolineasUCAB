@@ -25,9 +25,33 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
     FUNCTION obtener_monto(reservaid INTEGER, tipo VARCHAR) RETURN UNIDAD
     IS
         monto UNIDAD;
+        valor UNIDAD;
     BEGIN
+        dbms_output.put_line('*Calculando monto a pagar');
         IF tipo = 'vuelo' THEN
             SELECT R.reserva_vuelo.monto INTO monto FROM RESERVA_VUELO R WHERE id_reserva_vuelo = reservaid;
+            BEGIN
+                SELECT R.reserva_seguro.monto INTO valor FROM SEGURO R WHERE reservavuelo_id = reservaid;
+            EXCEPTION WHEN NO_DATA_FOUND THEN
+                valor := UNIDAD(0,'X','X','X');
+            END;
+            monto.valor := monto.valor + valor.valor;
+        ELSIF tipo = 'carro' THEN
+            SELECT R.reserva_carro.monto INTO monto FROM RESERVA_CARRO R WHERE id_reserva_carro = reservaid;
+        ELSIF tipo = 'estancia' THEN
+            SELECT R.reserva_estacia.monto INTO monto FROM RESERVA_ESTANCIA R WHERE id_reserva_estancia = reservaid;
+        ELSIF tipo = 'triple' THEN
+            SELECT R.reserva_vuelo.monto INTO monto FROM RESERVA_VUELO R WHERE id_reserva_vuelo = reservaid; --VUELO
+            BEGIN
+                SELECT R.reserva_seguro.monto INTO valor FROM SEGURO R WHERE reservavuelo_id = reservaid;
+            EXCEPTION WHEN NO_DATA_FOUND THEN
+                valor := UNIDAD(0,'X','X','X');
+            END;
+            monto.valor := monto.valor + valor.valor;
+            SELECT R.reserva_carro.monto INTO valor FROM RESERVA_CARRO R WHERE reservavuelo_id = reservaid;
+            monto.valor := monto.valor + valor.valor; -- CARRO
+            SELECT R.reserva_estacia.monto INTO valor FROM RESERVA_ESTANCIA R WHERE reservavuelo_id = reservaid;
+            monto.valor := monto.valor + valor.valor; --HOSPEDAJE
         END IF;
         RETURN monto;
     END;
@@ -138,7 +162,7 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
         ELSIF tipo = 'triple' THEN
             INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,reservaid, reservaid, null,reservaid);
         END IF;
-        dbms_output.put_line('*Pagando con '||monto.convertir('monetaria','milla')||' millas. Millas restantes: '||restantes.valor);
+        dbms_output.put_line('*Pagando $'||monto.valor||' con '||monto.convertir('monetaria','milla')||' millas. Millas restantes: '||restantes.valor);
     END;
     
     PROCEDURE pagar(usuarioid INTEGER, reservaid INTEGER, tipo VARCHAR)
