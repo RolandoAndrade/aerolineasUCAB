@@ -54,7 +54,18 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
     FUNCTION seleccionar_tipo_pago(usuarioid INTEGER, tipo VARCHAR) RETURN INTEGER
     IS
     BEGIN
-        NULL;
+        IF tipo = 'tcc' THEN
+            FOR I IN (SELECT * FROM TARJETA_CREDITO WHERE usuario_id = usuarioid ORDER BY dbms_random.value)
+            LOOP
+                RETURN i.id_tarjeta_credito;
+            END LOOP;
+        ELSE
+            FOR I IN (SELECT * FROM TARJETA_DEBITO WHERE usuario_id = usuarioid ORDER BY dbms_random.value)
+            LOOP
+                RETURN i.id_trajeta_debito;
+            END LOOP;
+        END IF;
+        RETURN NULL;
     END;
     
     PROCEDURE cambiar_estado_reserva(reservaid INTEGER, tipo VARCHAR)
