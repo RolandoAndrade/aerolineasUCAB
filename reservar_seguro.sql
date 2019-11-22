@@ -25,7 +25,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_SEGURO IS
     		subir_precio(seguroid,I.precio);
     		iter:=iter-1;
     		IF iter<0 THEN
-    			BREACK;
+    			BREAK;
     		END IF;
     	END LOOP;
         
