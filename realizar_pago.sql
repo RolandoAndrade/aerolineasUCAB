@@ -107,7 +107,14 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
             restantes := millas_restantes(usuarioid);
             IF tipo = 'vuelo' THEN
                 INSERT INTO PAGO VALUES(id_pago.nextval,axmonto,SYSTIMESTAMP,restantes,null,tdd,tcc,null, reservaid, null,null);
+            ELSIF tipo = 'carro' THEN
+                INSERT INTO PAGO VALUES(id_pago.nextval,axmonto,SYSTIMESTAMP,restantes,null,tdd,tcc,null, null, null,reservaid);
+            ELSIF tipo = 'estancia' THEN
+                INSERT INTO PAGO VALUES(id_pago.nextval,axmonto,SYSTIMESTAMP,restantes,null,tdd,tcc,reservaid, null, null,null);
+            ELSIF tipo = 'triple' THEN
+                INSERT INTO PAGO VALUES(id_pago.nextval,axmonto,SYSTIMESTAMP,restantes,null,tdd,tcc,reservaid, reservaid, null,reservaid);
             END IF;
+            
         END LOOP;
     END;
     
@@ -157,4 +164,3 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
         dbms_output.put_line('i: Pagado');
     END;
 END;
-
