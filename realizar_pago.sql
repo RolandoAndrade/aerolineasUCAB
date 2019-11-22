@@ -1,16 +1,26 @@
 CREATE or REPLACE PACKAGE PAGAR_RESERVA IS
     PROCEDURE pagar(usuarioid INTEGER, reservaid INTEGER, tipo VARCHAR);
     FUNCTION millas_suficientes(usuarioid INTEGER, monto UNIDAD) RETURN BOOLEAN;
-    FUNCTION calcula_distancia(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN UNIDAD;
     FUNCTION monto_aleatorio(precio NUMBER) RETURN UNIDAD;
-    FUNCTION seleccionar_tipo_pago(usuarioid INTEGER) RETURN INTEGER;
+    FUNCTION seleccionar_tipo_pago(usuarioid INTEGER, tipo VARCHAR) RETURN INTEGER;
     PROCEDURE cambiar_estado_reserva(reservaid INTEGER, tipo VARCHAR);
     PROCEDURE pagar_tarjeta(usuarioid INTEGER, reservaid INTEGER, monto UNIDAD, tipo VARCHAR);
     FUNCTION obtener_monto(reservaid INTEGER, tipo VARCHAR) RETURN UNIDAD;
     PROCEDURE pagar_millas(usuarioid INTEGER, reservaid INTEGER, monto UNIDAD, tipo VARCHAR);
+    FUNCTION millas_restantes(usuarioid INTEGER) RETURN UNIDAD;
 END;
 /
 CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
+
+    FUNCTION millas_restantes(usuarioid INTEGER) RETURN UNIDAD
+    IS
+        restantes UNIDAD;
+    BEGIN
+        SELECT M.cantidad INTO restantes
+        FROM MILLA M
+        WHERE usuario_id = usuarioid;
+        RETURN restantes;
+    END;
 
     FUNCTION obtener_monto(reservaid INTEGER, tipo VARCHAR) RETURN UNIDAD
     IS
@@ -30,12 +40,6 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
         RETURN millas>monto.convertir('monetaria','milla');
     END;
     
-    FUNCTION calcula_distancia(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN UNIDAD
-    IS
-    BEGIN
-        NULL;
-    END;
-    
     FUNCTION monto_aleatorio(precio NUMBER) RETURN UNIDAD
     IS
         valor NUMBER;
@@ -47,7 +51,7 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
         RETURN UNIDAD(valor,'dolar','monetaria','usd');
     END;
     
-    FUNCTION seleccionar_tipo_pago(usuarioid INTEGER) RETURN INTEGER
+    FUNCTION seleccionar_tipo_pago(usuarioid INTEGER, tipo VARCHAR) RETURN INTEGER
     IS
     BEGIN
         NULL;
@@ -67,11 +71,26 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
     IS
         valor NUMBER;
         axmonto UNIDAD;
+        tcc INTEGER;
+        tdd INTEGER;
+        restantes UNIDAD;
     BEGIN
         valor := monto.valor;
         WHILE valor>0
         LOOP
-            NULL;
+            tcc := NULL;
+            tdd := NULL;
+            IF aceptar_o_rechazar(0.5) THEN
+               tcc := seleccionar_tipo_pago(usuarioid, 'tcc');
+            ELSE
+                tdd := seleccionar_tipo_pago(usuarioid, 'tdd');
+            END IF; 
+            axmonto := monto_aleatorio(valor);
+            valor := valor - axmonto.valor;
+            restantes := millas_restantes(usuarioid);
+            IF tipo = 'vuelo' THEN
+                INSERT INTO PAGO VALUES(id_pago.nextval,axmonto,SYSTIMESTAMP,restantes,null,tdd,tcc,null, reservaid, null,null);
+            END IF;
         END LOOP;
     END;
     
