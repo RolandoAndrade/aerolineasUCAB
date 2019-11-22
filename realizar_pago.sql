@@ -71,6 +71,7 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
     PROCEDURE cambiar_estado_reserva(reservaid INTEGER, tipo VARCHAR)
     IS
     BEGIN
+        dbms_output.put_line('*Cambiando el estado de la reserva a pagado');
         IF tipo = 'vuelo' THEN
             UPDATE RESERVA_VUELO R
             SET R.reserva_vuelo.estado = 'pagado'
@@ -89,14 +90,19 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
         valor := monto.valor;
         WHILE valor>0
         LOOP
+            dbms_output.put_line('*Pagando, monto restante: $'||valor);
             tcc := NULL;
             tdd := NULL;
+            axmonto := monto_aleatorio(valor);
+            dbms_output.put_line('  q: ¿Desea pagar con crédito o débito?');
             IF aceptar_o_rechazar(0.5) THEN
-               tcc := seleccionar_tipo_pago(usuarioid, 'tcc');
+                dbms_output.put_line('  r: $'||axmonto.valor||' a crédito');
+                tcc := seleccionar_tipo_pago(usuarioid, 'tcc');
             ELSE
+                dbms_output.put_line('  r: $'||axmonto.valor||' a débito');
                 tdd := seleccionar_tipo_pago(usuarioid, 'tdd');
             END IF; 
-            axmonto := monto_aleatorio(valor);
+            
             valor := valor - axmonto.valor;
             restantes := millas_restantes(usuarioid);
             IF tipo = 'vuelo' THEN
@@ -112,29 +118,36 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
     BEGIN
         IF tipo = 'vuelo' THEN
             UPDATE MILLA M
-            SET M.cantidad.valor = M.cantidad.valor - monto.valor
+            SET M.cantidad.valor = M.cantidad.valor - monto.convertir('monetaria','milla')
             WHERE usuario_id = usuarioid;
             SELECT M.cantidad, M.id_milla INTO restantes, idmilla
             FROM MILLA M
             WHERE usuario_id = usuarioid;
             INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,null, reservaid, null,null);
         END IF;
+        dbms_output.put_line('*Pagando con '||monto.convertir('monetaria','milla')||' millas. Millas restantes: '||restantes.valor);
     END;
     
     PROCEDURE pagar(usuarioid INTEGER, reservaid INTEGER, tipo VARCHAR)
     IS
         monto UNIDAD;
     BEGIN
+        dbms_output.put_line('-----------EL USUARIO PROCEDE A PAGAR------------');
         monto := obtener_monto(reservaid, tipo);
         IF millas_suficientes(usuarioid, monto) THEN
+            dbms_output.put_line('q: ¿Desea pagar con millas?');
             IF aceptar_o_rechazar(0.5) THEN
+                dbms_output.put_line('r: Sí');
                 pagar_millas(usuarioid,reservaid,monto,tipo);
             ELSE
+                dbms_output.put_line('r: No');
                 pagar_tarjeta(usuarioid,reservaid,monto,tipo);
             END IF;
         ELSE
+            dbms_output.put_line('i: Como no se tiene suficientes millas, se procede a pagar con tarjeta de crédito');
             pagar_tarjeta(usuarioid,reservaid,monto,tipo);
         END IF;
         cambiar_estado_reserva(reservaid, tipo);
+        dbms_output.put_line('i: Pagado');
     END;
 END;
