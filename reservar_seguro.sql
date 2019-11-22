@@ -5,6 +5,7 @@ CREATE OR REPLACE PACKAGE RESERVACION_SEGURO IS
 END;
 /
 CREATE OR REPLACE PACKAGE BODY RESERVACION_SEGURO IS
+
     PROCEDURE subir_precio(seguroid INTEGER, monto UNIDAD)
     IS
     BEGIN
@@ -13,8 +14,9 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_SEGURO IS
     
     PROCEDURE agregar_servicios(seguroid INTEGER)
     IS
+
     BEGIN
-        NULL;
+        
     END;
     
     PROCEDURE reservar_seguro(reservaid INTEGER)
@@ -24,5 +26,10 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_SEGURO IS
     BEGIN
         SELECT * INTO reserv FROM RESERVA_VUELO WHERE id_reserva_vuelo = reservaid;
         SELECT fecha_salida INTO fechafin FROM VUELO WHERE id_vuelo = reserv.vuelo_id;
+        INSERT INTO SEGURO VALUES(id_seguro.nextval,
+        	RESERVA(reserv.reserva_vuelo.fecha_inicio,fechafin,
+        		UNIDAD(0,'dolar','monetaria','usd'),'sin pagar'));
+        agregar_servicios(id_seguro.currval);
+
     END;
 END;
