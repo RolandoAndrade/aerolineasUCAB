@@ -270,3 +270,13 @@ BEGIN
     END LOOP;
     RETURN NULL;
 END;
+/
+FUNCTION random_fecha(minima TIMESTAMP, maxima TIMESTAMP) RETURN TIMESTAMP
+IS
+    hora TIMESTAMP;
+BEGIN
+    SELECT minima + dbms_random.value*(maxima-minima)
+    INTO hora
+    FROM DUAL;
+    RETURN hora;
+END;
