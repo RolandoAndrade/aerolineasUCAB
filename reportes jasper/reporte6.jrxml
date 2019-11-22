@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte6" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="38205c66-069f-4f07-871b-c143484bc8d5">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<queryString language="plsql">
+		<![CDATA[{CALL reporte_6($P{ORACLE_REF_CURSOR}, $P{id})}]]>
+	</queryString>
+	<field name="LOGO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="LOGO"/>
+	</field>
+	<field name="CORREO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CORREO"/>
+	</field>
+	<field name="CONCATERNARVUELOS(V.ID_VUELO)" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CONCATERNARVUELOS(V.ID_VUELO)"/>
+	</field>
+	<field name="TO_CHAR(RV.RESERVA_VUELO.FECHA_INICIO,&apos;MONDDYYYY&apos;)" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label">
+			<![CDATA[TO_CHAR(RV.RESERVA_VUELO.FECHA_INICIO,'MONDDYYYY')]]>
+		</property>
+	</field>
+	<field name="TO_CHAR(RV.RESERVA_VUELO.FECHA_FIN,&apos;MONDDYYYY&apos;)" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label">
+			<![CDATA[TO_CHAR(RV.RESERVA_VUELO.FECHA_FIN,'MONDDYYYY')]]>
+		</property>
+	</field>
+	<field name="&apos;$&apos;||RV.RESERVA_VUELO.MONTO.VALOR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label">
+			<![CDATA['$'||RV.RESERVA_VUELO.MONTO.VALOR]]>
+		</property>
+	</field>
+	<field name="TRAERPAGO(RV.ID_RESERVA_VUELO,P.ID_PAGO,P.TARJETACREDITO_ID,P.TARJETADEBITO_ID,P.MILLAS_ID)" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TRAERPAGO(RV.ID_RESERVA_VUELO,P.ID_PAGO,P.TARJETACREDITO_ID,P.TARJETADEBITO_ID,P.MILLAS_ID)"/>
+	</field>
+	<field name="&apos;$&apos;||P.MONTO.VALOR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label">
+			<![CDATA['$'||P.MONTO.VALOR]]>
+		</property>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="70" y="0" width="70" height="30" uuid="dec5413b-4d20-4a60-a12c-5dc1b3578947">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="93bd0ed4-b3ee-40fa-becb-1808346eafcc"/>
+				</reportElement>
+				<text><![CDATA[CORREO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="0" width="60" height="30" uuid="2438ad00-7924-42d5-8f75-01ccdb4af733">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17e8acb3-1766-42c7-8448-e2b5a0a42a39"/>
+				</reportElement>
+				<text><![CDATA[CONCATERNARVUELOS(V.ID_VUELO)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="60" height="30" uuid="3ffcafb4-7b33-4566-87a2-4131eb03845f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa4c0a4f-70c0-4dcd-b469-c420770dba6c"/>
+				</reportElement>
+				<text><![CDATA[TO_CHAR(RV.RESERVA_VUELO.FECHA_INICIO,'MONDDYYYY')]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="0" width="60" height="30" uuid="be165813-3643-42a0-b251-5344f1f9cc7a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf1226bb-ef2e-4df6-aaaa-82240af42e9b"/>
+				</reportElement>
+				<text><![CDATA[TO_CHAR(RV.RESERVA_VUELO.FECHA_FIN,'MONDDYYYY')]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="60" height="30" uuid="da3b0c82-bd79-4f9c-9d40-a058f593c060">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dff38ab9-b891-456e-a2b9-57848b9b85c5"/>
+				</reportElement>
+				<text><![CDATA['$'||RV.RESERVA_VUELO.MONTO.VALOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="50" height="30" uuid="88492f9e-4678-47b6-805b-dc26bdeb7472">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18917d6f-bad9-41f5-b2e7-368f611e899c"/>
+				</reportElement>
+				<text><![CDATA[TRAERPAGO(RV.ID_RESERVA_VUELO,P.ID_PAGO,P.TARJETACREDITO_ID,P.TARJETADEBITO_ID,P.MILLAS_ID)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="0" width="60" height="30" uuid="64923a23-8dfe-4b6d-a99d-7a465b27d933">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fe1234e4-75ed-4487-935b-c712a5a27ce1"/>
+				</reportElement>
+				<text><![CDATA['$'||P.MONTO.VALOR]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="0" width="80" height="80" uuid="2ecffe1e-7570-4561-a6b0-90dd385b8a9b"/>
+				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="70" y="0" width="70" height="30" uuid="f81f2edd-e5f2-4140-aa9a-0f9c4d42671b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="93bd0ed4-b3ee-40fa-becb-1808346eafcc"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{CORREO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="60" height="30" uuid="5eeca1e5-5e6a-49b3-b449-a71540d04107">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17e8acb3-1766-42c7-8448-e2b5a0a42a39"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{CONCATERNARVUELOS(V.ID_VUELO)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="60" height="30" uuid="08390d99-63fa-48e8-99c0-1ecc6c10433a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa4c0a4f-70c0-4dcd-b469-c420770dba6c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{TO_CHAR(RV.RESERVA_VUELO.FECHA_INICIO,'MONDDYYYY')}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="0" width="60" height="30" uuid="0d313354-ea43-41c3-9750-efe252c4358c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf1226bb-ef2e-4df6-aaaa-82240af42e9b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{TO_CHAR(RV.RESERVA_VUELO.FECHA_FIN,'MONDDYYYY')}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="60" height="30" uuid="241eead8-1caf-4565-86c4-b9d04fd35265">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dff38ab9-b891-456e-a2b9-57848b9b85c5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{'$'||RV.RESERVA_VUELO.MONTO.VALOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="50" height="30" uuid="5956eb95-ea7e-45f9-85f0-2ec1d0bff9c0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18917d6f-bad9-41f5-b2e7-368f611e899c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{TRAERPAGO(RV.ID_RESERVA_VUELO,P.ID_PAGO,P.TARJETACREDITO_ID,P.TARJETADEBITO_ID,P.MILLAS_ID)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="0" width="60" height="30" uuid="f2a2a709-b1a7-453f-aa21-13dc6417da9a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fe1234e4-75ed-4487-935b-c712a5a27ce1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{'$'||P.MONTO.VALOR}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c44d4c9d-6bf2-41b9-8404-a1cd8cce017b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter"/>
+	<queryString language="plsql">
+		<![CDATA[{CALL reporte_4($P{ORACLE_REF_CURSOR} )}]]>
+	</queryString>
+	<field name="CORREO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CORREO"/>
+	</field>
+	<field name="FOTO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="FOTO"/>
+	</field>
+	<field name="DEVOLVERNOMBRES(U.ID_USUARIO)" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DEVOLVERNOMBRES(U.ID_USUARIO)"/>
+	</field>
+	<field name="DEVOLVERAPELLIDOS(U.ID_USUARIO)" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DEVOLVERAPELLIDOS(U.ID_USUARIO)"/>
+	</field>
+	<field name="TELEFONO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TELEFONO"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="d97d95ea-62ae-470d-b403-31aba19a7786">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c4663b23-728f-4f16-8657-613f6beadd2b"/>
+				</reportElement>
+				<text><![CDATA[CORREO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="0" width="100" height="30" uuid="65774132-d0c1-4821-b0f4-c534e3973d78"/>
+				<text><![CDATA[foto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="0" width="100" height="30" uuid="9163c2ac-44ca-478c-9767-3b762b740756">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="30344d2c-b662-4479-abef-21a2a1312e68"/>
+				</reportElement>
+				<text><![CDATA[DEVOLVERNOMBRES(U.ID_USUARIO)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="100" height="30" uuid="4936bd20-cd65-4a4f-9a79-3c2f2190b828">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ed9b3b2-42f7-4cd1-a080-fdd77879f1b8"/>
+				</reportElement>
+				<text><![CDATA[DEVOLVERAPELLIDOS(U.ID_USUARIO)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="100" height="30" uuid="a3dc41cd-8099-44d1-9e94-fd698de414d9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a6d7e5fc-dfb9-496d-a73f-a5253a9b9947"/>
+				</reportElement>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="40" width="100" height="30" uuid="0e6b41b4-4da1-472e-9e4e-a56517e3019b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c4663b23-728f-4f16-8657-613f6beadd2b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{CORREO}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="140" y="30" width="50" height="50" uuid="7a506120-5f94-40e8-aeba-2f1a43b01611"/>
+				<imageExpression><![CDATA[$F{FOTO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="240" y="40" width="100" height="30" uuid="036c1a6f-34cd-4626-8f8c-6a475f455b37">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="30344d2c-b662-4479-abef-21a2a1312e68"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{DEVOLVERNOMBRES(U.ID_USUARIO)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="40" width="100" height="30" uuid="eea444aa-b439-4185-a4b4-e6bbe25817a9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ed9b3b2-42f7-4cd1-a080-fdd77879f1b8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{DEVOLVERAPELLIDOS(U.ID_USUARIO)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="47" width="100" height="30" uuid="af8f6ddb-4e71-4d22-92af-a0687722ba5b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a6d7e5fc-dfb9-496d-a73f-a5253a9b9947"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{TELEFONO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
