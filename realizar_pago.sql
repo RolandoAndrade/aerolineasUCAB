@@ -1,5 +1,5 @@
 CREATE or REPLACE PACKAGE PAGAR_RESERVA IS
-    PROCEDURE pagar(usuarioid INTEGER, reservaid INTEGER);
+    PROCEDURE pagar(usuarioid INTEGER, reservaid INTEGER, tipo VARCHAR);
     FUNCTION millas_suficientes(usuarioid INTEGER, monto UNIDAD) RETURN BOOLEAN;
     FUNCTION pagar_con_millas(usuarioid INTEGER, reservaid INTEGER) RETURN BOOLEAN;
     FUNCTION calcula_distancia(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN UNIDAD;
@@ -7,9 +7,21 @@ CREATE or REPLACE PACKAGE PAGAR_RESERVA IS
     FUNCTION seleccionar_tipo_pago(usuarioid INTEGER) RETURN INTEGER;
     PROCEDURE cambiar_estado_reserva(reservaid INTEGER);
     PROCEDURE pagar_tarjeta(usuarioid INTEGER, reservaid INTEGER);
+    FUNCTION obtener_monto(reservaid INTEGER, tipo VARCHAR) RETURN UNIDAD;
 END;
 /
 CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
+
+    FUNCTION obtener_monto(reservaid INTEGER, tipo VARCHAR) RETURN UNIDAD
+    IS
+        monto UNIDAD;
+    BEGIN
+        IF tipo = 'vuelo' THEN
+            SELECT R.reserva_vuelo.monto INTO monto FROM RESERVA_VUELO R WHERE id_reserva_vuelo = reservaid;
+            RETURN monto;
+        END IF;
+        RETURN NULL;
+    END;
 
     FUNCTION millas_suficientes(usuarioid INTEGER, monto UNIDAD) RETURN BOOLEAN
     IS
@@ -55,8 +67,9 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
         NULL;
     END;
     
-    PROCEDURE pagar(usuarioid INTEGER, reservaid INTEGER)
+    PROCEDURE pagar(usuarioid INTEGER, reservaid INTEGER, tipo VARCHAR)
     IS
+        monto UNIDAD;
     BEGIN
         NULL;
     END;
