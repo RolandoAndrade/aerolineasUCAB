@@ -228,8 +228,8 @@ BEGIN
     WHERE vuelo_id = vueloid
     AND usuario_id IS NULL;
     IF disponibles IS NULL OR disponibles = 0 THEN
-    	dbms_output.put_line('e: Todos los asientos están ocupados');
-    	RETURN 0;
+        dbms_output.put_line('e: Todos los asientos están ocupados');
+        RETURN 0;
     END IF;
     RETURN disponibles ;
 END;
@@ -259,4 +259,62 @@ BEGIN
         END IF;
     END LOOP;
     RETURN 0;
+END;
+/
+CREATE OR REPLACE FUNCTION getUsuarioAleatorio RETURN INTEGER
+IS
+BEGIN
+    FOR I IN (SELECT * FROM USUARIO ORDER BY dbms_random.value)
+    LOOP
+        RETURN I.id_usuario;
+    END LOOP;
+    RETURN NULL;
+END;
+/
+CREATE OR REPLACE FUNCTION random_fecha(minima TIMESTAMP, maxima TIMESTAMP) RETURN TIMESTAMP
+IS
+    hora TIMESTAMP;
+BEGIN
+    SELECT minima + dbms_random.value*(maxima-minima)
+    INTO hora
+    FROM DUAL;
+    RETURN hora;
+END;
+/
+CREATE OR REPLACE FUNCTION chocaConOtrosVuelosAvion(fechainicio TIMESTAMP, duracion UNIDAD, avionid INTEGER) RETURN NUMBER
+IS
+    vuelov VUELO%RowType;
+BEGIN
+    FOR vuelov IN (SELECT V.* FROM VUELO V, DISPONIBILIDAD D, ASIENTO A WHERE V.id_vuelo = D.vuelo_id AND
+    D.asiento_id = A.id_asiento AND A.avion_id = avionid)
+    LOOP
+        IF (fechainicio BETWEEN vuelov.fecha_salida AND vuelov.fecha_salida+vuelov.duracion.valor/24)
+        OR (vuelov.fecha_salida BETWEEN fechainicio AND fechainicio+duracion.valor/24) THEN
+            RETURN 1;
+        END IF;
+    END LOOP;
+    RETURN 0;
+END;
+/
+CREATE OR REPLACE FUNCTION chocaConReservasCarro(fecha TIMESTAMP, carroid INTEGER) RETURN NUMBER
+IS
+BEGIN
+    FOR reservac IN (SELECT * FROM RESERVA_CARRO WHERE carroid = carro_id)
+    LOOP
+        IF (fecha BETWEEN reservac.reserva_carro.fecha_inicio AND reservac.reserva_carro.fecha_fin) AND
+        reservac.reserva_carro.estado != 'cancelada'
+        THEN
+            RETURN 1;
+        END IF;
+    END LOOP;
+    RETURN 0;
+END;
+/
+CREATE OR REPLACE PROCEDURE devolverDinero(usuarioid INTEGER, monto UNIDAD)
+IS
+BEGIN
+    dbms_output.put_line('*Devolviendo dinero en millas');
+    UPDATE MILLA M
+    SET M.cantidad.valor = M.cantidad.valor + monto.convertir('monetaria','milla')
+    WHERE usuario_id = usuarioid;
 END;
