@@ -64,6 +64,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     FUNCTION buscar_habitacion(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER
     IS
     BEGIN
+        dbms_output.put_line('*Buscando habitaciones');
         FOR I IN (SELECT H.* FROM HABITACION H, RESERVA_ESTANCIA R, HOTEL O
         WHERE R.habitacion_id = H.id_habitacion AND 
         H.hotel_id = O.id_hotel AND O.lugar_hotel.pais = ubicacion.pais AND 
@@ -77,7 +78,15 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     FUNCTION buscar_apartamento(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER
     IS
     BEGIN
-        NULL;
+        dbms_output.put_line('*Buscando apartamentos');
+        FOR I IN (SELECT A.* FROM APARTAMENTO A, RESERVA_ESTANCIA R
+        WHERE R.apartamento_id = A.id_apartamento AND 
+        A.lugar_apartamento.pais = ubicacion.pais AND 
+        chocaConReservasApartamento(fechai,fechaf,id_apartamento)=0)
+        LOOP
+            RETURN I.id_apartamento;
+        END LOOP;
+        RETURN NULL;
     END;
     
     FUNCTION reservar_hospedaje_desde(usuarioid INTEGER, reservaid INTEGER, ubicacion LUGAR) RETURN BOOLEAN
@@ -123,3 +132,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         END LOOP;
     END;
 END;
+
+
+
+
