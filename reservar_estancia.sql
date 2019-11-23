@@ -3,9 +3,11 @@ CREATE OR REPLACE PACKAGE RESERVACION_HOSPEDAJE IS
     PROCEDURE seleccionar_fecha(fecha_inicio IN OUT TIMESTAMP, fecha_fin IN OUT TIMESTAMP);
     FUNCTION ubicacion_aleatoria RETURN LUGAR;
     FUNCTION reservar_hospedaje_desde(usuarioid INTEGER, reservaid INTEGER, ubicacion LUGAR) RETURN BOOLEAN;
+    FUNCTION buscar_habitacion(ubicacion LUGAR) RETURN INTEGER;
+    FUNCTION buscar_apartamento(ubicacion LUGAR) RETURN INTEGER;
     PROCEDURE finalizar_reserva(reservaid INTEGER);
     PROCEDURE cancelar_reserva(reservaid INTEGER);
-    PROCEDURE puntuar(carroid INTEGER);
+    PROCEDURE puntuar(reservaid INTEGER);
 END;
 /
 CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
@@ -53,7 +55,19 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         NULL;
     END;
     
-    PROCEDURE puntuar(carroid INTEGER)
+    PROCEDURE puntuar(reservaid INTEGER)
+    IS
+    BEGIN
+        NULL;
+    END;
+    
+    FUNCTION buscar_habitacion(ubicacion LUGAR) RETURN INTEGER
+    IS
+    BEGIN
+        NULL;
+    END;
+    
+    FUNCTION buscar_apartamento(ubicacion LUGAR) RETURN INTEGER
     IS
     BEGIN
         NULL;
@@ -61,8 +75,24 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     
     FUNCTION reservar_hospedaje_desde(usuarioid INTEGER, reservaid INTEGER, ubicacion LUGAR) RETURN BOOLEAN
     IS
+        fecha_inicio TIMESTAMP;
+        fecha_fin TIMESTAMP;
+        reserv RESERVA;
     BEGIN
-        NULL;
+        IF reservaid IS NULL THEN
+            seleccionar_fecha(fecha_inicio,fecha_fin);
+        ELSE
+            SELECT R.reserva_vuelo INTO reserv FROM RESERVA_VUELO R WHERE id_reserva_vuelo = reservaid;
+            fecha_inicio:= reserv.fecha_inicio;
+            IF reserv.fecha_fin IS NULL THEN
+                fecha_fin:= reserv.fecha_inicio+150;
+            ELSE
+                fecha_fin:= reserv.fecha_fin;
+            END IF;
+        END IF;
+        dbms_output.put_line('*Reservando estancia');
+        
+        
     END;
     
     PROCEDURE reservar_hospedaje
@@ -86,3 +116,4 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         END LOOP;
     END;
 END;
+
