@@ -228,8 +228,8 @@ BEGIN
     WHERE vuelo_id = vueloid
     AND usuario_id IS NULL;
     IF disponibles IS NULL OR disponibles = 0 THEN
-    	dbms_output.put_line('e: Todos los asientos están ocupados');
-    	RETURN 0;
+        dbms_output.put_line('e: Todos los asientos están ocupados');
+        RETURN 0;
     END IF;
     RETURN disponibles ;
 END;
@@ -271,7 +271,7 @@ BEGIN
     RETURN NULL;
 END;
 /
-FUNCTION random_fecha(minima TIMESTAMP, maxima TIMESTAMP) RETURN TIMESTAMP
+CREATE OR REPLACE FUNCTION random_fecha(minima TIMESTAMP, maxima TIMESTAMP) RETURN TIMESTAMP
 IS
     hora TIMESTAMP;
 BEGIN
