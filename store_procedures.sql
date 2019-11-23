@@ -309,3 +309,11 @@ BEGIN
     END LOOP;
     RETURN 0;
 END;
+/
+CREATE OR REPLACE PROCEDURE devolverDinero(usuarioid INTEGER, monto UNIDAD)
+IS
+BEGIN
+    UPDATE MILLA M
+    SET M.cantidad.valor = M.cantidad.valor + monto.convertir('moneraria','milla')
+    WHERE usuario_id = usuarioid;
+END;
