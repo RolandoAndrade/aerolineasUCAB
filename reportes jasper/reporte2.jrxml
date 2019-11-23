@@ -40,79 +40,121 @@
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="63" splitType="Stretch">
 			<staticText>
-				<reportElement x="80" y="0" width="70" height="30" uuid="3368769e-6251-426c-8805-cd0b4c4737db">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d554557-80bd-435a-82d0-b7ec394c1724"/>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="-20" y="31" width="100" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="7a4cc732-55c9-4e19-9c0e-e36e51525295">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
-				<text><![CDATA[MARCA]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[LOGO DE AEROLINEA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="150" y="0" width="70" height="30" uuid="a6c438fb-40b7-4f23-ad76-3a2fb2b0fcac">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3b6bc807-22d9-488c-9068-ea2068866b8d"/>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="80" y="31" width="91" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="5b3c7d67-000d-44fb-b683-2fe051682444">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[AVION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="170" y="31" width="120" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="ffb0f29c-995d-4548-9442-a647059ba126">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[FOTO AVION ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="290" y="31" width="90" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="5ff07a2f-1b84-4aa6-8a1a-b5b21779c0ff">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
 				<text><![CDATA[MODELO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="300" y="0" width="70" height="30" uuid="ec528bfc-33ac-47df-a8ee-79f15e7ee85d">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6c9ee004-acf9-421c-8926-f50898133644"/>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="380" y="31" width="71" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="3cbe57ad-9d75-456e-8a04-90d499e8d672">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
-				<text><![CDATA[SERIE]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD DE AVIONES QUE POSEE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="380" y="0" width="64" height="30" uuid="e1d969a8-a2a0-456d-aa86-9fbfac578b32">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9cdf9868-6081-479a-a72d-b6686e2e6fad"/>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="450" y="31" width="125" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="385e5426-cf61-4a16-8d53-159efb98e5d6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
-				<text><![CDATA[CANTIDAD]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="460" y="0" width="70" height="30" uuid="83f8662c-3293-44a4-b8a8-fb9ab1be6c25">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4642f1cf-f204-449e-8b37-46f95697fccd"/>
-				</reportElement>
-				<text><![CDATA[ASIENTOS]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[  CANTIDAD DE ASIENTOS POR CLASE]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="126" splitType="Stretch">
 			<textField>
-				<reportElement x="80" y="10" width="70" height="30" uuid="ddf3eeaa-722c-4657-b9cd-49fbf15a609a">
+				<reportElement x="90" y="10" width="70" height="30" uuid="ddf3eeaa-722c-4657-b9cd-49fbf15a609a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d554557-80bd-435a-82d0-b7ec394c1724"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{MARCA}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="150" y="10" width="70" height="30" uuid="0975ae8b-582a-497f-a145-289111bd1f0b">
+				<reportElement x="90" y="40" width="70" height="30" uuid="0975ae8b-582a-497f-a145-289111bd1f0b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3b6bc807-22d9-488c-9068-ea2068866b8d"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{MODELO}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="300" y="10" width="70" height="30" uuid="d89f86ef-3f05-4cb2-8a5d-e0ff0d7caa5c">
+				<reportElement x="300" y="10" width="70" height="100" uuid="d89f86ef-3f05-4cb2-8a5d-e0ff0d7caa5c">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6c9ee004-acf9-421c-8926-f50898133644"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{SERIE}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="380" y="10" width="50" height="30" uuid="930f8dbc-fde0-4def-b8da-42f9a19eca32">
+				<reportElement x="400" y="10" width="37" height="105" uuid="930f8dbc-fde0-4def-b8da-42f9a19eca32">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9cdf9868-6081-479a-a72d-b6686e2e6fad"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{CANTIDAD}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="444" y="10" width="126" height="110" uuid="6e4fdc17-dc70-4e63-a1ba-8968c260d1cd">
+				<reportElement x="460" y="10" width="106" height="110" uuid="6e4fdc17-dc70-4e63-a1ba-8968c260d1cd">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4642f1cf-f204-449e-8b37-46f95697fccd"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{ASIENTOS}]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement x="0" y="10" width="80" height="70" uuid="f158d8c2-159c-4520-8966-b559bad0e2e3"/>
+				<reportElement x="-20" y="15" width="100" height="100" uuid="f158d8c2-159c-4520-8966-b559bad0e2e3"/>
 				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
 			</image>
 			<image>
-				<reportElement x="220" y="10" width="80" height="70" uuid="46ead5f0-cf4d-4f2b-b800-a218e4d139a0"/>
+				<reportElement x="180" y="10" width="100" height="105" uuid="46ead5f0-cf4d-4f2b-b800-a218e4d139a0"/>
 				<imageExpression><![CDATA[$F{FOTO}]]></imageExpression>
 			</image>
+			<rectangle>
+				<reportElement x="80" y="-32" width="1" height="155" uuid="c1c8cf6a-1240-4392-8571-c0d54e301b39"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="171" y="-32" width="1" height="155" uuid="e74b6148-9f53-4a84-ac50-874f4a9f3aba"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="290" y="-32" width="1" height="155" uuid="0fd754d5-0ef7-49ba-a078-0ec5a5f1c3ff"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="380" y="-32" width="1" height="156" uuid="4e725592-37b7-4fc1-861f-bc811a2ad313"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="451" y="-32" width="1" height="155" uuid="21af4adf-c077-4d71-a3c0-0201336124ce"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-20" y="123" width="595" height="1" uuid="7e7a3419-1b7e-4817-bae7-8b575f496b6a"/>
+			</rectangle>
 		</band>
 	</detail>
 	<columnFooter>
