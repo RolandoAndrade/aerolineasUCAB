@@ -1,20 +1,15 @@
 CREATE OR REPLACE PACKAGE RESERVACION_HOSPEDAJE IS
     PROCEDURE reservar_hospedaje;
     PROCEDURE seleccionar_fecha(fecha_inicio IN OUT TIMESTAMP, fecha_fin IN OUT TIMESTAMP);
-    FUNCTION ubicacion_aleatoria RETURN INTEGER;
-    FUNCTION reservar_hospedaje_desde(usuarioid INTEGER, reservaid INTEGER, ubica LUGAR) RETURN BOOLEAN;
+    FUNCTION ubicacion_aleatoria RETURN LUGAR;
+    FUNCTION reservar_hospedaje_desde(usuarioid INTEGER, reservaid INTEGER, ubicacion LUGAR) RETURN BOOLEAN;
     PROCEDURE finalizar_reserva(reservaid INTEGER);
     PROCEDURE cancelar_reserva(reservaid INTEGER);
     PROCEDURE puntuar(carroid INTEGER);
 END;
 /
 CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
-    PROCEDURE reservar_hospedaje
-    IS
-    BEGIN
-        NULL;
-    END;
-    
+
     PROCEDURE seleccionar_fecha(fecha_inicio IN OUT TIMESTAMP, fecha_fin IN OUT TIMESTAMP)
     IS
         axfecha TIMESTAMP;
@@ -29,7 +24,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         END IF;
     END;
     
-    FUNCTION ubicacion_aleatoria RETURN INTEGER
+    FUNCTION ubicacion_aleatoria RETURN LUGAR
     IS
     BEGIN
         dbms_output.put_line('*Eligiendo un sitio de recogida y devolución');
@@ -45,13 +40,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
             END LOOP;
         END IF;
     END;
-    
-    FUNCTION reservar_hospedaje_desde(usuarioid INTEGER, reservaid INTEGER, ubica LUGAR) RETURN BOOLEAN
-    IS
-    BEGIN
-        NULL;
-    END;
-    
+
     PROCEDURE finalizar_reserva(reservaid INTEGER)
     IS
     BEGIN
@@ -68,5 +57,32 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     IS
     BEGIN
         NULL;
+    END;
+    
+    FUNCTION reservar_hospedaje_desde(usuarioid INTEGER, reservaid INTEGER, ubicacion LUGAR) RETURN BOOLEAN
+    IS
+    BEGIN
+        NULL;
+    END;
+    
+    PROCEDURE reservar_hospedaje
+    IS
+        usuarioid INTEGER;
+        ubicacion LUGAR;
+    BEGIN
+        dbms_output.put_line('******************************');
+        dbms_output.put_line('*                            *');
+        dbms_output.put_line('*   RESERVACION DE ESTANCIA  *');
+        dbms_output.put_line('*                            *');
+        dbms_output.put_line('******************************');
+        FOR I IN 1..50
+        LOOP
+            usuarioid := getUsuarioAleatorio();
+            dbms_output.put_line('----------EL USUARIO '||usuarioid||' DESEA RESERVAR UNA ESTANCIA----------');
+            ubicacion := ubicacion_aleatoria;
+            IF reservar_hospedaje_desde(usuarioid, null, ubicacion) THEN
+                NULL;
+            END IF;
+        END LOOP;
     END;
 END;
