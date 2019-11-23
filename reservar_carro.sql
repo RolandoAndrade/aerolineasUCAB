@@ -5,10 +5,19 @@ CREATE OR REPLACE PACKAGE RESERVACION_CARRO IS
     FUNCTION reservar_carro_desde(usuarioid INTEGER, reservaid INTEGER, recogida LUGAR, devolucion LUGAR) RETURN BOOLEAN;
     PROCEDURE finalizar_reserva(reservaid INTEGER);
     PROCEDURE cancelar_reserva(reservaid INTEGER);
+    PROCEDURE ajuste_recorrido(carroid INTEGER);
 END;
 /
-
 CREATE OR REPLACE PACKAGE BODY RESERVACION_CARRO IS
+    
+    PROCEDURE ajuste_recorrido(carroid INTEGER)
+    IS
+    BEGIN
+        dbms_output.put_line('*Ajustando recorrido del carro');
+        UPDATE CARRO C
+        SET C.recorrido.valor = C.recorrido.valor + dbms_random.value*1500
+        WHERE C.id_carro = carroid;
+    END;
     
     PROCEDURE seleccionar_fecha(fecha_inicio IN OUT TIMESTAMP, fecha_fin IN OUT TIMESTAMP)
     IS
@@ -26,19 +35,17 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_CARRO IS
 
     PROCEDURE recogida_devolucion(recogida IN OUT LUGAR, devolucion IN OUT LUGAR)
     IS
-        rec LUGAR;
-        dev LUGAR;
     BEGIN
         dbms_output.put_line('*Eligiendo un sitio de recogida y devolución');
         FOR I IN (SELECT * FROM CARRO ORDER BY dbms_random.value)
         LOOP
-            rec := I.lugar_carro;
+            recogida := I.lugar_carro;
             EXIT;
         END LOOP;
-        FOR I IN (SELECT * FROM CARRO C WHERE C.lugar_carro.ciudad = rec.ciudad
+        FOR I IN (SELECT * FROM CARRO C WHERE C.lugar_carro.ciudad = recogida.ciudad
         ORDER BY dbms_random.value)
         LOOP
-            dev := I.lugar_carro;
+            devolucion := I.lugar_carro;
             EXIT;
         END LOOP;
     END;
@@ -81,7 +88,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_CARRO IS
     PROCEDURE cancelar_reserva(reservaid INTEGER)
     IS
     BEGIN
-        dbms_output.put_line('*Cancelando la reserva del carro');
+        dbms_output.put_line('******Cancelando la reserva del carro******');
         UPDATE RESERVA_CARRO R
         SET R.reserva_carro.estado ='cancelada'
         WHERE R.id_reserva_carro = reservaid;
@@ -89,12 +96,19 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_CARRO IS
     
     PROCEDURE finalizar_reserva(reservaid INTEGER)
     IS
+        reserv RESERVA_CARRO%RowType;
     BEGIN
         dbms_output.put_line('*Determinando estado de la reserva a la fecha actual');
-        UPDATE RESERVA_CARRO R
-        SET R.reserva_carro.estado ='finalizada'
-        WHERE R.reserva_carro.fecha_fin<SYSTIMESTAMP AND
-        R.id_reserva_carro = reservaid;
+        SELECT * INTO reserv FROM RESERVA_CARRO WHERE id_reserva_carro = reservaid; 
+        IF reserv.reserva_carro.fecha_fin < SYSTIMESTAMP THEN
+            dbms_output.put_line('  i: La reserva a terminado');
+            UPDATE RESERVA_CARRO R
+            SET R.reserva_carro.estado ='finalizada'
+            WHERE R.id_reserva_carro = reservaid;
+            ajuste_recorrido(reserv.carro_id);
+        ELSE
+            dbms_output.put_line('  i: La reserva no ha terminado');
+        END IF;    
     END;
 
     PROCEDURE reservar_carro
@@ -102,7 +116,8 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_CARRO IS
         usuarioid INTEGER;
         recogida LUGAR;
         devolucion LUGAR;
-        
+        monto UNIDAD;
+        reservaid INTEGER;
     BEGIN
         dbms_output.put_line('******************************');
         dbms_output.put_line('*                            *');
@@ -115,21 +130,29 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_CARRO IS
             dbms_output.put_line('----------EL USUARIO '||usuarioid||' DESEA RESERVAR UN CARRO----------');
             recogida_devolucion(recogida, devolucion);
             IF reservar_carro_desde(usuarioid, null, recogida,devolucion) THEN
-                PAGAR_RESERVA.pagar(usuarioid,id_reserva_carro.currval,'carro');
+                reservaid:=id_reserva_carro.currval;
+                PAGAR_RESERVA.pagar(usuarioid,reservaid,'carro');
+                
                 dbms_output.put_line('q: ¿Desea cancelar la reserva?');
                 IF aceptar_o_rechazar(0.05) THEN
                     dbms_output.put_line('r: Sí');
-                    cancelar_reserva(id_reserva_carro.currval);
+                    cancelar_reserva(reservaid);
+                    SELECT R.reserva_carro.monto INTO monto 
+                    FROM RESERVA_CARRO R 
+                    WHERE R.id_reserva_carro = reservaid;
+                    devolverdinero(usuarioid,monto);
                 ELSE
                     dbms_output.put_line('r: No');
-                    finalizar_reserva(id_reserva_carro.currval);
+                    finalizar_reserva(reservaid);
                 END IF;
             END IF;
         END LOOP;
     END;
 END;
+--EXEC RESERVACION_CARRO.reservar_carro;
 
-exec RESERVACION_CARRO.reservar_carro;
+--EXEC RESERVACION_CARRO.reservar_carro;
+
 
 
 

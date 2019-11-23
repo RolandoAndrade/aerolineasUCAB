@@ -313,7 +313,8 @@ END;
 CREATE OR REPLACE PROCEDURE devolverDinero(usuarioid INTEGER, monto UNIDAD)
 IS
 BEGIN
+    dbms_output.put_line('*Devolviendo dinero en millas');
     UPDATE MILLA M
-    SET M.cantidad.valor = M.cantidad.valor + monto.convertir('moneraria','milla')
+    SET M.cantidad.valor = M.cantidad.valor + monto.convertir('monetaria','milla')
     WHERE usuario_id = usuarioid;
 END;
