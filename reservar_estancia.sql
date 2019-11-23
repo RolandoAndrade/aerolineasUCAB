@@ -3,8 +3,8 @@ CREATE OR REPLACE PACKAGE RESERVACION_HOSPEDAJE IS
     PROCEDURE seleccionar_fecha(fecha_inicio IN OUT TIMESTAMP, fecha_fin IN OUT TIMESTAMP);
     FUNCTION ubicacion_aleatoria RETURN LUGAR;
     FUNCTION reservar_hospedaje_desde(usuarioid INTEGER, reservaid INTEGER, ubicacion LUGAR) RETURN BOOLEAN;
-    FUNCTION buscar_habitacion(ubicacion LUGAR) RETURN INTEGER;
-    FUNCTION buscar_apartamento(ubicacion LUGAR) RETURN INTEGER;
+    FUNCTION buscar_habitacion(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER;
+    FUNCTION buscar_apartamento(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER;
     PROCEDURE finalizar_reserva(reservaid INTEGER);
     PROCEDURE cancelar_reserva(reservaid INTEGER);
     PROCEDURE puntuar(reservaid INTEGER);
@@ -61,13 +61,20 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         NULL;
     END;
     
-    FUNCTION buscar_habitacion(ubicacion LUGAR) RETURN INTEGER
+    FUNCTION buscar_habitacion(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER
     IS
     BEGIN
-        NULL;
+        FOR I IN (SELECT H.* FROM HABITACION H, RESERVA_ESTANCIA R, HOTEL O
+        WHERE R.habitacion_id = H.id_habitacion AND 
+        H.hotel_id = O.id_hotel AND O.lugar_hotel.pais = ubicacion.pais AND 
+        chocaConReservasHabitacion(fechai,fechaf,id_habitacion)=0)
+        LOOP
+            RETURN I.id_habitacion;
+        END LOOP;
+        RETURN NULL;
     END;
     
-    FUNCTION buscar_apartamento(ubicacion LUGAR) RETURN INTEGER
+    FUNCTION buscar_apartamento(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER
     IS
     BEGIN
         NULL;
@@ -116,4 +123,3 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         END LOOP;
     END;
 END;
-
