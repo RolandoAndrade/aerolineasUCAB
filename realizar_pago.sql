@@ -196,7 +196,9 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
     IS
         monto UNIDAD;
     BEGIN
-        dbms_output.put_line('-----------EL USUARIO PROCEDE A PAGAR------------');
+        dbms_output.put_line('******************************');
+        dbms_output.put_line('*    EL USUARIO VA A PAGAR   *');
+        dbms_output.put_line('******************************');
         monto := obtener_monto(reservaid, tipo);
         IF millas_suficientes(usuarioid, monto) THEN
             dbms_output.put_line('q: ¿Desea pagar con millas?');
