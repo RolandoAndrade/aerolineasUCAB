@@ -295,3 +295,17 @@ BEGIN
     END LOOP;
     RETURN 0;
 END;
+/
+CREATE OR REPLACE FUNCTION chocaConReservasCarro(fecha TIMESTAMP, carroid INTEGER) RETURN NUMBER
+IS
+BEGIN
+    FOR reservac IN (SELECT * FROM RESERVA_CARRO WHERE carroid = carro_id)
+    LOOP
+        IF (fecha BETWEEN reservac.reserva_carro.fecha_inicio AND reservac.reserva_carro.fecha_fin) AND
+        reservac.reserva_carro.estado != 'cancelada'
+        THEN
+            RETURN 1;
+        END IF;
+    END LOOP;
+    RETURN 0;
+END;
