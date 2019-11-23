@@ -234,10 +234,20 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         LOOP
             generar_vuelo(avi,100);
         END LOOP;
+        
+        dbms_output.put_line('******************************');
+        dbms_output.put_line('*  GENERANDO VUELOS PARA HOY *');
+        dbms_output.put_line('******************************');
+        total := dbms_random.value*30;
+        dbms_output.put_line('----------Se van a generar '||total||' vuelos---------');
+        FOR avi in (SELECT * FROM AVION ORDER BY dbms_random.value)
+        LOOP
+            generar_vuelo(avi,1);
+            total:=total-1;
+            EXIT WHEN total<0;
+        END LOOP;
     END;
 END;
-/
-
 --DELETE FROM DISPONIBILIDAD;DELETE FROM VUELO;DROP SEQUENCE id_vuelo;DROP SEQUENCE id_disponibilidad;CREATE SEQUENCE id_vuelo INCREMENT BY 1 START WITH 1 MINVALUE 1; CREATE SEQUENCE id_disponibilidad INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
 --SELECT * FROM VUELO;
