@@ -238,7 +238,7 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         dbms_output.put_line('******************************');
         dbms_output.put_line('*  GENERANDO VUELOS PARA HOY *');
         dbms_output.put_line('******************************');
-        total := dbms_random.value*30;
+        total := (dbms_random.value+15)*2;
         dbms_output.put_line('----------Se van a generar '||total||' vuelos---------');
         FOR avi in (SELECT * FROM AVION ORDER BY dbms_random.value)
         LOOP
