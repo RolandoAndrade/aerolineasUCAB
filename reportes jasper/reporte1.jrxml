@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="96347d7c-64bc-4146-bfcb-698c3956d86a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString language="plsql">
+		<![CDATA[{CALL reporte_1($P{ORACLE_REF_CURSOR} )}]]>
+	</queryString>
+	<field name="LOGO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="LOGO"/>
+	</field>
+	<field name="TIPO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TIPO"/>
+	</field>
+	<field name="FLOTA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FLOTA"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="66" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="120" y="31" width="211" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="b17b3a7b-3fcd-4e0f-a721-1078dbd81b47">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="330" y="31" width="244" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="bf8f86e1-a86b-4ba9-8b63-396222d6b9cb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[FLOTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="-20" y="31" width="140" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="3e22004e-b4a5-4e64-82a1-8a9893a15e0c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[LOGO DE AEROLINEA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="141" splitType="Stretch">
+			<image>
+				<reportElement x="-10" y="4" width="121" height="125" uuid="80f6d835-74af-46ed-b5b1-b54aa6db3efb"/>
+				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="150" y="0" width="180" height="125" uuid="63573d42-7387-45c5-9a21-29672b36d434">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TIPO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="180" height="125" uuid="1ec59bbf-fea9-428f-8544-d6053bba8a31">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a5075e58-6ad2-498d-970c-80e18088bdfd"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FLOTA}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="120" y="-35" width="1" height="175" uuid="06ac11ba-af3a-45e6-a877-7f21ffd3a651"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="330" y="-35" width="1" height="175" uuid="b93bfb9a-c2ef-4623-b63a-3eb3f04c8a1a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-20" y="140" width="595" height="1" uuid="9f32c7be-9622-48c9-beb8-85de322732ec"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
