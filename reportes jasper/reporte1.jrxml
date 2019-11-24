@@ -25,9 +25,9 @@
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="66" splitType="Stretch">
 			<staticText>
-				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="150" y="0" width="180" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="b17b3a7b-3fcd-4e0f-a721-1078dbd81b47">
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="120" y="31" width="211" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="b17b3a7b-3fcd-4e0f-a721-1078dbd81b47">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -36,7 +36,7 @@
 				<text><![CDATA[TIPO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="330" y="0" width="180" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="bf8f86e1-a86b-4ba9-8b63-396222d6b9cb">
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="330" y="31" width="244" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="bf8f86e1-a86b-4ba9-8b63-396222d6b9cb">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -44,12 +44,21 @@
 				</textElement>
 				<text><![CDATA[FLOTA]]></text>
 			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="-20" y="31" width="140" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="3e22004e-b4a5-4e64-82a1-8a9893a15e0c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[LOGO DE AEROLINEA]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="141" splitType="Stretch">
 			<image>
-				<reportElement x="-11" y="0" width="121" height="125" uuid="80f6d835-74af-46ed-b5b1-b54aa6db3efb"/>
+				<reportElement x="-10" y="4" width="121" height="125" uuid="80f6d835-74af-46ed-b5b1-b54aa6db3efb"/>
 				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
 			</image>
 			<textField>
@@ -66,6 +75,15 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{FLOTA}]]></textFieldExpression>
 			</textField>
+			<rectangle>
+				<reportElement x="120" y="-35" width="1" height="175" uuid="06ac11ba-af3a-45e6-a877-7f21ffd3a651"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="330" y="-35" width="1" height="175" uuid="b93bfb9a-c2ef-4623-b63a-3eb3f04c8a1a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-20" y="140" width="595" height="1" uuid="9f32c7be-9622-48c9-beb8-85de322732ec"/>
+			</rectangle>
 		</band>
 	</detail>
 	<columnFooter>

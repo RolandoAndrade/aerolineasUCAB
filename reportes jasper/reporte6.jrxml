@@ -15,8 +15,8 @@
 	<field name="CORREO" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CORREO"/>
 	</field>
-	<field name="CONCATERNARVUELOS(V.ID_VUELO)" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="CONCATERNARVUELOS(V.ID_VUELO)"/>
+	<field name="CONCATERNARVUELOS(V.ID_VUELO,RV.RESERVA_VUELO.FECHA_INICIO)" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CONCATERNARVUELOS(V.ID_VUELO,RV.RESERVA_VUELO.FECHA_INICIO)"/>
 	</field>
 	<field name="TO_CHAR(RV.RESERVA_VUELO.FECHA_INICIO,&apos;MONDDYYYY&apos;)" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label">
@@ -51,98 +51,159 @@
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="31" splitType="Stretch">
 			<staticText>
-				<reportElement x="70" y="0" width="70" height="30" uuid="dec5413b-4d20-4a60-a12c-5dc1b3578947">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="93bd0ed4-b3ee-40fa-becb-1808346eafcc"/>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="-20" y="0" width="80" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="ea28855e-92b7-4108-9751-0350f3d980b2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
-				<text><![CDATA[CORREO]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Logo de la aerolinea]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="150" y="0" width="60" height="30" uuid="2438ad00-7924-42d5-8f75-01ccdb4af733">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17e8acb3-1766-42c7-8448-e2b5a0a42a39"/>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="61" y="0" width="169" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="5d3b80b8-dea1-4dff-8efa-70c57a0c8ff1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
-				<text><![CDATA[CONCATERNARVUELOS(V.ID_VUELO)]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Correo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="220" y="0" width="60" height="30" uuid="3ffcafb4-7b33-4566-87a2-4131eb03845f">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa4c0a4f-70c0-4dcd-b469-c420770dba6c"/>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="230" y="0" width="69" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="2fc71304-14ab-4f52-9fe1-e3bada781436">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
-				<text><![CDATA[TO_CHAR(RV.RESERVA_VUELO.FECHA_INICIO,'MONDDYYYY')]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Vuelo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="290" y="0" width="60" height="30" uuid="be165813-3643-42a0-b251-5344f1f9cc7a">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf1226bb-ef2e-4df6-aaaa-82240af42e9b"/>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="299" y="0" width="60" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="f48c6d4e-f9cb-425c-93a8-e36c1f1c70c4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
-				<text><![CDATA[TO_CHAR(RV.RESERVA_VUELO.FECHA_FIN,'MONDDYYYY')]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Fecha de salida]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="370" y="0" width="60" height="30" uuid="da3b0c82-bd79-4f9c-9d40-a058f593c060">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dff38ab9-b891-456e-a2b9-57848b9b85c5"/>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="360" y="0" width="59" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="814eb417-44a4-4648-998c-26cc81632da0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
-				<text><![CDATA['$'||RV.RESERVA_VUELO.MONTO.VALOR]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Fecha de regreso]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="440" y="0" width="50" height="30" uuid="88492f9e-4678-47b6-805b-dc26bdeb7472">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18917d6f-bad9-41f5-b2e7-368f611e899c"/>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="420" y="0" width="51" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="9ee77dc0-ee81-4c56-a93b-33fee9a5d1fe">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
-				<text><![CDATA[TRAERPAGO(RV.ID_RESERVA_VUELO,P.ID_PAGO,P.TARJETACREDITO_ID,P.TARJETADEBITO_ID,P.MILLAS_ID)]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Precio total]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="500" y="0" width="60" height="30" uuid="64923a23-8dfe-4b6d-a99d-7a465b27d933">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fe1234e4-75ed-4487-935b-c712a5a27ce1"/>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="471" y="0" width="49" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="a915ea5e-54e4-4ced-9911-04e7b45fa72c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
 				</reportElement>
-				<text><![CDATA['$'||P.MONTO.VALOR]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Forma de pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="520" y="0" width="55" height="30" forecolor="#FFFFFF" backcolor="#6269D9" uuid="95c5296a-8a20-473c-b268-fa4dc63c6f14">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Monto pagado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="0" width="100" height="30" uuid="c2724334-2804-487c-9239-75108a04d165">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a83b6d1-d8ce-47e4-bc76-d7ee4485066b"/>
+				</reportElement>
+				<text><![CDATA[CONCATERNARVUELOS(V.ID_VUELO,RV.RESERVA_VUELO.FECHA_INICIO)]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="143" splitType="Stretch">
 			<image>
-				<reportElement x="-20" y="0" width="80" height="80" uuid="2ecffe1e-7570-4561-a6b0-90dd385b8a9b"/>
+				<reportElement x="-19" y="10" width="80" height="80" uuid="2ecffe1e-7570-4561-a6b0-90dd385b8a9b"/>
 				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="70" y="0" width="70" height="30" uuid="f81f2edd-e5f2-4140-aa9a-0f9c4d42671b">
+				<reportElement x="70" y="0" width="160" height="30" uuid="f81f2edd-e5f2-4140-aa9a-0f9c4d42671b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="93bd0ed4-b3ee-40fa-becb-1808346eafcc"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{CORREO}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="150" y="0" width="60" height="30" uuid="5eeca1e5-5e6a-49b3-b449-a71540d04107">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17e8acb3-1766-42c7-8448-e2b5a0a42a39"/>
-				</reportElement>
-				<textFieldExpression><![CDATA[$F{CONCATERNARVUELOS(V.ID_VUELO)}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="220" y="0" width="60" height="30" uuid="08390d99-63fa-48e8-99c0-1ecc6c10433a">
+				<reportElement x="310" y="0" width="50" height="125" uuid="08390d99-63fa-48e8-99c0-1ecc6c10433a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa4c0a4f-70c0-4dcd-b469-c420770dba6c"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{TO_CHAR(RV.RESERVA_VUELO.FECHA_INICIO,'MONDDYYYY')}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="290" y="0" width="60" height="30" uuid="0d313354-ea43-41c3-9750-efe252c4358c">
+				<reportElement x="370" y="2" width="50" height="125" uuid="0d313354-ea43-41c3-9750-efe252c4358c">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cf1226bb-ef2e-4df6-aaaa-82240af42e9b"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{TO_CHAR(RV.RESERVA_VUELO.FECHA_FIN,'MONDDYYYY')}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="370" y="0" width="60" height="30" uuid="241eead8-1caf-4565-86c4-b9d04fd35265">
+				<reportElement x="430" y="0" width="40" height="125" uuid="241eead8-1caf-4565-86c4-b9d04fd35265">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dff38ab9-b891-456e-a2b9-57848b9b85c5"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{'$'||RV.RESERVA_VUELO.MONTO.VALOR}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="440" y="0" width="50" height="30" uuid="5956eb95-ea7e-45f9-85f0-2ec1d0bff9c0">
+				<reportElement x="480" y="1" width="40" height="125" uuid="5956eb95-ea7e-45f9-85f0-2ec1d0bff9c0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18917d6f-bad9-41f5-b2e7-368f611e899c"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{TRAERPAGO(RV.ID_RESERVA_VUELO,P.ID_PAGO,P.TARJETACREDITO_ID,P.TARJETADEBITO_ID,P.MILLAS_ID)}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="500" y="0" width="60" height="30" uuid="f2a2a709-b1a7-453f-aa21-13dc6417da9a">
+				<reportElement x="530" y="2" width="45" height="120" uuid="f2a2a709-b1a7-453f-aa21-13dc6417da9a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fe1234e4-75ed-4487-935b-c712a5a27ce1"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{'$'||P.MONTO.VALOR}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="60" y="-32" width="1" height="173" uuid="9939b77d-a048-4d2d-86f2-724cfe1fca08"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="230" y="-32" width="1" height="173" uuid="65d1bc54-630d-4cb6-9f61-8edfcf719d2a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="299" y="-30" width="1" height="173" uuid="9f3ef977-f5a2-4ab1-a803-5a0ae380dcdd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="360" y="-30" width="1" height="173" uuid="25f6b5e2-af23-431c-b67f-992a828a8a6e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="419" y="-30" width="1" height="173" uuid="5e460254-e6fc-405f-8fa8-30d4b7a9fa91"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="470" y="-30" width="1" height="173" uuid="0c34b050-1336-4aa0-ab69-927c57121b06"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="519" y="-30" width="1" height="173" uuid="ed54bbc1-1a26-4533-913e-92063b7c04f1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-20" y="141" width="593" height="1" uuid="4f9fda9c-d75a-4945-81fd-f65306e2ad6c"/>
+			</rectangle>
+
+			<textField>
+				<reportElement x="240" y="10" width="50" height="130" uuid="622d4949-6210-4357-be53-efc2d05c9d12">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a83b6d1-d8ce-47e4-bc76-d7ee4485066b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{CONCATERNARVUELOS(V.ID_VUELO,RV.RESERVA_VUELO.FECHA_INICIO)}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -150,7 +211,7 @@
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="174" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>
