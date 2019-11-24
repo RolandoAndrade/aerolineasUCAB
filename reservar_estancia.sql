@@ -3,11 +3,12 @@ CREATE OR REPLACE PACKAGE RESERVACION_HOSPEDAJE IS
     PROCEDURE seleccionar_fecha(fecha_inicio IN OUT TIMESTAMP, fecha_fin IN OUT TIMESTAMP);
     FUNCTION ubicacion_aleatoria RETURN LUGAR;
     FUNCTION reservar_hospedaje_desde(usuarioid INTEGER, reservaid INTEGER, ubicacion LUGAR) RETURN BOOLEAN;
-    FUNCTION buscar_habitacion(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER;
-    FUNCTION buscar_apartamento(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER;
+    FUNCTION buscar_habitacion(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN HABITACION%RowType;
+    FUNCTION buscar_apartamento(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN APARTAMENTO%RowType;
     PROCEDURE finalizar_reserva(reservaid INTEGER);
     PROCEDURE cancelar_reserva(reservaid INTEGER);
     PROCEDURE puntuar(reservaid INTEGER);
+    PROCEDURE definir_huespedes(usuarioid INTEGER, reservaid INTEGER);
 END;
 /
 CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
@@ -61,7 +62,22 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         NULL;
     END;
     
-    FUNCTION buscar_habitacion(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER
+    PROCEDURE definir_huespedes(usuarioid INTEGER, reservaid INTEGER)
+    IS
+        adultos INTEGER;
+        ninos INTEGER;
+    BEGIN
+        adultos := (dbms_random.value+1)*6;
+        ninos := (dbms_random.value)*6;
+        dbms_output.put_line('*Definiendo huéspedes');
+        dbms_output.put_line('  q: ¿Cuántos adultos?');
+        dbms_output.put_line('  r: '||adultos);
+        dbms_output.put_line('  q: ¿Cuántos niños?');
+        dbms_output.put_line('  r: '||ninos);
+        INSERT INTO HUESPED VALUES
+    END;
+    
+    FUNCTION buscar_habitacion(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN HABITACION%RowType
     IS
     BEGIN
         dbms_output.put_line('  -Buscando habitaciones');
@@ -70,12 +86,12 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         H.hotel_id = O.id_hotel AND O.lugar_hotel.pais = ubicacion.pais AND 
         chocaConReservasHabitacion(fechai,fechaf,id_habitacion)=0)
         LOOP
-            RETURN I.id_habitacion;
+            RETURN I;
         END LOOP;
         RETURN NULL;
     END;
     
-    FUNCTION buscar_apartamento(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER
+    FUNCTION buscar_apartamento(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN APARTAMENTO%RowType
     IS
     BEGIN
         dbms_output.put_line('  -Buscando apartamentos');
@@ -84,7 +100,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         A.lugar_apartamento.pais = ubicacion.pais AND 
         chocaConReservasApartamento(fechai,fechaf,id_apartamento)=0)
         LOOP
-            RETURN I.id_apartamento;
+            RETURN I;
         END LOOP;
         RETURN NULL;
     END;
@@ -94,8 +110,8 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         fecha_inicio TIMESTAMP;
         fecha_fin TIMESTAMP;
         reserv RESERVA;
-        apart INTEGER;
-        habit INTEGER;
+        apart APARTAMENTO%RowType;
+        habit HABITACION%RowType;
     BEGIN
         IF reservaid IS NULL THEN
             seleccionar_fecha(fecha_inicio,fecha_fin);
@@ -117,11 +133,25 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         END IF;
         IF apart IS NOT NULL AND habit IS NOT NULL THEN
             dbms_output.put_line('  q: ¿Desea un apartamento o un hotel?');
-            IF aceptar_o_rechazar(0.5) THEN
-                NULL;
+            IF aceptar_o_rechazar(0.5)<0.5 THEN
+                dbms_output.put_line('  r: Hotel');
+                apart:=null;
+            ELSE
+                dbms_output.put_line('  r: Apartamento');
+                habit:=null;
             END IF;
         END IF;
-        dbms_output.put_line('  i: Ya que no hay problemas se procede con la reserva');
+        IF apart IS NOT NULL THEN
+            dbms_output.put_line('  i: Se procede a reservar un apartamento');
+            INSERT INTO RESERVA_ESTANCIA VALUES(id_reserva_estancia.nextval,
+            RESERVA(fecha_inicio,fecha_fin,apart.precio,'sin pagar'),
+            0,apart.id_apartamento, null);
+        ELSE
+            dbms_output.put_line('  i: Se procede a reservar una habitación en un hotel');
+            INSERT INTO RESERVA_ESTANCIA VALUES(id_reserva_estancia.nextval,
+            RESERVA(fecha_inicio,fecha_fin,habit.precio,'sin pagar'),
+            0,null, habit.id_habitacion);
+        END IF;
     END;
     
     PROCEDURE reservar_hospedaje
