@@ -121,8 +121,8 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO MODELO VALUES (id_modelo.nextVal,'458 Italia', 'Carro', EMPTY_BLOB(), 6) RETURNING foto INTO V_blob;
-    V_bfile := BFILENAME('IMAGES', 'ferrari458italia.jpg');
+    INSERT INTO MODELO VALUES (id_modelo.nextVal,'458 ITALIA', 'Carro', EMPTY_BLOB(), 6) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'ferrari458ITALIA.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
     DBMS_LOB.CLOSE(V_bfile);
@@ -227,8 +227,8 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO AEROLINEA VALUES (id_aerolinea.nextVal, EMPTY_BLOB(), 'Ali Italia', 'unica') RETURNING logo INTO V_blob;
-    V_bfile := BFILENAME('IMAGES', 'alitalia.png');
+    INSERT INTO AEROLINEA VALUES (id_aerolinea.nextVal, EMPTY_BLOB(), 'Ali ITALIA', 'unica') RETURNING logo INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'alITALIA.png');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
     DBMS_LOB.CLOSE(V_bfile);
@@ -3121,7 +3121,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Burj Al Arab',EMPTY_BLOB(),'5',LUGAR('Emiratos Arabes Unidos','Dubai','Jumeirah Beach Road','Jumeirah St','111','GMT+4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Burj Al Arab',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Jumeirah Beach Road','Jumeirah St','111','GMT+4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'burj-al-arab.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3134,7 +3134,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'President Wilson',EMPTY_BLOB(),'5',LUGAR('Suiza','Ginebra',' Quai Wilson 47','Ginebra','1211','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'President Wilson',EMPTY_BLOB(),'5',LUGAR('SUIZA','Ginebra',' Quai Wilson 47','Ginebra','1211','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'president-wilson.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3147,7 +3147,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Atlantis',EMPTY_BLOB(),'5',LUGAR('Emiratos Arabes Unidos','Dubai','Crescent Rd','Dubai','111','GMT+4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Atlantis',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Crescent Rd','Dubai','111','GMT+4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'the-atlantis.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3160,7 +3160,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Four Season Hotel George V',EMPTY_BLOB(),'5',LUGAR('Francia','Paris','31 Avenue George V','Paris','75008','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Four Season Hotel George V',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','31 Avenue George V','Paris','75008','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'four-season-hotel-george-v.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3173,7 +3173,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel de Glace',EMPTY_BLOB(),'5',LUGAR('Canada','Quebec','1860 Boulevard Valcartier','Quebec','G0A 4S0','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel de Glace',EMPTY_BLOB(),'5',LUGAR('CANADA','Quebec','1860 Boulevard Valcartier','Quebec','G0A 4S0','GMT-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hotel-de-glace.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3186,7 +3186,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Palms Casino Resort',EMPTY_BLOB(),'5',LUGAR('Estados Unidos','Las Vegas','4321 W Flamingo Rd','Las Vegas','NV 89103','GMT-8')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Palms Casino Resort',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Las Vegas','4321 W Flamingo Rd','Las Vegas','NV 89103','GMT-8')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'palms-casino-resort.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3199,7 +3199,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Mandarin Oriental',EMPTY_BLOB(),'5',LUGAR('Estados Unidos','New York','80 Columbus Cir','New York','NY 10023','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Mandarin Oriental',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','New York','80 Columbus Cir','New York','NY 10023','GMT-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'mandarin-oriental.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3212,7 +3212,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Fairmmont Kea Lani Maui',EMPTY_BLOB(),'5',LUGAR('Estados Unidos','Wailea','4100 Wailea Alanui Dr','Wailea','HI 96753','GMT-10')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Fairmmont Kea Lani Maui',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Wailea','4100 Wailea Alanui Dr','Wailea','HI 96753','GMT-10')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fairmont-kea-lani-maui.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3225,7 +3225,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Park Hyatt',EMPTY_BLOB(),'5',LUGAR('Francia','Paris','5 Rue de la Paix','Paris','75002','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Park Hyatt',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','5 Rue de la Paix','Paris','75002','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fairmont-kea-lani-maui.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3238,7 +3238,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'The Raj Palace',EMPTY_BLOB(),'5',LUGAR('India','Jaipur','Jorawar Singh Gate','Jaipur','302002','GMT+5:30')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'The Raj Palace',EMPTY_BLOB(),'5',LUGAR('INDIA','Jaipur','Jorawar Singh Gate','Jaipur','302002','GMT+5:30')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'the-raj-palace.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3251,7 +3251,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bora Bora Resort',EMPTY_BLOB(),'5',LUGAR('Francia','Bora Bora','St. Regis','Bora Bora','98714 ','GMT-10')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bora Bora Resort',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Bora Bora','St. Regis','Bora Bora','98714 ','GMT-10')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'bora-bora.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3264,7 +3264,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Tamanaco',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caracas','Av.Ppal de las Mercedes','Caracas','1060','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Tamanaco',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av.Ppal de las Mercedes','Caracas','1060','GMT-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'tamanaco.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3277,7 +3277,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Macuto Sheraton',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caraballeda','Av.Ppal de Caraballeda','Caraballeda','1165','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Macuto Sheraton',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caraballeda','Av.Ppal de Caraballeda','Caraballeda','1165','GMT-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'macuto-sheraton.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3290,7 +3290,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Eurobuilding',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caracas','Calle La Guairita','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Eurobuilding',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Calle La Guairita','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'eurobuilding.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3303,7 +3303,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Aladdin',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caracas','Av Guaicaipuro','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Aladdin',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av Guaicaipuro','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'aladdin.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3379,7 +3379,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Burj Al Arab',EMPTY_BLOB(),'5',LUGAR('Emiratos Arabes Unidos','Dubai','Jumeirah Beach Road','Jumeirah St','111','GMT+4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Burj Al Arab',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Jumeirah Beach Road','Jumeirah St','111','GMT+4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'burj-al-arab.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3392,7 +3392,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'President Wilson',EMPTY_BLOB(),'5',LUGAR('Suiza','Ginebra',' Quai Wilson 47','Ginebra','1211','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'President Wilson',EMPTY_BLOB(),'5',LUGAR('SUIZA','Ginebra',' Quai Wilson 47','Ginebra','1211','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'president-wilson.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3405,7 +3405,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Atlantis',EMPTY_BLOB(),'5',LUGAR('Emiratos Arabes Unidos','Dubai','Crescent Rd','Dubai','111','GMT+4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Atlantis',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Crescent Rd','Dubai','111','GMT+4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'the-atlantis.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3418,7 +3418,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Four Season Hotel George V',EMPTY_BLOB(),'5',LUGAR('Francia','Paris','31 Avenue George V','Paris','75008','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Four Season Hotel George V',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','31 Avenue George V','Paris','75008','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'four-season-hotel-george-v.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3431,7 +3431,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel de Glace',EMPTY_BLOB(),'5',LUGAR('Canada','Quebec','1860 Boulevard Valcartier','Quebec','G0A 4S0','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel de Glace',EMPTY_BLOB(),'5',LUGAR('CANADA','Quebec','1860 Boulevard Valcartier','Quebec','G0A 4S0','GMT-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hotel-de-glace.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3444,7 +3444,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Palms Casino Resort',EMPTY_BLOB(),'5',LUGAR('Estados Unidos','Las Vegas','4321 W Flamingo Rd','Las Vegas','NV 89103','GMT-8')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Palms Casino Resort',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Las Vegas','4321 W Flamingo Rd','Las Vegas','NV 89103','GMT-8')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'palms-casino-resort.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3457,7 +3457,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Mandarin Oriental',EMPTY_BLOB(),'5',LUGAR('Estados Unidos','New York','80 Columbus Cir','New York','NY 10023','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Mandarin Oriental',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','New York','80 Columbus Cir','New York','NY 10023','GMT-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'mandarin-oriental.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3470,7 +3470,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Fairmmont Kea Lani Maui',EMPTY_BLOB(),'5',LUGAR('Estados Unidos','Wailea','4100 Wailea Alanui Dr','Wailea','HI 96753','GMT-10')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Fairmmont Kea Lani Maui',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Wailea','4100 Wailea Alanui Dr','Wailea','HI 96753','GMT-10')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fairmont-kea-lani-maui.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3483,7 +3483,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Park Hyatt',EMPTY_BLOB(),'5',LUGAR('Francia','Paris','5 Rue de la Paix','Paris','75002','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Park Hyatt',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','5 Rue de la Paix','Paris','75002','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fairmont-kea-lani-maui.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3496,7 +3496,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'The Raj Palace',EMPTY_BLOB(),'5',LUGAR('India','Jaipur','Jorawar Singh Gate','Jaipur','302002','GMT+5:30')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'The Raj Palace',EMPTY_BLOB(),'5',LUGAR('INDIA','Jaipur','Jorawar Singh Gate','Jaipur','302002','GMT+5:30')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'the-raj-palace.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3509,7 +3509,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bora Bora Resort',EMPTY_BLOB(),'5',LUGAR('Francia','Bora Bora','St. Regis','Bora Bora','98714 ','GMT-10')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bora Bora Resort',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Bora Bora','St. Regis','Bora Bora','98714 ','GMT-10')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'bora-bora.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3522,7 +3522,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Tamanaco',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caracas','Av.Ppal de las Mercedes','Caracas','1060','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Tamanaco',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av.Ppal de las Mercedes','Caracas','1060','GMT-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'tamanaco.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3535,7 +3535,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Macuto Sheraton',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caraballeda','Av.Ppal de Caraballeda','Caraballeda','1165','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Macuto Sheraton',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caraballeda','Av.Ppal de Caraballeda','Caraballeda','1165','GMT-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'macuto-sheraton.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3548,7 +3548,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Eurobuilding',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caracas','Calle La Guairita','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Eurobuilding',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Calle La Guairita','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'eurobuilding.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3561,7 +3561,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Aladdin',EMPTY_BLOB(),'5',LUGAR('Venezuela','Caracas','Av Guaicaipuro','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Aladdin',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av Guaicaipuro','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'aladdin.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3700,7 +3700,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cob Cottage',EMPTY_BLOB(),1,1,UNIDAD(120,'dolar','monetaria','usd'),LUGAR('Columbia Britanica','Mayne Island','Horton Bay Rd','Mayne Island','V0N 2J0','GMT-8')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cob Cottage',EMPTY_BLOB(),1,1,UNIDAD(120,'dolar','monetaria','usd'),LUGAR('COLUMBIA BRITANICA','Mayne Island','Horton Bay Rd','Mayne Island','V0N 2J0','GMT-8')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'cob-cottage.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3718,7 +3718,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'I Sette Coni',EMPTY_BLOB(),1,1,UNIDAD(72,'dolar','monetaria','usd'),LUGAR('Italia','Specchiaruzzo','Contrada Difesa','Specchiaruzzo','72017','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'I Sette Coni',EMPTY_BLOB(),1,1,UNIDAD(72,'dolar','monetaria','usd'),LUGAR('ITALIA','Specchiaruzzo','Contrada Difesa','Specchiaruzzo','72017','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sette-coni.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3736,7 +3736,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Estudio en Sol',EMPTY_BLOB(),5,5,UNIDAD(70,'dolar','monetaria','usd'),LUGAR('Espania','Madrid','Puerta del sol','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Estudio en Sol',EMPTY_BLOB(),5,5,UNIDAD(70,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Puerta del sol','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sol.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3753,7 +3753,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Gran Vía',EMPTY_BLOB(),3,1,UNIDAD(61,'dolar','monetaria','usd'),LUGAR('Espania','Madrid','Calle Gran Via','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Gran Vía',EMPTY_BLOB(),3,1,UNIDAD(61,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Calle Gran Via','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sol.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3771,7 +3771,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cottage',EMPTY_BLOB(),3,1,UNIDAD(100,'dolar','monetaria','usd'),LUGAR('Estados Unidos','Miami','NE 6th Ave','Miami','33101','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cottage',EMPTY_BLOB(),3,1,UNIDAD(100,'dolar','monetaria','usd'),LUGAR('ESTADOS UNIDOS','Miami','NE 6th Ave','Miami','33101','GMT-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'cottage.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3788,7 +3788,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Hector Cave',EMPTY_BLOB(),1,3,UNIDAD(436,'dolar','monetaria','usd'),LUGAR('Grecia','Santorini','Epa Od Firon-las','Santorini','84700','GMT+2')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Hector Cave',EMPTY_BLOB(),1,3,UNIDAD(436,'dolar','monetaria','usd'),LUGAR('GRECIA','Santorini','Epa Od Firon-las','Santorini','84700','GMT+2')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hector-cave.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3806,7 +3806,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Fiori',EMPTY_BLOB(),1,3,UNIDAD(105,'dolar','monetaria','usd'),LUGAR('Italia','Roma','Piazza venecia','Roma','04100','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Fiori',EMPTY_BLOB(),1,3,UNIDAD(105,'dolar','monetaria','usd'),LUGAR('ITALIA','Roma','Piazza venecia','Roma','04100','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fiori.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3957,7 +3957,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cob Cottage',EMPTY_BLOB(),1,1,UNIDAD(120,'dolar','monetaria','usd'),LUGAR('Columbia Britanica','Mayne Island','Horton Bay Rd','Mayne Island','V0N 2J0','GMT-8')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cob Cottage',EMPTY_BLOB(),1,1,UNIDAD(120,'dolar','monetaria','usd'),LUGAR('COLUMBIA BRITANICA','Mayne Island','Horton Bay Rd','Mayne Island','V0N 2J0','GMT-8')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'cob-cottage.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3975,7 +3975,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'I Sette Coni',EMPTY_BLOB(),1,1,UNIDAD(72,'dolar','monetaria','usd'),LUGAR('Italia','Specchiaruzzo','Contrada Difesa','Specchiaruzzo','72017','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'I Sette Coni',EMPTY_BLOB(),1,1,UNIDAD(72,'dolar','monetaria','usd'),LUGAR('ITALIA','Specchiaruzzo','Contrada Difesa','Specchiaruzzo','72017','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sette-coni.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3993,7 +3993,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Estudio en Sol',EMPTY_BLOB(),5,5,UNIDAD(70,'dolar','monetaria','usd'),LUGAR('Espania','Madrid','Puerta del sol','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Estudio en Sol',EMPTY_BLOB(),5,5,UNIDAD(70,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Puerta del sol','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sol.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -4010,7 +4010,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Gran Vía',EMPTY_BLOB(),3,1,UNIDAD(61,'dolar','monetaria','usd'),LUGAR('Espania','Madrid','Calle Gran Via','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Gran Vía',EMPTY_BLOB(),3,1,UNIDAD(61,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Calle Gran Via','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sol.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -4028,7 +4028,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cottage',EMPTY_BLOB(),3,1,UNIDAD(100,'dolar','monetaria','usd'),LUGAR('Estados Unidos','Miami','NE 6th Ave','Miami','33101','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cottage',EMPTY_BLOB(),3,1,UNIDAD(100,'dolar','monetaria','usd'),LUGAR('ESTADOS UNIDOS','Miami','NE 6th Ave','Miami','33101','GMT-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'cottage.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -4045,7 +4045,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Hector Cave',EMPTY_BLOB(),1,3,UNIDAD(436,'dolar','monetaria','usd'),LUGAR('Grecia','Santorini','Epa Od Firon-las','Santorini','84700','GMT+2')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Hector Cave',EMPTY_BLOB(),1,3,UNIDAD(436,'dolar','monetaria','usd'),LUGAR('GRECIA','Santorini','Epa Od Firon-las','Santorini','84700','GMT+2')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hector-cave.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -4063,7 +4063,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Fiori',EMPTY_BLOB(),1,3,UNIDAD(105,'dolar','monetaria','usd'),LUGAR('Italia','Roma','Piazza venecia','Roma','04100','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Fiori',EMPTY_BLOB(),1,3,UNIDAD(105,'dolar','monetaria','usd'),LUGAR('ITALIA','Roma','Piazza venecia','Roma','04100','GMT+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fiori.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));

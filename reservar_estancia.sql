@@ -72,13 +72,13 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     
     PROCEDURE puntuar(reservaid INTEGER)
     IS
-        puntuacion NUMBER;
+        puntua INTEGER;
     BEGIN
-        puntuacion := dbms_random.value*10;
+        puntua := dbms_random.value*10;
         UPDATE RESERVA_ESTANCIA
-        SET puntuacion = puntuacion
+        SET puntuacion = puntua
         WHERE id_reserva_estancia = reservaid;
-        dbms_output.put_line('  i: Se asignó una puntuación de '||puntuacion);
+        dbms_output.put_line('  i: Se asignó una puntuación de '||puntua);
     END;
     
     PROCEDURE definir_huespedes(usuarioid INTEGER, reservaid INTEGER)
@@ -86,7 +86,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         adultos INTEGER;
         ninos INTEGER;
     BEGIN
-        adultos := (dbms_random.value+1)*6;
+        adultos := (dbms_random.value+1)*3;
         ninos := (dbms_random.value)*6;
         dbms_output.put_line('*Definiendo huéspedes');
         dbms_output.put_line('  q: ¿Cuántos adultos?');
@@ -103,9 +103,8 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     IS
     BEGIN
         dbms_output.put_line('  -Buscando habitaciones');
-        FOR I IN (SELECT H.* FROM HABITACION H, RESERVA_ESTANCIA R, HOTEL O
-        WHERE R.habitacion_id = H.id_habitacion AND 
-        H.hotel_id = O.id_hotel AND O.lugar_hotel.pais = ubicacion.pais AND 
+        FOR I IN (SELECT H.* FROM HABITACION H, HOTEL O
+        WHERE H.hotel_id = O.id_hotel AND O.lugar_hotel.pais = ubicacion.pais AND 
         chocaConReservasHabitacion(fechai,fechaf,id_habitacion)=0)
         LOOP
             RETURN I;
@@ -117,9 +116,8 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     IS
     BEGIN
         dbms_output.put_line('  -Buscando apartamentos');
-        FOR I IN (SELECT A.* FROM APARTAMENTO A, RESERVA_ESTANCIA R
-        WHERE R.apartamento_id = A.id_apartamento AND 
-        A.lugar_apartamento.pais = ubicacion.pais AND 
+        FOR I IN (SELECT A.* FROM APARTAMENTO A
+        WHERE A.lugar_apartamento.pais = ubicacion.pais AND 
         chocaConReservasApartamento(fechai,fechaf,id_apartamento)=0)
         LOOP
             RETURN I;
@@ -176,6 +174,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
             0,reservaid,null, habit.id_habitacion);
         END IF;
         definir_huespedes(usuarioid, id_reserva_estancia.currval);
+        RETURN TRUE;
     END;
     
     PROCEDURE reservar_hospedaje
