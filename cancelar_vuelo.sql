@@ -66,6 +66,7 @@ BEGIN
         FETCH Cvuelo INTO registro;
     END LOOP;    
 END;
+<<<<<<< HEAD
 
 
 
@@ -73,6 +74,12 @@ EXEC estadoVuelo;
 
 
 select * from usuario
+=======
+EXEC estadoVuelo;
+
+
+
+>>>>>>> 213f8ae7a94fd10b284db683523d1d9bdd3d500e
 
 
 

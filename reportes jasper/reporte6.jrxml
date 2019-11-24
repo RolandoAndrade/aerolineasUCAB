@@ -198,6 +198,7 @@
 			<rectangle>
 				<reportElement x="-20" y="141" width="593" height="1" uuid="4f9fda9c-d75a-4945-81fd-f65306e2ad6c"/>
 			</rectangle>
+
 			<textField>
 				<reportElement x="240" y="10" width="50" height="130" uuid="622d4949-6210-4357-be53-efc2d05c9d12">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a83b6d1-d8ce-47e4-bc76-d7ee4485066b"/>

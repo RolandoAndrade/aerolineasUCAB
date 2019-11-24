@@ -1,6 +1,5 @@
 CREATE OR REPLACE PACKAGE RESERVACION_VUELOS IS
     PROCEDURE reservar_vuelos;
-    FUNCTION usuario_aleatorio RETURN INTEGER;
     FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
     FUNCTION origen_destino_aleatorio(aeropuerto1 IN OUT INTEGER, aeropuerto2 IN OUT INTEGER, usuarioid INTEGER) RETURN INTEGER;
     FUNCTION vuelo_vuelta(vueloida INTEGER, aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER;
@@ -8,7 +7,8 @@ CREATE OR REPLACE PACKAGE RESERVACION_VUELOS IS
     FUNCTION calcular_precio(vueloid INTEGER, vueltaid INTEGER, userid INTEGER) RETURN UNIDAD;
     PROCEDURE actualizar_millas_usuario(usuarioid INTEGER,vueloid INTEGER);
     PROCEDURE cancelar_reserva(reservaid INTEGER);
-    PROCEDURE reservatriple(reservaid INTEGER);
+    PROCEDURE cancelar_triple(reservaid INTEGER);
+    FUNCTION reservatriple(reservaid INTEGER,usuarioid INTEGER, destinoid INTEGER) RETURN BOOLEAN;
     PROCEDURE agregar_seguro(reservaid INTEGER);
     FUNCTION abrir_vuelo(vuelov INTEGER) RETURN INTEGER;
 END;
@@ -21,20 +21,32 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         dbms_output.put_line('q: ¿Desea reservar un seguro?');
         IF aceptar_o_rechazar(0.5) THEN
             dbms_output.put_line('r: Sí');
+            RESERVACION_SEGURO.reservar_seguro(reservaid);
         ELSE
             dbms_output.put_line('r: No');
         END IF;
     END;
 
-    PROCEDURE reservatriple(reservaid INTEGER)
+    FUNCTION reservatriple(reservaid INTEGER,usuarioid INTEGER, destinoid INTEGER) RETURN BOOLEAN
     IS
+        destino LUGAR;
     BEGIN
+        destino := getAeropuerto(destinoid).lugar_aeropuerto;
         dbms_output.put_line('q: ¿Desea hacer una reserva triple?');
-        IF aceptar_o_rechazar(0.1) THEN
+        IF aceptar_o_rechazar(0.2) THEN
             dbms_output.put_line('  r: Sí');
+            IF RESERVACION_CARRO.reservar_carro_desde(usuarioid, reservaid,destino,destino) THEN
+                IF RESERVACION_HOSPEDAJE.reservar_hospedaje_desde(usuarioid, reservaid,destino) THEN
+                    dbms_output.put_line('i: Reserva triple completada con éxito');
+                    RETURN TRUE;
+                END IF;
+            END IF;
+            cancelar_triple(reservaid);
+            dbms_output.put_line('e: Hubo un problema');
         ELSE
             dbms_output.put_line('  r: No');
         END IF;
+        RETURN FALSE;
     END;
     
     PROCEDURE asignar_asiento(vueloid INTEGER, usuarioid INTEGER)
@@ -56,23 +68,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             WHERE id_disponibilidad = dispon;
         END IF;
     END;    
-    
-    FUNCTION usuario_aleatorio RETURN INTEGER
-    IS
-        CURSOR usuarios IS 
-        SELECT id_usuario
-        FROM USUARIO 
-        ORDER BY dbms_random.value;
-        usuarioid INTEGER;
-    BEGIN
-        OPEN usuarios;
-        FETCH usuarios INTO usuarioid;
-        IF usuarios%found THEN
-            RETURN usuarioid;
-        END IF;
-        RETURN -1;
-    END;  
-    
+
     FUNCTION hay_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, usuarioid INTEGER, fecha TIMESTAMP) RETURN INTEGER
     IS
         CURSOR vuelos IS
@@ -257,6 +253,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
     
     PROCEDURE actualizar_millas_usuario(usuarioid INTEGER,vueloid INTEGER)
     IS
+        vuelon VUELO%RowType;
     BEGIN
         NULL;
     END;  
@@ -268,13 +265,19 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         IF aceptar_o_rechazar(0.05) THEN
             dbms_output.put_line('r: Sí');
             UPDATE RESERVA_VUELO R SET R.reserva_vuelo.estado = 'cancelado' WHERE id_reserva_vuelo = reservaid;
-            UPDATE RESERVA_CARRO R SET R.reserva_carro.estado = 'cancelado' WHERE reservavuelo_id = reservaid;
-            UPDATE RESERVA_ESTANCIA R SET R.reserva_estacia.estado = 'cancelado' WHERE reservavuelo_id = reservaid;
             UPDATE SEGURO R SET R.reserva_seguro.estado = 'cancelado' WHERE reservavuelo_id = reservaid;
+            cancelar_triple(reservaid);
         ELSE
             dbms_output.put_line('r: No');
         END IF;
-    END;   
+    END;
+    PROCEDURE cancelar_triple(reservaid INTEGER)
+    IS
+    BEGIN
+        dbms_output.put_line('*Cancelando reservas que surgieron del vuelo');
+        UPDATE RESERVA_CARRO R SET R.reserva_carro.estado = 'cancelado' WHERE reservavuelo_id = reservaid;
+        UPDATE RESERVA_ESTANCIA R SET R.reserva_estacia.estado = 'cancelado' WHERE reservavuelo_id = reservaid;
+    END;
     
     PROCEDURE reservar_vuelos
     IS
@@ -285,20 +288,20 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         axReserva RESERVA;
         vueloid INTEGER;
         vueltaid INTEGER;
+        tipo VARCHAR(20);
     BEGIN
         dbms_output.put_line('******************************');
         dbms_output.put_line('*                            *');
         dbms_output.put_line('*   RESERVACION DE VUELOS    *');
         dbms_output.put_line('*                            *');
         dbms_output.put_line('******************************');
-        FOR I IN 1..5
+        FOR I IN 1..5--00
         LOOP
-            usuarioid := usuario_aleatorio;
+            usuarioid := getUsuarioAleatorio;
             dbms_output.put_line('-----El usuario '||usuarioid||' desea hacer una reserva-----');
             origen:=NULL;
             destino:=NULL;
             vueloid:=origen_destino_aleatorio(origen,destino,usuarioid);
-            reservatriple(usuarioid);
             vueltaid :=vuelo_vuelta(vueloid,origen,destino,usuarioid,getVuelo(vueloid).fecha_salida);
             asignar_asiento(vueloid,usuarioid);
            
@@ -314,14 +317,19 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             dbms_output.put_line('*Creada reserva');
             INSERT INTO RESERVA_VUELO VALUES(id_reserva_vuelo.nextval,axReserva,vueloid,usuarioid);
             agregar_seguro(id_reserva_vuelo.currval);
-            --Pagar
+            IF reservatriple(id_reserva_vuelo.currval, usuarioid, destino) THEN
+                tipo:='triple';
+            ELSE
+                tipo:='vuelo';
+            END IF;
+            PAGAR_RESERVA.pagar(usuarioid,id_reserva_vuelo.currval,tipo);
             
         END LOOP;
     END;       
 END;
 
 
-SELECT * FROM DISPONIBILIDAD;
-SELECT asientosDisponibles(id_vuelo) FROM VUELO;
-
-EXEC RESERVACION_VUELOS.reservar_vuelos;
+--SELECT * FROM DISPONIBILIDAD;
+--SELECT asientosDisponibles(id_vuelo) FROM VUELO;
+--SELECT * FROM SEGURO;
+--EXEC RESERVACION_VUELOS.reservar_vuelos;

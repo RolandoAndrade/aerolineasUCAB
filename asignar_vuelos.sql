@@ -1,7 +1,6 @@
---SET SERVEROUTPUT ON;
-
 CREATE or REPLACE PACKAGE ASIGNACION_VUELOS IS
     PROCEDURE asignar_vuelos;
+    PROCEDURE generar_vuelo(avi AVION%RowType, dias NUMBER);
     FUNCTION duracion_vuelo(aeropuerto1 INTEGER, aeropuerto2 INTEGER, velocidad UNIDAD) RETURN UNIDAD;
     FUNCTION fecha_de_vuelo(minima TIMESTAMP, maxima TIMESTAMP) RETURN TIMESTAMP;
     FUNCTION calcula_distancia(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN UNIDAD;
@@ -65,10 +64,7 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         hora TIMESTAMP;
     BEGIN
         dbms_output.put_line('*Seleccionando fecha y hora del vuelo');
-        SELECT minima + dbms_random.value*(maxima-minima)
-        INTO hora
-        FROM DUAL;
-        RETURN hora;
+        RETURN random_fecha(minima, maxima);
     END;
     
     FUNCTION calcula_distancia(aeropuerto1 INTEGER, aeropuerto2 INTEGER) RETURN UNIDAD
@@ -172,7 +168,7 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         RETURN FALSE;
     END;
     
-    PROCEDURE asignar_vuelos
+    PROCEDURE generar_vuelo(avi AVION%RowType, dias NUMBER)
     IS
         aeropuerto1 INTEGER;
         aeropuerto2 INTEGER;
@@ -181,50 +177,79 @@ CREATE OR REPLACE PACKAGE BODY ASIGNACION_VUELOS AS
         duracion2 UNIDAD;
         fechaPartida TIMESTAMP;
     BEGIN
+        aeropuerto1:=NULL;
+        aeropuerto2:=NULL;
+        aeropuerto3:=NULL;
+        dbms_output.put_line('------Asignando el vuelo para el avión '||avi.id_avion||' de alcance '||avi.alcance.valor||'km------');
+        IF seleccionar_aeropuertos(aeropuerto1,aeropuerto2,aeropuerto3,avi.alcance) THEN
+        BEGIN
+            IF aeropuerto3 IS NULL THEN
+                duracion := duracion_vuelo(aeropuerto1,aeropuerto2,avi.velocidad_max);
+                LOOP
+                    dbms_output.put_line('*Asignando fecha para el vuelo que no choque con otros vuelos del avión');
+                    fechaPartida:= fecha_de_vuelo(SYSTIMESTAMP-dias, SYSTIMESTAMP+dias);
+                    EXIT WHEN chocaConOtrosVuelosAvion(fechaPartida,duracion,avi.id_avion) = 0;
+                    dbms_output.put_line('  e: Hubo un choque, intentando de nuevo');
+                END LOOP;
+                abrir_vuelo(aeropuerto1,aeropuerto2,fechaPartida,duracion,avi.id_avion,null);
+                dbms_output.put_line('  c: Vuelo directo creado entre '||
+                getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||
+                getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||' con una duración de '||
+                duracion.valor||' horas, para el día '||fechaPartida);
+            ELSE
+                duracion := duracion_vuelo(aeropuerto1,aeropuerto3,avi.velocidad_max);
+                duracion2 := duracion_vuelo(aeropuerto3,aeropuerto2,avi.velocidad_max);
+                LOOP
+                    dbms_output.put_line('*Asignando fecha donde el vuelo que no choque con otros vuelos del avión');
+                    fechaPartida:= fecha_de_vuelo(SYSTIMESTAMP-dias, SYSTIMESTAMP+dias);
+                    EXIT WHEN chocaConOtrosVuelosAvion(fechaPartida,duracion,avi.id_avion) = 0
+                    AND chocaConOtrosVuelosAvion(fechaPartida+1/3,duracion2,avi.id_avion) = 0;
+                    dbms_output.put_line('  e: Hubo un choque, intentando de nuevo');
+                END LOOP;
+                abrir_vuelo(aeropuerto1,aeropuerto3,fechaPartida,duracion,avi.id_avion,null);
+                abrir_vuelo(aeropuerto3,aeropuerto2,fechaPartida+1/3,duracion2,avi.id_avion,id_vuelo.currval);
+
+                dbms_output.put_line('  c: Se creó un vuelo escalado que parte de '||
+                getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' el día '||fechaPartida||
+                ', realiza una parada en '||getAeropuerto(aeropuerto3).lugar_aeropuerto.ciudad||
+                ' luego de '||duracion.valor||' horas de viaje, para luego salir a '||getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||
+                ' el día '||(fechaPartida+1/3)||
+                ' en un trayecto de '||duracion.valor||' horas');
+            END IF;
+        END;
+        END IF;
+    END;
+    
+    PROCEDURE asignar_vuelos
+    IS
+        total INTEGER;
+    BEGIN
         dbms_output.put_line('******************************');
         dbms_output.put_line('*                            *');
         dbms_output.put_line('*    GENERACION DE VUELOS    *');
         dbms_output.put_line('*                            *');
         dbms_output.put_line('******************************');
+        
         FOR avi in (SELECT * FROM AVION ORDER BY alcance.valor)
         LOOP
-            dbms_output.put_line('------Asignando el vuelo para el avión '||avi.id_avion||' de alcance '||avi.alcance.valor||'km------');
-            IF seleccionar_aeropuertos(aeropuerto1,aeropuerto2,aeropuerto3,avi.alcance) THEN
-            BEGIN
-                IF aeropuerto3 IS NULL THEN
-                    duracion := duracion_vuelo(aeropuerto1,aeropuerto2,avi.velocidad_max);
-                    fechaPartida:= fecha_de_vuelo(SYSTIMESTAMP-100, SYSTIMESTAMP+100);
-                    abrir_vuelo(aeropuerto1,aeropuerto2,fechaPartida,duracion,avi.id_avion,null);
-                    dbms_output.put_line('  c: Vuelo directo creado entre '||
-                    getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' y '||
-                    getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||' con una duración de '||
-                    duracion.valor||' horas, para el día '||fechaPartida);
-                ELSE
-                    duracion := duracion_vuelo(aeropuerto1,aeropuerto3,avi.velocidad_max);
-                    duracion2 := duracion_vuelo(aeropuerto3,aeropuerto2,avi.velocidad_max);
-                    fechaPartida:= fecha_de_vuelo(SYSTIMESTAMP-100, SYSTIMESTAMP+100);
-                    abrir_vuelo(aeropuerto1,aeropuerto3,fechaPartida,duracion,avi.id_avion,null);
-                    abrir_vuelo(aeropuerto3,aeropuerto2,fechaPartida+1/3,duracion2,avi.id_avion,id_vuelo.currval);
-                    
-                    dbms_output.put_line('  c: Se creó un vuelo escalado que parte de '||
-                    getAeropuerto(aeropuerto1).lugar_aeropuerto.ciudad||' el día '||fechaPartida||
-                    ', realiza una parada en '||getAeropuerto(aeropuerto3).lugar_aeropuerto.ciudad||
-                    ' luego de '||duracion.valor||' horas de viaje, para luego salir a '||getAeropuerto(aeropuerto2).lugar_aeropuerto.ciudad||
-                    ' el día '||(fechaPartida+1/3)||
-                    ' en un trayecto de '||duracion.valor||' horas');
-                END IF;
-            END;
-            END IF;
-            aeropuerto1:=NULL;
-            aeropuerto2:=NULL;
-            aeropuerto3:=NULL;
+            generar_vuelo(avi,100);
+        END LOOP;
+        
+        dbms_output.put_line('******************************');
+        dbms_output.put_line('*  GENERANDO VUELOS PARA HOY *');
+        dbms_output.put_line('******************************');
+        total := (dbms_random.value+15)*2;
+        dbms_output.put_line('----------Se van a generar '||total||' vuelos---------');
+        FOR avi in (SELECT * FROM AVION ORDER BY dbms_random.value)
+        LOOP
+            generar_vuelo(avi,1);
+            total:=total-1;
+            EXIT WHEN total<0;
         END LOOP;
     END;
 END;
-/
-
 --DELETE FROM DISPONIBILIDAD;DELETE FROM VUELO;DROP SEQUENCE id_vuelo;DROP SEQUENCE id_disponibilidad;CREATE SEQUENCE id_vuelo INCREMENT BY 1 START WITH 1 MINVALUE 1; CREATE SEQUENCE id_disponibilidad INCREMENT BY 1 START WITH 1 MINVALUE 1; 
 
---SELECT * FROM VUELO;
+SELECT * FROM VUELO;
 --SELECT * FROM DISPONIBILIDAD;
---exec ASIGNACION_VUELOS.asignar_vuelos;
+exec ASIGNACION_VUELOS.asignar_vuelos;
