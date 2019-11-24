@@ -101,7 +101,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_CARRO IS
         dbms_output.put_line('*Determinando estado de la reserva a la fecha actual');
         SELECT * INTO reserv FROM RESERVA_CARRO WHERE id_reserva_carro = reservaid; 
         IF reserv.reserva_carro.fecha_fin < SYSTIMESTAMP THEN
-            dbms_output.put_line('  i: La reserva a terminado');
+            dbms_output.put_line('  i: La reserva ha terminado');
             UPDATE RESERVA_CARRO R
             SET R.reserva_carro.estado ='finalizada'
             WHERE R.id_reserva_carro = reservaid;
