@@ -64,7 +64,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     FUNCTION buscar_habitacion(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER
     IS
     BEGIN
-        dbms_output.put_line('*Buscando habitaciones');
+        dbms_output.put_line('  -Buscando habitaciones');
         FOR I IN (SELECT H.* FROM HABITACION H, RESERVA_ESTANCIA R, HOTEL O
         WHERE R.habitacion_id = H.id_habitacion AND 
         H.hotel_id = O.id_hotel AND O.lugar_hotel.pais = ubicacion.pais AND 
@@ -78,7 +78,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     FUNCTION buscar_apartamento(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN INTEGER
     IS
     BEGIN
-        dbms_output.put_line('*Buscando apartamentos');
+        dbms_output.put_line('  -Buscando apartamentos');
         FOR I IN (SELECT A.* FROM APARTAMENTO A, RESERVA_ESTANCIA R
         WHERE R.apartamento_id = A.id_apartamento AND 
         A.lugar_apartamento.pais = ubicacion.pais AND 
@@ -94,6 +94,8 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         fecha_inicio TIMESTAMP;
         fecha_fin TIMESTAMP;
         reserv RESERVA;
+        apart INTEGER;
+        habit INTEGER;
     BEGIN
         IF reservaid IS NULL THEN
             seleccionar_fecha(fecha_inicio,fecha_fin);
@@ -106,9 +108,20 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
                 fecha_fin:= reserv.fecha_fin;
             END IF;
         END IF;
-        dbms_output.put_line('*Reservando estancia');
-        
-        
+        dbms_output.put_line('*Reservando estancia en '||ubicacion.pais);
+        apart := buscar_apartamento(fecha_inicio,fecha_fin,ubicacion);
+        habit := buscar_habitacion(fecha_inicio,fecha_fin,ubicacion);
+        IF apart IS NULL AND habit IS NULL THEN
+            dbms_output.put_line('  e: No hay estancia disponible para la fecha indicada');
+            RETURN FALSE;
+        END IF;
+        IF apart IS NOT NULL AND habit IS NOT NULL THEN
+            dbms_output.put_line('  q: ¿Desea un apartamento o un hotel?');
+            IF aceptar_o_rechazar(0.5) THEN
+                NULL;
+            END IF;
+        END IF;
+        dbms_output.put_line('  i: Ya que no hay problemas se procede con la reserva');
     END;
     
     PROCEDURE reservar_hospedaje
@@ -132,7 +145,3 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         END LOOP;
     END;
 END;
-
-
-
-
