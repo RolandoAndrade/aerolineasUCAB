@@ -1,3 +1,16 @@
+CREATE OR REPLACE PACKAGE RESERVACION_HOSPEDAJE IS
+    PROCEDURE reservar_hospedaje;
+    PROCEDURE seleccionar_fecha(fecha_inicio IN OUT TIMESTAMP, fecha_fin IN OUT TIMESTAMP);
+    FUNCTION ubicacion_aleatoria RETURN LUGAR;
+    FUNCTION reservar_hospedaje_desde(usuarioid INTEGER, reservaid INTEGER, ubicacion LUGAR) RETURN BOOLEAN;
+    FUNCTION buscar_habitacion(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN HABITACION%RowType;
+    FUNCTION buscar_apartamento(fechai TIMESTAMP, fechaf TIMESTAMP, ubicacion LUGAR) RETURN APARTAMENTO%RowType;
+    PROCEDURE finalizar_reserva(reservaid INTEGER);
+    PROCEDURE cancelar_reserva(reservaid INTEGER);
+    PROCEDURE puntuar(reservaid INTEGER);
+    PROCEDURE definir_huespedes(usuarioid INTEGER, reservaid INTEGER);
+END;
+/
 CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
 
     PROCEDURE seleccionar_fecha(fecha_inicio IN OUT TIMESTAMP, fecha_fin IN OUT TIMESTAMP)
@@ -33,8 +46,19 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
 
     PROCEDURE finalizar_reserva(reservaid INTEGER)
     IS
+        reserv RESERVA_ESTANCIA%RowType;
     BEGIN
-        NULL;
+        dbms_output.put_line('*Determinando estado de la reserva a la fecha actual');
+        SELECT * INTO reserv FROM RESERVA_ESTANCIA WHERE id_reserva_estancia = reservaid; 
+        IF reserv.reserva_estacia.fecha_fin < SYSTIMESTAMP THEN
+            dbms_output.put_line('  i: La reserva ha terminado');
+            UPDATE RESERVA_ESTANCIA R
+            SET R.reserva_estacia.estado ='finalizada'
+            WHERE R.id_reserva_estancia = reservaid;
+            puntuar(reservaid);
+        ELSE
+            dbms_output.put_line('  i: La reserva no ha terminado');
+        END IF;    
     END;
     
     PROCEDURE cancelar_reserva(reservaid INTEGER)
@@ -45,8 +69,13 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     
     PROCEDURE puntuar(reservaid INTEGER)
     IS
+        puntuacion NUMBER;
     BEGIN
-        NULL;
+        puntuacion := dbms_random.value*10;
+        UPDATE RESERVA_ESTANCIA
+        SET puntuacion = puntuacion
+        WHERE id_reserva_estancia = reservaid;
+        dbms_output.put_line('  i: Se asignó una puntuación de '||puntuacion);
     END;
     
     PROCEDURE definir_huespedes(usuarioid INTEGER, reservaid INTEGER)
@@ -150,6 +179,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     IS
         usuarioid INTEGER;
         ubicacion LUGAR;
+        reservaid INTEGER;
     BEGIN
         dbms_output.put_line('******************************');
         dbms_output.put_line('*                            *');
@@ -162,7 +192,20 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
             dbms_output.put_line('----------EL USUARIO '||usuarioid||' DESEA RESERVAR UNA ESTANCIA----------');
             ubicacion := ubicacion_aleatoria;
             IF reservar_hospedaje_desde(usuarioid, null, ubicacion) THEN
-                NULL;
+                reservaid:=id_reserva_estancia.currval;
+                PAGAR_RESERVA.pagar(usuarioid,reservaid,'estancia');
+                dbms_output.put_line('q: ¿Desea cancelar la reserva?');
+                IF aceptar_o_rechazar(0.05) THEN
+                    dbms_output.put_line('r: Sí');
+                    cancelar_reserva(reservaid);
+                    --SELECT R.reserva_carro.monto INTO monto 
+                    --FROM RESERVA_CARRO R 
+                    --WHERE R.id_reserva_carro = reservaid;
+                    --devolverdinero(usuarioid,monto);
+                ELSE
+                    dbms_output.put_line('r: No');
+                    finalizar_reserva(reservaid);
+                END IF;
             END IF;
         END LOOP;
     END;
