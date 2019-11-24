@@ -41,6 +41,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
                     RETURN TRUE;
                 END IF;
             END IF;
+            cancelar_triple(reservaid);
             dbms_output.put_line('e: Hubo un problema');
         ELSE
             dbms_output.put_line('  r: No');
@@ -252,6 +253,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
     
     PROCEDURE actualizar_millas_usuario(usuarioid INTEGER,vueloid INTEGER)
     IS
+        vuelon VUELO%RowType;
     BEGIN
         NULL;
     END;  
@@ -325,3 +327,9 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         END LOOP;
     END;       
 END;
+
+
+--SELECT * FROM DISPONIBILIDAD;
+--SELECT asientosDisponibles(id_vuelo) FROM VUELO;
+--SELECT * FROM SEGURO;
+--EXEC RESERVACION_VUELOS.reservar_vuelos;
