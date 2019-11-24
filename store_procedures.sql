@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION aceptar_o_rechazar(probabilidadSi NUMBER) RETURN BOOLEAN
+﻿CREATE OR REPLACE FUNCTION aceptar_o_rechazar(probabilidadSi NUMBER) RETURN BOOLEAN
 IS
 BEGIN
     RETURN dbms_random.value < probabilidadSi;
@@ -319,6 +319,18 @@ BEGIN
     WHERE usuario_id = usuarioid;
 END;
 /
+CREATE OR REPLACE PROCEDURE insertarCaracteristicaHotel(hotel NUMBER, titulo VARCHAR, descripcion VARCHAR)
+IS 
+BEGIN
+    INSERT INTO CARACTERISTICA VALUES (id_caracteristica.nextVal, titulo, descripcion,null,null,hotel);
+END;
+/
+CREATE OR REPLACE PROCEDURE insertarCaracteristicaHotel(habitacion NUMBER, titulo VARCHAR, descripcion VARCHAR)
+IS 
+BEGIN
+    INSERT INTO CARACTERISTICA VALUES (id_caracteristica.nextVal, titulo, descripcion,null,habitacion,null);
+END;
+/            
 CREATE OR REPLACE FUNCTION chocaConReservasApartamento(fechai TIMESTAMP, fechaf TIMESTAMP, apartamentoid INTEGER) RETURN NUMBER
 IS
 BEGIN
