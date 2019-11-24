@@ -313,10 +313,10 @@ CREATE TABLE PAGO (
 --------------------------------------------------------para poder crear blobs, despues del AS deben poner la direccion --------
 -------------------------------------------------------donde tienen la imagen---------------------------------------------------
 
-CREATE OR REPLACE DIRECTORY IMAGES AS 'C:\Users\Usuario\Documents\Universidad\septimo\Base de Datos 2\proyecto\imagenes';
+--CREATE OR REPLACE DIRECTORY IMAGES AS 'C:\Users\Usuario\Documents\Universidad\septimo\Base de Datos 2\proyecto\imagenes';
 --CREATE OR REPLACE DIRECTORY IMAGES AS 'C:\Users\Rolando Andrade\Desktop\SISTEMAS DE BASES DE DATOS II\aerolineasUCAB\imagenes';
 
-GRANT READ, WRITE ON DIRECTORY IMAGES TO system;
+--GRANT READ, WRITE ON DIRECTORY IMAGES TO system;
 
 ------------------------------------------prueba insertando una imagen en una tabla que ya no existe----------------------------
 --------------------------------------------la prueba funciono asi se insertan blob en la bd------------------------------------
