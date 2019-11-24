@@ -157,7 +157,7 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
             valor := valor - axmonto.valor;
             restantes := millas_restantes(usuarioid);
             IF tipo = 'vuelo' THEN
-                INSERT INTO PAGO VALUES(id_pago.nextval,axmonto,SYSTIMESTAMP,restantes,null,tdd,tcc,null, reservaid, null,null);
+                INSERT INTO PAGO VALUES(id_pago.nextval,axmonto,SYSTIMESTAMP,restantes,null,tdd,tcc,null, reservaid, getSeguroDe(reservaid),null);
             ELSIF tipo = 'carro' THEN
                 INSERT INTO PAGO VALUES(id_pago.nextval,axmonto,SYSTIMESTAMP,restantes,null,tdd,tcc,null, null, null,reservaid);
             ELSIF tipo = 'estancia' THEN
@@ -181,13 +181,13 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
             FROM MILLA M
             WHERE usuario_id = usuarioid;
         IF tipo = 'vuelo' THEN
-            INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,null, reservaid, null,null);
+            INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,null, reservaid, getSeguroDe(reservaid),null);
         ELSIF tipo = 'carro' THEN
             INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,null, null, null,reservaid);
         ELSIF tipo = 'estancia' THEN
             INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,reservaid, null, null,null);
         ELSIF tipo = 'triple' THEN
-            INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,reservaid, reservaid, null,reservaid);
+            INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,getEstanciaDe(reservaid), reservaid, getSeguroDe(reservaid),getCarroDe(reservaid));
         END IF;
         dbms_output.put_line('*Pagando $'||monto.valor||' con '||monto.convertir('monetaria','milla')||' millas. Millas restantes: '||restantes.valor);
     END;
