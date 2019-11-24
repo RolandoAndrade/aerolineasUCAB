@@ -64,7 +64,10 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     PROCEDURE cancelar_reserva(reservaid INTEGER)
     IS
     BEGIN
-        NULL;
+        dbms_output.put_line('******Cancelando la reserva del hospedaje******');
+        UPDATE RESERVA_ESTANCIA R
+        SET R.reserva_estacia.estado ='cancelada'
+        WHERE R.id_reserva_estancia = reservaid;
     END;
     
     PROCEDURE puntuar(reservaid INTEGER)
@@ -180,6 +183,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         usuarioid INTEGER;
         ubicacion LUGAR;
         reservaid INTEGER;
+        monto UNIDAD;
     BEGIN
         dbms_output.put_line('******************************');
         dbms_output.put_line('*                            *');
@@ -198,10 +202,10 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
                 IF aceptar_o_rechazar(0.05) THEN
                     dbms_output.put_line('r: Sí');
                     cancelar_reserva(reservaid);
-                    --SELECT R.reserva_carro.monto INTO monto 
-                    --FROM RESERVA_CARRO R 
-                    --WHERE R.id_reserva_carro = reservaid;
-                    --devolverdinero(usuarioid,monto);
+                    SELECT R.reserva_estacia.monto INTO monto 
+                    FROM RESERVA_ESTANCIA R 
+                    WHERE R.id_reserva_estancia = reservaid;
+                    devolverdinero(usuarioid,monto);
                 ELSE
                     dbms_output.put_line('r: No');
                     finalizar_reserva(reservaid);
