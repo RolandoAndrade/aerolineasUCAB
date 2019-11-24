@@ -82,17 +82,4 @@ CREATE OR REPLACE PACKAGE BODY CANCELAR_VUELO AS
 END;
 
 
---EXEC estadoVuelo;
-
-
-
-
-
-
-
-
-
-
-
-
 
