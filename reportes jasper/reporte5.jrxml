@@ -21,8 +21,8 @@
 	<field name="CORREO" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CORREO"/>
 	</field>
-	<field name="CONCATERNARVUELOS(V.ID_VUELO)" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="CONCATERNARVUELOS(V.ID_VUELO)"/>
+	<field name="CONCATERNARVUELOS(V.ID_VUELO,RV.RESERVA_VUELO.FECHA_INICIO)" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CONCATERNARVUELOS(V.ID_VUELO,RV.RESERVA_VUELO.FECHA_INICIO)"/>
 	</field>
 	<field name="TO_CHAR(RV.RESERVA_VUELO.FECHA_INICIO,&apos;MONDDYYYY&apos;)" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label">
@@ -155,12 +155,6 @@
 				<textFieldExpression><![CDATA[$F{CORREO}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="220" y="0" width="60" height="174" uuid="266988ac-fbee-4147-a080-77ee4a8099da">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ab54bcf2-4420-435d-989f-6e7e6c82f89a"/>
-				</reportElement>
-				<textFieldExpression><![CDATA[$F{CONCATERNARVUELOS(V.ID_VUELO)}]]></textFieldExpression>
-			</textField>
-			<textField>
 				<reportElement x="290" y="10" width="29" height="164" uuid="4eca9676-ad60-4d8b-8337-c92e39e4ecaa">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c6aec8ad-c8cb-4ecc-a5c7-abde6c674b2a"/>
 				</reportElement>
@@ -227,6 +221,12 @@
 			<rectangle>
 				<reportElement x="-19" y="173" width="593" height="1" uuid="5bc62416-4d9f-477d-81d4-96fd03fc4f68"/>
 			</rectangle>
+			<textField>
+				<reportElement x="219" y="10" width="62" height="160" uuid="7ab39e6c-7210-49a2-ba9b-f04389984966">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f1c586b5-4428-4d56-a175-c89b93f94b6d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{CONCATERNARVUELOS(V.ID_VUELO,RV.RESERVA_VUELO.FECHA_INICIO)}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>

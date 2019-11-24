@@ -15,8 +15,8 @@
 	<field name="CORREO" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="CORREO"/>
 	</field>
-	<field name="CONCATERNARVUELOS(V.ID_VUELO)" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="CONCATERNARVUELOS(V.ID_VUELO)"/>
+	<field name="CONCATERNARVUELOS(V.ID_VUELO,RV.RESERVA_VUELO.FECHA_INICIO)" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CONCATERNARVUELOS(V.ID_VUELO,RV.RESERVA_VUELO.FECHA_INICIO)"/>
 	</field>
 	<field name="TO_CHAR(RV.RESERVA_VUELO.FECHA_INICIO,&apos;MONDDYYYY&apos;)" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label">
@@ -124,6 +124,12 @@
 				</textElement>
 				<text><![CDATA[Monto pagado]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="257" y="0" width="100" height="30" uuid="c2724334-2804-487c-9239-75108a04d165">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a83b6d1-d8ce-47e4-bc76-d7ee4485066b"/>
+				</reportElement>
+				<text><![CDATA[CONCATERNARVUELOS(V.ID_VUELO,RV.RESERVA_VUELO.FECHA_INICIO)]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
@@ -137,12 +143,6 @@
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="93bd0ed4-b3ee-40fa-becb-1808346eafcc"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{CORREO}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="240" y="0" width="60" height="125" uuid="5eeca1e5-5e6a-49b3-b449-a71540d04107">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17e8acb3-1766-42c7-8448-e2b5a0a42a39"/>
-				</reportElement>
-				<textFieldExpression><![CDATA[$F{CONCATERNARVUELOS(V.ID_VUELO)}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="310" y="0" width="50" height="125" uuid="08390d99-63fa-48e8-99c0-1ecc6c10433a">
@@ -198,6 +198,13 @@
 			<rectangle>
 				<reportElement x="-20" y="141" width="593" height="1" uuid="4f9fda9c-d75a-4945-81fd-f65306e2ad6c"/>
 			</rectangle>
+
+			<textField>
+				<reportElement x="240" y="10" width="50" height="130" uuid="622d4949-6210-4357-be53-efc2d05c9d12">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a83b6d1-d8ce-47e4-bc76-d7ee4485066b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{CONCATERNARVUELOS(V.ID_VUELO,RV.RESERVA_VUELO.FECHA_INICIO)}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>
