@@ -70,7 +70,7 @@ END;
 CREATE OR REPLACE PROCEDURE REPORTE_6 (cursorMemoria OUT SYS_REFCURSOR, x NUMBER)
 AS
 BEGIN
-    OPEN cursorMemoria FOR SELECT A.logo,U.correo,concaternarVuelos(V.id_vuelo, RV.reserva_vuelo.fecha_inicio),TO_CHAR(RV.reserva_vuelo.fecha_inicio, 'Mon DD YYYY'),TO_CHAR(RV.reserva_vuelo.fecha_fin,'Mon DD YYYY'),'$ '||RV.reserva_vuelo.monto.valor,traerPago(RV.id_reserva_vuelo,P.id_pago,P.tarjetacredito_id,P.tarjetadebito_id,P.millas_id),'$'||P.monto.valor
+    OPEN cursorMemoria FOR SELECT A.logo,U.correo,concaternarVuelos(V.id_vuelo, RV.reserva_vuelo.fecha_inicio),TO_CHAR(RV.reserva_vuelo.fecha_inicio, 'Mon DD YYYY'),TO_CHAR(RV.reserva_vuelo.fecha_fin,'Mon DD YYYY'),'$ '||precio_total(RV.id_reserva_vuelo, RV.reserva_vuelo.monto.valor, P.id_pago),traerPago(RV.id_reserva_vuelo,P.id_pago,P.tarjetacredito_id,P.tarjetadebito_id,P.millas_id),'$'||P.monto.valor
                             FROM USUARIO U, RESERVA_VUELO RV, VUELO V, DISPONIBILIDAD D, ASIENTO ASI, AVION AV, AEROLINEA A, PAGO P
                             WHERE U.id_usuario = RV.usuario_id
                             AND P.reservavuelo_id = RV.id_reserva_vuelo
@@ -83,7 +83,23 @@ BEGIN
                             AND RV.id_reserva_vuelo = x;
 END;
 
-
-
-
+CREATE OR REPLACE FUNCTION precio_total (x NUMBER, y NUMBER, z NUMBER) RETURN NUMBER
+IS
+    total NUMBER(5);
+    aux NUMBER(5);
+BEGIN
+    SELECT P.seguro_id INTO aux
+    FROM PAGO P
+    WHERE P.reservavuelo_id = x
+    AND P.id_pago = z;
+    IF (aux IS NULL) THEN
+        RETURN y;
+    ELSE 
+        SELECT S.reserva_seguro.monto.valor INTO total
+        FROM SEGURO S 
+        WHERE S.reservavuelo_id = 2;
+        total := total + y;
+        RETURN total;
+    END IF;
+END;
 
