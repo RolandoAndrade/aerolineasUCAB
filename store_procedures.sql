@@ -325,7 +325,7 @@ BEGIN
     INSERT INTO CARACTERISTICA VALUES (id_caracteristica.nextVal, titulo, descripcion,null,null,hotel);
 END;
 /
-CREATE OR REPLACE PROCEDURE insertarCaracteristicaHotel(habitacion NUMBER, titulo VARCHAR, descripcion VARCHAR)
+CREATE OR REPLACE PROCEDURE insertarCaracteristicaHabitacion(habitacion NUMBER, titulo VARCHAR, descripcion VARCHAR)
 IS 
 BEGIN
     INSERT INTO CARACTERISTICA VALUES (id_caracteristica.nextVal, titulo, descripcion,null,habitacion,null);
