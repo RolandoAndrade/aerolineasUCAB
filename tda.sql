@@ -54,22 +54,18 @@ CREATE OR REPLACE TYPE BODY UNIDAD AS
 END;
 /
 CREATE OR REPLACE TYPE RESERVA AS OBJECT (
-    fecha_inicio DATE,
-    fecha_fin DATE,
+    fecha_inicio TIMESTAMP,
+    fecha_fin TIMESTAMP,
     monto UNIDAD,
     estado VARCHAR(15),
-    MEMBER FUNCTION validar_fecha(fecha_inicioP DATE, fecha_finP DATE) RETURN DATE
+    STATIC FUNCTION validar_fecha(fecha_inicioP TIMESTAMP, fecha_finP TIMESTAMP) RETURN BOOLEAN
 );
 /
 CREATE OR REPLACE TYPE BODY RESERVA AS
-    MEMBER FUNCTION validar_fecha(fecha_inicioP DATE, fecha_finP DATE) RETURN DATE
+    STATIC FUNCTION validar_fecha(fecha_inicioP TIMESTAMP, fecha_finP TIMESTAMP) RETURN BOOLEAN
     IS
     BEGIN
-        IF(fecha_finP > fecha_inicioP) THEN 
-            RETURN fecha_inicioP;
-        ELSE
-            raise_application_error(-20010, 'la fecha final no puede ser menor a la fecha inical');
-        END IF;
+        RETURN fecha_inicioP<fecha_finP;
     END;
 END;
 /
