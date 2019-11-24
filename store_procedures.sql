@@ -330,3 +330,35 @@ IS
 BEGIN
     INSERT INTO CARACTERISTICA VALUES (id_caracteristica.nextVal, titulo, descripcion,null,habitacion,null);
 END;
+/            
+CREATE OR REPLACE FUNCTION chocaConReservasApartamento(fechai TIMESTAMP, fechaf TIMESTAMP, apartamentoid INTEGER) RETURN NUMBER
+IS
+BEGIN
+    FOR reservac IN (SELECT * FROM RESERVA_ESTANCIA WHERE apartamento_id = apartamentoid)
+    LOOP
+        IF ((fechai BETWEEN reservac.reserva_estacia.fecha_inicio AND reservac.reserva_estacia.fecha_fin)
+        OR (fechaf BETWEEN reservac.reserva_estacia.fecha_inicio AND reservac.reserva_estacia.fecha_fin))
+        AND
+        reservac.reserva_estacia.estado != 'cancelada'
+        THEN
+            RETURN 1;
+        END IF;
+    END LOOP;
+    RETURN 0;
+END;
+/
+CREATE OR REPLACE FUNCTION chocaConReservasHabitacion(fechai TIMESTAMP, fechaf TIMESTAMP, habitacionid INTEGER) RETURN NUMBER
+IS
+BEGIN
+    FOR reservac IN (SELECT * FROM RESERVA_ESTANCIA WHERE habitacion_id = habitacionid)
+    LOOP
+        IF ((fechai BETWEEN reservac.reserva_estacia.fecha_inicio AND reservac.reserva_estacia.fecha_fin)
+        OR (fechaf BETWEEN reservac.reserva_estacia.fecha_inicio AND reservac.reserva_estacia.fecha_fin))
+        AND
+        reservac.reserva_estacia.estado != 'cancelada'
+        THEN
+            RETURN 1;
+        END IF;
+    END LOOP;
+    RETURN 0;
+END;
