@@ -9,12 +9,5 @@ BEGIN
 END;
 
 exec simulacion;
-
-EXEC  CAMBIAR_ESTADOS.estadoVuelo;
-exec RESERVACION_VUELOS.reservar_vuelos;
-SELECT * FROM pago
-order by reservavuelo_id
-
-select vuelo_id, count(*) AS cantidad from reserva_vuelo group by vuelo_id order by cantidad desc
-select count(*) from vuelo;
-select * from PAGO WHERE millas_id IS NOT NULL;
+select * from pago
+ select P.millas_restantes.valor FROM Pago p where reservavuelo_id = 16; 

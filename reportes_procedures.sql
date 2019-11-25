@@ -97,7 +97,7 @@ BEGIN
     traerfechanull(RV.reserva_vuelo.fecha_fin) "fecha_fin",
     '$ '||precio_total(RV.id_reserva_vuelo, RV.reserva_vuelo.monto.valor, P.id_pago),
     traerPago(RV.id_reserva_vuelo,P.id_pago,P.tarjetacredito_id,P.tarjetadebito_id,P.millas_id),
-    '$'||ROUND(P.monto.valor,2) "monto"
+    '$'||ROUND(P.monto.valor,0) "monto"
                             FROM USUARIO U, RESERVA_VUELO RV, VUELO V, DISPONIBILIDAD D, ASIENTO ASI, AVION AV, AEROLINEA A, PAGO P
                             WHERE U.id_usuario = RV.usuario_id
                             AND P.reservavuelo_id = RV.id_reserva_vuelo
