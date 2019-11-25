@@ -393,3 +393,11 @@ BEGIN
     END IF;
     RETURN distancia;
 END;
+/
+CREATE OR REPLACE FUNCTION getSeguroDe(reservavueloid INTEGER) RETURN INTEGER
+IS
+    ret INTEGER;
+BEGIN
+    SELECT id_seguro INTO ret FROM SEGURO WHERE reservavuelo_id = reservavueloid;
+    RETURN ret;
+END;
