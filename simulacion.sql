@@ -5,4 +5,5 @@ BEGIN
     RESERVACION_VUELOS.reservar_vuelos;
     RESERVACION_CARRO.reservar_carro;
     RESERVACION_HOSPEDAJE.reservar_hospedaje;
+    CAMBIAR_ESTADOS.estadoVuelo;
 END;
