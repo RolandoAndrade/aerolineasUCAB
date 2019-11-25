@@ -379,3 +379,17 @@ BEGIN
     RETURN UNIDAD(R*c,'kilometros','distancia','km');
     -- FORMULA DE https://www.movable-type.co.uk/scripts/latlong.html
 END;
+/
+CREATE OR REPLACE FUNCTION distanciaDelVuelo(vueloid INTEGER) RETURN UNIDAD
+IS
+    vuelo1 VUELO%RowType;
+    distancia UNIDAD;
+BEGIN
+    vuelo1 := getVuelo(vueloid);
+    distancia := distanciaEntreAeropuertos(vuelo1.aeropuerto_sale,vuelo1.aeropuerto_llega);
+    IF vuelo1.vuelo_id IS NOT NULL THEN
+        vuelo1:=getVuelo(vuelo1.vuelo_id);
+        distancia.valor := distancia.valor + distanciaEntreAeropuertos(vuelo1.aeropuerto_sale,vuelo1.aeropuerto_llega).valor;
+    END IF;
+    RETURN distancia;
+END;
