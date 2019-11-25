@@ -42,7 +42,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
                 END IF;
             END IF;
             cancelar_triple(reservaid,usuarioid);
-            dbms_output.put_line('e: Hubo un problema');
+            dbms_output.put_line('e: Hubo un problema, se añadió una compensación al usuario en millas');
         ELSE
             dbms_output.put_line('  r: No');
         END IF;
@@ -300,7 +300,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         dbms_output.put_line('*   RESERVACION DE VUELOS    *');
         dbms_output.put_line('*                            *');
         dbms_output.put_line('******************************');
-        FOR I IN 1..5--00
+        FOR I IN 1..10--00
         LOOP
             usuarioid := getUsuarioAleatorio;
             dbms_output.put_line('-----El usuario '||usuarioid||' desea hacer una reserva-----');
@@ -335,6 +335,5 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
                 dbms_output.put_line('*******EL USUARIO NO ENCONTRÓ VUELOS QUE LE GUSTARAN Y SE FUE CON LA COMPETENCIA******');
             END IF;
         END LOOP;
-
     END;       
 END;
