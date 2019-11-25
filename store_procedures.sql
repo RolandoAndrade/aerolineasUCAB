@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION aceptar_o_rechazar(probabilidadSi NUMBER) RETURN BOOLEAN
+﻿CREATE OR REPLACE FUNCTION aceptar_o_rechazar(probabilidadSi NUMBER) RETURN BOOLEAN
 IS
 BEGIN
     RETURN dbms_random.value < probabilidadSi;
@@ -117,7 +117,7 @@ BEGIN
     RETURN cantidad;
 END;
 /
-CREATE OR REPLACE FUNCTION concaternarVuelos(x NUMBER) RETURN VARCHAR
+CREATE OR REPLACE FUNCTION concaternarVuelos(x NUMBER, y DATE) RETURN VARCHAR
 IS
     registro1 VARCHAR(100);
     registro2 VARCHAR(100);
@@ -126,11 +126,10 @@ BEGIN
         FROM VUELO V, AEROPUERTO A
         WHERE V.id_vuelo = x
         AND A.id_aeropuerto = V.aeropuerto_sale;
-    SELECT A.lugar_aeropuerto.pais ||' ('||A.abreviatura||'), '||A.lugar_aeropuerto.pais ||' '|| TO_CHAR(RV.reserva_vuelo.fecha_inicio,'DY Mon DD YYYY') INTO registro2
-        FROM VUELO V, AEROPUERTO A, RESERVA_VUELO RV
+    SELECT A.lugar_aeropuerto.pais ||' ('||A.abreviatura||'), '||A.lugar_aeropuerto.pais ||' '|| TO_CHAR(y,'DY Mon DD YYYY') INTO registro2
+        FROM VUELO V, AEROPUERTO A
         WHERE V.id_vuelo = x
-        AND A.id_aeropuerto = V.aeropuerto_llega
-        AND V.id_vuelo = RV.vuelo_id;
+        AND A.id_aeropuerto = V.aeropuerto_llega;
     registro1:=registro1 || registro2;    
     RETURN registro1;   
 END;
@@ -319,6 +318,18 @@ BEGIN
     WHERE usuario_id = usuarioid;
 END;
 /
+CREATE OR REPLACE PROCEDURE insertarCaracteristicaHotel(hotel NUMBER, titulo VARCHAR, descripcion VARCHAR)
+IS 
+BEGIN
+    INSERT INTO CARACTERISTICA VALUES (id_caracteristica.nextVal, titulo, descripcion,null,null,hotel);
+END;
+/
+CREATE OR REPLACE PROCEDURE insertarCaracteristicaHotel(habitacion NUMBER, titulo VARCHAR, descripcion VARCHAR)
+IS 
+BEGIN
+    INSERT INTO CARACTERISTICA VALUES (id_caracteristica.nextVal, titulo, descripcion,null,habitacion,null);
+END;
+/            
 CREATE OR REPLACE FUNCTION chocaConReservasApartamento(fechai TIMESTAMP, fechaf TIMESTAMP, apartamentoid INTEGER) RETURN NUMBER
 IS
 BEGIN
