@@ -77,14 +77,14 @@ CREATE OR REPLACE TYPE LUGAR AS OBJECT (
     nombre VARCHAR(50),
     codigo_postal VARCHAR(50),
     zona_horaria VARCHAR(50),
-    MEMBER FUNCTION convertir_zonaH(zona_horaria VARCHAR) RETURN DATE
+    MEMBER FUNCTION convertir_zonaH(fecha TIMESTAMP) RETURN TIMESTAMP
 );
 /
 ------------------------falta crear la funcion canvertir hora-------------------------------------------------------------------
 CREATE OR REPLACE TYPE BODY LUGAR AS
-    MEMBER FUNCTION convertir_zonaH(zona_horaria VARCHAR) RETURN DATE
+    MEMBER FUNCTION convertir_zonaH(fecha TIMESTAMP) RETURN TIMESTAMP
     IS 
     BEGIN
-        RETURN NULL;
+        RETURN fecha+TO_NUMBER(zona_horaria)/24;
     END;
 END;
