@@ -2572,7 +2572,7 @@ INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'NARITA', 'mai', UNIDAD(35.
 INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'AEROPUERTO DE LONDRE OXFORD', 'alo', UNIDAD(51.50528,'grados','coordenada','°'), UNIDAD(0.05528,'grados','coordenada','°'), LUGAR('INGLATERRA', 'LONDRES', 'CIUDAD DE OXFORD', 'AEROPUERTO DE LONDRE OXFORD',null, 'gtm+4'));
 INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'AEROPUERTO DE BERLIN TEGEL', 'adb', UNIDAD(52.55973,'grados','coordenada','°'), UNIDAD(13.28769,'grados','coordenada','°'), LUGAR('ALEMANIA', 'BERLIN', 'TEGEL', 'AEROPUERTO DE BERLIN TEGEL',null, 'gtm+5'));
 INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'Giovanni Battista', 'gib', UNIDAD(41.79944,'grados','coordenada','°'), UNIDAD(12.59722,'grados','coordenada','°'), LUGAR('ITALIA', 'ROMA', 'LACIO', 'Giovanni Battista',null, 'gtm+5'));
-INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'TORONTO PEARSON', 'top', UNIDAD(43.68611,'grados','coordenada','°'), UNIDAD(-79.63333,'grados','coordenada','°'), LUGAR('CANADA', 'TORONO', 'OESTE', 'TORONTO PEARSON',null, 'gtm -1'));
+INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'TORONTO PEARSON', 'top', UNIDAD(43.68611,'grados','coordenada','°'), UNIDAD(-79.63333,'grados','coordenada','°'), LUGAR('CANADA', 'TORONTO', 'OESTE', 'TORONTO PEARSON',null, 'gtm -1'));
 INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'BENITO JUAREZ', 'bej', UNIDAD(17.60157,'grados','coordenada','°'), UNIDAD(-101.46054,'grados','coordenada','°'), LUGAR('MEXICO', 'CIUDAD DE MEXICO', 'VALLE DE MEXICO', 'BENITO JUAREZ',null, 'gtm-2'));
 INSERT INTO AEROPUERTO VALUES(id_aeropuerto.nextVal, 'ALCANTIRI SUCRE', 'mai', UNIDAD(-19.24647,'grados','coordenada','°'), UNIDAD(-65.15094,'grados','coordenada','°'), LUGAR('BOLIVIA', 'CIUDAD DE SUCRE', 'YAMPARAEZ', 'ALCANTIRI SUCRE',null, 'gtm 0'));
 /
@@ -3312,7 +3312,123 @@ BEGIN
     COMMIT;
 END;
 /
-
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hard Rock Hotel',EMPTY_BLOB(),'5',LUGAR('PANAMA','Ciudad de Panama','Av Balboa','Ciudad de Panama','0831','GMT-5')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'hard-rock-hotel.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Hive',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Washington',' F St NW','Washington','20037','GMT-5')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'hive.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Lisboa',EMPTY_BLOB(),'5',LUGAR('PORTUGAL','Lisboa','R. Barata Salgueiro','Lisboa','1000','GMT')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'lisboa.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Rock Hard',EMPTY_BLOB(),'5',LUGAR('ARGENTINA','Buenos Aires','Av. Pueyrredón 2501','Buenos Aires','C1119','GMT-3')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'buenosaires.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hyatt Place DaXing',EMPTY_BLOB(),'3',LUGAR('CHINA','Pekin','Guogongzhuang Rd','Pekin','100000','GMT+8')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'hyattpekin.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel NH',EMPTY_BLOB(),'4',LUGAR('CHILE','Santiago de Chile','Av Condell','Santiago de Chile','8150','GMT-3')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'hotelnh.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Intercontinental',EMPTY_BLOB(),'4',LUGAR('JAPON','Tokyo','Av. Shinagawa','Tokyo','100-0004','GMT+9')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'intercontinental.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bridge House BB',EMPTY_BLOB(),'3',LUGAR('INGLATERRA','Londres','B1354','Londres','5698','GMT')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'bridge-house.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
+SET serveroutput ON
+DECLARE 
+    V_blob BLOB;
+    V_bfile BFILE;
+BEGIN 
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Berlin Berlin',EMPTY_BLOB(),'3',LUGAR('ALEMANIA','Berlin','Lutzowpl','Berlin','10115','GMT+1')) RETURNING foto INTO V_blob;
+    V_bfile := BFILENAME('IMAGES', 'berlin.jpg');
+    DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
+    DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
+    DBMS_LOB.CLOSE(V_bfile);
+    COMMIT;
+END;
+/
 ---------------------------------------------HABITACION------------------------------------------------------------------------
 
 INSERT INTO HABITACION VALUES (id_habitacion.nextVal,10,1,'King',UNIDAD(10000,'dolar','monetaria','usd'),1);
@@ -3405,35 +3521,59 @@ INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15800,'do
 INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15800,'dolar','monetaria','usd'),15);
 INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','usd'),15);
 
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15600,'dolar','monetaria','usd'),11);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Triple',UNIDAD(9000,'dolar','monetaria','usd'),11);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Triple',UNIDAD(9000,'dolar','monetaria','usd'),11);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Twin',UNIDAD(5500,'dolar','monetaria','usd'),11);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2000,'dolar','monetaria','usd'),11);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','usd'),16);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15800,'dolar','monetaria','usd'),16);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(16800,'dolar','monetaria','usd'),16);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(16800,'dolar','monetaria','usd'),16);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','usd'),16);
 
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15000,'dolar','monetaria','usd'),12);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Triple',UNIDAD(6500,'dolar','monetaria','usd'),12);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14000,'dolar','monetaria','usd'),12);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14000,'dolar','monetaria','usd'),12);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(1256,'dolar','monetaria','usd'),12);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','usd'),17);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(17800,'dolar','monetaria','usd'),17);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(17800,'dolar','monetaria','usd'),17);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(17800,'dolar','monetaria','usd'),17);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','usd'),17);
 
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14600,'dolar','monetaria','usd'),13);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Twin',UNIDAD(4500,'dolar','monetaria','usd'),13);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15600,'dolar','monetaria','usd'),13);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Twin',UNIDAD(4500,'dolar','monetaria','usd'),13);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','usd'),13);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','usd'),18);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(18800,'dolar','monetaria','usd'),18);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(18800,'dolar','monetaria','usd'),18);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(18800,'dolar','monetaria','usd'),18);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','usd'),18);
 
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14000,'dolar','monetaria','usd'),14);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Triple',UNIDAD(5000,'dolar','monetaria','usd'),14);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Twin',UNIDAD(2560,'dolar','monetaria','usd'),14);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(1250,'dolar','monetaria','usd'),14);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15000,'dolar','monetaria','usd'),14);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','usd'),19);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(19800,'dolar','monetaria','usd'),19);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(19800,'dolar','monetaria','usd'),19);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(19800,'dolar','monetaria','usd'),19);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','usd'),19);
 
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','usd'),15);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15800,'dolar','monetaria','usd'),15);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15800,'dolar','monetaria','usd'),15);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(15800,'dolar','monetaria','usd'),15);
-INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','usd'),15);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','usd'),20);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(20800,'dolar','monetaria','usd'),20);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(20800,'dolar','monetaria','usd'),20);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(20800,'dolar','monetaria','usd'),20);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','usd'),20);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','usd'),21);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(21800,'dolar','monetaria','usd'),21);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(21800,'dolar','monetaria','usd'),21);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(21800,'dolar','monetaria','usd'),21);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','usd'),21);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','usd'),22);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(21800,'dolar','monetaria','usd'),22);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(22800,'dolar','monetaria','usd'),22);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(22800,'dolar','monetaria','usd'),22);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','usd'),22);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','usd'),23);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(23800,'dolar','monetaria','usd'),23);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(23800,'dolar','monetaria','usd'),23);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(23800,'dolar','monetaria','usd'),23);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','usd'),23);
+
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Individual',UNIDAD(2500,'dolar','monetaria','usd'),24);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(24800,'dolar','monetaria','usd'),24);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(24800,'dolar','monetaria','usd'),24);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'King',UNIDAD(24800,'dolar','monetaria','usd'),24);
+INSERT INTO HABITACION VALUES (id_habitacion.nextVal,4,3,'Queen',UNIDAD(14700,'dolar','monetaria','usd'),24);
 ----------------------------------APARTAMENTO CON CARACTERISTICA----------------------------------------------------------------
 /
 SET serveroutput ON

@@ -159,6 +159,69 @@ BEGIN
      insertarCaracteristicaHotel(:new.id_hotel, 'Motel','Motel del amor');
      insertarCaracteristicaHotel(:new.id_hotel, 'Cocteles','Delivery de Cocteles');
 END;
+ELSIF (:new.nombre = 'Hard Rock Hotel' )THEN
+BEGIN
+     insertarCaracteristicaHotel(:new.id_hotel, 'Helipuerto','Helipuerto en la azotea'); 
+     insertarCaracteristicaHotel(:new.id_hotel, 'Taxi','Servicio de taxi de lujo');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Motel','Motel del amor');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Cocteles','Delivery de Cocteles');
+END;
+ELSIF (:new.nombre = 'Hotel Hive' )THEN
+BEGIN
+     insertarCaracteristicaHotel(:new.id_hotel, 'Helipuerto','Helipuerto en la azotea'); 
+     insertarCaracteristicaHotel(:new.id_hotel, 'Taxi','Servicio de taxi de lujo');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Motel','Motel del amor');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Cocteles','Delivery de Cocteles');
+END;
+ELSIF (:new.nombre = 'Hotel Lisboa' )THEN
+BEGIN
+     insertarCaracteristicaHotel(:new.id_hotel, 'Helipuerto','Helipuerto en la azotea'); 
+     insertarCaracteristicaHotel(:new.id_hotel, 'Taxi','Servicio de taxi de lujo');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Motel','Motel del amor');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Cocteles','Delivery de Cocteles');
+END;
+ELSIF (:new.nombre = 'Rock Hard' )THEN
+BEGIN
+     insertarCaracteristicaHotel(:new.id_hotel, 'Helipuerto','Helipuerto en la azotea'); 
+     insertarCaracteristicaHotel(:new.id_hotel, 'Taxi','Servicio de taxi de lujo');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Motel','Motel del amor');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Cocteles','Delivery de Cocteles');
+END;
+ELSIF (:new.nombre = 'Hyatt Place DaXing' )THEN
+BEGIN
+     insertarCaracteristicaHotel(:new.id_hotel, 'Helipuerto','Helipuerto en la azotea'); 
+     insertarCaracteristicaHotel(:new.id_hotel, 'Taxi','Servicio de taxi de lujo');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Motel','Motel del amor');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Cocteles','Delivery de Cocteles');
+END;
+ELSIF (:new.nombre = 'Hotel NH' )THEN
+BEGIN
+     insertarCaracteristicaHotel(:new.id_hotel, 'Helipuerto','Helipuerto en la azotea'); 
+     insertarCaracteristicaHotel(:new.id_hotel, 'Taxi','Servicio de taxi de lujo');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Motel','Motel del amor');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Cocteles','Delivery de Cocteles');
+END;
+ELSIF (:new.nombre = 'Intercontinental' )THEN
+BEGIN
+     insertarCaracteristicaHotel(:new.id_hotel, 'Helipuerto','Helipuerto en la azotea'); 
+     insertarCaracteristicaHotel(:new.id_hotel, 'Taxi','Servicio de taxi de lujo');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Motel','Motel del amor');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Cocteles','Delivery de Cocteles');
+END;
+ELSIF (:new.nombre = 'Bridge House BB' )THEN
+BEGIN
+     insertarCaracteristicaHotel(:new.id_hotel, 'Helipuerto','Helipuerto en la azotea'); 
+     insertarCaracteristicaHotel(:new.id_hotel, 'Taxi','Servicio de taxi de lujo');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Motel','Motel del amor');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Cocteles','Delivery de Cocteles');
+END;
+ELSIF (:new.nombre = 'Hotel Berlin Berlin' )THEN
+BEGIN
+     insertarCaracteristicaHotel(:new.id_hotel, 'Helipuerto','Helipuerto en la azotea'); 
+     insertarCaracteristicaHotel(:new.id_hotel, 'Taxi','Servicio de taxi de lujo');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Motel','Motel del amor');
+     insertarCaracteristicaHotel(:new.id_hotel, 'Cocteles','Delivery de Cocteles');
+END;
 END IF;
 END;
 /
