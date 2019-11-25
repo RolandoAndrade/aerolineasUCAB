@@ -253,9 +253,13 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
     
     PROCEDURE actualizar_millas_usuario(usuarioid INTEGER,vueloid INTEGER)
     IS
-        vuelon VUELO%RowType;
+        distancia UNIDAD;
     BEGIN
-        NULL;
+        distancia := distanciaDelVuelo(vueloid);
+        dbms_output.put_line('*Añadiendo '||distancia.valor||' millas del usuario');
+        UPDATE MILLA M
+        SET M.cantidad.valor = M.cantidad.valor + distancia.valor
+        WHERE usuario_id = usuarioid;
     END;  
     
     PROCEDURE cancelar_reserva(reservaid INTEGER)
@@ -302,34 +306,33 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
             origen:=NULL;
             destino:=NULL;
             vueloid:=origen_destino_aleatorio(origen,destino,usuarioid);
-            vueltaid :=vuelo_vuelta(vueloid,origen,destino,usuarioid,getVuelo(vueloid).fecha_salida);
-            asignar_asiento(vueloid,usuarioid);
-           
-            IF vueltaid != -1 THEN
-                asignar_asiento(vueltaid,usuarioid);
-                axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
-                getVuelo(vueltaid).fecha_salida, calcular_precio(vueloid,vueltaid,usuarioid),
-                'sin pagar');
+            IF vueloid != -1 THEN
+                vueltaid :=vuelo_vuelta(vueloid,origen,destino,usuarioid,getVuelo(vueloid).fecha_salida);
+                asignar_asiento(vueloid,usuarioid);
+               
+                IF vueltaid != -1 THEN
+                    asignar_asiento(vueltaid,usuarioid);
+                    axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
+                    getVuelo(vueltaid).fecha_salida, calcular_precio(vueloid,vueltaid,usuarioid),
+                    'sin pagar');
+                ELSE
+                    axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
+                    null, calcular_precio(vueloid,vueltaid,usuarioid),'sin pagar');
+                END IF;
+                dbms_output.put_line('*Creada reserva');
+                INSERT INTO RESERVA_VUELO VALUES(id_reserva_vuelo.nextval,axReserva,vueloid,usuarioid);
+                agregar_seguro(id_reserva_vuelo.currval);
+                IF reservatriple(id_reserva_vuelo.currval, usuarioid, destino) THEN
+                    tipo:='triple';
+                ELSE
+                    tipo:='vuelo';
+                END IF;
+                PAGAR_RESERVA.pagar(usuarioid,id_reserva_vuelo.currval,tipo);
+                actualizar_millas_usuario(usuarioid,vueloid);
             ELSE
-                axReserva := RESERVA(getVuelo(vueloid).fecha_salida, 
-                null, calcular_precio(vueloid,vueltaid,usuarioid),'sin pagar');
+                dbms_output.put_line('*******EL USUARIO NO ENCONTRÓ VUELOS QUE LE GUSTARAN, SE FUE CON LA COMPETENCIA******');
             END IF;
-            dbms_output.put_line('*Creada reserva');
-            INSERT INTO RESERVA_VUELO VALUES(id_reserva_vuelo.nextval,axReserva,vueloid,usuarioid);
-            agregar_seguro(id_reserva_vuelo.currval);
-            IF reservatriple(id_reserva_vuelo.currval, usuarioid, destino) THEN
-                tipo:='triple';
-            ELSE
-                tipo:='vuelo';
-            END IF;
-            PAGAR_RESERVA.pagar(usuarioid,id_reserva_vuelo.currval,tipo);
-            
         END LOOP;
+
     END;       
 END;
-
-
---SELECT * FROM DISPONIBILIDAD;
---SELECT asientosDisponibles(id_vuelo) FROM VUELO;
---SELECT * FROM SEGURO;
---EXEC RESERVACION_VUELOS.reservar_vuelos;
