@@ -98,7 +98,7 @@ CREATE OR REPLACE PACKAGE BODY CAMBIAR_ESTADOS AS
         WHERE D.vuelo_id = vueloid
         AND D.usuario_id IS NULL;
         disponible:=asientosDisponibles(vueloid);  
-        RETURN reservados>10;
+        RETURN reservados<disponible/4;
     END;
 
     PROCEDURE estadoVuelo

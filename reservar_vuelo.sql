@@ -189,7 +189,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         vuelov:= hay_vuelo(aeropuerto2,aeropuerto1,usuarioid,fecha);
         IF vuelov = -1 THEN
             dbms_output.put_line('q: Parece que no hay ningún vuelo, ¿Desea solicitar que se abra alguno?');
-            IF aceptar_o_rechazar(0.5) THEN
+            IF aceptar_o_rechazar(0.01) THEN
                 dbms_output.put_line('  r: Abre un vuelo, que debe ser ida y vuelta');
                 RETURN abrir_vuelo(vueloida);
             ELSE
@@ -258,7 +258,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         distancia := distanciaDelVuelo(vueloid);
         dbms_output.put_line('*Añadiendo '||distancia.valor||' millas del usuario');
         UPDATE MILLA M
-        SET M.cantidad.valor = M.cantidad.valor + distancia.valor
+        SET M.cantidad.valor = ROUND(M.cantidad.valor + distancia.valor,2)
         WHERE usuario_id = usuarioid;
     END;  
     
@@ -300,7 +300,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_VUELOS AS
         dbms_output.put_line('*   RESERVACION DE VUELOS    *');
         dbms_output.put_line('*                            *');
         dbms_output.put_line('******************************');
-        FOR I IN 1..10--00
+        FOR I IN 1..500
         LOOP
             usuarioid := getUsuarioAleatorio;
             dbms_output.put_line('-----El usuario '||usuarioid||' desea hacer una reserva-----');

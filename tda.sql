@@ -1,5 +1,5 @@
 CREATE OR REPLACE TYPE UNIDAD AS OBJECT( 
-    valor NUMBER(10,5), 
+    valor DOUBLE PRECISION, 
     nombre VARCHAR2(30), --Nombre oficial de la unidad ej: Kilogramo, Metro, Segundo
     tipo VARCHAR2(15),   --Tipo al que pertenece la unidad: Distancia, Tiempo, Velocidad, Monetaria
     simbolo VARCHAR2(5),
