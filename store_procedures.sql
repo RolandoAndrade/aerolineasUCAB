@@ -350,3 +350,32 @@ BEGIN
     END LOOP;
     RETURN 0;
 END;
+/
+CREATE OR REPLACE FUNCTION distanciaEntreAeropuertos(aeropuerto1 INTEGER,aeropuerto2 INTEGER) RETURN UNIDAD
+IS
+        R INTEGER; -- RADIO DE LA TIERRA
+        lat1 NUMBER(10,5); -- LATITUD 1
+        lat2 NUMBER(10,5); -- LATITUD 2
+        lon1 NUMBER(10,5); -- LONGITUD 1
+        lon2 NUMBER(10,5); -- LONGITUD 2
+        dLat NUMBER(10,5); -- DELTA LATITUD
+        dLon NUMBER(10,5); -- DELTA LONGITUD
+        aero1 AEROPUERTO%RowType;
+        aero2 AEROPUERTO%RowType;
+        a NUMBER(10,5);
+        c NUMBER(10,5);
+BEGIN
+    R:=6371000;
+    aero1 := getAeropuerto(aeropuerto1);
+    aero2 := getAeropuerto(aeropuerto2);
+    lat1 := aero1.latitud.convertir('coordenada','rad');
+    lat2 := aero2.latitud.convertir('coordenada','rad');
+    lon1 := aero1.longitud.convertir('coordenada','rad');
+    lon2 := aero2.longitud.convertir('coordenada','rad');
+    dLat := lat2 - lat1;
+    dLon := lon2 - lon1;
+    a:=SIN(dLat/2)*SIN(dLat/2)+COS(lat1)*COS(lat2)*SIN(dLon/2)*SIN(dLon/2);
+    c:=2*ATAN(SQRT(a)/SQRT(1-a))/1000;
+    RETURN UNIDAD(R*c,'kilometros','distancia','km');
+    -- FORMULA DE https://www.movable-type.co.uk/scripts/latlong.html
+END;
