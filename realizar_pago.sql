@@ -37,9 +37,17 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
             END;
             monto.valor := monto.valor + valor.valor;
         ELSIF tipo = 'carro' THEN
-            SELECT R.reserva_carro.monto INTO monto FROM RESERVA_CARRO R WHERE id_reserva_carro = reservaid;
+            BEGIN
+                SELECT R.reserva_carro.monto INTO monto FROM RESERVA_CARRO R WHERE id_reserva_carro = reservaid;
+            EXCEPTION WHEN NO_DATA_FOUND THEN
+                monto := UNIDAD(0,'dolar','monetaria','usd');
+            END;
         ELSIF tipo = 'estancia' THEN
-            SELECT R.reserva_estacia.monto INTO monto FROM RESERVA_ESTANCIA R WHERE id_reserva_estancia = reservaid;
+            BEGIN
+                SELECT R.reserva_estacia.monto INTO monto FROM RESERVA_ESTANCIA R WHERE id_reserva_estancia = reservaid;
+            EXCEPTION WHEN NO_DATA_FOUND THEN
+                monto := UNIDAD(0,'dolar','monetaria','usd');
+            END;
         ELSIF tipo = 'triple' THEN
             SELECT R.reserva_vuelo.monto INTO monto FROM RESERVA_VUELO R WHERE id_reserva_vuelo = reservaid; --VUELO
             BEGIN
@@ -48,9 +56,17 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
                 valor := UNIDAD(0,'X','X','X');
             END;
             monto.valor := monto.valor + valor.valor;
-            SELECT R.reserva_carro.monto INTO valor FROM RESERVA_CARRO R WHERE reservavuelo_id = reservaid;
+            BEGIN
+                SELECT R.reserva_carro.monto INTO valor FROM RESERVA_CARRO R WHERE reservavuelo_id = reservaid;
+            EXCEPTION WHEN NO_DATA_FOUND THEN
+                valor := UNIDAD(0,'X','X','X');
+            END;
             monto.valor := monto.valor + valor.valor; -- CARRO
-            SELECT R.reserva_estacia.monto INTO valor FROM RESERVA_ESTANCIA R WHERE reservavuelo_id = reservaid;
+            BEGIN
+                SELECT R.reserva_estacia.monto INTO valor FROM RESERVA_ESTANCIA R WHERE reservavuelo_id = reservaid;
+            EXCEPTION WHEN NO_DATA_FOUND THEN
+                valor := UNIDAD(0,'X','X','X');
+            END;
             monto.valor := monto.valor + valor.valor; --HOSPEDAJE
         END IF;
         RETURN monto;
