@@ -401,3 +401,19 @@ BEGIN
     SELECT id_seguro INTO ret FROM SEGURO WHERE reservavuelo_id = reservavueloid;
     RETURN ret;
 END;
+/
+CREATE OR REPLACE FUNCTION getCarroDe(reservavueloid INTEGER) RETURN INTEGER
+IS
+    ret INTEGER;
+BEGIN
+    SELECT id_reserva_carro INTO ret FROM RESERVA_CARRO WHERE reservavuelo_id = reservavueloid;
+    RETURN ret;
+END;
+/
+CREATE OR REPLACE FUNCTION getEstanciaDe(reservavueloid INTEGER) RETURN INTEGER
+IS
+    ret INTEGER;
+BEGIN
+    SELECT id_reserva_estancia INTO ret FROM RESERVA_ESTANCIA WHERE reservavuelo_id = reservavueloid;
+    RETURN ret;
+END;
