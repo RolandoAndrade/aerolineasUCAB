@@ -1569,993 +1569,993 @@ END;
 ----------------------------------------------FIN PROVEEDOR DE CARROS------------------------------------------------------------
 ------------------------------------------------CARROS--------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),1, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),1, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),1, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),1, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),1, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),1, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),1, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),1, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),1, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),1, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),1, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),1, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),1, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),1, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),1, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),1, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),1, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),1, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),1, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),1, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),1, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),1, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),1, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),1, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),1, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),1, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),1, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),1, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),1, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),1, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),1, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),1, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),1, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),1, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),1, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),1, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),1, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),1, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),1, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),1, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),1, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),1, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),1, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),1, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),1, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),1, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),1, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),1, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),1, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),1, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),1, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),1, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),1, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),1, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),1, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),1, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),1, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),1, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),1, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),1, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),1, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),1, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),1, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),1, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),1, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),1, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),1, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),1, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),1, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),1, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),1, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),1, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),1, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),1, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),1, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),1, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),1, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),1, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),1, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),1, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),1, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),1, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),1, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),1, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),1, 13);
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),2, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),2, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),2, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),2, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),2, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),2, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),2, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),2, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),2, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),2, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),2, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),2, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),2, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),2, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),2, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),2, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),2, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),2, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),2, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),2, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),2, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),2, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),2, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),2, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),2, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),2, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),2, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),2, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),2, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),2, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),2, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),2, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),2, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),2, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),2, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),2, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),2, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),2, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),2, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),2, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),2, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),2, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),2, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),2, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),2, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),2, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),2, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),2, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),2, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),2, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),2, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),2, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),2, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),2, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),2, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),2, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),2, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),2, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),2, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),2, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),2, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),2, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),2, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),2, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),2, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),2, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),2, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),2, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),2, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),2, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),2, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),2, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),2, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),2, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),2, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),2, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),2, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),2, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),2, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),2, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),2, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),2, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),2, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),2, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),2, 13);
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),3, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),3, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),3, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),3, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),3, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),3, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),3, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),3, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),3, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),3, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),3, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),3, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),3, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),3, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),3, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),3, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),3, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),3, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),3, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),3, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),3, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),3, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),3, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),3, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),3, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),3, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),3, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),3, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),3, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),3, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),3, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),3, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),3, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),3, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),3, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),3, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),3, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),3, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),3, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),3, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),3, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),3, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),3, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),3, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),3, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),3, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),3, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),3, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),3, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),3, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),3, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),3, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),3, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),3, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),3, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),3, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),3, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),3, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),3, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),3, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),3, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),3, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),3, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),3, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),3, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),3, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),3, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),3, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),3, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),3, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),3, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),3, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),3, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),3, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),3, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),3, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),3, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),3, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),3, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),3, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),3, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),3, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),3, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),3, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),3, 13);
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),4, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),4, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),4, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),4, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),4, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),4, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),4, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),4, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),4, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),4, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),4, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),4, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),4, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),4, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),4, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),4, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),4, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),4, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),4, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),4, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),4, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),4, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),4, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),4, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),4, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),4, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),4, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),4, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),4, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),4, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),4, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),4, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),4, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),4, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),4, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),4, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),4, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),4, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),4, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),4, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),4, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),4, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),4, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),4, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),4, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),4, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),4, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),4, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),4, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),4, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),4, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),4, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),4, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),4, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),4, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),4, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),4, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),4, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),4, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),4, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),4, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),4, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),4, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),4, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),4, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),4, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),4, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),4, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),4, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),4, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),4, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),4, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),4, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),4, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),4, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),4, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),4, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),4, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),4, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),4, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),4, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),4, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),4, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),4, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),4, 13);
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),5, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),5, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),5, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),5, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),5, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),5, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),5, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),5, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),5, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),5, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),5, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),5, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),5, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),5, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),5, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),5, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),5, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),5, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),5, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),5, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),5, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),5, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),5, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),5, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),5, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),5, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),5, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),5, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),5, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),5, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),5, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),5, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),5, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),5, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),5, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),5, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),5, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),5, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),5, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),5, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),5, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),5, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),5, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),5, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),5, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),5, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),5, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),5, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),5, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),5, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),5, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),5, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),5, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),5, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),5, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),5, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),5, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),5, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),5, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),5, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),5, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),5, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),5, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),5, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),5, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),5, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),5, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),5, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),5, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),5, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),5, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),5, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),5, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),5, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),5, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),5, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),5, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),5, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),5, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),5, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),5, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),5, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),5, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),5, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),5, 13);
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),6, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),6, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),6, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),6, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),6, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),6, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),6, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),6, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),6, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),6, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),6, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),6, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),6, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),6, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),6, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),6, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),6, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),6, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),6, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),6, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),6, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),6, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),6, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),6, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),6, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),6, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),6, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),6, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),6, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),6, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),6, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),6, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),6, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),6, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),6, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),6, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),6, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),6, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),6, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),6, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),6, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),6, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),6, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),6, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),6, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),6, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),6, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),6, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),6, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),6, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),6, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),6, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),6, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),6, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),6, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),6, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),6, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),6, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),6, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),6, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),6, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),6, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),6, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),6, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),6, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),6, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),6, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),6, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),6, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),6, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),6, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),6, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),6, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),6, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),6, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),6, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),6, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),6, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),6, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),6, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),6, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),6, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),6, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),6, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),6, 13);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),7, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),7, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),7, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),7, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),7, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),7, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),8, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),8, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),8, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),8, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),8, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),8, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),7, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),7, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),7, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),7, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),7, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),7, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),7, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),7, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),7, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),7, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),7, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),7, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),7, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),7, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),7, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),7, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),7, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),7, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),7, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),7, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),7, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),7, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),7, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),7, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),7, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),7, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),7, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),7, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),7, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),7, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),7, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),7, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),7, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),7, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),7, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),7, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),7, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),7, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),7, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),7, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),7, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),7, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),7, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),7, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),7, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),7, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),7, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),7, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),7, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),7, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),7, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),7, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),7, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),7, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),7, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),7, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),7, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),7, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),7, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),7, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),7, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),7, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),7, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),7, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),7, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),7, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),7, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),7, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),7, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),7, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),7, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),7, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),7, 13);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),8, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),8, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),8, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),8, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),8, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),8, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),8, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),8, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),8, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),8, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),8, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),8, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),8, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),8, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),8, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),8, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),8, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),8, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),8, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),8, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),8, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),8, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),8, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),8, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),8, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),8, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),8, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),8, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),8, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),8, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),8, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),8, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),8, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),8, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),8, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),8, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),8, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),8, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),8, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),8, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),8, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),8, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),8, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),8, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),8, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),8, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),8, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),8, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),8, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),8, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),8, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),8, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),8, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),8, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),8, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),8, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),8, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),8, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),8, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),8, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),8, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),8, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),8, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),8, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),8, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),8, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),8, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),8, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),8, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),8, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),8, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),8, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),8, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),8, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),8, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),8, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),8, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),8, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),8, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),8, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),8, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),8, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),8, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),8, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),8, 13);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),9, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),9, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),9, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),9, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),9, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),9, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),9, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),9, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),9, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),9, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),9, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),9, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),9, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),9, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),9, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),9, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),9, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),9, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),9, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),9, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),9, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),9, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),9, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),9, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),9, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),9, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),9, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),9, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),9, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),9, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),9, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),9, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),9, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),9, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),9, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),9, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),9, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),9, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),9, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),9, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),9, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),9, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),9, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),9, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),9, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),9, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),9, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),9, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),9, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),9, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),9, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),9, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),9, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),9, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),9, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),9, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),9, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),9, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),9, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),9, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),9, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),9, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),9, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),9, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),9, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),9, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),9, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),9, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),9, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),9, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),9, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),9, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),9, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),9, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),9, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),9, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),9, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),9, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),9, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),9, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),9, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),9, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),9, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),9, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),9, 13);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),10, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),10, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),10, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),10, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),10, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),10, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),10, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),10, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),10, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),10, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),10, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),10, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),10, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),10, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),10, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),10, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),10, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),10, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),10, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),10, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),10, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),10, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),10, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),10, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),10, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),10, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),10, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),10, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),10, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),10, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),10, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),10, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),10, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),10, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),10, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),10, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),10, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),10, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),10, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),10, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),10, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),10, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),10, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),10, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),10, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),10, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),10, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),10, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),10, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),10, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),10, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),10, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),10, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),10, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),10, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),10, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),10, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),10, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),10, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),10, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),10, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),10, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),10, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),10, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),10, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),10, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),10, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),10, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),10, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),10, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),10, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),10, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),10, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),10, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),10, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),10, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),10, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),10, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),10, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),10, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),10, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),10, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),10, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),10, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),10, 13);
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),11, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),11, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),11, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),11, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),11, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),11, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),11, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),11, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),11, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),11, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),11, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),11, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),11, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),11, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),11, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),11, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),11, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),11, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),11, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),11, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),11, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),11, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),11, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),11, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),11, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),11, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),11, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),11, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),11, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),11, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),11, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),11, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),11, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),11, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),11, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),11, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),11, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),11, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),11, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),11, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),11, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),11, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),11, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),11, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),11, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),11, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),11, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),11, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),11, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),11, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),11, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),11, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),11, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),11, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),11, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),11, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),11, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),11, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),11, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),11, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),11, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),11, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),11, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),11, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),11, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),11, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),11, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),11, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),11, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),11, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),11, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),11, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),11, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),11, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),11, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),11, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),11, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),11, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),11, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),11, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),11, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),11, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),11, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),11, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),11, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),11, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),11, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),11, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),11, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),11, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),11, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),11, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),11, 13);
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),12, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),12, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),12, 8);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),12, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),12, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),12, 9);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),12, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),12, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),12, 10);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),12, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),12, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),12, 11);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),12, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),12, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),12, 12);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),12, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),12, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),12, 13);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),12, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),12, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),12, 14);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),12, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),12, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),12, 15);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),12, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),12, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),12, 8);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),12, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),12, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),12, 9);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),12, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),12, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),12, 10);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),12, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),12, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),12, 11);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),12, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),12, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),12, 12);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),12, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),12, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),12, 13);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),12, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),12, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),12, 13);
-
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),12, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),12, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),12, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),11, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),11, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),11, 13);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),13, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),13, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),13, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),12, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),12, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),12, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),13, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),13, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),13, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),12, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),12, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),12, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),13, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),13, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),13, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),12, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),12, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),12, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),13, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),13, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),13, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),12, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),12, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),12, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),13, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),13, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),13, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),12, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),12, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),12, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),13, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),13, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),12, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),12, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),12, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),13, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),13, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),13, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),12, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),12, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),12, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),13, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),13, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),13, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),12, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),12, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),12, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),13, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),13, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),13, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),12, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),12, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),12, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),13, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),13, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),13, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),12, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),12, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),12, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),13, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),13, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),13, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),12, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),12, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),12, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),13, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),13, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),13, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),12, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),12, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),12, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),13, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),13, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),13, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),12, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),12, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),12, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),13, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),13, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),12, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),12, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),12, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),13, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),13, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),12, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),12, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),12, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),13, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),13, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),12, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),12, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),12, 13);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),14, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),14, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),14, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),13, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),13, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),13, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),14, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),14, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),14, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),13, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),13, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),13, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),14, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),14, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),14, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),13, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),13, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),13, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),14, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),14, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),14, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),13, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),13, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),13, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),14, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),14, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),14, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),13, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),13, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),13, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),14, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),14, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),13, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),14, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),14, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),14, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),13, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),13, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),13, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),14, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),14, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),14, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),13, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),13, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),13, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),14, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),14, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),14, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),13, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),13, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),13, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),14, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),14, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),14, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),13, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),13, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),13, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),14, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),14, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),14, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),13, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),13, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),13, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),14, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),14, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),14, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),13, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),13, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),13, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),14, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),14, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),14, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),13, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),13, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),13, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),14, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),14, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),13, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),14, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),14, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),13, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),14, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),14, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),13, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),13, 13);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),14, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),14, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),14, 8);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),14, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),14, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),14, 9);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),14, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),14, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),14, 10);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),14, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),14, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),14, 11);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),14, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),14, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),14, 12);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),14, 13);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),14, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),14, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),14, 14);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),14, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),14, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),14, 15);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),14, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),14, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),14, 8);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),14, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),14, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),14, 9);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),14, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),14, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),14, 10);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),14, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),14, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),14, 11);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),14, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),14, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),14, 12);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),14, 13);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),14, 13);
+
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),14, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),14, 13);
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),15, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),15, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,'gmt 0'),15, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),15, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),15, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('VENEZELA','CARACAS','LA GUAIRA','MAIQUETIA',NULL,' 0'),15, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),15, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),15, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'gmt-1'),15, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),15, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),15, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PANAMA','CIUDAD DE PANAMA','CENTRO','TOCUMEN',NULL,'-1'),15, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),15, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),15, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'gmt-1'),15, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),15, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),15, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(5000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESTADOS UNIDOS','WASHINGTON','BUSINESS DISTRICT','WASHINGTON DULLES',NULL,'-1'),15, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),15, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),15, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'gmt+5'),15, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),15, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),15, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ESPAÑA','MADRID','BARAJA','ADOLFO SUAREZ',NULL,'+5'),15, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),15, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),15, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'gmt+4'),15, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),15, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),15, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('PORTUGAL','LISBOA','FEGUESIAS DE OLIVAIS','HUMBERTO DELGADO',NULL,'+4'),15, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),15, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),15, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'gmt+1'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ARGENTINA','BUENOS AIRES','OESTE','EZEIZA',NULL,'+1'),15, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),15, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),15, 14);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'gmt+12'),15, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),15, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),15, 14);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHINA','PEKIN','DISTRITO CHAOYANG','AEROPUERTO INTERNACIONAL DE PEKIN',NULL,'+12'),15, 14);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),15, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),15, 15);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'gmt+1'),15, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),15, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),15, 15);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(975,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CHILE','SANTIAGO DE CHILE','OESTE','ARTURO MERINO',NULL,'+1'),15, 15);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),15, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),15, 8);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'gmt+12'),15, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),15, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),15, 8);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('JAPON','TOKIO','NUEVO TOKIO','NARITA-',NULL,'+12'),15, 8);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),15, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),15, 9);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'gmt+4'),15, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),15, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),15, 9);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(7500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('INGLATERRA','LONDRES','CIUDAD DE OXFORD','AEROPUERTO DE LONDRE OXFORD',NULL,'+4'),15, 9);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),15, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),15, 10);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'gmt+5'),15, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),15, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),15, 10);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(500,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ALEMANIA','BERLIN','TEGEL','AEROPUERTO DE BERLIN TEGEL',NULL,'+5'),15, 10);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),15, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),15, 11);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'gmt+5'),15, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),15, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),15, 11);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(6850,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('ITALIA','ROMA','LACIO','Giovanni Battista',NULL,'+5'),15, 11);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),15, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),15, 12);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'gmt-1'),15, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),15, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),15, 12);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(8000,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('CANADA','TORONO','OESTE','TORONTO PEARSON',NULL,'-1'),15, 12);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),15, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),15, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),15, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),15, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),15, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'gmt-2'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('MEXICO','CIUDAD DE MEXICO','VALLE DE MEXICO','BENITO JUAREZ',NULL,'-2'),15, 13);
 
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),15, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),15, 13);
-INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'gmt0'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),15, 13);
+INSERT INTO CARRO VALUES(id_carro.nextVal,  'carro poco uso perfecto para viajes', UNIDAD(700,'dolares', 'monetaria', 'usd'), UNIDAD(500,'kilometros', 'distancia', 'km'), LUGAR('BOLIVIA','CIUDAD DE SUCRE','YAMPARAEZ','ALCANTIRI SUCRE',NULL,'0'),15, 13);
 /
 ------------------------------------------------------------------------------------------------------------------------------- Fin de carro-----------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------AEROPUERTO--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -3121,7 +3121,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Burj Al Arab',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Jumeirah Beach Road','Jumeirah St','111','GMT+4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Burj Al Arab',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Jumeirah Beach Road','Jumeirah St','111','+4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'burj-al-arab.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3134,7 +3134,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'President Wilson',EMPTY_BLOB(),'5',LUGAR('SUIZA','Ginebra',' Quai Wilson 47','Ginebra','1211','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'President Wilson',EMPTY_BLOB(),'5',LUGAR('SUIZA','Ginebra',' Quai Wilson 47','Ginebra','1211','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'president-wilson.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3147,7 +3147,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Atlantis',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Crescent Rd','Dubai','111','GMT+4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Atlantis',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Crescent Rd','Dubai','111','+4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'the-atlantis.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3160,7 +3160,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Four Season Hotel George V',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','31 Avenue George V','Paris','75008','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Four Season Hotel George V',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','31 Avenue George V','Paris','75008','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'four-season-hotel-george-v.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3173,7 +3173,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel de Glace',EMPTY_BLOB(),'5',LUGAR('CANADA','Quebec','1860 Boulevard Valcartier','Quebec','G0A 4S0','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel de Glace',EMPTY_BLOB(),'5',LUGAR('CANADA','Quebec','1860 Boulevard Valcartier','Quebec','G0A 4S0','-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hotel-de-glace.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3186,7 +3186,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Palms Casino Resort',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Las Vegas','4321 W Flamingo Rd','Las Vegas','NV 89103','GMT-8')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Palms Casino Resort',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Las Vegas','4321 W Flamingo Rd','Las Vegas','NV 89103','-8')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'palms-casino-resort.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3199,7 +3199,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Mandarin Oriental',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','New York','80 Columbus Cir','New York','NY 10023','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Mandarin Oriental',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','New York','80 Columbus Cir','New York','NY 10023','-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'mandarin-oriental.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3212,7 +3212,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Fairmmont Kea Lani Maui',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Wailea','4100 Wailea Alanui Dr','Wailea','HI 96753','GMT-10')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Fairmmont Kea Lani Maui',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Wailea','4100 Wailea Alanui Dr','Wailea','HI 96753','-10')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fairmont-kea-lani-maui.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3225,7 +3225,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Park Hyatt',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','5 Rue de la Paix','Paris','75002','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Park Hyatt',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','5 Rue de la Paix','Paris','75002','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fairmont-kea-lani-maui.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3238,7 +3238,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'The Raj Palace',EMPTY_BLOB(),'5',LUGAR('INDIA','Jaipur','Jorawar Singh Gate','Jaipur','302002','GMT+5:30')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'The Raj Palace',EMPTY_BLOB(),'5',LUGAR('INDIA','Jaipur','Jorawar Singh Gate','Jaipur','302002','+5:30')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'the-raj-palace.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3251,7 +3251,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bora Bora Resort',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Bora Bora','St. Regis','Bora Bora','98714 ','GMT-10')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bora Bora Resort',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Bora Bora','St. Regis','Bora Bora','98714 ','-10')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'bora-bora.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3264,7 +3264,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Tamanaco',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av.Ppal de las Mercedes','Caracas','1060','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Tamanaco',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av.Ppal de las Mercedes','Caracas','1060','-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'tamanaco.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3277,7 +3277,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Macuto Sheraton',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caraballeda','Av.Ppal de Caraballeda','Caraballeda','1165','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Macuto Sheraton',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caraballeda','Av.Ppal de Caraballeda','Caraballeda','1165','-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'macuto-sheraton.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3290,7 +3290,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Eurobuilding',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Calle La Guairita','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Eurobuilding',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Calle La Guairita','Caracas','1061','-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'eurobuilding.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3303,7 +3303,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Aladdin',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av Guaicaipuro','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Aladdin',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av Guaicaipuro','Caracas','1061','-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'aladdin.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3379,7 +3379,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Burj Al Arab',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Jumeirah Beach Road','Jumeirah St','111','GMT+4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Burj Al Arab',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Jumeirah Beach Road','Jumeirah St','111','+4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'burj-al-arab.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3392,7 +3392,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'President Wilson',EMPTY_BLOB(),'5',LUGAR('SUIZA','Ginebra',' Quai Wilson 47','Ginebra','1211','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'President Wilson',EMPTY_BLOB(),'5',LUGAR('SUIZA','Ginebra',' Quai Wilson 47','Ginebra','1211','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'president-wilson.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3405,7 +3405,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Atlantis',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Crescent Rd','Dubai','111','GMT+4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Atlantis',EMPTY_BLOB(),'5',LUGAR('EMIRATOS ARABES UNIDOS','Dubai','Crescent Rd','Dubai','111','+4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'the-atlantis.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3418,7 +3418,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Four Season Hotel George V',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','31 Avenue George V','Paris','75008','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Four Season Hotel George V',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','31 Avenue George V','Paris','75008','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'four-season-hotel-george-v.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3431,7 +3431,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel de Glace',EMPTY_BLOB(),'5',LUGAR('CANADA','Quebec','1860 Boulevard Valcartier','Quebec','G0A 4S0','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel de Glace',EMPTY_BLOB(),'5',LUGAR('CANADA','Quebec','1860 Boulevard Valcartier','Quebec','G0A 4S0','-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hotel-de-glace.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3444,7 +3444,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Palms Casino Resort',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Las Vegas','4321 W Flamingo Rd','Las Vegas','NV 89103','GMT-8')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Palms Casino Resort',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Las Vegas','4321 W Flamingo Rd','Las Vegas','NV 89103','-8')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'palms-casino-resort.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3457,7 +3457,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Mandarin Oriental',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','New York','80 Columbus Cir','New York','NY 10023','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Mandarin Oriental',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','New York','80 Columbus Cir','New York','NY 10023','-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'mandarin-oriental.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3470,7 +3470,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Fairmmont Kea Lani Maui',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Wailea','4100 Wailea Alanui Dr','Wailea','HI 96753','GMT-10')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Fairmmont Kea Lani Maui',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Wailea','4100 Wailea Alanui Dr','Wailea','HI 96753','-10')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fairmont-kea-lani-maui.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3483,7 +3483,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Park Hyatt',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','5 Rue de la Paix','Paris','75002','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Park Hyatt',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Paris','5 Rue de la Paix','Paris','75002','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fairmont-kea-lani-maui.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3496,7 +3496,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'The Raj Palace',EMPTY_BLOB(),'5',LUGAR('INDIA','Jaipur','Jorawar Singh Gate','Jaipur','302002','GMT+5:30')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'The Raj Palace',EMPTY_BLOB(),'5',LUGAR('INDIA','Jaipur','Jorawar Singh Gate','Jaipur','302002','+5:30')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'the-raj-palace.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3509,7 +3509,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bora Bora Resort',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Bora Bora','St. Regis','Bora Bora','98714 ','GMT-10')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bora Bora Resort',EMPTY_BLOB(),'5',LUGAR('FRANCIA','Bora Bora','St. Regis','Bora Bora','98714 ','-10')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'bora-bora.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3522,7 +3522,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Tamanaco',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av.Ppal de las Mercedes','Caracas','1060','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Tamanaco',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av.Ppal de las Mercedes','Caracas','1060','-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'tamanaco.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3535,7 +3535,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Macuto Sheraton',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caraballeda','Av.Ppal de Caraballeda','Caraballeda','1165','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Macuto Sheraton',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caraballeda','Av.Ppal de Caraballeda','Caraballeda','1165','-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'macuto-sheraton.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3548,7 +3548,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Eurobuilding',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Calle La Guairita','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Eurobuilding',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Calle La Guairita','Caracas','1061','-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'eurobuilding.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3561,7 +3561,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Aladdin',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av Guaicaipuro','Caracas','1061','GMT-4')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Aladdin',EMPTY_BLOB(),'5',LUGAR('VENEZUELA','Caracas','Av Guaicaipuro','Caracas','1061','-4')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'aladdin.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3700,7 +3700,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cob Cottage',EMPTY_BLOB(),1,1,UNIDAD(120,'dolar','monetaria','usd'),LUGAR('COLUMBIA BRITANICA','Mayne Island','Horton Bay Rd','Mayne Island','V0N 2J0','GMT-8')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cob Cottage',EMPTY_BLOB(),1,1,UNIDAD(120,'dolar','monetaria','usd'),LUGAR('COLUMBIA BRITANICA','Mayne Island','Horton Bay Rd','Mayne Island','V0N 2J0','-8')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'cob-cottage.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3718,7 +3718,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'I Sette Coni',EMPTY_BLOB(),1,1,UNIDAD(72,'dolar','monetaria','usd'),LUGAR('ITALIA','Specchiaruzzo','Contrada Difesa','Specchiaruzzo','72017','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'I Sette Coni',EMPTY_BLOB(),1,1,UNIDAD(72,'dolar','monetaria','usd'),LUGAR('ITALIA','Specchiaruzzo','Contrada Difesa','Specchiaruzzo','72017','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sette-coni.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3736,7 +3736,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Estudio en Sol',EMPTY_BLOB(),5,5,UNIDAD(70,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Puerta del sol','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Estudio en Sol',EMPTY_BLOB(),5,5,UNIDAD(70,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Puerta del sol','Madrid','28001','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sol.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3753,7 +3753,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Gran Vía',EMPTY_BLOB(),3,1,UNIDAD(61,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Calle Gran Via','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Gran Vía',EMPTY_BLOB(),3,1,UNIDAD(61,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Calle Gran Via','Madrid','28001','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sol.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3771,7 +3771,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cottage',EMPTY_BLOB(),3,1,UNIDAD(100,'dolar','monetaria','usd'),LUGAR('ESTADOS UNIDOS','Miami','NE 6th Ave','Miami','33101','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cottage',EMPTY_BLOB(),3,1,UNIDAD(100,'dolar','monetaria','usd'),LUGAR('ESTADOS UNIDOS','Miami','NE 6th Ave','Miami','33101','-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'cottage.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3788,7 +3788,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Hector Cave',EMPTY_BLOB(),1,3,UNIDAD(436,'dolar','monetaria','usd'),LUGAR('GRECIA','Santorini','Epa Od Firon-las','Santorini','84700','GMT+2')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Hector Cave',EMPTY_BLOB(),1,3,UNIDAD(436,'dolar','monetaria','usd'),LUGAR('GRECIA','Santorini','Epa Od Firon-las','Santorini','84700','+2')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hector-cave.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3806,7 +3806,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Fiori',EMPTY_BLOB(),1,3,UNIDAD(105,'dolar','monetaria','usd'),LUGAR('ITALIA','Roma','Piazza venecia','Roma','04100','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Fiori',EMPTY_BLOB(),1,3,UNIDAD(105,'dolar','monetaria','usd'),LUGAR('ITALIA','Roma','Piazza venecia','Roma','04100','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fiori.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3957,7 +3957,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cob Cottage',EMPTY_BLOB(),1,1,UNIDAD(120,'dolar','monetaria','usd'),LUGAR('COLUMBIA BRITANICA','Mayne Island','Horton Bay Rd','Mayne Island','V0N 2J0','GMT-8')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cob Cottage',EMPTY_BLOB(),1,1,UNIDAD(120,'dolar','monetaria','usd'),LUGAR('COLUMBIA BRITANICA','Mayne Island','Horton Bay Rd','Mayne Island','V0N 2J0','-8')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'cob-cottage.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3975,7 +3975,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'I Sette Coni',EMPTY_BLOB(),1,1,UNIDAD(72,'dolar','monetaria','usd'),LUGAR('ITALIA','Specchiaruzzo','Contrada Difesa','Specchiaruzzo','72017','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'I Sette Coni',EMPTY_BLOB(),1,1,UNIDAD(72,'dolar','monetaria','usd'),LUGAR('ITALIA','Specchiaruzzo','Contrada Difesa','Specchiaruzzo','72017','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sette-coni.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3993,7 +3993,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Estudio en Sol',EMPTY_BLOB(),5,5,UNIDAD(70,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Puerta del sol','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Estudio en Sol',EMPTY_BLOB(),5,5,UNIDAD(70,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Puerta del sol','Madrid','28001','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sol.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -4010,7 +4010,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Gran Vía',EMPTY_BLOB(),3,1,UNIDAD(61,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Calle Gran Via','Madrid','28001','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Gran Vía',EMPTY_BLOB(),3,1,UNIDAD(61,'dolar','monetaria','usd'),LUGAR('ESPANIA','Madrid','Calle Gran Via','Madrid','28001','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'sol.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -4028,7 +4028,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cottage',EMPTY_BLOB(),3,1,UNIDAD(100,'dolar','monetaria','usd'),LUGAR('ESTADOS UNIDOS','Miami','NE 6th Ave','Miami','33101','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Cottage',EMPTY_BLOB(),3,1,UNIDAD(100,'dolar','monetaria','usd'),LUGAR('ESTADOS UNIDOS','Miami','NE 6th Ave','Miami','33101','-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'cottage.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -4045,7 +4045,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Hector Cave',EMPTY_BLOB(),1,3,UNIDAD(436,'dolar','monetaria','usd'),LUGAR('GRECIA','Santorini','Epa Od Firon-las','Santorini','84700','GMT+2')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Hector Cave',EMPTY_BLOB(),1,3,UNIDAD(436,'dolar','monetaria','usd'),LUGAR('GRECIA','Santorini','Epa Od Firon-las','Santorini','84700','+2')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hector-cave.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -4063,7 +4063,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Fiori',EMPTY_BLOB(),1,3,UNIDAD(105,'dolar','monetaria','usd'),LUGAR('ITALIA','Roma','Piazza venecia','Roma','04100','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO APARTAMENTO VALUES (id_apartamento.nextVal,'Fiori',EMPTY_BLOB(),1,3,UNIDAD(105,'dolar','monetaria','usd'),LUGAR('ITALIA','Roma','Piazza venecia','Roma','04100','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'fiori.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
