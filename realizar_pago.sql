@@ -163,7 +163,7 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
             ELSIF tipo = 'estancia' THEN
                 INSERT INTO PAGO VALUES(id_pago.nextval,axmonto,SYSTIMESTAMP,restantes,null,tdd,tcc,reservaid, null, null,null);
             ELSIF tipo = 'triple' THEN
-                INSERT INTO PAGO VALUES(id_pago.nextval,axmonto,SYSTIMESTAMP,restantes,null,tdd,tcc,reservaid, reservaid, null,reservaid);
+                INSERT INTO PAGO VALUES(id_pago.nextval,axmonto,SYSTIMESTAMP,restantes,null,tdd,tcc,getEstanciaDe(reservaid), reservaid, getSeguroDe(reservaid),getCarroDe(reservaid));
             END IF;
             
         END LOOP;
