@@ -122,11 +122,11 @@ IS
     registro1 VARCHAR(100);
     registro2 VARCHAR(100);
 BEGIN
-    SELECT A.lugar_aeropuerto.pais ||' ('||A.abreviatura||'), '||A.lugar_aeropuerto.pais ||' - ' INTO registro1
+    SELECT A.lugar_aeropuerto.ciudad ||' ('||A.abreviatura||'), '||A.lugar_aeropuerto.pais ||' - ' INTO registro1
         FROM VUELO V, AEROPUERTO A
         WHERE V.id_vuelo = x
         AND A.id_aeropuerto = V.aeropuerto_sale;
-    SELECT A.lugar_aeropuerto.pais ||' ('||A.abreviatura||'), '||A.lugar_aeropuerto.pais ||' '|| TO_CHAR(y,'DY Mon DD YYYY') INTO registro2
+    SELECT A.lugar_aeropuerto.ciudad ||' ('||A.abreviatura||'), '||A.lugar_aeropuerto.pais ||' '|| TO_CHAR(y,'DY Mon DD YYYY') INTO registro2
         FROM VUELO V, AEROPUERTO A
         WHERE V.id_vuelo = x
         AND A.id_aeropuerto = V.aeropuerto_llega;
@@ -169,7 +169,7 @@ BEGIN
     aux2:= TRUNC(aux); 
     registro:= aux2||'h ';
     aux:= aux - TRUNC(aux);
-    aux:= aux*60;
+    aux:= TRUNC(aux*60);
     registro:= registro||aux ||'m';
     RETURN registro;
 END;
@@ -213,7 +213,7 @@ BEGIN
                 AND RV.id_reserva_vuelo = x
                 AND P.millas_id = n
                 AND P.id_pago = y;
-                registro:= 'Club Premiumm Millas - '||registro;
+                registro:= 'Club Premiumm Millas - '||registro||' millas restantes';
             RETURN registro;
         END IF;
 END;
@@ -314,7 +314,7 @@ IS
 BEGIN
     dbms_output.put_line('*Devolviendo dinero en millas');
     UPDATE MILLA M
-    SET M.cantidad.valor = M.cantidad.valor + monto.convertir('monetaria','milla')
+    SET M.cantidad.valor = ROUND(M.cantidad.valor + monto.convertir('monetaria','milla'),2)
     WHERE usuario_id = usuarioid;
 END;
 /
@@ -427,4 +427,22 @@ IS
 BEGIN
     SELECT id_reserva_estancia INTO ret FROM RESERVA_ESTANCIA WHERE reservavuelo_id = reservavueloid;
     RETURN ret;
+END;
+/
+CREATE OR REPLACE FUNCTION fecha_reporte(fechareal TIMESTAMP, fechaestimada TIMESTAMP, salelugar VARCHAR) RETURN VARCHAR
+IS
+BEGIN
+    IF fechareal IS NOT NULL THEN
+        RETURN TO_CHAR(fechareal,'HH:MI PM')||' '||salelugar;
+    END IF;
+    RETURN TO_CHAR(fechaestimada,'HH:MI PM')||' '||salelugar;
+END;
+/
+CREATE OR REPLACE FUNCTION traerfechanull(fechareal TIMESTAMP) RETURN VARCHAR
+IS
+BEGIN
+    IF fechareal IS NOT NULL THEN
+        RETURN TO_CHAR(fechareal,'Mon DD YYYY');
+    END IF;
+    RETURN 'No tiene retorno';
 END;

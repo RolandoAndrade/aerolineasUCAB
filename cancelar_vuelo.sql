@@ -1,85 +1,133 @@
-CREATE OR REPLACE PACKAGE CANCELAR_VUELO IS
-   FUNCTION obtenerHora(vueloid NUMBER) RETURN NUMBER;
-   FUNCTION obtenerMinuto(vueloid NUMBER) RETURN NUMBER;
-   PROCEDURE estadoVuelo;
+CREATE OR REPLACE PACKAGE CAMBIAR_ESTADOS IS
+    PROCEDURE estadoVuelo;
+    FUNCTION pasajeros_suficientes(vueloid INTEGER) RETURN BOOLEAN;
+    PROCEDURE cancelar_vuelo(vueloid INTEGER);
+    PROCEDURE cancelar_reservas_vuelo(vueloid INTEGER);
+    PROCEDURE completar_vuelo(vueloid INTEGER);
+    PROCEDURE completar_reservas_vuelo(vueloid INTEGER);
+    PROCEDURE arrancar_vuelo(vueloid INTEGER);
+    PROCEDURE abordar_vuelo(vueloid INTEGER);
 END;
 /
-CREATE OR REPLACE PACKAGE BODY CANCELAR_VUELO AS
-    FUNCTION obtenerHora(x NUMBER) RETURN NUMBER
+CREATE OR REPLACE PACKAGE BODY CAMBIAR_ESTADOS AS
+    
+    PROCEDURE abordar_vuelo(vueloid INTEGER)
     IS
-        aux NUMBER(5);
-        str VARCHAR(10);
     BEGIN
-        SELECT TRUNC(V.duracion.valor) INTO aux
-            FROM VUELO V
-            WHERE V.id_vuelo = x;
-        str:= TO_CHAR(aux);
-        RETURN aux;    
+        dbms_output.put_line('*El vuelo abordando');
+        UPDATE VUELO V
+        SET estado = 'abordando'
+        WHERE id_vuelo = vueloid;
     END;
     
-    FUNCTION obtenerMinuto(x NUMBER) RETURN NUMBER
+    PROCEDURE arrancar_vuelo(vueloid INTEGER)
     IS
-        aux NUMBER(5,2);
-        aux2 NUMBER(5,2);
-        str VARCHAR(10);
     BEGIN
-        SELECT V.duracion.valor INTO aux
-            FROM VUELO V
-            WHERE V.id_vuelo = x;
-        aux2:= aux - TRUNC(aux);
-        aux2:= aux2*60;
-        RETURN aUx2; 
+        dbms_output.put_line('*El vuelo debería estar en progreso. Revisando...');
+        IF NOT pasajeros_suficientes(vueloid) THEN
+            dbms_output.put_line('*El vuelo está restrasado por falta de pasajeros');
+            UPDATE VUELO V
+            SET estado = 'atrasado'
+            WHERE id_vuelo = vueloid;
+        ELSIF aceptar_o_rechazar(0.05) THEN
+            dbms_output.put_line('*El vuelo está restrasado por razones meteorológicas');
+            UPDATE VUELO V
+            SET estado = 'atrasado'
+            WHERE id_vuelo = vueloid;
+        ELSE
+            dbms_output.put_line('*El vuelo está en progreso');
+            UPDATE VUELO V
+            SET estado = 'en progreso',
+            fecha_salida_real = fecha_salida + dbms_random.value/24
+            WHERE id_vuelo = vueloid;
+        END IF;
     END;
     
+    PROCEDURE completar_vuelo(vueloid INTEGER)
+    IS
+    BEGIN
+        dbms_output.put_line('*El vuelo se completó de manera exitosa');
+        UPDATE VUELO V
+        SET estado = 'completado',
+        fecha_salida_real = fecha_salida + dbms_random.value/24,
+        fecha_llegada_real = fecha_salida + dbms_random.value/24 + V.duracion.valor/24
+        WHERE id_vuelo = vueloid;
+    END;
+
+    PROCEDURE completar_reservas_vuelo(vueloid INTEGER)
+    IS
+    BEGIN
+        dbms_output.put_line('*Completando las reservas asociadas al vuelo');
+        UPDATE RESERVA_VUELO R
+        SET R.reserva_vuelo.estado = 'completado'
+        WHERE vuelo_id = vueloid;
+        FOR I IN (SELECT * FROM RESERVA_VUELO WHERE vuelo_id = vueloid)
+        LOOP
+            UPDATE SEGURO S
+            SET S.reserva_seguro.estado = 'completado'
+            WHERE reservavuelo_id = I.id_reserva_vuelo;
+        END LOOP;
+    END;
+    
+    PROCEDURE cancelar_reservas_vuelo(vueloid INTEGER)
+    IS
+    BEGIN
+        dbms_output.put_line('*Cancelando las reservas asociadas al vuelo');
+        FOR I IN (SELECT * FROM RESERVA_VUELO WHERE vuelo_id = vueloid)
+        LOOP
+            RESERVACION_VUELOS.cancelar_reserva(I.id_reserva_vuelo,I.usuario_id);
+        END LOOP;
+    END;
+
+    PROCEDURE cancelar_vuelo(vueloid INTEGER)
+    IS
+    BEGIN
+        dbms_output.put_line('*Cancelando el vuelo');
+        cancelar_reservas_vuelo(vueloid);
+        UPDATE VUELO SET estado = 'cancelado' WHERE id_vuelo = vueloid;
+    END;
+
+    FUNCTION pasajeros_suficientes(vueloid INTEGER) RETURN BOOLEAN
+    IS
+        reservados INTEGER;
+        disponible INTEGER;
+    BEGIN
+        dbms_output.put_line('*Verificando si se cumplió la capacidad minima de despegue');
+        SELECT COUNT(D.id_disponibilidad) into reservados
+        FROM DISPONIBILIDAD D
+        WHERE D.vuelo_id = vueloid
+        AND D.usuario_id IS NULL;
+        disponible:=asientosDisponibles(vueloid);  
+        RETURN reservados>10;
+    END;
+
     PROCEDURE estadoVuelo
     IS
-        registro VUELO%ROWTYPE;
         fechaSystem TIMESTAMP;
-        horaSystem VARCHAR(5);
-        minutoSystem VARCHAR(5);
-        horaVuelo NUMBER(5);
-        minutoVuelo NUMBER(5);
-        disponible INTEGER;
-        reservados INTEGER;
-        CURSOR Cvuelo IS SELECT * FROM VUELO;
     BEGIN
         dbms_output.put_line('***********************************');
         dbms_output.put_line('*                                 *');
         dbms_output.put_line('*   CAMBIANDO ESTADOS DE VUELO    *');
         dbms_output.put_line('*                                 *');
         dbms_output.put_line('***********************************');
-        OPEN Cvuelo;
-        FETCH Cvuelo INTO registro;
-        WHILE Cvuelo%FOUND
+        FOR I IN (SELECT * FROM VUELO)
         LOOP
-            SELECT SYSTIMESTAMP INTO fechaSystem
-                FROM DUAL;
-            horaVuelo:=obtenerHora(registro.id_vuelo);
-            minutoVuelo:=obtenerMinuto(registro.id_vuelo);
-            horaSystem:= TO_CHAR(fechaSystem, 'HH');
-            minutoSystem:= TO_CHAR(fechaSystem, 'MI');
-            SELECT COUNT(D.id_disponibilidad) into reservados
-                FROM ASIENTO A, DISPONIBILIDAD D
-                WHERE D.vuelo_id = registro.id_vuelo
-                AND A.id_asiento = D.asiento_id
-                AND D.usuario_id = null;
-            disponible:=asientosDisponibles(registro.id_vuelo);  
-            IF (reservados< disponible/4 ) THEN
-            dbms_output.put_line('-----El vuelo '||resgistro.id_vuelo||' fue cancelado-----');
-                UPDATE VUELO SET estado = 'Cancelado' 
-                      WHERE id_vuelo = registro.id_vuelo;
-            END IF;
-            IF(TO_CHAR(registro.fecha_salida_real, 'DD/MM/YYYY' ) >= TO_CHAR(fechaSystem, 'DD/MM/YYY' ) AND TO_CHAR(registro.fecha_salida_real,'HH')+horaVuelo >= horaSystem )THEN        
-                IF(TO_CHAR(registro.fecha_salida_real,'HH')-horaSystem  BETWEEN -1 AND horaVuelo ) THEN
-                dbms_output.put_line('-----El vuelo '||resgistro.id_vuelo||' esta en transito-----');
-                    UPDATE VUELO SET estado = 'En Transito' 
-                        WHERE id_vuelo = registro.id_vuelo;
+            SELECT SYSTIMESTAMP INTO fechasystem FROM DUAL;
+            IF I.fecha_salida<fechasystem THEN
+                dbms_output.put_line('-----------El vuelo '||I.id_vuelo||' debía salir el '||I.fecha_salida||' ---------');
+                IF NOT pasajeros_suficientes(I.id_vuelo) AND (I.fecha_salida + I.duracion.valor/24) < fechasystem THEN
+                    dbms_output.put_line('*El vuelo se canceló al no tener suficientes pasajeros');
+                    cancelar_vuelo(I.id_vuelo);
+                ELSE
+                    IF (I.fecha_salida + I.duracion.valor/24) < fechasystem THEN
+                        completar_vuelo(I.id_vuelo);
+                    ELSE
+                        arrancar_vuelo(I.id_vuelo);
+                    END IF;    
                 END IF;
+            ELSIF (I.fecha_salida+1/6) <fechasystem THEN
+                abordar_vuelo(I.id_vuelo);
             END IF;
-            FETCH Cvuelo INTO registro;
         END LOOP;    
     END;
 END;
-
-
-
