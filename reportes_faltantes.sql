@@ -24,31 +24,52 @@ AS
     registros INTEGER;
 BEGIN
     SELECT COUNT(*) INTO registros FROM (SELECT DISTINCT S.avion_id, V.id_vuelo
-                                FROM ASIENTO S, DISPONIBILIDAD D, VUELO V, AEROPUERTO O, AEROPUERTO D
+                                FROM ASIENTO S, DISPONIBILIDAD D, VUELO V
+                                LEFT JOIN VUELO VV ON V.vuelo_id=VV.id_vuelo 
+                                LEFT JOIN AEROPUERTO oo ON oo.id_aeropuerto = VV.aeropuerto_sale, 
+                                AEROPUERTO O, AEROPUERTO D
                                 WHERE S.id_asiento = D.asiento_id AND
                                 V.id_vuelo = D.vuelo_id AND
                                 O.id_aeropuerto = V.aeropuerto_sale AND
                                 d.id_aeropuerto = V.aeropuerto_llega AND
-                                (o.lugar_aeropuerto.ciudad LIKE UPPER('%'||lugar_origen||'%') OR
-                                o.lugar_aeropuerto.pais LIKE UPPER('%'||lugar_origen||'%'))AND
+                                ((o.lugar_aeropuerto.ciudad LIKE UPPER('%'||lugar_origen||'%') OR
+                                o.lugar_aeropuerto.pais LIKE UPPER('%'||lugar_origen||'%') OR
+                                oo.lugar_aeropuerto.ciudad LIKE UPPER('%'||lugar_origen||'%') OR
+                                oo.lugar_aeropuerto.pais LIKE UPPER('%'||lugar_origen||'%'))AND
                                 (d.lugar_aeropuerto.pais LIKE UPPER('%'||lugar_destino||'%') OR
-                                d.lugar_aeropuerto.ciudad LIKE UPPER('%'||lugar_destino||'%')) AND
-                                V.fecha_salida BETWEEN fecha_inicio AND fecha_fin);
+                                d.lugar_aeropuerto.ciudad  LIKE UPPER('%'||lugar_destino||'%')) AND
+                                V.fecha_salida BETWEEN fecha_inicio AND fecha_fin));
 
     OPEN cursorMemoria FOR
     SELECT logo, fecha, origen, destino, servicios 
-    FROM AEROLINEA W, (SELECT R.id_aerolinea, TO_CHAR(fecha_inicio,'DD/MM/YYYY')||' - '||TO_CHAR(fecha_fin,'DD/MM/YYYY') fecha, 
+    FROM AEROLINEA W, (SELECT R.id_aerolinea, 
+    CASE WHEN registros = 0 THEN 'Todos los tiempos' ELSE TO_CHAR(fecha_inicio,'DD/MM/YYYY')||' - '||TO_CHAR(fecha_fin,'DD/MM/YYYY') END fecha, 
     origen, destino, COUNT(*) servicios
     FROM AEROLINEA R, AVION A, (SELECT DISTINCT S.avion_id, V.id_vuelo, 
-                                CASE WHEN (o.lugar_aeropuerto.ciudad LIKE UPPER('%'||lugar_origen||'%')) THEN o.lugar_aeropuerto.ciudad ELSE o.lugar_aeropuerto.pais END origen,
+                                CASE 
+                                WHEN (o.lugar_aeropuerto.ciudad LIKE UPPER('%'||lugar_origen||'%')) THEN 
+                                o.lugar_aeropuerto.ciudad
+                                WHEN (oo.lugar_aeropuerto.ciudad LIKE UPPER('%'||lugar_origen||'%')) THEN
+                                oo.lugar_aeropuerto.ciudad
+                                WHEN (oo.lugar_aeropuerto.pais LIKE UPPER('%'||lugar_origen||'%')) THEN
+                                oo.lugar_aeropuerto.pais
+                                ELSE o.lugar_aeropuerto.pais 
+                                END origen,
+                                
                                 CASE WHEN (d.lugar_aeropuerto.ciudad LIKE UPPER('%'||lugar_destino||'%')) THEN d.lugar_aeropuerto.ciudad ELSE d.lugar_aeropuerto.pais END destino
-                                FROM ASIENTO S, DISPONIBILIDAD D, VUELO V, AEROPUERTO O, AEROPUERTO D
+                                FROM ASIENTO S, DISPONIBILIDAD D, VUELO V 
+                                LEFT JOIN VUELO VV ON V.vuelo_id=VV.id_vuelo 
+                                LEFT JOIN AEROPUERTO oo ON oo.id_aeropuerto = VV.aeropuerto_sale, 
+                                AEROPUERTO O, AEROPUERTO D
                                 WHERE S.id_asiento = D.asiento_id AND
                                 V.id_vuelo = D.vuelo_id AND
                                 O.id_aeropuerto = V.aeropuerto_sale AND
                                 d.id_aeropuerto = V.aeropuerto_llega AND
-                                (registros=0 OR((o.lugar_aeropuerto.ciudad LIKE UPPER('%'||lugar_origen||'%') OR
-                                o.lugar_aeropuerto.pais LIKE UPPER('%'||lugar_origen||'%'))AND
+                                (registros=0 OR(
+                                (o.lugar_aeropuerto.ciudad LIKE UPPER('%'||lugar_origen||'%') OR
+                                o.lugar_aeropuerto.pais LIKE UPPER('%'||lugar_origen||'%') OR
+                                oo.lugar_aeropuerto.ciudad LIKE UPPER('%'||lugar_origen||'%') OR
+                                oo.lugar_aeropuerto.pais LIKE UPPER('%'||lugar_origen||'%'))AND
                                 (d.lugar_aeropuerto.pais LIKE UPPER('%'||lugar_destino||'%') OR
                                 d.lugar_aeropuerto.ciudad  LIKE UPPER('%'||lugar_destino||'%')) AND
                                 V.fecha_salida BETWEEN fecha_inicio AND fecha_fin))) VUELOS_AVION
@@ -59,4 +80,7 @@ BEGIN
     WHERE X.id_aerolinea = W.id_aerolinea AND
     rownum <= 5;
 END;
+        
+
+
 
