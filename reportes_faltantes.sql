@@ -1,6 +1,10 @@
-SELECT TO_CHAR(V.fecha_salida,'DD Mon yyyy HH:MI PM') fecha_salida, 
-getAeropuertoReporte(v.aeropuerto_sale) origen, traerLlega(v.aeropuerto_llega) destino,
-getLogoAerolinea(V.id_vuelo) logo_aerolinea, V.estado estado
-FROM VUELO V
-WHERE TO_CHAR(V.fecha_salida,'DD-MM-YYYY') = '31-12-2019'
-ORDER BY V.fecha_salida;
+CREATE OR REPLACE PROCEDURE REPORTE_12 (cursorMemoria OUT SYS_REFCURSOR, dia DATE)
+AS
+BEGIN
+    OPEN cursorMemoria FOR SELECT getfechadespegue(V.id_vuelo) fecha_salida, 
+    getAeropuertoReporte(v.aeropuerto_sale) origen, getAeropuertoReporte(v.aeropuerto_llega) destino,
+    getLogoAerolinea(V.id_vuelo) logo_aerolinea, V.estado estado, getFechaLLegada(V.id_vuelo) llegada
+    FROM VUELO V
+    WHERE TO_CHAR(V.fecha_salida,'DD-MM-YYYY') = TO_CHAR(dia,'DD-MM-YYYY')
+    ORDER BY V.fecha_salida;
+END;
