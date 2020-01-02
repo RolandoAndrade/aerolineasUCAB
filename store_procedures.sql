@@ -491,7 +491,10 @@ BEGIN
     registro:=getVuelo(vueloid);
     IF registro.fecha_llegada_real IS NOT NULL THEN
         RETURN TO_CHAR(registro.fecha_llegada_real,'DD Mon yyyy HH:MI PM');
-    ELSE IF registro.fecha_salida_real IS NOT NULL THEN
+    ELSIF registro.fecha_salida_real IS NOT NULL THEN
         RETURN TO_CHAR(registro.fecha_salida_real+registro.duracion.valor,'DD Mon yyyy HH:MI PM');
     END IF;
+    RETURN 'Por calcular';
 END;
+
+/
