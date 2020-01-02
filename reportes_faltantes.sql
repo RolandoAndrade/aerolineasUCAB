@@ -18,31 +18,35 @@ BEGIN
 END;
 
 
-CREATE OR REPLACE PROCEDURE REPORTE_12 (cursorMemoria OUT SYS_REFCURSOR, ciudad_origen VARCHAR, 
-ciudad_destino VARCHAR, pais_origen VARCHAR, pais_destino VARCHAR, fecha_inicio DATE, fecha_fin DATE)
+CREATE OR REPLACE PROCEDURE REPORTE_8 (cursorMemoria OUT SYS_REFCURSOR, lugar_origen VARCHAR, 
+lugar_destino VARCHAR, fecha_inicio DATE, fecha_fin DATE)
 AS
     registros INTEGER;
 BEGIN
     --Hay origen o destino
     OPEN cursorMemoria FOR
-    SELECT * FROM(SELECT R.nombre nombre, TO_CHAR(fecha_inicio,'DD/MM/YYYY')||' - '||TO_CHAR(fecha_fin,'DD/MM/YYYY') fecha, 
-    'CARACAS' origen, 'PANAMÁ' destino, COUNT(*) servicios
-    FROM AEROLINEA R, AVION A, (SELECT DISTINCT S.avion_id, V.id_vuelo
+    SELECT logo, fecha, origen, destino, servicios 
+    FROM AEROLINEA W, (SELECT R.id_aerolinea idaerolinea, TO_CHAR(fecha_inicio,'DD/MM/YYYY')||' - '||TO_CHAR(fecha_fin,'DD/MM/YYYY') fecha, 
+    origen, destino, COUNT(*) servicios
+    FROM AEROLINEA R, AVION A, (SELECT DISTINCT S.avion_id, V.id_vuelo, 
+                                CASE WHEN o.lugar_aeropuerto.ciudad=lugar_origen THEN lugar_origen ELSE o.lugar_aeropuerto.pais END origen,
+                                CASE WHEN D.lugar_aeropuerto.ciudad=lugar_destino THEN lugar_origen ELSE d.lugar_aeropuerto.pais END destino
                                 FROM ASIENTO S, DISPONIBILIDAD D, VUELO V, AEROPUERTO O, AEROPUERTO D
                                 WHERE S.id_asiento = D.asiento_id AND
                                 V.id_vuelo = D.vuelo_id AND
                                 O.id_aeropuerto = V.aeropuerto_sale AND
                                 d.id_aeropuerto = V.aeropuerto_llega AND
-                                (o.lugar_aeropuerto.ciudad=ciudad_origen OR
-                                o.lugar_aeropuerto.pais=pais_origen)AND
-                                (d.lugar_aeropuerto.pais=pais_destino OR
-                                d.lugar_aeropuerto.ciudad=ciudad_destino) AND
+                                (o.lugar_aeropuerto.ciudad=lugar_origen OR
+                                o.lugar_aeropuerto.pais=lugar_origen)AND
+                                (d.lugar_aeropuerto.pais=lugar_destino OR
+                                d.lugar_aeropuerto.ciudad=lugar_destino) AND
                                 V.fecha_salida BETWEEN fecha_inicio AND fecha_fin) VUELOS_AVION
     WHERE R.id_aerolinea = a.aerolinea_id AND
     A.id_avion = vuelos_avion.avion_id
-    GROUP BY nombre,  '10/12/2019 - 10/01/2020', 
-    'CARACAS', 'PANAMÁ'
-    ORDER BY servicios DESC) WHERE rownum <= 5;
+    GROUP BY idaerolinea, origen, destino
+    ORDER BY servicios DESC) X
+    WHERE X.idaerolinea = W.id_aerolinea AND
+    rownum <= 5;
 END;
 
 
