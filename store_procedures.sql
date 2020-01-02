@@ -496,5 +496,11 @@ BEGIN
     END IF;
     RETURN 'Por calcular';
 END;
-
 /
+CREATE OR REPLACE FUNCTION getPuntuacionDelApartamento(apartamentoid INTEGER) RETURN NUMBER
+IS
+    punt NUMBER;
+BEGIN
+    SELECT AVG(puntuacion) INTO punt FROM RESERVA_ESTANCIA AND puntuacion>0
+    RETURN punt;
+END;

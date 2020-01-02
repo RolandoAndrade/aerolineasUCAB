@@ -81,6 +81,21 @@ BEGIN
     rownum <= 5;
 END;
         
+--REPORTE DE LUGARES CON MÁS RESERVACIONES (PARAMETRIZADO POR LUGAR, FECHA DE INICIO, FECHA DE FIN)
+--CASE
+--    WHEN A.id_apartamento IS NOT NULL THEN A.foto
+--    WHEN HH.id_hotel IS NOT NULL THEN HH.foto
+--END foto,
+SELECT
+    A.id_apartamento apartamento,
+    HH.id_hotel hotel,
+    COUNT(*) servicios
+    FROM RESERVA_ESTANCIA RE 
+    LEFT JOIN APARTAMENTO A ON RE.apartamento_id = A.id_apartamento
+    LEFT JOIN HABITACION H ON RE.habitacion_id = H.id_habitacion
+    LEFT JOIN HOTEL HH ON H.hotel_id = HH.id_hotel
+    GROUP BY apartamento,hotel
+
 
 
 
