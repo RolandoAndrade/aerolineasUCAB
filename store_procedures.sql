@@ -463,3 +463,12 @@ BEGIN
     RETURN NULL;
 END;
 
+/
+
+CREATE OR REPLACE FUNCTION getAeropuertoReporte(aeropuertoid INTEGER) RETURN VARCHAR
+IS
+    registro AEROPUERTO%RowType;
+BEGIN
+    registro:= getAeropuerto(aeropuertoid);
+    RETURN registro.lugar_aeropuerto.ciudad||' ('||registro.abreviatura||' ), '||registro.lugar_aeropuerto.ciudad.pais;
+END;
