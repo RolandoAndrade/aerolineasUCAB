@@ -470,5 +470,16 @@ IS
     registro AEROPUERTO%RowType;
 BEGIN
     registro:= getAeropuerto(aeropuertoid);
-    RETURN registro.lugar_aeropuerto.ciudad||' ('||registro.abreviatura||' ), '||registro.lugar_aeropuerto.ciudad.pais;
+    RETURN registro.lugar_aeropuerto.ciudad||' ('||registro.abreviatura||'), '||registro.lugar_aeropuerto.pais;
+END;
+/
+CREATE OR REPLACE FUNCTION getFechaDespegue(vueloid INTEGER) RETURN VARCHAR
+IS
+    registro VUELO%RowType;
+BEGIN
+    SELECT * INTO registro FROM VUELO WHERE vueloid = id_vuelo;
+    IF registro.fecha_salida_real IS NOT NULL THEN
+        RETURN TO_CHAR(registro.fecha_salida_real,'DD Mon yyyy HH:MI PM');
+    END IF;
+    RETURN TO_CHAR(registro.fecha_salida,'DD Mon yyyy HH:MI PM');
 END;
