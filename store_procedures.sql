@@ -446,3 +446,20 @@ BEGIN
     END IF;
     RETURN 'No tiene retorno';
 END;
+/
+
+CREATE OR REPLACE FUNCTION getLogoAerolinea(vueloid INTEGER) RETURN BLOB
+IS
+BEGIN
+    FOR I IN (SELECT R.*
+              FROM AVION A, ASIENTO S, DISPONIBILIDAD D, AEROLINEA R
+              WHERE A.id_avion = S.avion_id AND
+              S.id_asiento = D.asiento_id AND
+              vuelo_id = vueloid AND
+              A.aerolinea_id = R.id_aerolinea)
+    LOOP
+        RETURN I.logo;
+    END LOOP;
+    RETURN NULL;
+END;
+
