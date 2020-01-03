@@ -501,6 +501,22 @@ CREATE OR REPLACE FUNCTION getPuntuacionDelApartamento(apartamentoid INTEGER) RE
 IS
     punt NUMBER;
 BEGIN
-    SELECT AVG(puntuacion) INTO punt FROM RESERVA_ESTANCIA AND puntuacion>0
+    SELECT AVG(puntuacion) INTO punt 
+    FROM RESERVA_ESTANCIA 
+    WHERE apartamento_id = apartamentoid 
+    AND puntuacion>0;
+    RETURN punt;
+END;
+/
+CREATE OR REPLACE FUNCTION getPuntuacionDelHotel(hotelid INTEGER) RETURN NUMBER
+IS
+    punt NUMBER;
+BEGIN
+    SELECT AVG(puntuacion) INTO punt 
+    FROM RESERVA_ESTANCIA R, HABITACION H
+    WHERE 
+    habitacion_id = H.id_habitacion AND
+    hotel_id = hotelid
+    AND puntuacion>0;
     RETURN punt;
 END;
