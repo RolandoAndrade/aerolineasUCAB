@@ -86,6 +86,60 @@ END;
 --    WHEN A.id_apartamento IS NOT NULL THEN A.foto
 --    WHEN HH.id_hotel IS NOT NULL THEN HH.foto
 --END foto,
+create or replace PROCEDURE REPORTE_10 (cursorMemoria OUT SYS_REFCURSOR, fecha_inicio DATE, fecha_fin DATE)
+AS
+    registros INTEGER;
+BEGIN
+    SELECT COUNT(*) INTO registros FROM (SELECT
+        A.id_apartamento apartamento,
+        HH.id_hotel hotel, 
+        COUNT(*) servicios
+        FROM RESERVA_ESTANCIA RE 
+        LEFT JOIN APARTAMENTO A ON RE.apartamento_id = A.id_apartamento
+        LEFT JOIN HABITACION H ON RE.habitacion_id = H.id_habitacion
+        LEFT JOIN HOTEL HH ON H.hotel_id = HH.id_hotel
+        WHERE puntuacion>0 AND RE.reserva_estacia.fecha_inicio BETWEEN fecha_inicio AND fecha_fin
+        GROUP BY A.id_apartamento,HH.id_hotel);
+    OPEN cursorMemoria FOR
+    SELECT
+    CASE
+        WHEN X.apartamento IS NOT NULL THEN W.foto
+        WHEN X.hotel IS NOT NULL THEN Z.foto
+    END foto_lugar,
+    CASE
+        WHEN X.apartamento IS NOT NULL THEN W.nombre
+        WHEN X.hotel IS NOT NULL THEN Z.nombre
+    END nombre_lugar,
+    CASE 
+        WHEN registros = 0 THEN 'Todos los tiempos'
+        ELSE TO_CHAR(fecha_inicio, 'Day, DD Mon YYYY') END
+        fechainicio,
+    CASE 
+        WHEN registros = 0 THEN 'Todos los tiempos'
+        ELSE TO_CHAR(fecha_fin, 'Day, DD Mon YYYY') END
+        fechafin,
+    servicios,
+    ROUND(COALESCE(CASE
+        WHEN X.apartamento IS NOT NULL THEN getPuntuacionDelApartamento(X.apartamento)
+        WHEN X.hotel IS NOT NULL THEN getPuntuacionDelHotel(X.hotel)
+    END,0),2)||'/10' puntuacion
+    FROM
+    (SELECT
+        A.id_apartamento apartamento,
+        HH.id_hotel hotel, 
+        COUNT(*) servicios
+        FROM RESERVA_ESTANCIA RE 
+        LEFT JOIN APARTAMENTO A ON RE.apartamento_id = A.id_apartamento
+        LEFT JOIN HABITACION H ON RE.habitacion_id = H.id_habitacion
+        LEFT JOIN HOTEL HH ON H.hotel_id = HH.id_hotel
+        WHERE puntuacion>0 AND
+        (registros = 0 OR RE.reserva_estacia.fecha_inicio BETWEEN fecha_inicio AND fecha_fin)
+        GROUP BY A.id_apartamento,HH.id_hotel) X
+        LEFT JOIN APARTAMENTO W ON W.id_apartamento = X.apartamento
+        LEFT JOIN HOTEL Z ON Z.id_hotel = X.hotel
+    ORDER BY servicios DESC;    
+END;
+
 SELECT
 CASE
     WHEN X.apartamento IS NOT NULL THEN W.foto
@@ -98,10 +152,10 @@ END nombre_lugar,
 '10-12-2019' fecha_inicio,
 '10-12-2020' fecha_fin,
 servicios,
-COALESCE(CASE
+ROUND(COALESCE(CASE
     WHEN X.apartamento IS NOT NULL THEN getPuntuacionDelApartamento(X.apartamento)
     WHEN X.hotel IS NOT NULL THEN getPuntuacionDelHotel(X.hotel)
-END,0)||'/10' puntuacion
+END,0),2)||'/10' puntuacion
 FROM
 (SELECT
     A.id_apartamento apartamento,
@@ -111,12 +165,12 @@ FROM
     LEFT JOIN APARTAMENTO A ON RE.apartamento_id = A.id_apartamento
     LEFT JOIN HABITACION H ON RE.habitacion_id = H.id_habitacion
     LEFT JOIN HOTEL HH ON H.hotel_id = HH.id_hotel
-    GROUP BY A.id_apartamento,HH.id_hotel
-    ORDER BY servicios DESC) X
+    WHERE puntuacion>0
+    GROUP BY A.id_apartamento,HH.id_hotel) X
     LEFT JOIN APARTAMENTO W ON W.id_apartamento = X.apartamento
     LEFT JOIN HOTEL Z ON Z.id_hotel = X.hotel
+ORDER BY servicios DESC
     
-SELECT * FROM RESERVA_VUELO
 
 
 
