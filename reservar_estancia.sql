@@ -74,7 +74,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     IS
         puntua INTEGER;
     BEGIN
-        puntua := dbms_random.value*10;
+        puntua := dbms_random.value*9+1;
         UPDATE RESERVA_ESTANCIA
         SET puntuacion = puntua
         WHERE id_reserva_estancia = reservaid;
