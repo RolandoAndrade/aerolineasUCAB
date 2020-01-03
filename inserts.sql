@@ -3239,7 +3239,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'The Raj Palace',EMPTY_BLOB(),'5',LUGAR('INDIA','Jaipur','Jorawar Singh Gate','Jaipur','302002','+5:30')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'The Raj Palace',EMPTY_BLOB(),'5',LUGAR('INDIA','Jaipur','Jorawar Singh Gate','Jaipur','302002','+6')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'the-raj-palace.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3319,7 +3319,7 @@ DECLARE
     V_bfile BFILE;
 BEGIN 
 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hard Rock Hotel',EMPTY_BLOB(),'5',LUGAR('PANAMA','Ciudad de Panama','Av Balboa','Ciudad de Panama','0831','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hard Rock Hotel',EMPTY_BLOB(),'5',LUGAR('PANAMA','Ciudad de Panama','Av Balboa','Ciudad de Panama','0831','-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hard-rock-hotel.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3333,7 +3333,7 @@ DECLARE
     V_bfile BFILE;
 BEGIN 
 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Hive',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Washington',' F St NW','Washington','20037','GMT-5')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Hive',EMPTY_BLOB(),'5',LUGAR('ESTADOS UNIDOS','Washington',' F St NW','Washington','20037','-5')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hive.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3346,7 +3346,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Lisboa',EMPTY_BLOB(),'5',LUGAR('PORTUGAL','Lisboa','R. Barata Salgueiro','Lisboa','1000','GMT')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Lisboa',EMPTY_BLOB(),'5',LUGAR('PORTUGAL','Lisboa','R. Barata Salgueiro','Lisboa','1000','0')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'lisboa.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3360,7 +3360,7 @@ DECLARE
     V_bfile BFILE;
 BEGIN 
 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Rock Hard',EMPTY_BLOB(),'5',LUGAR('ARGENTINA','Buenos Aires','Av. Pueyrredón 2501','Buenos Aires','C1119','GMT-3')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Rock Hard',EMPTY_BLOB(),'5',LUGAR('ARGENTINA','Buenos Aires','Av. Pueyrredón 2501','Buenos Aires','C1119','-3')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'buenosaires.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3373,7 +3373,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hyatt Place DaXing',EMPTY_BLOB(),'3',LUGAR('CHINA','Pekin','Guogongzhuang Rd','Pekin','100000','GMT+8')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hyatt Place DaXing',EMPTY_BLOB(),'3',LUGAR('CHINA','Pekin','Guogongzhuang Rd','Pekin','100000','+8')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hyattpekin.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3386,7 +3386,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel NH',EMPTY_BLOB(),'4',LUGAR('CHILE','Santiago de Chile','Av Condell','Santiago de Chile','8150','GMT-3')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel NH',EMPTY_BLOB(),'4',LUGAR('CHILE','Santiago de Chile','Av Condell','Santiago de Chile','8150','-3')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'hotelnh.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3399,7 +3399,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Intercontinental',EMPTY_BLOB(),'4',LUGAR('JAPON','Tokyo','Av. Shinagawa','Tokyo','100-0004','GMT+9')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Intercontinental',EMPTY_BLOB(),'4',LUGAR('JAPON','Tokyo','Av. Shinagawa','Tokyo','100-0004','+9')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'intercontinental.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3412,7 +3412,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bridge House BB',EMPTY_BLOB(),'3',LUGAR('INGLATERRA','Londres','B1354','Londres','5698','GMT')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Bridge House BB',EMPTY_BLOB(),'3',LUGAR('INGLATERRA','Londres','B1354','Londres','5698','0')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'bridge-house.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));
@@ -3425,7 +3425,7 @@ DECLARE
     V_blob BLOB;
     V_bfile BFILE;
 BEGIN 
-    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Berlin Berlin',EMPTY_BLOB(),'3',LUGAR('ALEMANIA','Berlin','Lutzowpl','Berlin','10115','GMT+1')) RETURNING foto INTO V_blob;
+    INSERT INTO HOTEL VALUES (id_hotel.nextVal,'Hotel Berlin Berlin',EMPTY_BLOB(),'3',LUGAR('ALEMANIA','Berlin','Lutzowpl','Berlin','10115','+1')) RETURNING foto INTO V_blob;
     V_bfile := BFILENAME('IMAGES', 'berlin.jpg');
     DBMS_LOB.OPEN(V_bfile, DBMS_LOB.LOB_READONLY);
     DBMS_LOB.LOADFROMFILE(V_blob, V_bfile, SYS.DBMS_LOB.GETLENGTH(V_bfile));

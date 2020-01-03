@@ -18,8 +18,8 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
         axfecha TIMESTAMP;
     BEGIN
         dbms_output.put_line('*Fecha de inicio y fin de la reserva');
-        fecha_inicio:=random_fecha(SYSTIMESTAMP-300,SYSTIMESTAMP+300);
-        fecha_fin:=random_fecha(SYSTIMESTAMP-300,SYSTIMESTAMP+300);
+        fecha_inicio:=random_fecha(SYSTIMESTAMP-300,SYSTIMESTAMP+50);
+        fecha_fin:=random_fecha(SYSTIMESTAMP-300,SYSTIMESTAMP+50);
         IF NOT RESERVA.validar_fecha(fecha_inicio,fecha_fin) THEN
             axfecha := fecha_inicio;
             fecha_inicio := fecha_fin;
@@ -74,7 +74,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVACION_HOSPEDAJE IS
     IS
         puntua INTEGER;
     BEGIN
-        puntua := dbms_random.value*10;
+        puntua := dbms_random.value*9+1;
         UPDATE RESERVA_ESTANCIA
         SET puntuacion = puntua
         WHERE id_reserva_estancia = reservaid;

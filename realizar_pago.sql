@@ -138,11 +138,11 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
             
             UPDATE RESERVA_CARRO R
             SET R.reserva_carro.estado = 'pagado'
-            WHERE R.id_reserva_carro = reservaid;
+            WHERE R.reservavuelo_id = reservaid;
             
             UPDATE RESERVA_ESTANCIA R
             SET R.reserva_estacia.estado = 'pagado'
-            WHERE R.id_reserva_estancia = reservaid;
+            WHERE R.reservavuelo_id = reservaid;
         END IF;
     END;
     
@@ -204,6 +204,7 @@ CREATE OR REPLACE PACKAGE BODY PAGAR_RESERVA IS
             INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,reservaid, null, null,null);
         ELSIF tipo = 'triple' THEN
             INSERT INTO PAGO VALUES(id_pago.nextval,monto,SYSTIMESTAMP,restantes,idmilla,null,null,getEstanciaDe(reservaid), reservaid, getSeguroDe(reservaid),getCarroDe(reservaid));
+        
         END IF;
         dbms_output.put_line('*Pagando $'||monto.valor||' con '||monto.convertir('monetaria','milla')||' millas. Millas restantes: '||restantes.valor);
     END;

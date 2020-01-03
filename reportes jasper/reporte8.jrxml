@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" uuid="f5e59eed-6f80-4b0b-bd95-324e92cd0ac0">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BasesII"/>
+	<parameter name="fecha_inicio" class="java.sql.Date">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[TODAY( )]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_fin" class="java.sql.Date">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[TODAY( )]]></defaultValueExpression>
+	</parameter>
+	<parameter name="lugar_origen" class="java.lang.String"/>
+	<parameter name="lugar_destino" class="java.lang.String"/>
+	<queryString language="plsql">
+		<![CDATA[{CALL reporte_8($P{ORACLE_REF_CURSOR}, $P{lugar_origen},$P{lugar_destino},$P{fecha_inicio},$P{fecha_fin})}]]>
+	</queryString>
+	<field name="LOGO" class="java.awt.Image"/>
+	<field name="FECHA" class="java.lang.String"/>
+	<field name="ORIGEN" class="java.lang.String"/>
+	<field name="DESTINO" class="java.lang.String"/>
+	<field name="SERVICIOS" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="111">
+			<textField>
+				<reportElement mode="Opaque" x="-20" y="0" width="595" height="110" forecolor="#FFFFFF" backcolor="#4C51D9" uuid="b1ae67a3-0237-42f5-b5d3-f403e7693e95"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TOP 5 AEROLÍNEAS QUE PRESTAN SERVICIO  " +  $F{FECHA}
+]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="-20" y="-1" width="140" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="7a4cc732-55c9-4e19-9c0e-e36e51525295">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOGO DE LA AEROLINEA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="250" y="-1" width="120" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="5b3c7d67-000d-44fb-b683-2fe051682444">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORIGEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="371" y="-1" width="120" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="ffb0f29c-995d-4548-9442-a647059ba126">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESTINO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="120" y="-1" width="130" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="5ff07a2f-1b84-4aa6-8a1a-b5b21779c0ff">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="491" y="-1" width="84" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="3cbe57ad-9d75-456e-8a04-90d499e8d672">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD DE SERVICIOS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="112" splitType="Immediate">
+			<textField>
+				<reportElement x="121" y="-14" width="129" height="126" uuid="ddf3eeaa-722c-4657-b9cd-49fbf15a609a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d554557-80bd-435a-82d0-b7ec394c1724"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="-14" width="119" height="125" uuid="0975ae8b-582a-497f-a145-289111bd1f0b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3b6bc807-22d9-488c-9068-ea2068866b8d"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ORIGEN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="504" y="-14" width="59" height="125" uuid="930f8dbc-fde0-4def-b8da-42f9a19eca32">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9cdf9868-6081-479a-a72d-b6686e2e6fad"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SERVICIOS}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="5" y="0" width="90" height="96" uuid="46ead5f0-cf4d-4f2b-b800-a218e4d139a0"/>
+				<imageExpression><![CDATA[$F{LOGO}]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement mode="Opaque" x="120" y="-63" width="1" height="175" forecolor="#7D83E8" uuid="c1c8cf6a-1240-4392-8571-c0d54e301b39"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="250" y="-64" width="1" height="176" forecolor="#7D83E8" uuid="e74b6148-9f53-4a84-ac50-874f4a9f3aba"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="371" y="-64" width="1" height="175" forecolor="#7D83E8" uuid="0fd754d5-0ef7-49ba-a078-0ec5a5f1c3ff"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="491" y="-64" width="1" height="176" forecolor="#7D83E8" uuid="4e725592-37b7-4fc1-861f-bc811a2ad313"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="-20" y="111" width="595" height="1" forecolor="#7D83E8" uuid="7e7a3419-1b7e-4817-bae7-8b575f496b6a"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="371" y="-14" width="120" height="125" uuid="68bdc6a9-6edd-461c-8d6a-98a893123fc5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3b6bc807-22d9-488c-9068-ea2068866b8d"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DESTINO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<textField>
+				<reportElement mode="Opaque" x="-20" y="3" width="595" height="47" forecolor="#FFFFFF" backcolor="#4C51D9" uuid="ae9eb17d-82aa-4461-8096-b0255f21bdab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CARACAS, VENEZUELA. " + DATEFORMAT(NOW(),"dd-MM-yyyy")]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

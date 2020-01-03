@@ -318,13 +318,13 @@ BEGIN
     WHERE usuario_id = usuarioid;
 END;
 /
-CREATE OR REPLACE PROCEDURE insertarCaracteristicaHotel(hotel NUMBER, titulo VARCHAR, descripcion VARCHAR)
+CREATE OR REPLACE PROCEDURE icHotel(hotel NUMBER, titulo VARCHAR, descripcion VARCHAR)
 IS 
 BEGIN
     INSERT INTO CARACTERISTICA VALUES (id_caracteristica.nextVal, titulo, descripcion,null,null,hotel);
 END;
 /
-CREATE OR REPLACE PROCEDURE insertarCaracteristicaHabitacion(habitacion NUMBER, titulo VARCHAR, descripcion VARCHAR)
+CREATE OR REPLACE PROCEDURE icHabitacion(habitacion NUMBER, titulo VARCHAR, descripcion VARCHAR)
 IS 
 BEGIN
     INSERT INTO CARACTERISTICA VALUES (id_caracteristica.nextVal, titulo, descripcion,null,habitacion,null);
@@ -445,4 +445,78 @@ BEGIN
         RETURN TO_CHAR(fechareal,'Mon DD YYYY');
     END IF;
     RETURN 'No tiene retorno';
+END;
+/
+
+CREATE OR REPLACE FUNCTION getLogoAerolinea(vueloid INTEGER) RETURN BLOB
+IS
+BEGIN
+    FOR I IN (SELECT R.*
+              FROM AVION A, ASIENTO S, DISPONIBILIDAD D, AEROLINEA R
+              WHERE A.id_avion = S.avion_id AND
+              S.id_asiento = D.asiento_id AND
+              vuelo_id = vueloid AND
+              A.aerolinea_id = R.id_aerolinea)
+    LOOP
+        RETURN I.logo;
+    END LOOP;
+    RETURN NULL;
+END;
+
+/
+
+CREATE OR REPLACE FUNCTION getAeropuertoReporte(aeropuertoid INTEGER) RETURN VARCHAR
+IS
+    registro AEROPUERTO%RowType;
+BEGIN
+    registro:= getAeropuerto(aeropuertoid);
+    RETURN registro.lugar_aeropuerto.ciudad||' ('||registro.abreviatura||'), '||registro.lugar_aeropuerto.pais;
+END;
+/
+CREATE OR REPLACE FUNCTION getFechaDespegue(vueloid INTEGER) RETURN VARCHAR
+IS
+    registro VUELO%RowType;
+BEGIN
+    registro:=getVuelo(vueloid);
+    IF registro.fecha_salida_real IS NOT NULL THEN
+        RETURN TO_CHAR(registro.fecha_salida_real,'DD Mon yyyy HH:MI PM');
+    END IF;
+    RETURN TO_CHAR(registro.fecha_salida,'DD Mon yyyy HH:MI PM');
+END;
+/
+CREATE OR REPLACE FUNCTION getFechaLLegada(vueloid INTEGER) RETURN VARCHAR
+IS
+    registro VUELO%RowType;
+BEGIN
+    registro:=getVuelo(vueloid);
+    IF registro.fecha_llegada_real IS NOT NULL THEN
+        RETURN TO_CHAR(registro.fecha_llegada_real,'DD Mon yyyy HH:MI PM');
+    ELSIF registro.fecha_salida_real IS NOT NULL THEN
+        RETURN TO_CHAR(registro.fecha_salida_real+registro.duracion.valor,'DD Mon yyyy HH:MI PM');
+    END IF;
+    RETURN 'Por calcular';
+END;
+/
+CREATE OR REPLACE FUNCTION getPuntuacionDelApartamento(apartamentoid INTEGER) RETURN NUMBER
+IS
+    punt NUMBER;
+BEGIN
+    SELECT AVG(puntuacion) INTO punt 
+    FROM RESERVA_ESTANCIA 
+    WHERE apartamento_id = apartamentoid 
+    AND puntuacion>0;
+    RETURN punt;
+END;
+/
+CREATE OR REPLACE FUNCTION getPuntuacionDelHotel(hotelid INTEGER) RETURN NUMBER
+IS
+    punt NUMBER;
+BEGIN
+    SELECT AVG(puntuacion) INTO punt 
+    FROM RESERVA_ESTANCIA R, HABITACION H
+    WHERE 
+    habitacion_id = H.id_habitacion AND
+    hotel_id = hotelid
+    AND puntuacion>0;
+    RETURN punt;
 END;
