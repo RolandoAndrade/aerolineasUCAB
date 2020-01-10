@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte13" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f7f15dc-1f35-4dda-a025-f0ca6cea8bde">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter"/>
+	<parameter name="fecha_inicio" class="java.sql.Date">
+		<defaultValueExpression><![CDATA["01/01/2019"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_fin" class="java.sql.Date">
+		<defaultValueExpression><![CDATA["01/01/2020"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="plsql">
+		<![CDATA[{CALL reporte_13($P{ORACLE_REF_CURSOR}, $P{fecha_inicio}, $P{fecha_fin})}]]>
+	</queryString>
+	<field name="LOGO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="LOGO"/>
+	</field>
+	<field name="INICIO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="INICIO"/>
+	</field>
+	<field name="FINALE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FINALE"/>
+	</field>
+	<field name="ORIGEN" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ORIGEN"/>
+	</field>
+	<field name="DESTINO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DESTINO"/>
+	</field>
+	<field name="TOTAL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="TOTAL"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

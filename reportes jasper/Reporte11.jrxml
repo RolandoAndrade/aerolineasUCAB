@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte11" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0be4306e-c7a6-4a3b-9995-0def29ed46fb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="correo_usu" class="java.lang.String">
+		<defaultValueExpression><![CDATA["robertocarbajales@gmail.com"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_inicio" class="java.sql.Date">
+		<defaultValueExpression><![CDATA["28/12/19"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_fin" class="java.sql.Date">
+		<defaultValueExpression><![CDATA["26/5/20"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="plsql">
+		<![CDATA[{CALL reporte_11($P{ORACLE_REF_CURSOR}, $P{correo_usu}, $P{fecha_inicio}, $P{fecha_fin})}]]>
+	</queryString>
+	<field name="FOTO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="FOTO"/>
+	</field>
+	<field name="MA.NOMBRE||&apos;&apos;||M.NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label">
+			<![CDATA[MA.NOMBRE||''||M.NOMBRE]]>
+		</property>
+	</field>
+	<field name="NOMBRE" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<field name="CORREO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CORREO"/>
+	</field>
+	<field name="RECOGIDA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="RECOGIDA"/>
+	</field>
+	<field name="DEVOLUCION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DEVOLUCION"/>
+	</field>
+	<field name="FECHA_INICIO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FECHA_INICIO"/>
+	</field>
+	<field name="FECHA_FIN" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FECHA_FIN"/>
+	</field>
+	<field name="PRECIO" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="PRECIO"/>
+	</field>
+	<field name="PAGAR" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PAGAR"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="123" y="0" width="100" height="30" uuid="64312e80-b0e1-413a-8508-5eb1cfa67125">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8eb4ba71-0f1f-44c1-9f30-8ba3c0d0fd15"/>
+				</reportElement>
+				<text><![CDATA[MA.NOMBRE||''||M.NOMBRE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="123" y="63" width="100" height="30" uuid="a98d52fc-c9ba-406c-985d-976ee5cb448c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8eb4ba71-0f1f-44c1-9f30-8ba3c0d0fd15"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{MA.NOMBRE||''||M.NOMBRE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
