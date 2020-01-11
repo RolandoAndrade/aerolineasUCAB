@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte9" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="90392388-2955-489c-833f-52611065f122">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="correo_usu" class="java.lang.String">
+		<defaultValueExpression><![CDATA["robertocarbajales@gmail.com"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_inicio" class="java.sql.Date">
+		<defaultValueExpression><![CDATA["01/01/2019"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha_fin" class="java.sql.Date">
+		<defaultValueExpression><![CDATA["01/01/2020"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="plsql">
+		<![CDATA[{CALL reporte_9($P{ORACLE_REF_CURSOR}, $P{correo_usu}, $P{fecha_inicio}, $P{fecha_fin})}]]>
+	</queryString>
+	<field name="FOTO" class="java.awt.Image">
+		<property name="com.jaspersoft.studio.field.label" value="FOTO"/>
+	</field>
+	<field name="NOMBRE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
+	</field>
+	<field name="CORREO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CORREO"/>
+	</field>
+	<field name="INICIO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="INICIO"/>
+	</field>
+	<field name="FIN" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FIN"/>
+	</field>
+	<field name="CANTIDAD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CANTIDAD"/>
+	</field>
+	<field name="CARACTERISTICAS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CARACTERISTICAS"/>
+	</field>
+	<field name="DIRECCION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DIRECCION"/>
+	</field>
+	<field name="PUNTUACION" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PUNTUACION"/>
+	</field>
+	<field name="PAGO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PAGO"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

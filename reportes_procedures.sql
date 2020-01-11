@@ -240,3 +240,134 @@ BEGIN
         RETURN total;
     END IF;
 END;
+
+CREATE OR REPLACE PROCEDURE REPORTE_7 (cursorMemoria OUT SYS_REFCURSOR, x VARCHAR, y VARCHAR)
+AS
+    registros NUMBER(20);
+BEGIN
+
+    SELECT COUNT(*) INTO registros 
+    FROM (SELECT TO_CHAR(RV.reserva_vuelo.fecha_inicio, 'Mon DD YYYY')|| '-'||TO_CHAR(RV.reserva_vuelo.fecha_fin, 'Mon DD YYYY'), traerSale(V.id_vuelo), traerLlega(V.id_vuelo), COUNT(RV.vuelo_id) AS total
+            FROM RESERVA_VUELO RV, VUELO V
+            WHERE RV.vuelo_id = V.id_vuelo
+            AND RV.reserva_vuelo.fecha_inicio >=  x
+            AND RV.reserva_vuelo.fecha_fin <= y
+            GROUP BY RV.reserva_vuelo.fecha_inicio, RV.reserva_vuelo.fecha_fin, traerSale(V.id_vuelo), traerLlega(V.id_vuelo)
+            ORDER BY total desc 
+            FETCH NEXT 10 ROWS ONLY); 
+
+        
+    OPEN cursorMemoria FOR SELECT TO_CHAR(RV.reserva_vuelo.fecha_inicio, 'Mon DD YYYY')|| '-'||TO_CHAR(RV.reserva_vuelo.fecha_fin, 'Mon DD YYYY') dia , traerSale(V.id_vuelo) sale, traerLlega(V.id_vuelo) llega, COUNT(RV.vuelo_id) AS total
+                            FROM RESERVA_VUELO RV, VUELO V
+                            WHERE registros = 0 
+                            OR RV.vuelo_id = V.id_vuelo
+                            AND RV.reserva_vuelo.fecha_inicio >=  x
+                            AND RV.reserva_vuelo.fecha_fin <= y
+                            GROUP BY RV.reserva_vuelo.fecha_inicio, RV.reserva_vuelo.fecha_fin, traerSale(V.id_vuelo), traerLlega(V.id_vuelo)
+                            ORDER BY total desc 
+                            FETCH NEXT 10 ROWS ONLY;
+END;
+
+CREATE OR REPLACE PROCEDURE REPORTE_9 (cursorMemoria OUT SYS_REFCURSOR, x VARCHAR, y DATE, z DATE)
+AS
+    registros NUMBER(20);
+BEGIN
+    
+    SELECT COUNT(*) INTO registros
+    FROM (SELECT H.foto, H.nombre, U.correo, TO_CHAR(RE.RESERVA_ESTACIA.fecha_inicio,'DD Mon  YYYY'), TO_CHAR(RE.RESERVA_ESTACIA.fecha_fin,'DD Mon  YYYY'),traerCantidad(RE.id_reserva_estancia, U.id_usuario),devolverCaracteristica(HA.id_habitacion),TO_CHAR(RE.RESERVA_ESTACIA.fecha_fin, 'Mon DD YYYY'), H.lugar_hotel.pais ||' '|| H.lugar_hotel.ciudad ||' '|| H.lugar_hotel.calle||' '||H.lugar_hotel.nombre||' '||H.lugar_hotel.codigo_postal as direccion, RE.puntuacion,ROUND( traerPagoTotal(RE.id_reserva_estancia),2)
+            FROM HOTEL H, USUARIO U, RESERVA_ESTANCIA RE, HABITACION HA
+            WHERE H.id_hotel = HA.hotel_id
+            AND HA.id_habitacion = RE.habitacion_id 
+            AND U.correo = x
+            AND TO_CHAR(RE.RESERVA_ESTACIA.fecha_inicio,'DD-MM-YYYY') = TO_CHAR(y,'DD-MM-YYYY')
+            AND TO_CHAR( RE.RESERVA_ESTACIA.fecha_fin,'DD-MM-YYYY') = TO_CHAR(z,'DD-MM-YYYY'));
+    
+        OPEN cursorMemoria FOR SELECT H.foto foto, H.nombre nombre, U.correo correo, TO_CHAR(RE.RESERVA_ESTACIA.fecha_inicio,'DD Mon  YYYY') inicio , TO_CHAR(RE.RESERVA_ESTACIA.fecha_fin,'DD Mon  YYYY') fin ,traerCantidad(RE.id_reserva_estancia, U.id_usuario) cantidad ,devolverCaracteristica(HA.id_habitacion) caracteristicas,H.lugar_hotel.codigo_postal || ' sw 150 court, ' || H.lugar_hotel.ciudad ||', '|| H.lugar_hotel.calle||', '||H.lugar_hotel.pais   as direccion, RE.puntuacion,ROUND( traerPagoTotal(RE.id_reserva_estancia),2) pago
+                                    FROM HOTEL H, USUARIO U, RESERVA_ESTANCIA RE, HABITACION HA
+                                    WHERE H.id_hotel = HA.hotel_id
+                                    AND HA.id_habitacion = RE.habitacion_id
+                                    AND U.correo = x
+                                    AND registros = 0 
+                                    OR H.id_hotel = HA.hotel_id
+                                    AND HA.id_habitacion = RE.habitacion_id 
+                                    AND U.correo = x
+                                    AND TO_CHAR(RE.RESERVA_ESTACIA.fecha_inicio,'DD-MM-YYYY') = TO_CHAR(y,'DD-MM-YYYY')
+                                    AND TO_CHAR( RE.RESERVA_ESTACIA.fecha_fin,'DD-MM-YYYY') = TO_CHAR(z,'DD-MM-YYYY');
+    
+END;
+
+CREATE OR REPLACE PROCEDURE REPORTE_11 (cursorMemoria OUT SYS_REFCURSOR, x VARCHAR, y DATE, z DATE)
+AS
+    registros NUMBER(20);
+BEGIN
+        
+        SELECT COUNT(*) INTO registros
+        FROM (SELECT M.foto, MA.nombre || ' ' || M.nombre,PC.logo , U.correo, 'aeropuerto de ' || RC.recogida.ciudad, 'aeropuerto de ' || RC.devolucion.ciudad,TO_CHAR( RC.reserva_carro.fecha_inicio,'DD Mon  YYYY'), TO_CHAR( RC.reserva_carro.fecha_fin,'DD Mon  YYYY'), C.precio.valor, ROUND(traerPagoTotalCarro(rc.id_reserva_carro),2)
+                FROM MODELO M, MARCA MA, USUARIO U, RESERVA_CARRO RC, CARRO C, PROVEEDOR_CARRO PC
+                WHERE MA.id_marca = M.marca_id
+                AND M.id_modelo = C.modelo_id
+                AND C.id_carro = RC.carro_id
+                AND U.id_usuario = RC.usuario_id
+                AND PC.id_proveedor = C.proveedor_id
+                AND U.correo = x
+                AND TO_CHAR(RC.reserva_carro.fecha_inicio,'DD-MM-YYYY') = TO_CHAR(y,'DD-MM-YYYY')
+                AND TO_CHAR(RC.reserva_carro.fecha_fin,'DD-MM-YYYY') = TO_CHAR(z,'DD-MM-YYYY'));
+        
+        OPEN cursorMemoria FOR SELECT M.foto foto, MA.nombre || ' ' || M.nombre,PC.logo nombre , U.correo correo, 'aeropuerto de ' || RC.recogida.ciudad recogida, 'aeropuerto de ' || RC.devolucion.ciudad devolucion,TO_CHAR( RC.reserva_carro.fecha_inicio,'DD Mon  YYYY') fecha_inicio, TO_CHAR( RC.reserva_carro.fecha_fin,'DD Mon  YYYY') fecha_fin, C.precio.valor precio, ROUND(traerPagoTotalCarro(rc.id_reserva_carro),2) pagar
+                                    FROM MODELO M, MARCA MA, USUARIO U, RESERVA_CARRO RC, CARRO C, PROVEEDOR_CARRO PC
+                                    WHERE MA.id_marca = M.marca_id
+                                    AND M.id_modelo = C.modelo_id
+                                    AND C.id_carro = RC.carro_id
+                                    AND U.id_usuario = RC.usuario_id
+                                    AND PC.id_proveedor = C.proveedor_id
+                                    AND U.correo = x
+                                    AND registros = 0
+                                    OR MA.id_marca = M.marca_id
+                                    AND M.id_modelo = C.modelo_id
+                                    AND C.id_carro = RC.carro_id
+                                    AND U.id_usuario = RC.usuario_id
+                                    AND PC.id_proveedor = C.proveedor_id
+                                    AND U.correo = x
+                                    AND TO_CHAR(RC.reserva_carro.fecha_inicio,'DD-MM-YYYY') = TO_CHAR(y,'DD-MM-YYYY')
+                                    AND TO_CHAR(RC.reserva_carro.fecha_fin,'DD-MM-YYYY') = TO_CHAR(z,'DD-MM-YYYY');
+
+END;
+
+CREATE OR REPLACE PROCEDURE REPORTE_13 (cursorMemoria OUT SYS_REFCURSOR, x DATE, y DATE)
+AS
+    registros NUMBER(20);
+BEGIN
+    
+    SELECT COUNT(*) INTO registros
+    FROM (SELECT A.logo, B.inicio, B.finale, B.origen, B.destino, B.total
+            FROM ASEGURADORA A, (SELECT RV.reserva_vuelo.fecha_inicio as inicio, RV.reserva_vuelo.fecha_fin as finale, traerSale(V.id_vuelo) as origen, traerLlega(V.id_vuelo) as destino, COUNT(S.reservavuelo_id) AS total, V.id_vuelo as vuelo
+                                  FROM RESERVA_VUELO RV, VUELO V, SEGURO S
+                                  WHERE RV.vuelo_id = V.id_vuelo
+                                  AND RV.id_reserva_vuelo = S.reservavuelo_id
+                                  AND TO_CHAR(RV.reserva_vuelo.fecha_inicio,'DD-MM-YYYY') = TO_CHAR(TO_DATE('31/03/20'),'DD-MM-YYYY') 
+                                  AND TO_CHAR(RV.reserva_vuelo.fecha_fin,'DD-MM-YYYY') = TO_CHAR(TO_DATE('12/04/20'),'DD-MM-YYYY') 
+                                  GROUP BY RV.reserva_vuelo.fecha_inicio, RV.reserva_vuelo.fecha_fin, traerSale(V.id_vuelo), traerLlega(V.id_vuelo), V.id_vuelo
+                                  ORDER BY total desc) B, SEGURO SE
+            WHERE B.vuelo = SE.reservavuelo_id
+            AND A.id_aseguradora = SE.aseguradora_id);
+    
+        OPEN cursorMemoria FOR SELECT A.logo, B.inicio, B.finale, B.origen, B.destino, B.total
+                                FROM ASEGURADORA A, (SELECT TO_CHAR(RV.reserva_vuelo.fecha_inicio,'DD-MM-YYYY') as inicio, TO_CHAR(RV.reserva_vuelo.fecha_fin,'DD-MM-YYYY') as finale, traerSale(V.id_vuelo) as origen, traerLlega(V.id_vuelo) as destino, COUNT(S.reservavuelo_id) AS total, V.id_vuelo as vuelo
+                                                      FROM RESERVA_VUELO RV, VUELO V, SEGURO S
+                                                      WHERE RV.vuelo_id = V.id_vuelo
+                                                      AND RV.id_reserva_vuelo = S.reservavuelo_id
+                                                      AND registros = 0
+                                                      OR RV.vuelo_id = V.id_vuelo
+                                                      AND RV.id_reserva_vuelo = S.reservavuelo_id
+                                                      AND TO_CHAR(RV.reserva_vuelo.fecha_inicio,'DD-MM-YYYY') = TO_CHAR(TO_DATE('31/03/20'),'DD-MM-YYYY') 
+                                                      AND TO_CHAR(RV.reserva_vuelo.fecha_fin,'DD-MM-YYYY') = TO_CHAR(TO_DATE('12/04/20'),'DD-MM-YYYY') 
+                                                      GROUP BY RV.reserva_vuelo.fecha_inicio, RV.reserva_vuelo.fecha_fin, traerSale(V.id_vuelo), traerLlega(V.id_vuelo), V.id_vuelo
+                                                      ORDER BY total desc) B, SEGURO SE
+                                WHERE B.vuelo = SE.reservavuelo_id
+                                AND A.id_aseguradora = SE.aseguradora_id;
+    
+END;
+
+
+
+

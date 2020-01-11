@@ -520,3 +520,65 @@ BEGIN
     AND puntuacion>0;
     RETURN punt;
 END;
+/
+/
+CREATE OR REPLACE FUNCTION devolverCaracteristica(x NUMBER) RETURN VARCHAR
+IS
+    caracteristica VARCHAR(1000);
+    total VARCHAR(1000);
+    CURSOR Ccaracteristica IS SELECT C.descripcion 
+                        FROM CARACTERISTICA C, HABITACION HA
+                        WHERE HA.id_habitacion = C.habitacion_id
+                        AND HA.id_habitacion = x;
+BEGIN
+    OPEN Ccaracteristica;
+    FETCH Ccaracteristica INTO caracteristica;
+    WHILE(Ccaracteristica%FOUND)
+    LOOP
+        total:=total|| ', '||caracteristica;
+        FETCH Ccaracteristica INTO caracteristica;
+    END LOOP;
+    RETURN total;
+END;
+/
+CREATE OR REPLACE FUNCTION traerPagoTotal(x NUMBER) RETURN VARCHAR
+IS
+    registro1 VARCHAR(50);
+    aux NUMBER(2);
+BEGIN
+    select SUM(p.monto.valor) into registro1
+    from reserva_estancia re, pago p
+    where RE.id_reserva_estancia = p.reservaestancia_id
+    and RE.id_reserva_estancia = x;
+    RETURN registro1;
+END;
+/
+CREATE OR REPLACE FUNCTION traerCantidad(x NUMBER, y NUMBER) RETURN VARCHAR
+IS
+    registro1 VARCHAR(50);
+    aux NUMBER(2);
+BEGIN
+    aux := 2;
+    SELECT SUM(HU.cantidad) INTO registro1
+    from huesped HU, USUARIO U, reserva_estancia re
+    WHERE U.id_usuario = HU.usuario_id
+    AND RE.id_reserva_estancia = HU.reservaestancia_id
+    AND RE.id_reserva_estancia = X
+    AND U.id_usuario = Y;
+    IF (registro1 IS NOT NULL) THEN
+        RETURN registro1;
+    ELSE 
+        RETURN aux;
+    END IF;
+END;
+
+CREATE OR REPLACE FUNCTION traerPagoTotalCarro(x NUMBER) RETURN VARCHAR
+IS
+    registro1 VARCHAR(50);
+BEGIN
+    select SUM(p.monto.valor) INTO registro1
+    from reserva_carro rc, pago p
+    where rc.id_reserva_carro = p.reservacarro_id
+    and rc.id_reserva_carro = x;
+    RETURN registro1;
+END;
