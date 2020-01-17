@@ -1,72 +1,294 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte9" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="90392388-2955-489c-833f-52611065f122">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Adapter"/>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" uuid="f5e59eed-6f80-4b0b-bd95-324e92cd0ac0">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<parameter name="correo_usu" class="java.lang.String">
-		<defaultValueExpression><![CDATA["robertocarbajales@gmail.com"]]></defaultValueExpression>
-	</parameter>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BasesII"/>
 	<parameter name="fecha_inicio" class="java.sql.Date">
-		<defaultValueExpression><![CDATA["01/01/2019"]]></defaultValueExpression>
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[TODAY( )]]></defaultValueExpression>
 	</parameter>
-	<parameter name="fecha_fin" class="java.sql.Date">
-		<defaultValueExpression><![CDATA["01/01/2020"]]></defaultValueExpression>
-	</parameter>
+	<parameter name="fecha_fin" class="java.sql.Date"/>
+	<parameter name="correo" class="java.lang.String"/>
 	<queryString language="plsql">
-		<![CDATA[{CALL reporte_9($P{ORACLE_REF_CURSOR}, $P{correo_usu}, $P{fecha_inicio}, $P{fecha_fin})}]]>
+		<![CDATA[{CALL reporte_9($P{ORACLE_REF_CURSOR}, $P{correo}, $P{fecha_inicio}, $P{fecha_inicio})}]]>
 	</queryString>
-	<field name="FOTO" class="java.awt.Image">
-		<property name="com.jaspersoft.studio.field.label" value="FOTO"/>
-	</field>
-	<field name="NOMBRE" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="NOMBRE"/>
-	</field>
-	<field name="CORREO" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="CORREO"/>
-	</field>
-	<field name="INICIO" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="INICIO"/>
-	</field>
-	<field name="FIN" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="FIN"/>
-	</field>
-	<field name="CANTIDAD" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="CANTIDAD"/>
-	</field>
-	<field name="CARACTERISTICAS" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="CARACTERISTICAS"/>
-	</field>
-	<field name="DIRECCION" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="DIRECCION"/>
-	</field>
-	<field name="PUNTUACION" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="PUNTUACION"/>
-	</field>
-	<field name="PAGO" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="PAGO"/>
-	</field>
+	<field name="FOTO" class="java.awt.Image"/>
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="CORREO" class="java.lang.String"/>
+	<field name="INICIO" class="java.lang.String"/>
+	<field name="FIN" class="java.lang.String"/>
+	<field name="CANTIDAD" class="java.lang.String"/>
+	<field name="CARACTERISTICAS" class="java.lang.String"/>
+	<field name="DIRECCION" class="java.lang.String"/>
+	<field name="PUNTUACION" class="java.math.BigDecimal"/>
+	<field name="PAGO" class="java.math.BigDecimal"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<title>
-		<band height="79" splitType="Stretch"/>
-	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="111">
+			<textField>
+				<reportElement mode="Opaque" x="-20" y="0" width="595" height="110" forecolor="#FFFFFF" backcolor="#4C51D9" uuid="b1ae67a3-0237-42f5-b5d3-f403e7693e95"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA["RESERVACIONES DE HOTELES/HABITACIÓN ENTRE " +  UPPER(DATEFORMAT($P{fecha_inicio},"dd MMM yyyy") )+ " y "+UPPER(DATEFORMAT($P{fecha_fin},"dd MMM yyyy") )]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="-20" y="-1" width="80" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="7a4cc732-55c9-4e19-9c0e-e36e51525295">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOTO DEL LUGAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="61" y="-1" width="59" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="5b3c7d67-000d-44fb-b683-2fe051682444">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DEL LUGAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="120" y="-1" width="69" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="ffb0f29c-995d-4548-9442-a647059ba126">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CORREO DE USUARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="190" y="-1" width="60" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="5ff07a2f-1b84-4aa6-8a1a-b5b21779c0ff">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE ENTRADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="250" y="-1" width="59" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="3cbe57ad-9d75-456e-8a04-90d499e8d672">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE SALIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="310" y="-1" width="50" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="385e5426-cf61-4a16-8d53-159efb98e5d6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HUESPEDES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="361" y="-1" width="69" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="59d36479-5b64-4186-996b-341e00e57977">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="430" y="-1" width="60" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="12d0bbda-b3c5-4532-9a5d-a0931eb3e67a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="490" y="-1" width="40" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="a693626b-f357-4386-adb9-6f606ec15492">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PUNTUACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" mode="Opaque" x="530" y="-1" width="45" height="50" forecolor="#FFFFFF" backcolor="#6269D9" uuid="cd77b3a7-7469-4703-8fe5-a36b83f0f37f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba308798-46ef-4b81-a34f-61bba02dba5c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MONTO TOTAL PAGADO]]></text>
+			</staticText>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="128" splitType="Stretch">
+			<textField>
+				<reportElement x="195" y="-14" width="45" height="134" uuid="ddf3eeaa-722c-4657-b9cd-49fbf15a609a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d554557-80bd-435a-82d0-b7ec394c1724"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{INICIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="-14" width="50" height="134" uuid="0975ae8b-582a-497f-a145-289111bd1f0b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3b6bc807-22d9-488c-9068-ea2068866b8d"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="-11" width="40" height="134" uuid="930f8dbc-fde0-4def-b8da-42f9a19eca32">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9cdf9868-6081-479a-a72d-b6686e2e6fad"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FIN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="315" y="-17" width="35" height="140" uuid="6e4fdc17-dc70-4e63-a1ba-8968c260d1cd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4642f1cf-f204-449e-8b37-46f95697fccd"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CANTIDAD}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="-11" y="10" width="60" height="59" uuid="46ead5f0-cf4d-4f2b-b800-a218e4d139a0"/>
+				<imageExpression><![CDATA[$F{FOTO}]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement mode="Opaque" x="60" y="-64" width="1" height="186" forecolor="#7D83E8" uuid="c1c8cf6a-1240-4392-8571-c0d54e301b39"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="120" y="-64" width="1" height="186" forecolor="#7D83E8" uuid="e74b6148-9f53-4a84-ac50-874f4a9f3aba"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="189" y="-64" width="1" height="186" forecolor="#7D83E8" uuid="0fd754d5-0ef7-49ba-a078-0ec5a5f1c3ff"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="250" y="-64" width="1" height="187" forecolor="#7D83E8" uuid="4e725592-37b7-4fc1-861f-bc811a2ad313"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="309" y="-63" width="1" height="186" forecolor="#7D83E8" uuid="21af4adf-c077-4d71-a3c0-0201336124ce"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="-20" y="123" width="595" height="1" forecolor="#7D83E8" uuid="7e7a3419-1b7e-4817-bae7-8b575f496b6a"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="125" y="-14" width="59" height="134" uuid="68bdc6a9-6edd-461c-8d6a-98a893123fc5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3b6bc807-22d9-488c-9068-ea2068866b8d"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CORREO}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Opaque" x="360" y="-63" width="1" height="186" forecolor="#7D83E8" uuid="d68f7512-c1c5-4126-a36d-6e723280ce72"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="366" y="-14" width="59" height="134" uuid="1473b854-b0a9-4673-8620-d69d2908267c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3b6bc807-22d9-488c-9068-ea2068866b8d"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CARACTERISTICAS}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Opaque" x="429" y="-64" width="1" height="186" forecolor="#7D83E8" uuid="c4e9c3c4-f148-42ac-8dce-f72d98648904"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Opaque" x="490" y="-64" width="1" height="187" forecolor="#7D83E8" uuid="26ec4bd7-8c13-49ad-b62d-9bb29546f0bb"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="496" y="-11" width="30" height="134" uuid="4c56f84d-87a4-4471-9939-c367f5158fc0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9cdf9868-6081-479a-a72d-b6686e2e6fad"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PUNTUACION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="-12" width="45" height="134" uuid="e9166269-38a7-4013-bd35-8b9e2e7b2952">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d554557-80bd-435a-82d0-b7ec394c1724"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DIRECCION}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Opaque" x="530" y="-64" width="1" height="186" forecolor="#7D83E8" uuid="5ed500d4-7026-43af-b5bb-16467d733aa1"/>
+				<graphicElement>
+					<pen lineColor="#7D83E8"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="534" y="-15" width="39" height="140" uuid="56784e83-d7ec-4f36-84f0-6f0507540645">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4642f1cf-f204-449e-8b37-46f95697fccd"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAGO}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="50">
+			<textField>
+				<reportElement mode="Opaque" x="-20" y="3" width="595" height="47" forecolor="#FFFFFF" backcolor="#4C51D9" uuid="ae9eb17d-82aa-4461-8096-b0255f21bdab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CARACAS, VENEZUELA. " + DATEFORMAT(NOW(),"dd-MM-yyyy")]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>
