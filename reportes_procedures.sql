@@ -268,32 +268,63 @@ BEGIN
                             FETCH NEXT 10 ROWS ONLY;
 END;
 
+
 CREATE OR REPLACE PROCEDURE REPORTE_9 (cursorMemoria OUT SYS_REFCURSOR, x VARCHAR, y DATE, z DATE)
 AS
     registros NUMBER(20);
 BEGIN
     
     SELECT COUNT(*) INTO registros
-    FROM (SELECT H.foto, H.nombre, U.correo, TO_CHAR(RE.RESERVA_ESTACIA.fecha_inicio,'DD Mon  YYYY'), TO_CHAR(RE.RESERVA_ESTACIA.fecha_fin,'DD Mon  YYYY'),traerCantidad(RE.id_reserva_estancia, U.id_usuario),devolverCaracteristica(HA.id_habitacion),TO_CHAR(RE.RESERVA_ESTACIA.fecha_fin, 'Mon DD YYYY'), H.lugar_hotel.pais ||' '|| H.lugar_hotel.ciudad ||' '|| H.lugar_hotel.calle||' '||H.lugar_hotel.nombre||' '||H.lugar_hotel.codigo_postal as direccion, RE.puntuacion,ROUND( traerPagoTotal(RE.id_reserva_estancia),2)
-            FROM HOTEL H, USUARIO U, RESERVA_ESTANCIA RE, HABITACION HA
-            WHERE H.id_hotel = HA.hotel_id
-            AND HA.id_habitacion = RE.habitacion_id 
-            AND U.correo = x
-            AND TO_CHAR(RE.RESERVA_ESTACIA.fecha_inicio,'DD-MM-YYYY') = TO_CHAR(y,'DD-MM-YYYY')
-            AND TO_CHAR( RE.RESERVA_ESTACIA.fecha_fin,'DD-MM-YYYY') = TO_CHAR(z,'DD-MM-YYYY'));
+    FROM (SELECT
+        re.id_reserva_estancia,
+        (CASE WHEN id_apartamento IS NULL THEN H.foto ELSE A.foto END) foto, 
+        (CASE WHEN id_apartamento IS NULL THEN H.nombre||' Habitacion '||HA.numero||'-'||HA.piso ELSE 'Habitacion '||A.nombre END) nombre,
+        U.correo correo,
+        RE.reserva_estacia.fecha_inicio inicio,
+        RE.reserva_estacia.fecha_fin fin,
+        traerCantidad(RE.id_reserva_estancia, U.id_usuario) huespedes,
+        (CASE WHEN id_apartamento IS NULL THEN devolverCaracteristica(HA.id_habitacion) ELSE devolverCaracteristicaA(a.id_apartamento) END) descripcion,
+        CASE WHEN id_apartamento IS NULL THEN H.lugar_hotel.codigo_postal || ' sw 150 court, ' || H.lugar_hotel.ciudad ||', '|| H.lugar_hotel.calle||', '||H.lugar_hotel.pais
+        ELSE  A.lugar_apartamento.codigo_postal || ' sw 150 court, ' || A.lugar_apartamento.ciudad ||', '|| A.lugar_apartamento.calle||', '||A.lugar_apartamento.pais END ubicacion,
+        CASE WHEN RE.puntuacion=0 THEN 'No ha finalizado' ELSE ROUND(puntuacion,1)||'/10' END puntaje,
+        '$'||P.monto.valor precio
+        FROM RESERVA_ESTANCIA RE LEFT JOIN APARTAMENTO A ON RE.apartamento_id=A.id_apartamento LEFT JOIN HABITACION HA ON  RE.habitacion_id=HA.id_habitacion
+        LEFT JOIN HOTEL H ON HA.hotel_id=H.id_hotel, USUARIO U, PAGO P
+        WHERE 
+            U.id_usuario = usuarioReserva(id_reserva_estancia) AND
+            RE.id_reserva_estancia=P.reservaestancia_id AND
+            U.correo LIKE '%'||x||'%' AND 
+            RE.RESERVA_ESTACIA.fecha_inicio BETWEEN y AND z);
     
-        OPEN cursorMemoria FOR SELECT H.foto foto, H.nombre nombre, U.correo correo, TO_CHAR(RE.RESERVA_ESTACIA.fecha_inicio,'DD Mon  YYYY') inicio , TO_CHAR(RE.RESERVA_ESTACIA.fecha_fin,'DD Mon  YYYY') fin ,traerCantidad(RE.id_reserva_estancia, U.id_usuario) cantidad ,devolverCaracteristica(HA.id_habitacion) caracteristicas,H.lugar_hotel.codigo_postal || ' sw 150 court, ' || H.lugar_hotel.ciudad ||', '|| H.lugar_hotel.calle||', '||H.lugar_hotel.pais   as direccion, RE.puntuacion,ROUND( traerPagoTotal(RE.id_reserva_estancia),2) pago
-                                    FROM HOTEL H, USUARIO U, RESERVA_ESTANCIA RE, HABITACION HA
-                                    WHERE H.id_hotel = HA.hotel_id
-                                    AND HA.id_habitacion = RE.habitacion_id
-                                    AND U.correo = x
-                                    AND registros = 0 
-                                    OR H.id_hotel = HA.hotel_id
-                                    AND HA.id_habitacion = RE.habitacion_id 
-                                    AND U.correo = x
-                                    AND TO_CHAR(RE.RESERVA_ESTACIA.fecha_inicio,'DD-MM-YYYY') = TO_CHAR(y,'DD-MM-YYYY')
-                                    AND TO_CHAR( RE.RESERVA_ESTACIA.fecha_fin,'DD-MM-YYYY') = TO_CHAR(z,'DD-MM-YYYY');
+        OPEN cursorMemoria FOR SELECT
+                                    re.id_reserva_estancia,
+                                    (CASE WHEN id_apartamento IS NULL THEN H.foto ELSE A.foto END) foto, 
+                                    (CASE WHEN id_apartamento IS NULL THEN H.nombre||' Habitacion '||HA.numero||'-'||HA.piso ELSE 'Habitacion '||A.nombre END) nombre,
+                                    U.correo correo,
+                                    TO_CHAR(RE.reserva_estacia.fecha_inicio, 'Day, DD Mon YYYY') inicio,
+                                    TO_CHAR(RE.reserva_estacia.fecha_fin, 'Day, DD Mon YYYY') fin,
+                                    traerCantidad(RE.id_reserva_estancia, U.id_usuario) huespedes,
+                                    (CASE WHEN id_apartamento IS NULL THEN devolverCaracteristica(HA.id_habitacion) ELSE devolverCaracteristicaA(a.id_apartamento) END) descripcion,
+                                    CASE WHEN id_apartamento IS NULL THEN H.lugar_hotel.codigo_postal || ' sw 150 court, ' || H.lugar_hotel.ciudad ||', '|| H.lugar_hotel.calle||', '||H.lugar_hotel.pais
+                                    ELSE  A.lugar_apartamento.codigo_postal || ' sw 150 court, ' || A.lugar_apartamento.ciudad ||', '|| A.lugar_apartamento.calle||', '||A.lugar_apartamento.pais END ubicacion,
+                                    CASE WHEN RE.puntuacion=0 THEN 'No ha finalizado' ELSE ROUND(puntuacion,1)||'/10' END puntaje,
+                                    '$'||P.monto.valor precio
+                                    FROM RESERVA_ESTANCIA RE LEFT JOIN APARTAMENTO A ON RE.apartamento_id=A.id_apartamento LEFT JOIN HABITACION HA ON  RE.habitacion_id=HA.id_habitacion
+                                    LEFT JOIN HOTEL H ON HA.hotel_id=H.id_hotel, USUARIO U, PAGO P
+                                    WHERE 
+                                        U.id_usuario = usuarioReserva(id_reserva_estancia) AND
+                                        RE.id_reserva_estancia=P.reservaestancia_id AND
+                                       ( registros = 0 OR (
+                                        U.correo LIKE '%'||x||'%' AND 
+                                        RE.RESERVA_ESTACIA.fecha_inicio BETWEEN y AND z));
     
+END;
+
+CREATE OR REPLACE PROCEDURE REPORTE_9 (cursorMemoria OUT SYS_REFCURSOR, correo VARCHAR, fecha_inicio DATE, fecha_fin DATE)
+AS
+    registros INTEGER;
+BEGIN
+    SELECT foto
 END;
 
 CREATE OR REPLACE PROCEDURE REPORTE_11 (cursorMemoria OUT SYS_REFCURSOR, x VARCHAR, y DATE, z DATE)
@@ -371,3 +402,8 @@ END;
 
 
 
+select distinct * from reserva_estancia re, huesped h, usuario u WHERE h.reservaestancia_id=re.id_reserva_estancia and usuario_id=1 and h.usuario_id = u.id_usuario
+
+
+
+select * from huesped where reservaestancia_id= 70

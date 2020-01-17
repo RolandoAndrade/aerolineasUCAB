@@ -541,6 +541,25 @@ BEGIN
     RETURN total;
 END;
 /
+CREATE OR REPLACE FUNCTION devolverCaracteristicaA(x NUMBER) RETURN VARCHAR
+IS
+    caracteristica VARCHAR(1000);
+    total VARCHAR(1000);
+    CURSOR Ccaracteristica IS SELECT C.descripcion 
+                        FROM CARACTERISTICA C, APARTAMENTO HA
+                        WHERE HA.id_apartamento = C.apartamento_id
+                        AND HA.id_apartamento = x;
+BEGIN
+    OPEN Ccaracteristica;
+    FETCH Ccaracteristica INTO caracteristica;
+    WHILE(Ccaracteristica%FOUND)
+    LOOP
+        total:=total|| ', '||caracteristica;
+        FETCH Ccaracteristica INTO caracteristica;
+    END LOOP;
+    RETURN total;
+END;
+/
 CREATE OR REPLACE FUNCTION traerPagoTotal(x NUMBER) RETURN VARCHAR
 IS
     registro1 VARCHAR(50);
@@ -572,6 +591,17 @@ BEGIN
     END IF;
 END;
 
+CREATE OR REPLACE FUNCTION traerCantidad(x NUMBER, y NUMBER) RETURN VARCHAR
+IS
+    registro VARCHAR(100);
+BEGIN
+    FOR I IN (SELECT * FROM HUESPED WHERE reservaestancia_id=x AND usuario_id=y)
+    LOOP
+        registro:=registro||I.cantidad||' '||I.tipo||CHR(10);
+    END LOOP;
+    return registro;
+END;
+
 CREATE OR REPLACE FUNCTION traerPagoTotalCarro(x NUMBER) RETURN VARCHAR
 IS
     registro1 VARCHAR(50);
@@ -581,4 +611,15 @@ BEGIN
     where rc.id_reserva_carro = p.reservacarro_id
     and rc.id_reserva_carro = x;
     RETURN registro1;
+END;
+
+
+CREATE FUNCTION usuarioReserva(res INTEGER) RETURN INTEGER
+IS
+BEGIN
+   FOR I IN (SELECT * FROM HUESPED WHERE reservaestancia_id=res)
+   LOOP
+    RETURN I.usuario_id;
+   END LOOP;
+   return 1;
 END;
