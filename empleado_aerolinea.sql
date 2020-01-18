@@ -1,2 +1,21 @@
-select * from system.avion;
-select * from system.habitacion;
+--PUEDE
+
+SELECT * FROM SYSTEM.reserva_vuelo; 
+
+INSERT INTO SYSTEM.reserva_vuelo VALUES (48778, SYSTEM.RESERVA(SYSTIMESTAMP, NULL, SYSTEM.UNIDAD(1600.5236, 'dolar', 'monetaria', 'usd'), 'pagado'),447,2);
+
+UPDATE SYSTEM.MILLA MM
+SET MM.cantidad.valor=MM.cantidad.valor*2;
+
+DELETE FROM SYSTEM.DISPONIBILIDAD 
+WHERE id_disponibilidad=78818;
+
+--NO PUEDE
+
+SELECT * FROM SYSTEM.HABITACION;
+
+INSERT INTO SYSTEM.MARCA VALUES (13,'HACKEADO','aereo');
+
+UPDATE SYSTEM.AEROLINEA SET nombre = 'HACKED';
+
+DELETE FROM SYSTEM.AVION;

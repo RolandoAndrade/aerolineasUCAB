@@ -1,2 +1,25 @@
-select * from system.avion;
-select * from system.hotel;
+--PUEDE
+
+SELECT * from SYSTEM.HOTEL;
+
+INSERT INTO SYSTEM.HUESPED VALUES(100000,3,'HACKERS',1,1);
+
+UPDATE SYSTEM.MILLA MM
+SET MM.cantidad.valor=MM.cantidad.valor*2
+WHERE id_milla = 1;
+
+DELETE FROM system.HABITACION
+WHERE id_habitacion = 545644;
+
+--NO PUEDE
+
+SELECT * FROM SYSTEM.AVION;
+
+INSERT INTO SYSTEM.USUARIO VALUES(100,'lorem@gmail.com','agente86', DEFAULT, 'lorem', null, 'ipsum',null,'+58123456');
+
+UPDATE SYSTEM.TARJETA_CREDITO
+SET banco = 'HACKEADO';
+
+DELETE FROM system.vuelo
+WHERE id_vuelo = 545644;
+
