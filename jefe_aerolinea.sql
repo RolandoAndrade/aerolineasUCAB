@@ -8,10 +8,10 @@ SELECT * FROM SYSTEM.ASIENTO;
 SELECT * FROM SYSTEM.DISPONIBILIDAD WHERE id_disponibilidad=78818;
 SELECT * FROM SYSTEM.RESERVA_VUELO;
 
-INSERT INTO MARCA VALUES (id_marca.nextVal,'JEFE','aereo');
+INSERT INTO SYSTEM.MARCA VALUES (13,'HACKEADO','aereo');
 
 UPDATE SYSTEM.RESERVA_VUELO RV
-SET RV.reserva_vuelo.monto = RV.reserva_vuelo.monto*2;
+SET RV.reserva_vuelo.monto.valor = RV.reserva_vuelo.monto.valor*2;
 
 DELETE FROM SYSTEM.DISPONIBILIDAD 
 WHERE id_disponibilidad=78818;
@@ -20,10 +20,12 @@ WHERE id_disponibilidad=78818;
 
 SELECT * FROM SYSTEM.CARRO; 
 
-DELETE FROM SYSTEM.proveedor_carro;
+DELETE FROM SYSTEM.proveedor_carro; --PUEDE VER MAS NO ELIMINAR
 
-UPDATE SYSTEM.HABITACION
+UPDATE SYSTEM.APARTAMENTO
 SET nombre = 'hackeado';
 
-INSERT INTO CARACTERISTICA VALUES(system.id_caracteristica.nextVal,'Hackeado','Cocina hackeada',1,null,null);
+DELETE FROM SYSTEM.proveedor_carro;
+
+INSERT INTO SYSTEM.CARACTERISTICA VALUES(56000,'Hackeado','Cocina hackeada',1,null,null);
 
